@@ -1,0 +1,1657 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mc_math.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.global	hSin_Cos_Table
+  56              		.section	.rodata.hSin_Cos_Table,"a"
+  57              		.align	2
+  60              	hSin_Cos_Table:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 2
+
+
+  61 0000 0000     		.short	0
+  62 0002 C900     		.short	201
+  63 0004 9201     		.short	402
+  64 0006 5B02     		.short	603
+  65 0008 2403     		.short	804
+  66 000a ED03     		.short	1005
+  67 000c B604     		.short	1206
+  68 000e 7F05     		.short	1407
+  69 0010 4806     		.short	1608
+  70 0012 1107     		.short	1809
+  71 0014 D907     		.short	2009
+  72 0016 A208     		.short	2210
+  73 0018 6A09     		.short	2410
+  74 001a 330A     		.short	2611
+  75 001c FB0A     		.short	2811
+  76 001e C40B     		.short	3012
+  77 0020 8C0C     		.short	3212
+  78 0022 540D     		.short	3412
+  79 0024 1C0E     		.short	3612
+  80 0026 E30E     		.short	3811
+  81 0028 AB0F     		.short	4011
+  82 002a 7210     		.short	4210
+  83 002c 3A11     		.short	4410
+  84 002e 0112     		.short	4609
+  85 0030 C812     		.short	4808
+  86 0032 8F13     		.short	5007
+  87 0034 5514     		.short	5205
+  88 0036 1C15     		.short	5404
+  89 0038 E215     		.short	5602
+  90 003a A816     		.short	5800
+  91 003c 6E17     		.short	5998
+  92 003e 3318     		.short	6195
+  93 0040 F918     		.short	6393
+  94 0042 BE19     		.short	6590
+  95 0044 821A     		.short	6786
+  96 0046 471B     		.short	6983
+  97 0048 0B1C     		.short	7179
+  98 004a CF1C     		.short	7375
+  99 004c 931D     		.short	7571
+ 100 004e 571E     		.short	7767
+ 101 0050 1A1F     		.short	7962
+ 102 0052 DD1F     		.short	8157
+ 103 0054 9F20     		.short	8351
+ 104 0056 6121     		.short	8545
+ 105 0058 2322     		.short	8739
+ 106 005a E522     		.short	8933
+ 107 005c A623     		.short	9126
+ 108 005e 6724     		.short	9319
+ 109 0060 2825     		.short	9512
+ 110 0062 E825     		.short	9704
+ 111 0064 A826     		.short	9896
+ 112 0066 6727     		.short	10087
+ 113 0068 2628     		.short	10278
+ 114 006a E528     		.short	10469
+ 115 006c A329     		.short	10659
+ 116 006e 612A     		.short	10849
+ 117 0070 1F2B     		.short	11039
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 3
+
+
+ 118 0072 DC2B     		.short	11228
+ 119 0074 992C     		.short	11417
+ 120 0076 552D     		.short	11605
+ 121 0078 112E     		.short	11793
+ 122 007a CC2E     		.short	11980
+ 123 007c 872F     		.short	12167
+ 124 007e 4130     		.short	12353
+ 125 0080 FB30     		.short	12539
+ 126 0082 B531     		.short	12725
+ 127 0084 6E32     		.short	12910
+ 128 0086 2633     		.short	13094
+ 129 0088 DF33     		.short	13279
+ 130 008a 9634     		.short	13462
+ 131 008c 4D35     		.short	13645
+ 132 008e 0436     		.short	13828
+ 133 0090 BA36     		.short	14010
+ 134 0092 6F37     		.short	14191
+ 135 0094 2438     		.short	14372
+ 136 0096 D938     		.short	14553
+ 137 0098 8C39     		.short	14732
+ 138 009a 403A     		.short	14912
+ 139 009c F23A     		.short	15090
+ 140 009e A53B     		.short	15269
+ 141 00a0 563C     		.short	15446
+ 142 00a2 073D     		.short	15623
+ 143 00a4 B83D     		.short	15800
+ 144 00a6 683E     		.short	15976
+ 145 00a8 173F     		.short	16151
+ 146 00aa C53F     		.short	16325
+ 147 00ac 7340     		.short	16499
+ 148 00ae 2141     		.short	16673
+ 149 00b0 CE41     		.short	16846
+ 150 00b2 7A42     		.short	17018
+ 151 00b4 2543     		.short	17189
+ 152 00b6 D043     		.short	17360
+ 153 00b8 7A44     		.short	17530
+ 154 00ba 2445     		.short	17700
+ 155 00bc CD45     		.short	17869
+ 156 00be 7546     		.short	18037
+ 157 00c0 1C47     		.short	18204
+ 158 00c2 C347     		.short	18371
+ 159 00c4 6948     		.short	18537
+ 160 00c6 0F49     		.short	18703
+ 161 00c8 B449     		.short	18868
+ 162 00ca 584A     		.short	19032
+ 163 00cc FB4A     		.short	19195
+ 164 00ce 9D4B     		.short	19357
+ 165 00d0 3F4C     		.short	19519
+ 166 00d2 E04C     		.short	19680
+ 167 00d4 814D     		.short	19841
+ 168 00d6 204E     		.short	20000
+ 169 00d8 BF4E     		.short	20159
+ 170 00da 5D4F     		.short	20317
+ 171 00dc FB4F     		.short	20475
+ 172 00de 9750     		.short	20631
+ 173 00e0 3351     		.short	20787
+ 174 00e2 CE51     		.short	20942
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 4
+
+
+ 175 00e4 6852     		.short	21096
+ 176 00e6 0253     		.short	21250
+ 177 00e8 9B53     		.short	21403
+ 178 00ea 3254     		.short	21554
+ 179 00ec C954     		.short	21705
+ 180 00ee 6055     		.short	21856
+ 181 00f0 F555     		.short	22005
+ 182 00f2 8A56     		.short	22154
+ 183 00f4 1D57     		.short	22301
+ 184 00f6 B057     		.short	22448
+ 185 00f8 4258     		.short	22594
+ 186 00fa D358     		.short	22739
+ 187 00fc 6459     		.short	22884
+ 188 00fe F359     		.short	23027
+ 189 0100 825A     		.short	23170
+ 190 0102 0F5B     		.short	23311
+ 191 0104 9C5B     		.short	23452
+ 192 0106 285C     		.short	23592
+ 193 0108 B35C     		.short	23731
+ 194 010a 3E5D     		.short	23870
+ 195 010c C75D     		.short	24007
+ 196 010e 4F5E     		.short	24143
+ 197 0110 D75E     		.short	24279
+ 198 0112 5D5F     		.short	24413
+ 199 0114 E35F     		.short	24547
+ 200 0116 6860     		.short	24680
+ 201 0118 EB60     		.short	24811
+ 202 011a 6E61     		.short	24942
+ 203 011c F061     		.short	25072
+ 204 011e 7162     		.short	25201
+ 205 0120 F162     		.short	25329
+ 206 0122 7063     		.short	25456
+ 207 0124 EE63     		.short	25582
+ 208 0126 6C64     		.short	25708
+ 209 0128 E864     		.short	25832
+ 210 012a 6365     		.short	25955
+ 211 012c DD65     		.short	26077
+ 212 012e 5666     		.short	26198
+ 213 0130 CF66     		.short	26319
+ 214 0132 4667     		.short	26438
+ 215 0134 BC67     		.short	26556
+ 216 0136 3268     		.short	26674
+ 217 0138 A668     		.short	26790
+ 218 013a 1969     		.short	26905
+ 219 013c 8B69     		.short	27019
+ 220 013e FD69     		.short	27133
+ 221 0140 6D6A     		.short	27245
+ 222 0142 DC6A     		.short	27356
+ 223 0144 4A6B     		.short	27466
+ 224 0146 B76B     		.short	27575
+ 225 0148 236C     		.short	27683
+ 226 014a 8E6C     		.short	27790
+ 227 014c F86C     		.short	27896
+ 228 014e 616D     		.short	28001
+ 229 0150 C96D     		.short	28105
+ 230 0152 306E     		.short	28208
+ 231 0154 966E     		.short	28310
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 5
+
+
+ 232 0156 FB6E     		.short	28411
+ 233 0158 5E6F     		.short	28510
+ 234 015a C16F     		.short	28609
+ 235 015c 2270     		.short	28706
+ 236 015e 8370     		.short	28803
+ 237 0160 E270     		.short	28898
+ 238 0162 4071     		.short	28992
+ 239 0164 9D71     		.short	29085
+ 240 0166 F971     		.short	29177
+ 241 0168 5472     		.short	29268
+ 242 016a AE72     		.short	29358
+ 243 016c 0773     		.short	29447
+ 244 016e 5E73     		.short	29534
+ 245 0170 B573     		.short	29621
+ 246 0172 0A74     		.short	29706
+ 247 0174 5F74     		.short	29791
+ 248 0176 B274     		.short	29874
+ 249 0178 0475     		.short	29956
+ 250 017a 5575     		.short	30037
+ 251 017c A575     		.short	30117
+ 252 017e F375     		.short	30195
+ 253 0180 4176     		.short	30273
+ 254 0182 8D76     		.short	30349
+ 255 0184 D876     		.short	30424
+ 256 0186 2277     		.short	30498
+ 257 0188 6B77     		.short	30571
+ 258 018a B377     		.short	30643
+ 259 018c FA77     		.short	30714
+ 260 018e 3F78     		.short	30783
+ 261 0190 8478     		.short	30852
+ 262 0192 C778     		.short	30919
+ 263 0194 0979     		.short	30985
+ 264 0196 4A79     		.short	31050
+ 265 0198 8979     		.short	31113
+ 266 019a C879     		.short	31176
+ 267 019c 057A     		.short	31237
+ 268 019e 417A     		.short	31297
+ 269 01a0 7C7A     		.short	31356
+ 270 01a2 B67A     		.short	31414
+ 271 01a4 EE7A     		.short	31470
+ 272 01a6 267B     		.short	31526
+ 273 01a8 5C7B     		.short	31580
+ 274 01aa 917B     		.short	31633
+ 275 01ac C57B     		.short	31685
+ 276 01ae F87B     		.short	31736
+ 277 01b0 297C     		.short	31785
+ 278 01b2 597C     		.short	31833
+ 279 01b4 887C     		.short	31880
+ 280 01b6 B67C     		.short	31926
+ 281 01b8 E37C     		.short	31971
+ 282 01ba 0E7D     		.short	32014
+ 283 01bc 397D     		.short	32057
+ 284 01be 627D     		.short	32098
+ 285 01c0 897D     		.short	32137
+ 286 01c2 B07D     		.short	32176
+ 287 01c4 D57D     		.short	32213
+ 288 01c6 FA7D     		.short	32250
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 6
+
+
+ 289 01c8 1D7E     		.short	32285
+ 290 01ca 3E7E     		.short	32318
+ 291 01cc 5F7E     		.short	32351
+ 292 01ce 7E7E     		.short	32382
+ 293 01d0 9C7E     		.short	32412
+ 294 01d2 B97E     		.short	32441
+ 295 01d4 D57E     		.short	32469
+ 296 01d6 EF7E     		.short	32495
+ 297 01d8 097F     		.short	32521
+ 298 01da 217F     		.short	32545
+ 299 01dc 377F     		.short	32567
+ 300 01de 4D7F     		.short	32589
+ 301 01e0 617F     		.short	32609
+ 302 01e2 747F     		.short	32628
+ 303 01e4 867F     		.short	32646
+ 304 01e6 977F     		.short	32663
+ 305 01e8 A67F     		.short	32678
+ 306 01ea B47F     		.short	32692
+ 307 01ec C17F     		.short	32705
+ 308 01ee CD7F     		.short	32717
+ 309 01f0 D87F     		.short	32728
+ 310 01f2 E17F     		.short	32737
+ 311 01f4 E97F     		.short	32745
+ 312 01f6 F07F     		.short	32752
+ 313 01f8 F57F     		.short	32757
+ 314 01fa F97F     		.short	32761
+ 315 01fc FD7F     		.short	32765
+ 316 01fe FE7F     		.short	32766
+ 317              		.section	.text.MCM_Clarke,"ax",%progbits
+ 318              		.align	1
+ 319              		.weak	MCM_Clarke
+ 320              		.syntax unified
+ 321              		.thumb
+ 322              		.thumb_func
+ 324              	MCM_Clarke:
+ 325              	.LFB1090:
+ 326              		.file 1 "Src/mc_math.c"
+   1:Src/mc_math.c **** 
+   2:Src/mc_math.c **** /**
+   3:Src/mc_math.c ****   ******************************************************************************
+   4:Src/mc_math.c ****   * @file    mc_math.c
+   5:Src/mc_math.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   6:Src/mc_math.c ****   * @brief   This file provides mathematics functions useful for and specific to
+   7:Src/mc_math.c ****   *          Motor Control.
+   8:Src/mc_math.c ****   *
+   9:Src/mc_math.c ****   ******************************************************************************
+  10:Src/mc_math.c ****   * @attention
+  11:Src/mc_math.c ****   *
+  12:Src/mc_math.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  13:Src/mc_math.c ****   * All rights reserved.</center></h2>
+  14:Src/mc_math.c ****   *
+  15:Src/mc_math.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  16:Src/mc_math.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  17:Src/mc_math.c ****   * the License. You may obtain a copy of the License at:
+  18:Src/mc_math.c ****   *                             www.st.com/SLA0044
+  19:Src/mc_math.c ****   *
+  20:Src/mc_math.c ****   ******************************************************************************
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 7
+
+
+  21:Src/mc_math.c ****   */
+  22:Src/mc_math.c **** /* Includes ------------------------------------------------------------------*/
+  23:Src/mc_math.c **** #include "mc_math.h"
+  24:Src/mc_math.c **** #include "mc_type.h"
+  25:Src/mc_math.c **** 
+  26:Src/mc_math.c **** /** @addtogroup MCSDK
+  27:Src/mc_math.c ****   * @{
+  28:Src/mc_math.c ****   */
+  29:Src/mc_math.c **** 
+  30:Src/mc_math.c **** /** @defgroup MC_Math Motor Control Math functions
+  31:Src/mc_math.c ****   * @brief Motor Control Mathematic functions of the Motor Control SDK
+  32:Src/mc_math.c ****   *
+  33:Src/mc_math.c ****   * @todo Document the Motor Control Math "module".
+  34:Src/mc_math.c ****   *
+  35:Src/mc_math.c ****   * @{
+  36:Src/mc_math.c ****   */
+  37:Src/mc_math.c **** 
+  38:Src/mc_math.c **** /* Private macro -------------------------------------------------------------*/
+  39:Src/mc_math.c **** 
+  40:Src/mc_math.c **** #define SIN_COS_TABLE {\
+  41:Src/mc_math.c ****     0x0000,0x00C9,0x0192,0x025B,0x0324,0x03ED,0x04B6,0x057F,\
+  42:Src/mc_math.c ****     0x0648,0x0711,0x07D9,0x08A2,0x096A,0x0A33,0x0AFB,0x0BC4,\
+  43:Src/mc_math.c ****     0x0C8C,0x0D54,0x0E1C,0x0EE3,0x0FAB,0x1072,0x113A,0x1201,\
+  44:Src/mc_math.c ****     0x12C8,0x138F,0x1455,0x151C,0x15E2,0x16A8,0x176E,0x1833,\
+  45:Src/mc_math.c ****     0x18F9,0x19BE,0x1A82,0x1B47,0x1C0B,0x1CCF,0x1D93,0x1E57,\
+  46:Src/mc_math.c ****     0x1F1A,0x1FDD,0x209F,0x2161,0x2223,0x22E5,0x23A6,0x2467,\
+  47:Src/mc_math.c ****     0x2528,0x25E8,0x26A8,0x2767,0x2826,0x28E5,0x29A3,0x2A61,\
+  48:Src/mc_math.c ****     0x2B1F,0x2BDC,0x2C99,0x2D55,0x2E11,0x2ECC,0x2F87,0x3041,\
+  49:Src/mc_math.c ****     0x30FB,0x31B5,0x326E,0x3326,0x33DF,0x3496,0x354D,0x3604,\
+  50:Src/mc_math.c ****     0x36BA,0x376F,0x3824,0x38D9,0x398C,0x3A40,0x3AF2,0x3BA5,\
+  51:Src/mc_math.c ****     0x3C56,0x3D07,0x3DB8,0x3E68,0x3F17,0x3FC5,0x4073,0x4121,\
+  52:Src/mc_math.c ****     0x41CE,0x427A,0x4325,0x43D0,0x447A,0x4524,0x45CD,0x4675,\
+  53:Src/mc_math.c ****     0x471C,0x47C3,0x4869,0x490F,0x49B4,0x4A58,0x4AFB,0x4B9D,\
+  54:Src/mc_math.c ****     0x4C3F,0x4CE0,0x4D81,0x4E20,0x4EBF,0x4F5D,0x4FFB,0x5097,\
+  55:Src/mc_math.c ****     0x5133,0x51CE,0x5268,0x5302,0x539B,0x5432,0x54C9,0x5560,\
+  56:Src/mc_math.c ****     0x55F5,0x568A,0x571D,0x57B0,0x5842,0x58D3,0x5964,0x59F3,\
+  57:Src/mc_math.c ****     0x5A82,0x5B0F,0x5B9C,0x5C28,0x5CB3,0x5D3E,0x5DC7,0x5E4F,\
+  58:Src/mc_math.c ****     0x5ED7,0x5F5D,0x5FE3,0x6068,0x60EB,0x616E,0x61F0,0x6271,\
+  59:Src/mc_math.c ****     0x62F1,0x6370,0x63EE,0x646C,0x64E8,0x6563,0x65DD,0x6656,\
+  60:Src/mc_math.c ****     0x66CF,0x6746,0x67BC,0x6832,0x68A6,0x6919,0x698B,0x69FD,\
+  61:Src/mc_math.c ****     0x6A6D,0x6ADC,0x6B4A,0x6BB7,0x6C23,0x6C8E,0x6CF8,0x6D61,\
+  62:Src/mc_math.c ****     0x6DC9,0x6E30,0x6E96,0x6EFB,0x6F5E,0x6FC1,0x7022,0x7083,\
+  63:Src/mc_math.c ****     0x70E2,0x7140,0x719D,0x71F9,0x7254,0x72AE,0x7307,0x735E,\
+  64:Src/mc_math.c ****     0x73B5,0x740A,0x745F,0x74B2,0x7504,0x7555,0x75A5,0x75F3,\
+  65:Src/mc_math.c ****     0x7641,0x768D,0x76D8,0x7722,0x776B,0x77B3,0x77FA,0x783F,\
+  66:Src/mc_math.c ****     0x7884,0x78C7,0x7909,0x794A,0x7989,0x79C8,0x7A05,0x7A41,\
+  67:Src/mc_math.c ****     0x7A7C,0x7AB6,0x7AEE,0x7B26,0x7B5C,0x7B91,0x7BC5,0x7BF8,\
+  68:Src/mc_math.c ****     0x7C29,0x7C59,0x7C88,0x7CB6,0x7CE3,0x7D0E,0x7D39,0x7D62,\
+  69:Src/mc_math.c ****     0x7D89,0x7DB0,0x7DD5,0x7DFA,0x7E1D,0x7E3E,0x7E5F,0x7E7E,\
+  70:Src/mc_math.c ****     0x7E9C,0x7EB9,0x7ED5,0x7EEF,0x7F09,0x7F21,0x7F37,0x7F4D,\
+  71:Src/mc_math.c ****     0x7F61,0x7F74,0x7F86,0x7F97,0x7FA6,0x7FB4,0x7FC1,0x7FCD,\
+  72:Src/mc_math.c ****     0x7FD8,0x7FE1,0x7FE9,0x7FF0,0x7FF5,0x7FF9,0x7FFD,0x7FFE}
+  73:Src/mc_math.c **** 
+  74:Src/mc_math.c **** #define SIN_MASK        0x0300u
+  75:Src/mc_math.c **** #define U0_90           0x0200u
+  76:Src/mc_math.c **** #define U90_180         0x0300u
+  77:Src/mc_math.c **** #define U180_270        0x0000u
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 8
+
+
+  78:Src/mc_math.c **** #define U270_360        0x0100u
+  79:Src/mc_math.c **** 
+  80:Src/mc_math.c **** /* Private variables ---------------------------------------------------------*/
+  81:Src/mc_math.c **** const int16_t hSin_Cos_Table[256] = SIN_COS_TABLE;
+  82:Src/mc_math.c **** 
+  83:Src/mc_math.c **** #define divSQRT_3 (int32_t)0x49E6    /* 1/sqrt(3) in q1.15 format=0.5773315 */
+  84:Src/mc_math.c **** 
+  85:Src/mc_math.c **** #if defined (CCMRAM)
+  86:Src/mc_math.c **** #if defined (__ICCARM__)
+  87:Src/mc_math.c **** #pragma location = ".ccmram"
+  88:Src/mc_math.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+  89:Src/mc_math.c **** __attribute__( ( section ( ".ccmram" ) ) )
+  90:Src/mc_math.c **** #endif
+  91:Src/mc_math.c **** #endif
+  92:Src/mc_math.c **** /**
+  93:Src/mc_math.c ****   * @brief  This function transforms stator values a and b (which are
+  94:Src/mc_math.c ****   *         directed along axes each displaced by 120 degrees) into values
+  95:Src/mc_math.c ****   *         alpha and beta in a stationary qd reference frame.
+  96:Src/mc_math.c ****   *                               alpha = a
+  97:Src/mc_math.c ****   *                       beta = -(2*b+a)/sqrt(3)
+  98:Src/mc_math.c ****   * @param  Input: stator values a and b in ab_t format.
+  99:Src/mc_math.c ****   * @retval Stator values alpha and beta in alphabeta_t format.
+ 100:Src/mc_math.c ****   */
+ 101:Src/mc_math.c **** __weak alphabeta_t MCM_Clarke(ab_t Input)
+ 102:Src/mc_math.c **** {
+ 327              		.loc 1 102 1
+ 328              		.cfi_startproc
+ 329              		@ args = 0, pretend = 0, frame = 32
+ 330              		@ frame_needed = 1, uses_anonymous_args = 0
+ 331              		@ link register save eliminated.
+ 332 0000 80B4     		push	{r7}
+ 333              	.LCFI0:
+ 334              		.cfi_def_cfa_offset 4
+ 335              		.cfi_offset 7, -4
+ 336 0002 89B0     		sub	sp, sp, #36
+ 337              	.LCFI1:
+ 338              		.cfi_def_cfa_offset 40
+ 339 0004 00AF     		add	r7, sp, #0
+ 340              	.LCFI2:
+ 341              		.cfi_def_cfa_register 7
+ 342 0006 7860     		str	r0, [r7, #4]
+ 103:Src/mc_math.c ****   alphabeta_t Output;
+ 104:Src/mc_math.c **** 
+ 105:Src/mc_math.c ****   int32_t a_divSQRT3_tmp;
+ 106:Src/mc_math.c ****   int32_t b_divSQRT3_tmp;
+ 107:Src/mc_math.c ****   int32_t wbeta_tmp;
+ 108:Src/mc_math.c ****   int16_t hbeta_tmp;
+ 109:Src/mc_math.c **** 
+ 110:Src/mc_math.c ****   /* qIalpha = qIas*/
+ 111:Src/mc_math.c ****   Output.alpha = Input.a;
+ 343              		.loc 1 111 23
+ 344 0008 B7F90430 		ldrsh	r3, [r7, #4]
+ 345              		.loc 1 111 16
+ 346 000c 3B81     		strh	r3, [r7, #8]	@ movhi
+ 112:Src/mc_math.c **** 
+ 113:Src/mc_math.c ****   a_divSQRT3_tmp = divSQRT_3 * ((int32_t)Input.a);
+ 347              		.loc 1 113 47
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 9
+
+
+ 348 000e B7F90430 		ldrsh	r3, [r7, #4]
+ 349              		.loc 1 113 33
+ 350 0012 1A46     		mov	r2, r3
+ 351              		.loc 1 113 18
+ 352 0014 44F6E613 		movw	r3, #18918
+ 353 0018 02FB03F3 		mul	r3, r2, r3
+ 354 001c BB61     		str	r3, [r7, #24]
+ 114:Src/mc_math.c **** 
+ 115:Src/mc_math.c ****   b_divSQRT3_tmp = divSQRT_3 * ((int32_t)Input.b);
+ 355              		.loc 1 115 47
+ 356 001e B7F90630 		ldrsh	r3, [r7, #6]
+ 357              		.loc 1 115 33
+ 358 0022 1A46     		mov	r2, r3
+ 359              		.loc 1 115 18
+ 360 0024 44F6E613 		movw	r3, #18918
+ 361 0028 02FB03F3 		mul	r3, r2, r3
+ 362 002c 7B61     		str	r3, [r7, #20]
+ 116:Src/mc_math.c **** 
+ 117:Src/mc_math.c ****   /* qIbeta = -(2*qIbs+qIas)/sqrt(3) */
+ 118:Src/mc_math.c **** #ifndef FULL_MISRA_C_COMPLIANCY_MC_MATH
+ 119:Src/mc_math.c ****   /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 120:Src/mc_math.c ****     that Cortex-M3 assembly instruction ASR (arithmetic shift right) is used by
+ 121:Src/mc_math.c ****     the compiler to perform the shift (instead of LSR logical shift right) */
+ 122:Src/mc_math.c ****   //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Rule-10.1_R6
+ 123:Src/mc_math.c ****   wbeta_tmp = (-(a_divSQRT3_tmp) - (b_divSQRT3_tmp) - (b_divSQRT3_tmp)) >> 15;
+ 363              		.loc 1 123 16
+ 364 002e BB69     		ldr	r3, [r7, #24]
+ 365 0030 5A42     		rsbs	r2, r3, #0
+ 366              		.loc 1 123 34
+ 367 0032 7B69     		ldr	r3, [r7, #20]
+ 368 0034 D21A     		subs	r2, r2, r3
+ 369              		.loc 1 123 53
+ 370 0036 7B69     		ldr	r3, [r7, #20]
+ 371 0038 D31A     		subs	r3, r2, r3
+ 372              		.loc 1 123 13
+ 373 003a DB13     		asrs	r3, r3, #15
+ 374 003c 3B61     		str	r3, [r7, #16]
+ 124:Src/mc_math.c **** #else
+ 125:Src/mc_math.c ****   wbeta_tmp = (-(a_divSQRT3_tmp) - (b_divSQRT3_tmp) - (b_divSQRT3_tmp)) / 32768;
+ 126:Src/mc_math.c **** #endif
+ 127:Src/mc_math.c **** 
+ 128:Src/mc_math.c ****   /* Check saturation of Ibeta */
+ 129:Src/mc_math.c ****   if (wbeta_tmp > INT16_MAX)
+ 375              		.loc 1 129 6
+ 376 003e 3B69     		ldr	r3, [r7, #16]
+ 377 0040 B3F5004F 		cmp	r3, #32768
+ 378 0044 03DB     		blt	.L2
+ 130:Src/mc_math.c ****   {
+ 131:Src/mc_math.c ****     hbeta_tmp = INT16_MAX;
+ 379              		.loc 1 131 15
+ 380 0046 47F6FF73 		movw	r3, #32767
+ 381 004a FB83     		strh	r3, [r7, #30]	@ movhi
+ 382 004c 09E0     		b	.L3
+ 383              	.L2:
+ 132:Src/mc_math.c ****   }
+ 133:Src/mc_math.c ****   else if (wbeta_tmp < (-32768))
+ 384              		.loc 1 133 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 10
+
+
+ 385 004e 3B69     		ldr	r3, [r7, #16]
+ 386 0050 13F5004F 		cmn	r3, #32768
+ 387 0054 03DA     		bge	.L4
+ 134:Src/mc_math.c ****   {
+ 135:Src/mc_math.c ****     hbeta_tmp =  ((int16_t)-32768);
+ 388              		.loc 1 135 15
+ 389 0056 4FF40043 		mov	r3, #32768
+ 390 005a FB83     		strh	r3, [r7, #30]	@ movhi
+ 391 005c 01E0     		b	.L3
+ 392              	.L4:
+ 136:Src/mc_math.c ****   }
+ 137:Src/mc_math.c ****   else
+ 138:Src/mc_math.c ****   {
+ 139:Src/mc_math.c ****     hbeta_tmp = ((int16_t)wbeta_tmp);
+ 393              		.loc 1 139 15
+ 394 005e 3B69     		ldr	r3, [r7, #16]
+ 395 0060 FB83     		strh	r3, [r7, #30]	@ movhi
+ 396              	.L3:
+ 140:Src/mc_math.c ****   }
+ 141:Src/mc_math.c **** 
+ 142:Src/mc_math.c ****   Output.beta = hbeta_tmp;
+ 397              		.loc 1 142 15
+ 398 0062 FB8B     		ldrh	r3, [r7, #30]	@ movhi
+ 399 0064 7B81     		strh	r3, [r7, #10]	@ movhi
+ 143:Src/mc_math.c **** 
+ 144:Src/mc_math.c ****   if (((int16_t )-32768) == Output.beta)
+ 400              		.loc 1 144 35
+ 401 0066 B7F90A30 		ldrsh	r3, [r7, #10]
+ 402              		.loc 1 144 6
+ 403 006a 13F5004F 		cmn	r3, #32768
+ 404 006e 02D1     		bne	.L5
+ 145:Src/mc_math.c ****   {
+ 146:Src/mc_math.c ****     Output.beta = -32767;
+ 405              		.loc 1 146 17
+ 406 0070 48F20103 		movw	r3, #32769
+ 407 0074 7B81     		strh	r3, [r7, #10]	@ movhi
+ 408              	.L5:
+ 147:Src/mc_math.c ****   }
+ 148:Src/mc_math.c ****   else
+ 149:Src/mc_math.c ****   {
+ 150:Src/mc_math.c ****     /* Nothing to do */
+ 151:Src/mc_math.c ****   }
+ 152:Src/mc_math.c **** 
+ 153:Src/mc_math.c ****   return (Output);
+ 409              		.loc 1 153 10
+ 410 0076 BB68     		ldr	r3, [r7, #8]
+ 411 0078 FB60     		str	r3, [r7, #12]
+ 412 007a 0023     		movs	r3, #0
+ 413 007c BA89     		ldrh	r2, [r7, #12]
+ 414 007e 62F30F03 		bfi	r3, r2, #0, #16
+ 415 0082 FA89     		ldrh	r2, [r7, #14]
+ 416 0084 62F31F43 		bfi	r3, r2, #16, #16
+ 154:Src/mc_math.c **** }
+ 417              		.loc 1 154 1
+ 418 0088 1846     		mov	r0, r3
+ 419 008a 2437     		adds	r7, r7, #36
+ 420              	.LCFI3:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 11
+
+
+ 421              		.cfi_def_cfa_offset 4
+ 422 008c BD46     		mov	sp, r7
+ 423              	.LCFI4:
+ 424              		.cfi_def_cfa_register 13
+ 425              		@ sp needed
+ 426 008e 5DF8047B 		ldr	r7, [sp], #4
+ 427              	.LCFI5:
+ 428              		.cfi_restore 7
+ 429              		.cfi_def_cfa_offset 0
+ 430 0092 7047     		bx	lr
+ 431              		.cfi_endproc
+ 432              	.LFE1090:
+ 434              		.section	.text.MCM_Park,"ax",%progbits
+ 435              		.align	1
+ 436              		.weak	MCM_Park
+ 437              		.syntax unified
+ 438              		.thumb
+ 439              		.thumb_func
+ 441              	MCM_Park:
+ 442              	.LFB1091:
+ 155:Src/mc_math.c **** 
+ 156:Src/mc_math.c **** #if defined (CCMRAM)
+ 157:Src/mc_math.c **** #if defined (__ICCARM__)
+ 158:Src/mc_math.c **** #pragma location = ".ccmram"
+ 159:Src/mc_math.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 160:Src/mc_math.c **** __attribute__( ( section ( ".ccmram" ) ) )
+ 161:Src/mc_math.c **** #endif
+ 162:Src/mc_math.c **** #endif
+ 163:Src/mc_math.c **** /**
+ 164:Src/mc_math.c ****   * @brief  This function transforms stator values alpha and beta, which
+ 165:Src/mc_math.c ****   *         belong to a stationary qd reference frame, to a rotor flux
+ 166:Src/mc_math.c ****   *         synchronous reference frame (properly oriented), so as q and d.
+ 167:Src/mc_math.c ****   *                   d= alpha *sin(theta)+ beta *cos(Theta)
+ 168:Src/mc_math.c ****   *                   q= alpha *cos(Theta)- beta *sin(Theta)
+ 169:Src/mc_math.c ****   * @param  Input: stator values alpha and beta in alphabeta_t format.
+ 170:Src/mc_math.c ****   * @param  Theta: rotating frame angular position in q1.15 format.
+ 171:Src/mc_math.c ****   * @retval Stator values q and d in qd_t format
+ 172:Src/mc_math.c ****   */
+ 173:Src/mc_math.c **** __weak qd_t MCM_Park(alphabeta_t Input, int16_t Theta)
+ 174:Src/mc_math.c **** {
+ 443              		.loc 1 174 1
+ 444              		.cfi_startproc
+ 445              		@ args = 0, pretend = 0, frame = 48
+ 446              		@ frame_needed = 1, uses_anonymous_args = 0
+ 447 0000 80B5     		push	{r7, lr}
+ 448              	.LCFI6:
+ 449              		.cfi_def_cfa_offset 8
+ 450              		.cfi_offset 7, -8
+ 451              		.cfi_offset 14, -4
+ 452 0002 8CB0     		sub	sp, sp, #48
+ 453              	.LCFI7:
+ 454              		.cfi_def_cfa_offset 56
+ 455 0004 00AF     		add	r7, sp, #0
+ 456              	.LCFI8:
+ 457              		.cfi_def_cfa_register 7
+ 458 0006 7860     		str	r0, [r7, #4]
+ 459 0008 0B46     		mov	r3, r1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 12
+
+
+ 460 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 175:Src/mc_math.c ****   qd_t Output;
+ 176:Src/mc_math.c ****   int32_t d_tmp_1;
+ 177:Src/mc_math.c ****   int32_t d_tmp_2;
+ 178:Src/mc_math.c ****   int32_t q_tmp_1;
+ 179:Src/mc_math.c ****   int32_t q_tmp_2;
+ 180:Src/mc_math.c ****   int32_t wqd_tmp;
+ 181:Src/mc_math.c ****   int16_t hqd_tmp;
+ 182:Src/mc_math.c ****   Trig_Components Local_Vector_Components;
+ 183:Src/mc_math.c **** 
+ 184:Src/mc_math.c ****   Local_Vector_Components = MCM_Trig_Functions(Theta);
+ 461              		.loc 1 184 29
+ 462 000c B7F90230 		ldrsh	r3, [r7, #2]
+ 463 0010 1846     		mov	r0, r3
+ 464 0012 FFF7FEFF 		bl	MCM_Trig_Functions
+ 465 0016 0346     		mov	r3, r0
+ 466 0018 FB60     		str	r3, [r7, #12]
+ 185:Src/mc_math.c **** 
+ 186:Src/mc_math.c ****   /* No overflow guaranteed */
+ 187:Src/mc_math.c ****   q_tmp_1 = Input.alpha * ((int32_t )Local_Vector_Components.hCos);
+ 467              		.loc 1 187 18
+ 468 001a B7F90430 		ldrsh	r3, [r7, #4]
+ 469              		.loc 1 187 61
+ 470 001e B7F90C20 		ldrsh	r2, [r7, #12]
+ 471              		.loc 1 187 11
+ 472 0022 02FB03F3 		mul	r3, r2, r3
+ 473 0026 BB62     		str	r3, [r7, #40]
+ 188:Src/mc_math.c **** 
+ 189:Src/mc_math.c ****   /* No overflow guaranteed */
+ 190:Src/mc_math.c ****   q_tmp_2 = Input.beta * ((int32_t)Local_Vector_Components.hSin);
+ 474              		.loc 1 190 18
+ 475 0028 B7F90630 		ldrsh	r3, [r7, #6]
+ 476              		.loc 1 190 59
+ 477 002c B7F90E20 		ldrsh	r2, [r7, #14]
+ 478              		.loc 1 190 11
+ 479 0030 02FB03F3 		mul	r3, r2, r3
+ 480 0034 7B62     		str	r3, [r7, #36]
+ 191:Src/mc_math.c **** 
+ 192:Src/mc_math.c ****   /* Iq component in Q1.15 Format */
+ 193:Src/mc_math.c **** #ifndef FULL_MISRA_C_COMPLIANCY_MC_MATH
+ 194:Src/mc_math.c ****   /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 195:Src/mc_math.c ****     that Cortex-M3 assembly instruction ASR (arithmetic shift right) is used by
+ 196:Src/mc_math.c ****     the compiler to perform the shift (instead of LSR logical shift right) */
+ 197:Src/mc_math.c ****   wqd_tmp = (q_tmp_1 - q_tmp_2) >> 15; //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Ru
+ 481              		.loc 1 197 22
+ 482 0036 BA6A     		ldr	r2, [r7, #40]
+ 483 0038 7B6A     		ldr	r3, [r7, #36]
+ 484 003a D31A     		subs	r3, r2, r3
+ 485              		.loc 1 197 11
+ 486 003c DB13     		asrs	r3, r3, #15
+ 487 003e 3B62     		str	r3, [r7, #32]
+ 198:Src/mc_math.c **** #else
+ 199:Src/mc_math.c ****   wqd_tmp = (q_tmp_1 - q_tmp_2) / 32768;
+ 200:Src/mc_math.c **** #endif
+ 201:Src/mc_math.c **** 
+ 202:Src/mc_math.c ****   /* Check saturation of Iq */
+ 203:Src/mc_math.c ****   if (wqd_tmp > INT16_MAX)
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 13
+
+
+ 488              		.loc 1 203 6
+ 489 0040 3B6A     		ldr	r3, [r7, #32]
+ 490 0042 B3F5004F 		cmp	r3, #32768
+ 491 0046 03DB     		blt	.L8
+ 204:Src/mc_math.c ****   {
+ 205:Src/mc_math.c ****     hqd_tmp = INT16_MAX;
+ 492              		.loc 1 205 13
+ 493 0048 47F6FF73 		movw	r3, #32767
+ 494 004c FB85     		strh	r3, [r7, #46]	@ movhi
+ 495 004e 09E0     		b	.L9
+ 496              	.L8:
+ 206:Src/mc_math.c ****   }
+ 207:Src/mc_math.c ****   else if (wqd_tmp < (-32768))
+ 497              		.loc 1 207 11
+ 498 0050 3B6A     		ldr	r3, [r7, #32]
+ 499 0052 13F5004F 		cmn	r3, #32768
+ 500 0056 03DA     		bge	.L10
+ 208:Src/mc_math.c ****   {
+ 209:Src/mc_math.c ****     hqd_tmp = ((int16_t)-32768);
+ 501              		.loc 1 209 13
+ 502 0058 4FF40043 		mov	r3, #32768
+ 503 005c FB85     		strh	r3, [r7, #46]	@ movhi
+ 504 005e 01E0     		b	.L9
+ 505              	.L10:
+ 210:Src/mc_math.c ****   }
+ 211:Src/mc_math.c ****   else
+ 212:Src/mc_math.c ****   {
+ 213:Src/mc_math.c ****     hqd_tmp = ((int16_t)wqd_tmp);
+ 506              		.loc 1 213 13
+ 507 0060 3B6A     		ldr	r3, [r7, #32]
+ 508 0062 FB85     		strh	r3, [r7, #46]	@ movhi
+ 509              	.L9:
+ 214:Src/mc_math.c ****   }
+ 215:Src/mc_math.c **** 
+ 216:Src/mc_math.c ****   Output.q = hqd_tmp;
+ 510              		.loc 1 216 12
+ 511 0064 FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 512 0066 3B82     		strh	r3, [r7, #16]	@ movhi
+ 217:Src/mc_math.c **** 
+ 218:Src/mc_math.c ****   if (((int16_t)-32768) == Output.q)
+ 513              		.loc 1 218 34
+ 514 0068 B7F91030 		ldrsh	r3, [r7, #16]
+ 515              		.loc 1 218 6
+ 516 006c 13F5004F 		cmn	r3, #32768
+ 517 0070 02D1     		bne	.L11
+ 219:Src/mc_math.c ****   {
+ 220:Src/mc_math.c ****     Output.q = -32767;
+ 518              		.loc 1 220 14
+ 519 0072 48F20103 		movw	r3, #32769
+ 520 0076 3B82     		strh	r3, [r7, #16]	@ movhi
+ 521              	.L11:
+ 221:Src/mc_math.c ****   }
+ 222:Src/mc_math.c ****   else
+ 223:Src/mc_math.c ****   {
+ 224:Src/mc_math.c ****     /* Nothing to do */
+ 225:Src/mc_math.c ****   }
+ 226:Src/mc_math.c **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 14
+
+
+ 227:Src/mc_math.c ****   /* No overflow guaranteed */
+ 228:Src/mc_math.c ****   d_tmp_1 = Input.alpha * ((int32_t )Local_Vector_Components.hSin);
+ 522              		.loc 1 228 18
+ 523 0078 B7F90430 		ldrsh	r3, [r7, #4]
+ 524              		.loc 1 228 61
+ 525 007c B7F90E20 		ldrsh	r2, [r7, #14]
+ 526              		.loc 1 228 11
+ 527 0080 02FB03F3 		mul	r3, r2, r3
+ 528 0084 FB61     		str	r3, [r7, #28]
+ 229:Src/mc_math.c **** 
+ 230:Src/mc_math.c ****   /* No overflow guaranteed */
+ 231:Src/mc_math.c ****   d_tmp_2 = Input.beta * ((int32_t )Local_Vector_Components.hCos);
+ 529              		.loc 1 231 18
+ 530 0086 B7F90630 		ldrsh	r3, [r7, #6]
+ 531              		.loc 1 231 60
+ 532 008a B7F90C20 		ldrsh	r2, [r7, #12]
+ 533              		.loc 1 231 11
+ 534 008e 02FB03F3 		mul	r3, r2, r3
+ 535 0092 BB61     		str	r3, [r7, #24]
+ 232:Src/mc_math.c **** 
+ 233:Src/mc_math.c ****   /* Id component in Q1.15 Format */
+ 234:Src/mc_math.c **** #ifndef FULL_MISRA_C_COMPLIANCY_MC_MATH
+ 235:Src/mc_math.c ****   /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 236:Src/mc_math.c ****     that Cortex-M3 assembly instruction ASR (arithmetic shift right) is used by
+ 237:Src/mc_math.c ****     the compiler to perform the shift (instead of LSR logical shift right) */
+ 238:Src/mc_math.c ****   wqd_tmp = (d_tmp_1 + d_tmp_2) >> 15; //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Ru
+ 536              		.loc 1 238 22
+ 537 0094 FA69     		ldr	r2, [r7, #28]
+ 538 0096 BB69     		ldr	r3, [r7, #24]
+ 539 0098 1344     		add	r3, r3, r2
+ 540              		.loc 1 238 11
+ 541 009a DB13     		asrs	r3, r3, #15
+ 542 009c 3B62     		str	r3, [r7, #32]
+ 239:Src/mc_math.c **** #else
+ 240:Src/mc_math.c ****   wqd_tmp = (d_tmp_1 + d_tmp_2) / 32768;
+ 241:Src/mc_math.c **** #endif
+ 242:Src/mc_math.c **** 
+ 243:Src/mc_math.c ****   /* Check saturation of Id */
+ 244:Src/mc_math.c ****   if (wqd_tmp > INT16_MAX)
+ 543              		.loc 1 244 6
+ 544 009e 3B6A     		ldr	r3, [r7, #32]
+ 545 00a0 B3F5004F 		cmp	r3, #32768
+ 546 00a4 03DB     		blt	.L12
+ 245:Src/mc_math.c ****   {
+ 246:Src/mc_math.c ****     hqd_tmp = INT16_MAX;
+ 547              		.loc 1 246 13
+ 548 00a6 47F6FF73 		movw	r3, #32767
+ 549 00aa FB85     		strh	r3, [r7, #46]	@ movhi
+ 550 00ac 09E0     		b	.L13
+ 551              	.L12:
+ 247:Src/mc_math.c ****   }
+ 248:Src/mc_math.c ****   else if (wqd_tmp < (-32768))
+ 552              		.loc 1 248 11
+ 553 00ae 3B6A     		ldr	r3, [r7, #32]
+ 554 00b0 13F5004F 		cmn	r3, #32768
+ 555 00b4 03DA     		bge	.L14
+ 249:Src/mc_math.c ****   {
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 15
+
+
+ 250:Src/mc_math.c ****     hqd_tmp = ((int16_t)-32768);
+ 556              		.loc 1 250 13
+ 557 00b6 4FF40043 		mov	r3, #32768
+ 558 00ba FB85     		strh	r3, [r7, #46]	@ movhi
+ 559 00bc 01E0     		b	.L13
+ 560              	.L14:
+ 251:Src/mc_math.c ****   }
+ 252:Src/mc_math.c ****   else
+ 253:Src/mc_math.c ****   {
+ 254:Src/mc_math.c ****     hqd_tmp = ((int16_t)wqd_tmp);
+ 561              		.loc 1 254 13
+ 562 00be 3B6A     		ldr	r3, [r7, #32]
+ 563 00c0 FB85     		strh	r3, [r7, #46]	@ movhi
+ 564              	.L13:
+ 255:Src/mc_math.c ****   }
+ 256:Src/mc_math.c **** 
+ 257:Src/mc_math.c ****   Output.d = hqd_tmp;
+ 565              		.loc 1 257 12
+ 566 00c2 FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 567 00c4 7B82     		strh	r3, [r7, #18]	@ movhi
+ 258:Src/mc_math.c **** 
+ 259:Src/mc_math.c ****   if (((int16_t)-32768) == Output.d)
+ 568              		.loc 1 259 34
+ 569 00c6 B7F91230 		ldrsh	r3, [r7, #18]
+ 570              		.loc 1 259 6
+ 571 00ca 13F5004F 		cmn	r3, #32768
+ 572 00ce 02D1     		bne	.L15
+ 260:Src/mc_math.c ****   {
+ 261:Src/mc_math.c ****     Output.d = -32767;
+ 573              		.loc 1 261 14
+ 574 00d0 48F20103 		movw	r3, #32769
+ 575 00d4 7B82     		strh	r3, [r7, #18]	@ movhi
+ 576              	.L15:
+ 262:Src/mc_math.c ****   }
+ 263:Src/mc_math.c ****   else
+ 264:Src/mc_math.c ****   {
+ 265:Src/mc_math.c ****     /* Nothing to do */
+ 266:Src/mc_math.c ****   }
+ 267:Src/mc_math.c **** 
+ 268:Src/mc_math.c ****   return (Output);
+ 577              		.loc 1 268 10
+ 578 00d6 3B69     		ldr	r3, [r7, #16]
+ 579 00d8 7B61     		str	r3, [r7, #20]
+ 580 00da 0023     		movs	r3, #0
+ 581 00dc BA8A     		ldrh	r2, [r7, #20]
+ 582 00de 62F30F03 		bfi	r3, r2, #0, #16
+ 583 00e2 FA8A     		ldrh	r2, [r7, #22]
+ 584 00e4 62F31F43 		bfi	r3, r2, #16, #16
+ 269:Src/mc_math.c **** }
+ 585              		.loc 1 269 1
+ 586 00e8 1846     		mov	r0, r3
+ 587 00ea 3037     		adds	r7, r7, #48
+ 588              	.LCFI9:
+ 589              		.cfi_def_cfa_offset 8
+ 590 00ec BD46     		mov	sp, r7
+ 591              	.LCFI10:
+ 592              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 16
+
+
+ 593              		@ sp needed
+ 594 00ee 80BD     		pop	{r7, pc}
+ 595              		.cfi_endproc
+ 596              	.LFE1091:
+ 598              		.section	.text.MCM_Rev_Park,"ax",%progbits
+ 599              		.align	1
+ 600              		.weak	MCM_Rev_Park
+ 601              		.syntax unified
+ 602              		.thumb
+ 603              		.thumb_func
+ 605              	MCM_Rev_Park:
+ 606              	.LFB1092:
+ 270:Src/mc_math.c **** 
+ 271:Src/mc_math.c **** #if defined (CCMRAM)
+ 272:Src/mc_math.c **** #if defined (__ICCARM__)
+ 273:Src/mc_math.c **** #pragma location = ".ccmram"
+ 274:Src/mc_math.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 275:Src/mc_math.c **** __attribute__( ( section ( ".ccmram" ) ) )
+ 276:Src/mc_math.c **** #endif
+ 277:Src/mc_math.c **** #endif
+ 278:Src/mc_math.c **** /**
+ 279:Src/mc_math.c ****   * @brief  This function transforms stator voltage qVq and qVd, that belong to
+ 280:Src/mc_math.c ****   *         a rotor flux synchronous rotating frame, to a stationary reference
+ 281:Src/mc_math.c ****   *         frame, so as to obtain qValpha and qVbeta:
+ 282:Src/mc_math.c ****   *                  Valfa= Vq*Cos(theta)+ Vd*Sin(theta)
+ 283:Src/mc_math.c ****   *                  Vbeta=-Vq*Sin(theta)+ Vd*Cos(theta)
+ 284:Src/mc_math.c ****   * @param  Input: stator voltage Vq and Vd in qd_t format.
+ 285:Src/mc_math.c ****   * @param  Theta: rotating frame angular position in q1.15 format.
+ 286:Src/mc_math.c ****   * @retval Stator voltage Valpha and Vbeta in qd_t format.
+ 287:Src/mc_math.c ****   */
+ 288:Src/mc_math.c **** __weak alphabeta_t MCM_Rev_Park(qd_t Input, int16_t Theta)
+ 289:Src/mc_math.c **** {
+ 607              		.loc 1 289 1
+ 608              		.cfi_startproc
+ 609              		@ args = 0, pretend = 0, frame = 40
+ 610              		@ frame_needed = 1, uses_anonymous_args = 0
+ 611 0000 80B5     		push	{r7, lr}
+ 612              	.LCFI11:
+ 613              		.cfi_def_cfa_offset 8
+ 614              		.cfi_offset 7, -8
+ 615              		.cfi_offset 14, -4
+ 616 0002 8AB0     		sub	sp, sp, #40
+ 617              	.LCFI12:
+ 618              		.cfi_def_cfa_offset 48
+ 619 0004 00AF     		add	r7, sp, #0
+ 620              	.LCFI13:
+ 621              		.cfi_def_cfa_register 7
+ 622 0006 7860     		str	r0, [r7, #4]
+ 623 0008 0B46     		mov	r3, r1
+ 624 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 290:Src/mc_math.c ****   int32_t alpha_tmp1;
+ 291:Src/mc_math.c ****   int32_t alpha_tmp2;
+ 292:Src/mc_math.c ****   int32_t beta_tmp1;
+ 293:Src/mc_math.c ****   int32_t beta_tmp2;
+ 294:Src/mc_math.c ****   Trig_Components Local_Vector_Components;
+ 295:Src/mc_math.c ****   alphabeta_t Output;
+ 296:Src/mc_math.c **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 17
+
+
+ 297:Src/mc_math.c ****   Local_Vector_Components = MCM_Trig_Functions(Theta);
+ 625              		.loc 1 297 29
+ 626 000c B7F90230 		ldrsh	r3, [r7, #2]
+ 627 0010 1846     		mov	r0, r3
+ 628 0012 FFF7FEFF 		bl	MCM_Trig_Functions
+ 629 0016 0346     		mov	r3, r0
+ 630 0018 3B61     		str	r3, [r7, #16]
+ 298:Src/mc_math.c **** 
+ 299:Src/mc_math.c ****   /* No overflow guaranteed */
+ 300:Src/mc_math.c ****   alpha_tmp1 = Input.q * ((int32_t)Local_Vector_Components.hCos);
+ 631              		.loc 1 300 21
+ 632 001a B7F90430 		ldrsh	r3, [r7, #4]
+ 633              		.loc 1 300 59
+ 634 001e B7F91020 		ldrsh	r2, [r7, #16]
+ 635              		.loc 1 300 14
+ 636 0022 02FB03F3 		mul	r3, r2, r3
+ 637 0026 7B62     		str	r3, [r7, #36]
+ 301:Src/mc_math.c ****   alpha_tmp2 = Input.d * ((int32_t)Local_Vector_Components.hSin);
+ 638              		.loc 1 301 21
+ 639 0028 B7F90630 		ldrsh	r3, [r7, #6]
+ 640              		.loc 1 301 59
+ 641 002c B7F91220 		ldrsh	r2, [r7, #18]
+ 642              		.loc 1 301 14
+ 643 0030 02FB03F3 		mul	r3, r2, r3
+ 644 0034 3B62     		str	r3, [r7, #32]
+ 302:Src/mc_math.c **** 
+ 303:Src/mc_math.c **** #ifndef FULL_MISRA_C_COMPLIANCY_MC_MATH
+ 304:Src/mc_math.c ****   /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 305:Src/mc_math.c ****     that Cortex-M3 assembly instruction ASR (arithmetic shift right) is used by
+ 306:Src/mc_math.c ****     the compiler to perform the shift (instead of LSR logical shift right) */
+ 307:Src/mc_math.c ****   //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Rule-10.1_R6
+ 308:Src/mc_math.c ****   Output.alpha = (int16_t)(((alpha_tmp1) + (alpha_tmp2)) >> 15);
+ 645              		.loc 1 308 42
+ 646 0036 7A6A     		ldr	r2, [r7, #36]
+ 647 0038 3B6A     		ldr	r3, [r7, #32]
+ 648 003a 1344     		add	r3, r3, r2
+ 649              		.loc 1 308 58
+ 650 003c DB13     		asrs	r3, r3, #15
+ 651              		.loc 1 308 18
+ 652 003e 1BB2     		sxth	r3, r3
+ 653              		.loc 1 308 16
+ 654 0040 BB81     		strh	r3, [r7, #12]	@ movhi
+ 309:Src/mc_math.c **** #else
+ 310:Src/mc_math.c ****   Output.alpha = (int16_t)(((alpha_tmp1) + (alpha_tmp2)) / 32768);
+ 311:Src/mc_math.c **** #endif
+ 312:Src/mc_math.c **** 
+ 313:Src/mc_math.c ****   beta_tmp1 = Input.q * ((int32_t)Local_Vector_Components.hSin);
+ 655              		.loc 1 313 20
+ 656 0042 B7F90430 		ldrsh	r3, [r7, #4]
+ 657              		.loc 1 313 58
+ 658 0046 B7F91220 		ldrsh	r2, [r7, #18]
+ 659              		.loc 1 313 13
+ 660 004a 02FB03F3 		mul	r3, r2, r3
+ 661 004e FB61     		str	r3, [r7, #28]
+ 314:Src/mc_math.c ****   beta_tmp2 = Input.d * ((int32_t)Local_Vector_Components.hCos);
+ 662              		.loc 1 314 20
+ 663 0050 B7F90630 		ldrsh	r3, [r7, #6]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 18
+
+
+ 664              		.loc 1 314 58
+ 665 0054 B7F91020 		ldrsh	r2, [r7, #16]
+ 666              		.loc 1 314 13
+ 667 0058 02FB03F3 		mul	r3, r2, r3
+ 668 005c BB61     		str	r3, [r7, #24]
+ 315:Src/mc_math.c **** 
+ 316:Src/mc_math.c **** #ifndef FULL_MISRA_C_COMPLIANCY_MC_MATH
+ 317:Src/mc_math.c ****   /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 318:Src/mc_math.c ****   that Cortex-M3 assembly instruction ASR (arithmetic shift right) is used by
+ 319:Src/mc_math.c ****   the compiler to perform the shift (instead of LSR logical shift right) */
+ 320:Src/mc_math.c ****   //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Rule-10.1_R6
+ 321:Src/mc_math.c ****   Output.beta = (int16_t)((beta_tmp2 - beta_tmp1) >> 15);
+ 669              		.loc 1 321 38
+ 670 005e BA69     		ldr	r2, [r7, #24]
+ 671 0060 FB69     		ldr	r3, [r7, #28]
+ 672 0062 D31A     		subs	r3, r2, r3
+ 673              		.loc 1 321 51
+ 674 0064 DB13     		asrs	r3, r3, #15
+ 675              		.loc 1 321 17
+ 676 0066 1BB2     		sxth	r3, r3
+ 677              		.loc 1 321 15
+ 678 0068 FB81     		strh	r3, [r7, #14]	@ movhi
+ 322:Src/mc_math.c **** #else
+ 323:Src/mc_math.c ****   Output.beta = (int16_t)((beta_tmp2 - beta_tmp1) / 32768);
+ 324:Src/mc_math.c **** #endif
+ 325:Src/mc_math.c **** 
+ 326:Src/mc_math.c ****   return (Output);
+ 679              		.loc 1 326 10
+ 680 006a FB68     		ldr	r3, [r7, #12]
+ 681 006c 7B61     		str	r3, [r7, #20]
+ 682 006e 0023     		movs	r3, #0
+ 683 0070 BA8A     		ldrh	r2, [r7, #20]
+ 684 0072 62F30F03 		bfi	r3, r2, #0, #16
+ 685 0076 FA8A     		ldrh	r2, [r7, #22]
+ 686 0078 62F31F43 		bfi	r3, r2, #16, #16
+ 327:Src/mc_math.c **** }
+ 687              		.loc 1 327 1
+ 688 007c 1846     		mov	r0, r3
+ 689 007e 2837     		adds	r7, r7, #40
+ 690              	.LCFI14:
+ 691              		.cfi_def_cfa_offset 8
+ 692 0080 BD46     		mov	sp, r7
+ 693              	.LCFI15:
+ 694              		.cfi_def_cfa_register 13
+ 695              		@ sp needed
+ 696 0082 80BD     		pop	{r7, pc}
+ 697              		.cfi_endproc
+ 698              	.LFE1092:
+ 700              		.section	.text.MCM_Trig_Functions,"ax",%progbits
+ 701              		.align	1
+ 702              		.weak	MCM_Trig_Functions
+ 703              		.syntax unified
+ 704              		.thumb
+ 705              		.thumb_func
+ 707              	MCM_Trig_Functions:
+ 708              	.LFB1093:
+ 328:Src/mc_math.c **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 19
+
+
+ 329:Src/mc_math.c **** #if defined (CCMRAM)
+ 330:Src/mc_math.c **** #if defined (__ICCARM__)
+ 331:Src/mc_math.c **** #pragma location = ".ccmram"
+ 332:Src/mc_math.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 333:Src/mc_math.c **** __attribute__( ( section ( ".ccmram" ) ) )
+ 334:Src/mc_math.c **** #endif
+ 335:Src/mc_math.c **** #endif
+ 336:Src/mc_math.c **** /**
+ 337:Src/mc_math.c ****   * @brief  This function returns cosine and sine functions of the angle fed in input.
+ 338:Src/mc_math.c ****   * @param  hAngle: angle in q1.15 format.
+ 339:Src/mc_math.c ****   * @retval Sin(angle) and Cos(angle) in Trig_Components format.
+ 340:Src/mc_math.c ****   */
+ 341:Src/mc_math.c **** 
+ 342:Src/mc_math.c **** __weak Trig_Components MCM_Trig_Functions(int16_t hAngle)
+ 343:Src/mc_math.c **** {
+ 709              		.loc 1 343 1
+ 710              		.cfi_startproc
+ 711              		@ args = 0, pretend = 0, frame = 24
+ 712              		@ frame_needed = 1, uses_anonymous_args = 0
+ 713              		@ link register save eliminated.
+ 714 0000 80B4     		push	{r7}
+ 715              	.LCFI16:
+ 716              		.cfi_def_cfa_offset 4
+ 717              		.cfi_offset 7, -4
+ 718 0002 87B0     		sub	sp, sp, #28
+ 719              	.LCFI17:
+ 720              		.cfi_def_cfa_offset 32
+ 721 0004 00AF     		add	r7, sp, #0
+ 722              	.LCFI18:
+ 723              		.cfi_def_cfa_register 7
+ 724 0006 0346     		mov	r3, r0
+ 725 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 344:Src/mc_math.c **** 
+ 345:Src/mc_math.c ****   int32_t shindex;
+ 346:Src/mc_math.c ****   uint16_t uhindex;
+ 347:Src/mc_math.c **** 
+ 348:Src/mc_math.c ****   Trig_Components Local_Components;
+ 349:Src/mc_math.c **** 
+ 350:Src/mc_math.c ****   /* 10 bit index computation  */
+ 351:Src/mc_math.c ****   shindex = (((int32_t)32768) + ((int32_t)hAngle));
+ 726              		.loc 1 351 34
+ 727 000a B7F90630 		ldrsh	r3, [r7, #6]
+ 728              		.loc 1 351 11
+ 729 000e 03F50043 		add	r3, r3, #32768
+ 730 0012 7B61     		str	r3, [r7, #20]
+ 352:Src/mc_math.c ****   uhindex = (uint16_t)shindex;
+ 731              		.loc 1 352 11
+ 732 0014 7B69     		ldr	r3, [r7, #20]
+ 733 0016 7B82     		strh	r3, [r7, #18]	@ movhi
+ 353:Src/mc_math.c ****   uhindex /= ((uint16_t)64);
+ 734              		.loc 1 353 11
+ 735 0018 7B8A     		ldrh	r3, [r7, #18]
+ 736 001a 9B09     		lsrs	r3, r3, #6
+ 737 001c 7B82     		strh	r3, [r7, #18]	@ movhi
+ 354:Src/mc_math.c **** 
+ 355:Src/mc_math.c ****   switch (((uint16_t)uhindex) & SIN_MASK)
+ 738              		.loc 1 355 31
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 20
+
+
+ 739 001e 7B8A     		ldrh	r3, [r7, #18]
+ 740 0020 03F44073 		and	r3, r3, #768
+ 741              		.loc 1 355 3
+ 742 0024 B3F5407F 		cmp	r3, #768
+ 743 0028 1FD0     		beq	.L20
+ 744 002a B3F5407F 		cmp	r3, #768
+ 745 002e 5FD8     		bhi	.L27
+ 746 0030 B3F5007F 		cmp	r3, #512
+ 747 0034 08D0     		beq	.L22
+ 748 0036 B3F5007F 		cmp	r3, #512
+ 749 003a 59D8     		bhi	.L27
+ 750 003c 002B     		cmp	r3, #0
+ 751 003e 29D0     		beq	.L23
+ 752 0040 B3F5807F 		cmp	r3, #256
+ 753 0044 3FD0     		beq	.L24
+ 356:Src/mc_math.c ****   {
+ 357:Src/mc_math.c ****     case U0_90:
+ 358:Src/mc_math.c ****     {
+ 359:Src/mc_math.c ****       Local_Components.hSin = hSin_Cos_Table[( uint8_t )( uhindex )];
+ 360:Src/mc_math.c ****       Local_Components.hCos = hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 361:Src/mc_math.c ****       break;
+ 362:Src/mc_math.c ****     }
+ 363:Src/mc_math.c **** 
+ 364:Src/mc_math.c ****     case U90_180:
+ 365:Src/mc_math.c ****     {
+ 366:Src/mc_math.c ****       Local_Components.hSin = hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 367:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( uhindex )];
+ 368:Src/mc_math.c ****       break;
+ 369:Src/mc_math.c ****     }
+ 370:Src/mc_math.c **** 
+ 371:Src/mc_math.c ****     case U180_270:
+ 372:Src/mc_math.c ****     {
+ 373:Src/mc_math.c ****       Local_Components.hSin = -hSin_Cos_Table[( uint8_t )( uhindex )];
+ 374:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 375:Src/mc_math.c ****       break;
+ 376:Src/mc_math.c ****     }
+ 377:Src/mc_math.c **** 
+ 378:Src/mc_math.c ****     case U270_360:
+ 379:Src/mc_math.c ****     {
+ 380:Src/mc_math.c ****       Local_Components.hSin =  -hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 381:Src/mc_math.c ****       Local_Components.hCos =  hSin_Cos_Table[( uint8_t )( uhindex )];
+ 382:Src/mc_math.c ****       break;
+ 383:Src/mc_math.c ****     }
+ 384:Src/mc_math.c **** 
+ 385:Src/mc_math.c ****     default:
+ 386:Src/mc_math.c ****       break;
+ 754              		.loc 1 386 7
+ 755 0046 53E0     		b	.L27
+ 756              	.L22:
+ 359:Src/mc_math.c ****       Local_Components.hCos = hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 757              		.loc 1 359 46
+ 758 0048 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 759 004a DBB2     		uxtb	r3, r3
+ 760 004c 1A46     		mov	r2, r3
+ 359:Src/mc_math.c ****       Local_Components.hCos = hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 761              		.loc 1 359 45
+ 762 004e 304B     		ldr	r3, .L28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 21
+
+
+ 763 0050 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 359:Src/mc_math.c ****       Local_Components.hCos = hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 764              		.loc 1 359 29
+ 765 0054 7B81     		strh	r3, [r7, #10]	@ movhi
+ 360:Src/mc_math.c ****       break;
+ 766              		.loc 1 360 67
+ 767 0056 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 768 0058 DBB2     		uxtb	r3, r3
+ 360:Src/mc_math.c ****       break;
+ 769              		.loc 1 360 46
+ 770 005a DB43     		mvns	r3, r3
+ 771 005c DBB2     		uxtb	r3, r3
+ 772 005e 1A46     		mov	r2, r3
+ 360:Src/mc_math.c ****       break;
+ 773              		.loc 1 360 45
+ 774 0060 2B4B     		ldr	r3, .L28
+ 775 0062 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 360:Src/mc_math.c ****       break;
+ 776              		.loc 1 360 29
+ 777 0066 3B81     		strh	r3, [r7, #8]	@ movhi
+ 361:Src/mc_math.c ****     }
+ 778              		.loc 1 361 7
+ 779 0068 43E0     		b	.L25
+ 780              	.L20:
+ 366:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( uhindex )];
+ 781              		.loc 1 366 67
+ 782 006a 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 783 006c DBB2     		uxtb	r3, r3
+ 366:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( uhindex )];
+ 784              		.loc 1 366 46
+ 785 006e DB43     		mvns	r3, r3
+ 786 0070 DBB2     		uxtb	r3, r3
+ 787 0072 1A46     		mov	r2, r3
+ 366:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( uhindex )];
+ 788              		.loc 1 366 45
+ 789 0074 264B     		ldr	r3, .L28
+ 790 0076 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 366:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( uhindex )];
+ 791              		.loc 1 366 29
+ 792 007a 7B81     		strh	r3, [r7, #10]	@ movhi
+ 367:Src/mc_math.c ****       break;
+ 793              		.loc 1 367 47
+ 794 007c 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 795 007e DBB2     		uxtb	r3, r3
+ 796 0080 1A46     		mov	r2, r3
+ 367:Src/mc_math.c ****       break;
+ 797              		.loc 1 367 46
+ 798 0082 234B     		ldr	r3, .L28
+ 799 0084 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 800 0088 9BB2     		uxth	r3, r3
+ 367:Src/mc_math.c ****       break;
+ 801              		.loc 1 367 29
+ 802 008a 5B42     		rsbs	r3, r3, #0
+ 803 008c 9BB2     		uxth	r3, r3
+ 804 008e 1BB2     		sxth	r3, r3
+ 805 0090 3B81     		strh	r3, [r7, #8]	@ movhi
+ 368:Src/mc_math.c ****     }
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 22
+
+
+ 806              		.loc 1 368 7
+ 807 0092 2EE0     		b	.L25
+ 808              	.L23:
+ 373:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 809              		.loc 1 373 47
+ 810 0094 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 811 0096 DBB2     		uxtb	r3, r3
+ 812 0098 1A46     		mov	r2, r3
+ 373:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 813              		.loc 1 373 46
+ 814 009a 1D4B     		ldr	r3, .L28
+ 815 009c 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 816 00a0 9BB2     		uxth	r3, r3
+ 373:Src/mc_math.c ****       Local_Components.hCos = -hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
+ 817              		.loc 1 373 29
+ 818 00a2 5B42     		rsbs	r3, r3, #0
+ 819 00a4 9BB2     		uxth	r3, r3
+ 820 00a6 1BB2     		sxth	r3, r3
+ 821 00a8 7B81     		strh	r3, [r7, #10]	@ movhi
+ 374:Src/mc_math.c ****       break;
+ 822              		.loc 1 374 68
+ 823 00aa 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 824 00ac DBB2     		uxtb	r3, r3
+ 374:Src/mc_math.c ****       break;
+ 825              		.loc 1 374 47
+ 826 00ae DB43     		mvns	r3, r3
+ 827 00b0 DBB2     		uxtb	r3, r3
+ 828 00b2 1A46     		mov	r2, r3
+ 374:Src/mc_math.c ****       break;
+ 829              		.loc 1 374 46
+ 830 00b4 164B     		ldr	r3, .L28
+ 831 00b6 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 832 00ba 9BB2     		uxth	r3, r3
+ 374:Src/mc_math.c ****       break;
+ 833              		.loc 1 374 29
+ 834 00bc 5B42     		rsbs	r3, r3, #0
+ 835 00be 9BB2     		uxth	r3, r3
+ 836 00c0 1BB2     		sxth	r3, r3
+ 837 00c2 3B81     		strh	r3, [r7, #8]	@ movhi
+ 375:Src/mc_math.c ****     }
+ 838              		.loc 1 375 7
+ 839 00c4 15E0     		b	.L25
+ 840              	.L24:
+ 380:Src/mc_math.c ****       Local_Components.hCos =  hSin_Cos_Table[( uint8_t )( uhindex )];
+ 841              		.loc 1 380 69
+ 842 00c6 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 843 00c8 DBB2     		uxtb	r3, r3
+ 380:Src/mc_math.c ****       Local_Components.hCos =  hSin_Cos_Table[( uint8_t )( uhindex )];
+ 844              		.loc 1 380 48
+ 845 00ca DB43     		mvns	r3, r3
+ 846 00cc DBB2     		uxtb	r3, r3
+ 847 00ce 1A46     		mov	r2, r3
+ 380:Src/mc_math.c ****       Local_Components.hCos =  hSin_Cos_Table[( uint8_t )( uhindex )];
+ 848              		.loc 1 380 47
+ 849 00d0 0F4B     		ldr	r3, .L28
+ 850 00d2 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 851 00d6 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 23
+
+
+ 380:Src/mc_math.c ****       Local_Components.hCos =  hSin_Cos_Table[( uint8_t )( uhindex )];
+ 852              		.loc 1 380 29
+ 853 00d8 5B42     		rsbs	r3, r3, #0
+ 854 00da 9BB2     		uxth	r3, r3
+ 855 00dc 1BB2     		sxth	r3, r3
+ 856 00de 7B81     		strh	r3, [r7, #10]	@ movhi
+ 381:Src/mc_math.c ****       break;
+ 857              		.loc 1 381 47
+ 858 00e0 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 859 00e2 DBB2     		uxtb	r3, r3
+ 860 00e4 1A46     		mov	r2, r3
+ 381:Src/mc_math.c ****       break;
+ 861              		.loc 1 381 46
+ 862 00e6 0A4B     		ldr	r3, .L28
+ 863 00e8 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
+ 381:Src/mc_math.c ****       break;
+ 864              		.loc 1 381 29
+ 865 00ec 3B81     		strh	r3, [r7, #8]	@ movhi
+ 382:Src/mc_math.c ****     }
+ 866              		.loc 1 382 7
+ 867 00ee 00E0     		b	.L25
+ 868              	.L27:
+ 869              		.loc 1 386 7
+ 870 00f0 00BF     		nop
+ 871              	.L25:
+ 387:Src/mc_math.c ****   }
+ 388:Src/mc_math.c ****   return (Local_Components);
+ 872              		.loc 1 388 10
+ 873 00f2 BB68     		ldr	r3, [r7, #8]
+ 874 00f4 FB60     		str	r3, [r7, #12]
+ 875 00f6 0023     		movs	r3, #0
+ 876 00f8 BA89     		ldrh	r2, [r7, #12]
+ 877 00fa 62F30F03 		bfi	r3, r2, #0, #16
+ 878 00fe FA89     		ldrh	r2, [r7, #14]
+ 879 0100 62F31F43 		bfi	r3, r2, #16, #16
+ 389:Src/mc_math.c **** }
+ 880              		.loc 1 389 1
+ 881 0104 1846     		mov	r0, r3
+ 882 0106 1C37     		adds	r7, r7, #28
+ 883              	.LCFI19:
+ 884              		.cfi_def_cfa_offset 4
+ 885 0108 BD46     		mov	sp, r7
+ 886              	.LCFI20:
+ 887              		.cfi_def_cfa_register 13
+ 888              		@ sp needed
+ 889 010a 5DF8047B 		ldr	r7, [sp], #4
+ 890              	.LCFI21:
+ 891              		.cfi_restore 7
+ 892              		.cfi_def_cfa_offset 0
+ 893 010e 7047     		bx	lr
+ 894              	.L29:
+ 895              		.align	2
+ 896              	.L28:
+ 897 0110 00000000 		.word	hSin_Cos_Table
+ 898              		.cfi_endproc
+ 899              	.LFE1093:
+ 901              		.section	.text.MCM_Sqrt,"ax",%progbits
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 24
+
+
+ 902              		.align	1
+ 903              		.weak	MCM_Sqrt
+ 904              		.syntax unified
+ 905              		.thumb
+ 906              		.thumb_func
+ 908              	MCM_Sqrt:
+ 909              	.LFB1094:
+ 390:Src/mc_math.c **** 
+ 391:Src/mc_math.c **** #if defined (CCMRAM)
+ 392:Src/mc_math.c **** #if defined (__ICCARM__)
+ 393:Src/mc_math.c **** #pragma location = ".ccmram"
+ 394:Src/mc_math.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 395:Src/mc_math.c **** __attribute__( ( section ( ".ccmram" ) ) )
+ 396:Src/mc_math.c **** #endif
+ 397:Src/mc_math.c **** #endif
+ 398:Src/mc_math.c **** /**
+ 399:Src/mc_math.c ****   * @brief  It calculates the square root of a non-negative int32_t. It returns 0 for negative int3
+ 400:Src/mc_math.c ****   * @param  Input int32_t number.
+ 401:Src/mc_math.c ****   * @retval int32_t Square root of Input (0 if Input<0).
+ 402:Src/mc_math.c ****   */
+ 403:Src/mc_math.c **** __weak int32_t MCM_Sqrt(int32_t wInput)
+ 404:Src/mc_math.c **** {
+ 910              		.loc 1 404 1
+ 911              		.cfi_startproc
+ 912              		@ args = 0, pretend = 0, frame = 24
+ 913              		@ frame_needed = 1, uses_anonymous_args = 0
+ 914              		@ link register save eliminated.
+ 915 0000 80B4     		push	{r7}
+ 916              	.LCFI22:
+ 917              		.cfi_def_cfa_offset 4
+ 918              		.cfi_offset 7, -4
+ 919 0002 87B0     		sub	sp, sp, #28
+ 920              	.LCFI23:
+ 921              		.cfi_def_cfa_offset 32
+ 922 0004 00AF     		add	r7, sp, #0
+ 923              	.LCFI24:
+ 924              		.cfi_def_cfa_register 7
+ 925 0006 7860     		str	r0, [r7, #4]
+ 405:Src/mc_math.c ****   int32_t wtemprootnew;
+ 406:Src/mc_math.c **** 
+ 407:Src/mc_math.c ****   if (wInput > 0)
+ 926              		.loc 1 407 6
+ 927 0008 7B68     		ldr	r3, [r7, #4]
+ 928 000a 002B     		cmp	r3, #0
+ 929 000c 28DD     		ble	.L31
+ 930              	.LBB2:
+ 408:Src/mc_math.c ****   {
+ 409:Src/mc_math.c ****   uint8_t biter = 0u;
+ 931              		.loc 1 409 11
+ 932 000e 0023     		movs	r3, #0
+ 933 0010 FB74     		strb	r3, [r7, #19]
+ 410:Src/mc_math.c ****   int32_t wtemproot;
+ 411:Src/mc_math.c **** 
+ 412:Src/mc_math.c ****     if (wInput <= ((int32_t)2097152))
+ 934              		.loc 1 412 8
+ 935 0012 7B68     		ldr	r3, [r7, #4]
+ 936 0014 B3F5001F 		cmp	r3, #2097152
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 25
+
+
+ 937 0018 02DC     		bgt	.L32
+ 413:Src/mc_math.c ****     {
+ 414:Src/mc_math.c ****       wtemproot = ((int32_t)128);
+ 938              		.loc 1 414 17
+ 939 001a 8023     		movs	r3, #128
+ 940 001c FB60     		str	r3, [r7, #12]
+ 941 001e 02E0     		b	.L37
+ 942              	.L32:
+ 415:Src/mc_math.c ****     }
+ 416:Src/mc_math.c ****     else
+ 417:Src/mc_math.c ****     {
+ 418:Src/mc_math.c ****       wtemproot = ((int32_t)8192);
+ 943              		.loc 1 418 17
+ 944 0020 4FF40053 		mov	r3, #8192
+ 945 0024 FB60     		str	r3, [r7, #12]
+ 946              	.L37:
+ 419:Src/mc_math.c ****     }
+ 420:Src/mc_math.c **** 
+ 421:Src/mc_math.c ****     do
+ 422:Src/mc_math.c ****     {
+ 423:Src/mc_math.c ****       wtemprootnew = (wtemproot + (wInput / wtemproot)) / (int32_t)2;
+ 947              		.loc 1 423 43
+ 948 0026 7A68     		ldr	r2, [r7, #4]
+ 949 0028 FB68     		ldr	r3, [r7, #12]
+ 950 002a 92FBF3F2 		sdiv	r2, r2, r3
+ 951              		.loc 1 423 33
+ 952 002e FB68     		ldr	r3, [r7, #12]
+ 953 0030 1344     		add	r3, r3, r2
+ 954              		.loc 1 423 20
+ 955 0032 DA0F     		lsrs	r2, r3, #31
+ 956 0034 1344     		add	r3, r3, r2
+ 957 0036 5B10     		asrs	r3, r3, #1
+ 958 0038 7B61     		str	r3, [r7, #20]
+ 424:Src/mc_math.c ****       if ((wtemprootnew == wtemproot) || ((int32_t)0 == wtemproot))
+ 959              		.loc 1 424 10
+ 960 003a 7A69     		ldr	r2, [r7, #20]
+ 961 003c FB68     		ldr	r3, [r7, #12]
+ 962 003e 9A42     		cmp	r2, r3
+ 963 0040 02D0     		beq	.L34
+ 964              		.loc 1 424 39 discriminator 1
+ 965 0042 FB68     		ldr	r3, [r7, #12]
+ 966 0044 002B     		cmp	r3, #0
+ 967 0046 02D1     		bne	.L35
+ 968              	.L34:
+ 425:Src/mc_math.c ****       {
+ 426:Src/mc_math.c ****         biter = 6U;
+ 969              		.loc 1 426 15
+ 970 0048 0623     		movs	r3, #6
+ 971 004a FB74     		strb	r3, [r7, #19]
+ 972 004c 04E0     		b	.L36
+ 973              	.L35:
+ 427:Src/mc_math.c ****       }
+ 428:Src/mc_math.c ****       else
+ 429:Src/mc_math.c ****       {
+ 430:Src/mc_math.c ****         biter ++;
+ 974              		.loc 1 430 15
+ 975 004e FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 26
+
+
+ 976 0050 0133     		adds	r3, r3, #1
+ 977 0052 FB74     		strb	r3, [r7, #19]
+ 431:Src/mc_math.c ****         wtemproot = wtemprootnew;
+ 978              		.loc 1 431 19
+ 979 0054 7B69     		ldr	r3, [r7, #20]
+ 980 0056 FB60     		str	r3, [r7, #12]
+ 981              	.L36:
+ 432:Src/mc_math.c ****       }
+ 433:Src/mc_math.c ****     }
+ 434:Src/mc_math.c ****     while (biter < 6U);
+ 982              		.loc 1 434 5
+ 983 0058 FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 984 005a 052B     		cmp	r3, #5
+ 985 005c E3D9     		bls	.L37
+ 986 005e 01E0     		b	.L38
+ 987              	.L31:
+ 988              	.LBE2:
+ 435:Src/mc_math.c **** 
+ 436:Src/mc_math.c ****   }
+ 437:Src/mc_math.c ****   else
+ 438:Src/mc_math.c ****   {
+ 439:Src/mc_math.c ****     wtemprootnew = (int32_t)0;
+ 989              		.loc 1 439 18
+ 990 0060 0023     		movs	r3, #0
+ 991 0062 7B61     		str	r3, [r7, #20]
+ 992              	.L38:
+ 440:Src/mc_math.c ****   }
+ 441:Src/mc_math.c **** 
+ 442:Src/mc_math.c ****   return (wtemprootnew);
+ 993              		.loc 1 442 10
+ 994 0064 7B69     		ldr	r3, [r7, #20]
+ 443:Src/mc_math.c **** }
+ 995              		.loc 1 443 1
+ 996 0066 1846     		mov	r0, r3
+ 997 0068 1C37     		adds	r7, r7, #28
+ 998              	.LCFI25:
+ 999              		.cfi_def_cfa_offset 4
+ 1000 006a BD46     		mov	sp, r7
+ 1001              	.LCFI26:
+ 1002              		.cfi_def_cfa_register 13
+ 1003              		@ sp needed
+ 1004 006c 5DF8047B 		ldr	r7, [sp], #4
+ 1005              	.LCFI27:
+ 1006              		.cfi_restore 7
+ 1007              		.cfi_def_cfa_offset 0
+ 1008 0070 7047     		bx	lr
+ 1009              		.cfi_endproc
+ 1010              	.LFE1094:
+ 1012              		.section	.text.MCM_floatToIntBit,"ax",%progbits
+ 1013              		.align	1
+ 1014              		.weak	MCM_floatToIntBit
+ 1015              		.syntax unified
+ 1016              		.thumb
+ 1017              		.thumb_func
+ 1019              	MCM_floatToIntBit:
+ 1020              	.LFB1095:
+ 444:Src/mc_math.c **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 27
+
+
+ 445:Src/mc_math.c **** /**
+ 446:Src/mc_math.c ****   * @brief  This function codify a floating point number into the relative 32bit integer.
+ 447:Src/mc_math.c ****   * @param  float Floating point number to be coded.
+ 448:Src/mc_math.c ****   * @retval uint32_t Coded 32bit integer.
+ 449:Src/mc_math.c ****   */
+ 450:Src/mc_math.c **** __weak uint32_t MCM_floatToIntBit( float_t x ) //cstat !MISRAC2012-Dir-4.6_a
+ 451:Src/mc_math.c **** {
+ 1021              		.loc 1 451 1
+ 1022              		.cfi_startproc
+ 1023              		@ args = 0, pretend = 0, frame = 16
+ 1024              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1025              		@ link register save eliminated.
+ 1026 0000 80B4     		push	{r7}
+ 1027              	.LCFI28:
+ 1028              		.cfi_def_cfa_offset 4
+ 1029              		.cfi_offset 7, -4
+ 1030 0002 85B0     		sub	sp, sp, #20
+ 1031              	.LCFI29:
+ 1032              		.cfi_def_cfa_offset 24
+ 1033 0004 00AF     		add	r7, sp, #0
+ 1034              	.LCFI30:
+ 1035              		.cfi_def_cfa_register 7
+ 1036 0006 87ED010A 		vstr.32	s0, [r7, #4]
+ 452:Src/mc_math.c ****   const uint32_t *pInt;
+ 453:Src/mc_math.c ****   pInt = (uint32_t *)(&x); //cstat !MISRAC2012-Rule-11.3
+ 1037              		.loc 1 453 8
+ 1038 000a 3B1D     		adds	r3, r7, #4
+ 1039 000c FB60     		str	r3, [r7, #12]
+ 454:Src/mc_math.c ****   return (*pInt);
+ 1040              		.loc 1 454 11
+ 1041 000e FB68     		ldr	r3, [r7, #12]
+ 1042 0010 1B68     		ldr	r3, [r3]
+ 455:Src/mc_math.c **** }
+ 1043              		.loc 1 455 1
+ 1044 0012 1846     		mov	r0, r3
+ 1045 0014 1437     		adds	r7, r7, #20
+ 1046              	.LCFI31:
+ 1047              		.cfi_def_cfa_offset 4
+ 1048 0016 BD46     		mov	sp, r7
+ 1049              	.LCFI32:
+ 1050              		.cfi_def_cfa_register 13
+ 1051              		@ sp needed
+ 1052 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1053              	.LCFI33:
+ 1054              		.cfi_restore 7
+ 1055              		.cfi_def_cfa_offset 0
+ 1056 001c 7047     		bx	lr
+ 1057              		.cfi_endproc
+ 1058              	.LFE1095:
+ 1060              		.text
+ 1061              	.Letext0:
+ 1062              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1063              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1064              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 1065              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 1066              		.file 6 "Inc/mc_type.h"
+ 1067              		.file 7 "Inc/mc_math.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 28
+
+
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 29
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mc_math.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:60     .rodata.hSin_Cos_Table:00000000 hSin_Cos_Table
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:57     .rodata.hSin_Cos_Table:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:318    .text.MCM_Clarke:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:324    .text.MCM_Clarke:00000000 MCM_Clarke
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:435    .text.MCM_Park:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:441    .text.MCM_Park:00000000 MCM_Park
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:707    .text.MCM_Trig_Functions:00000000 MCM_Trig_Functions
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:599    .text.MCM_Rev_Park:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:605    .text.MCM_Rev_Park:00000000 MCM_Rev_Park
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:701    .text.MCM_Trig_Functions:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:897    .text.MCM_Trig_Functions:00000110 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:902    .text.MCM_Sqrt:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:908    .text.MCM_Sqrt:00000000 MCM_Sqrt
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:1013   .text.MCM_floatToIntBit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:1019   .text.MCM_floatToIntBit:00000000 MCM_floatToIntBit
+
+NO UNDEFINED SYMBOLS

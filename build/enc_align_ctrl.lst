@@ -1,0 +1,742 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"enc_align_ctrl.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.EAC_Init,"ax",%progbits
+  56              		.align	1
+  57              		.weak	EAC_Init
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	EAC_Init:
+  63              	.LFB1088:
+  64              		.file 1 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c"
+   1:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+   2:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   ******************************************************************************
+   3:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @file    enc_align_ctrl.c
+   4:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief   This file provides firmware functions that implement the features
+   6:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *          of the Encoder Alignment Control component of the Motor Control SDK.
+   7:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   ******************************************************************************
+   8:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @attention
+   9:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *
+  10:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  11:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * All rights reserved.</center></h2>
+  12:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *
+  13:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  14:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  15:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * the License. You may obtain a copy of the License at:
+  16:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *                             www.st.com/SLA0044
+  17:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *
+  18:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   ******************************************************************************
+  19:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @ingroup EncAlignCtrl
+  20:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+  21:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  22:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /* Includes ------------------------------------------------------------------*/
+  23:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #include "enc_align_ctrl.h"
+  24:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #include "mc_type.h"
+  25:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  26:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /** @addtogroup MCSDK
+  27:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @{
+  28:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+  29:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  30:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /** @defgroup EncAlignCtrl Encoder Alignment Controller
+  31:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief Encoder Alignment Controller component of the Motor Control SDK
+  32:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *
+  33:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * Initial encoder calibration which comprises a rotor alignment in a given position
+  34:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * necessary to make the information coming from a quadrature encoder absolute.
+  35:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @{
+  36:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+  37:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  38:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+  39:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief  It initializes the handle
+  40:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pHandle: handler of the current instance of the EncAlignCtrl component.
+  41:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pSTC: Pointer to Speed and Torque Controller structure used by the EAC.
+  42:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pVSS: Pointer to Virtual Speed Sensor structure used by the EAC.
+  43:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pENC: Pointer to ENCoder structure used by the EAC.
+  44:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+  45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** __weak void EAC_Init(EncAlign_Handle_t *pHandle, SpeednTorqCtrl_Handle_t *pSTC, VirtualSpeedSensor_
+  46:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****                      ENCODER_Handle_t *pENC)
+  47:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** {
+  65              		.loc 1 47 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 16
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 3
+
+
+  70 0000 80B4     		push	{r7}
+  71              	.LCFI0:
+  72              		.cfi_def_cfa_offset 4
+  73              		.cfi_offset 7, -4
+  74 0002 85B0     		sub	sp, sp, #20
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 24
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 F860     		str	r0, [r7, #12]
+  81 0008 B960     		str	r1, [r7, #8]
+  82 000a 7A60     		str	r2, [r7, #4]
+  83 000c 3B60     		str	r3, [r7]
+  48:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+  49:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   if (NULL == pHandle)
+  50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+  51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Nothing to do */
+  52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+  53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   else
+  54:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+  55:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+  56:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->pSTC = pSTC;
+  84              		.loc 1 56 19
+  85 000e FB68     		ldr	r3, [r7, #12]
+  86 0010 BA68     		ldr	r2, [r7, #8]
+  87 0012 1A60     		str	r2, [r3]
+  57:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->pVSS = pVSS;
+  88              		.loc 1 57 19
+  89 0014 FB68     		ldr	r3, [r7, #12]
+  90 0016 7A68     		ldr	r2, [r7, #4]
+  91 0018 5A60     		str	r2, [r3, #4]
+  58:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->pENC = pENC;
+  92              		.loc 1 58 19
+  93 001a FB68     		ldr	r3, [r7, #12]
+  94 001c 3A68     		ldr	r2, [r7]
+  95 001e 9A60     		str	r2, [r3, #8]
+  59:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->EncAligned = false;
+  96              		.loc 1 59 25
+  97 0020 FB68     		ldr	r3, [r7, #12]
+  98 0022 0022     		movs	r2, #0
+  99 0024 9A73     		strb	r2, [r3, #14]
+  60:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->EncRestart = false;
+ 100              		.loc 1 60 25
+ 101 0026 FB68     		ldr	r3, [r7, #12]
+ 102 0028 0022     		movs	r2, #0
+ 103 002a DA73     		strb	r2, [r3, #15]
+  61:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+  62:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+  63:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+  64:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** }
+ 104              		.loc 1 64 1
+ 105 002c 00BF     		nop
+ 106 002e 1437     		adds	r7, r7, #20
+ 107              	.LCFI3:
+ 108              		.cfi_def_cfa_offset 4
+ 109 0030 BD46     		mov	sp, r7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 4
+
+
+ 110              	.LCFI4:
+ 111              		.cfi_def_cfa_register 13
+ 112              		@ sp needed
+ 113 0032 5DF8047B 		ldr	r7, [sp], #4
+ 114              	.LCFI5:
+ 115              		.cfi_restore 7
+ 116              		.cfi_def_cfa_offset 0
+ 117 0036 7047     		bx	lr
+ 118              		.cfi_endproc
+ 119              	.LFE1088:
+ 121              		.section	.text.EAC_StartAlignment,"ax",%progbits
+ 122              		.align	1
+ 123              		.weak	EAC_StartAlignment
+ 124              		.syntax unified
+ 125              		.thumb
+ 126              		.thumb_func
+ 128              	EAC_StartAlignment:
+ 129              	.LFB1089:
+  65:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  66:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+  67:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief  It starts the encoder alignment procedure.
+  68:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * It configures the VSS (Virtual Speed Sensor) with the required angle and sets the
+  69:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * STC (Speed and Torque Controller) to execute the required torque ramp.
+  70:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pHandle: handler of the current instance of the EncAlignCtrl component.
+  71:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+  72:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** __weak void EAC_StartAlignment(EncAlign_Handle_t *pHandle)
+  73:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** {
+ 130              		.loc 1 73 1
+ 131              		.cfi_startproc
+ 132              		@ args = 0, pretend = 0, frame = 16
+ 133              		@ frame_needed = 1, uses_anonymous_args = 0
+ 134 0000 80B5     		push	{r7, lr}
+ 135              	.LCFI6:
+ 136              		.cfi_def_cfa_offset 8
+ 137              		.cfi_offset 7, -8
+ 138              		.cfi_offset 14, -4
+ 139 0002 84B0     		sub	sp, sp, #16
+ 140              	.LCFI7:
+ 141              		.cfi_def_cfa_offset 24
+ 142 0004 00AF     		add	r7, sp, #0
+ 143              	.LCFI8:
+ 144              		.cfi_def_cfa_register 7
+ 145 0006 7860     		str	r0, [r7, #4]
+  74:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+  75:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   if (NULL == pHandle)
+  76:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+  77:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Nothing to do */
+  78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   else
+  80:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+  81:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+  82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     uint32_t wAux;
+  83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  84:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Set pVSS mechanical speed to zero */
+  85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     VSS_SetMecAcceleration(pHandle->pVSS, 0, 0U);
+ 146              		.loc 1 85 5
+ 147 0008 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 5
+
+
+ 148 000a 5B68     		ldr	r3, [r3, #4]
+ 149 000c 0022     		movs	r2, #0
+ 150 000e 0021     		movs	r1, #0
+ 151 0010 1846     		mov	r0, r3
+ 152 0012 FFF7FEFF 		bl	VSS_SetMecAcceleration
+  86:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  87:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Set pVSS mechanical angle */
+  88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     VSS_SetMecAngle(pHandle->pVSS, pHandle->hElAngle);
+ 153              		.loc 1 88 5
+ 154 0016 7B68     		ldr	r3, [r7, #4]
+ 155 0018 5A68     		ldr	r2, [r3, #4]
+ 156 001a 7B68     		ldr	r3, [r7, #4]
+ 157 001c B3F91430 		ldrsh	r3, [r3, #20]
+ 158 0020 1946     		mov	r1, r3
+ 159 0022 1046     		mov	r0, r2
+ 160 0024 FFF7FEFF 		bl	VSS_SetMecAngle
+  89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Set pSTC in MCM_TORQUE_MODE */
+  91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     STC_SetControlMode(pHandle->pSTC, MCM_TORQUE_MODE);
+ 161              		.loc 1 91 5
+ 162 0028 7B68     		ldr	r3, [r7, #4]
+ 163 002a 1B68     		ldr	r3, [r3]
+ 164 002c 0421     		movs	r1, #4
+ 165 002e 1846     		mov	r0, r3
+ 166 0030 FFF7FEFF 		bl	STC_SetControlMode
+  92:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Set starting torque to Zero */
+  94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     (void)STC_ExecRamp(pHandle->pSTC, 0, 0U);
+ 167              		.loc 1 94 11
+ 168 0034 7B68     		ldr	r3, [r7, #4]
+ 169 0036 1B68     		ldr	r3, [r3]
+ 170 0038 0022     		movs	r2, #0
+ 171 003a 0021     		movs	r1, #0
+ 172 003c 1846     		mov	r0, r3
+ 173 003e FFF7FEFF 		bl	STC_ExecRamp
+  95:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+  96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Execute the torque ramp */
+  97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     (void)STC_ExecRamp(pHandle->pSTC, pHandle->hFinalTorque, (uint32_t)pHandle->hDurationms);
+ 174              		.loc 1 97 11
+ 175 0042 7B68     		ldr	r3, [r7, #4]
+ 176 0044 1868     		ldr	r0, [r3]
+ 177 0046 7B68     		ldr	r3, [r7, #4]
+ 178 0048 B3F91210 		ldrsh	r1, [r3, #18]
+ 179              		.loc 1 97 79
+ 180 004c 7B68     		ldr	r3, [r7, #4]
+ 181 004e DB8A     		ldrh	r3, [r3, #22]
+ 182              		.loc 1 97 11
+ 183 0050 1A46     		mov	r2, r3
+ 184 0052 FFF7FEFF 		bl	STC_ExecRamp
+  98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Compute hRemainingTicks, the number of thick of alignment phase */
+  99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     wAux = ((uint32_t)pHandle->hDurationms) * ((uint32_t)pHandle->hEACFrequencyHz);
+ 185              		.loc 1 99 30
+ 186 0056 7B68     		ldr	r3, [r7, #4]
+ 187 0058 DB8A     		ldrh	r3, [r3, #22]
+ 188              		.loc 1 99 13
+ 189 005a 1A46     		mov	r2, r3
+ 190              		.loc 1 99 65
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 6
+
+
+ 191 005c 7B68     		ldr	r3, [r7, #4]
+ 192 005e 1B8A     		ldrh	r3, [r3, #16]
+ 193              		.loc 1 99 10
+ 194 0060 02FB03F3 		mul	r3, r2, r3
+ 195 0064 FB60     		str	r3, [r7, #12]
+ 100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     wAux /= 1000U;
+ 196              		.loc 1 100 10
+ 197 0066 FB68     		ldr	r3, [r7, #12]
+ 198 0068 094A     		ldr	r2, .L3
+ 199 006a A2FB0323 		umull	r2, r3, r2, r3
+ 200 006e 9B09     		lsrs	r3, r3, #6
+ 201 0070 FB60     		str	r3, [r7, #12]
+ 101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->hRemainingTicks = (uint16_t)wAux;
+ 202              		.loc 1 101 32
+ 203 0072 FB68     		ldr	r3, [r7, #12]
+ 204 0074 9AB2     		uxth	r2, r3
+ 205              		.loc 1 101 30
+ 206 0076 7B68     		ldr	r3, [r7, #4]
+ 207 0078 9A81     		strh	r2, [r3, #12]	@ movhi
+ 102:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->hRemainingTicks++;
+ 208              		.loc 1 102 12
+ 209 007a 7B68     		ldr	r3, [r7, #4]
+ 210 007c 9B89     		ldrh	r3, [r3, #12]
+ 211              		.loc 1 102 29
+ 212 007e 0133     		adds	r3, r3, #1
+ 213 0080 9AB2     		uxth	r2, r3
+ 214 0082 7B68     		ldr	r3, [r7, #4]
+ 215 0084 9A81     		strh	r2, [r3, #12]	@ movhi
+ 103:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 104:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+ 105:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ 106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** }
+ 216              		.loc 1 106 1
+ 217 0086 00BF     		nop
+ 218 0088 1037     		adds	r7, r7, #16
+ 219              	.LCFI9:
+ 220              		.cfi_def_cfa_offset 8
+ 221 008a BD46     		mov	sp, r7
+ 222              	.LCFI10:
+ 223              		.cfi_def_cfa_register 13
+ 224              		@ sp needed
+ 225 008c 80BD     		pop	{r7, pc}
+ 226              	.L4:
+ 227 008e 00BF     		.align	2
+ 228              	.L3:
+ 229 0090 D34D6210 		.word	274877907
+ 230              		.cfi_endproc
+ 231              	.LFE1089:
+ 233              		.section	.text.EAC_Exec,"ax",%progbits
+ 234              		.align	1
+ 235              		.weak	EAC_Exec
+ 236              		.syntax unified
+ 237              		.thumb
+ 238              		.thumb_func
+ 240              	EAC_Exec:
+ 241              	.LFB1090:
+ 107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 7
+
+
+ 108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+ 109:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief  It executes the encoder alignment controller and must be called with a
+ 110:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         frequency equal to the one settled in the parameters
+ 111:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         hEACFrequencyHz. Calling this method the EAC is able to verify
+ 112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         if the alignment duration has been finished. At the end of alignment
+ 113:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         the encoder is set to the defined mechanical angle.
+ 114:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         Note: STC and VSS are not called by EAC_Exec.
+ 115:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pHandle: handler of the current instance of the EncAlignCtrl component.
+ 116:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @retval bool It returns true when the programmed alignment has been
+ 117:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         completed.
+ 118:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+ 119:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** __weak bool EAC_Exec(EncAlign_Handle_t *pHandle)
+ 120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** {
+ 242              		.loc 1 120 1
+ 243              		.cfi_startproc
+ 244              		@ args = 0, pretend = 0, frame = 16
+ 245              		@ frame_needed = 1, uses_anonymous_args = 0
+ 246 0000 80B5     		push	{r7, lr}
+ 247              	.LCFI11:
+ 248              		.cfi_def_cfa_offset 8
+ 249              		.cfi_offset 7, -8
+ 250              		.cfi_offset 14, -4
+ 251 0002 84B0     		sub	sp, sp, #16
+ 252              	.LCFI12:
+ 253              		.cfi_def_cfa_offset 24
+ 254 0004 00AF     		add	r7, sp, #0
+ 255              	.LCFI13:
+ 256              		.cfi_def_cfa_register 7
+ 257 0006 7860     		str	r0, [r7, #4]
+ 121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   bool retVal = true;
+ 258              		.loc 1 121 8
+ 259 0008 0123     		movs	r3, #1
+ 260 000a FB73     		strb	r3, [r7, #15]
+ 122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   if (NULL == pHandle)
+ 124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+ 125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     retVal = false;
+ 126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+ 127:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   else
+ 128:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+ 129:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ 130:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     if (pHandle->hRemainingTicks > 0U)
+ 261              		.loc 1 130 16
+ 262 000c 7B68     		ldr	r3, [r7, #4]
+ 263 000e 9B89     		ldrh	r3, [r3, #12]
+ 264              		.loc 1 130 8
+ 265 0010 002B     		cmp	r3, #0
+ 266 0012 20D0     		beq	.L6
+ 131:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     {
+ 132:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       pHandle->hRemainingTicks--;
+ 267              		.loc 1 132 14
+ 268 0014 7B68     		ldr	r3, [r7, #4]
+ 269 0016 9B89     		ldrh	r3, [r3, #12]
+ 270              		.loc 1 132 31
+ 271 0018 013B     		subs	r3, r3, #1
+ 272 001a 9AB2     		uxth	r2, r3
+ 273 001c 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 8
+
+
+ 274 001e 9A81     		strh	r2, [r3, #12]	@ movhi
+ 133:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+ 134:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       if (0U == pHandle->hRemainingTicks)
+ 275              		.loc 1 134 24
+ 276 0020 7B68     		ldr	r3, [r7, #4]
+ 277 0022 9B89     		ldrh	r3, [r3, #12]
+ 278              		.loc 1 134 10
+ 279 0024 002B     		cmp	r3, #0
+ 280 0026 14D1     		bne	.L7
+ 135:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       {
+ 136:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****         /* At the end of Alignment procedure, we set the encoder mechanical angle to the alignement
+ 137:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****         ENC_SetMecAngle(pHandle->pENC, pHandle->hElAngle / ((int16_t)pHandle->bElToMecRatio));
+ 281              		.loc 1 137 9
+ 282 0028 7B68     		ldr	r3, [r7, #4]
+ 283 002a 9A68     		ldr	r2, [r3, #8]
+ 284              		.loc 1 137 47
+ 285 002c 7B68     		ldr	r3, [r7, #4]
+ 286 002e B3F91430 		ldrsh	r3, [r3, #20]
+ 287 0032 1946     		mov	r1, r3
+ 288              		.loc 1 137 77
+ 289 0034 7B68     		ldr	r3, [r7, #4]
+ 290 0036 1B7E     		ldrb	r3, [r3, #24]	@ zero_extendqisi2
+ 291              		.loc 1 137 58
+ 292 0038 91FBF3F3 		sdiv	r3, r1, r3
+ 293              		.loc 1 137 9
+ 294 003c 1BB2     		sxth	r3, r3
+ 295 003e 1946     		mov	r1, r3
+ 296 0040 1046     		mov	r0, r2
+ 297 0042 FFF7FEFF 		bl	ENC_SetMecAngle
+ 138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****         pHandle->EncAligned = true;
+ 298              		.loc 1 138 29
+ 299 0046 7B68     		ldr	r3, [r7, #4]
+ 300 0048 0122     		movs	r2, #1
+ 301 004a 9A73     		strb	r2, [r3, #14]
+ 139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****         retVal = true;
+ 302              		.loc 1 139 16
+ 303 004c 0123     		movs	r3, #1
+ 304 004e FB73     		strb	r3, [r7, #15]
+ 305 0050 01E0     		b	.L6
+ 306              	.L7:
+ 140:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       }
+ 141:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       else
+ 142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       {
+ 143:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****         retVal = false;
+ 307              		.loc 1 143 16
+ 308 0052 0023     		movs	r3, #0
+ 309 0054 FB73     		strb	r3, [r7, #15]
+ 310              	.L6:
+ 144:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       }
+ 145:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     }
+ 146:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     else
+ 147:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     {
+ 148:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****       /* Nothing to do */
+ 149:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     }
+ 150:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 151:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+ 152:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 9
+
+
+ 153:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+ 154:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   return (retVal);
+ 311              		.loc 1 154 10
+ 312 0056 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 155:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** }
+ 313              		.loc 1 155 1
+ 314 0058 1846     		mov	r0, r3
+ 315 005a 1037     		adds	r7, r7, #16
+ 316              	.LCFI14:
+ 317              		.cfi_def_cfa_offset 8
+ 318 005c BD46     		mov	sp, r7
+ 319              	.LCFI15:
+ 320              		.cfi_def_cfa_register 13
+ 321              		@ sp needed
+ 322 005e 80BD     		pop	{r7, pc}
+ 323              		.cfi_endproc
+ 324              	.LFE1090:
+ 326              		.section	.text.EAC_IsAligned,"ax",%progbits
+ 327              		.align	1
+ 328              		.weak	EAC_IsAligned
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 333              	EAC_IsAligned:
+ 334              	.LFB1091:
+ 156:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+ 157:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+ 158:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief  It returns true if the encoder has been aligned at least
+ 159:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   *         one time, false if hasn't been never aligned.
+ 160:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pHandle: handler of the current instance of the EncAlignCtrl component.
+ 161:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @retval bool Encoder Aligned flag
+ 162:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+ 163:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** __weak bool EAC_IsAligned(EncAlign_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 164:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** {
+ 335              		.loc 1 164 1
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 8
+ 338              		@ frame_needed = 1, uses_anonymous_args = 0
+ 339              		@ link register save eliminated.
+ 340 0000 80B4     		push	{r7}
+ 341              	.LCFI16:
+ 342              		.cfi_def_cfa_offset 4
+ 343              		.cfi_offset 7, -4
+ 344 0002 83B0     		sub	sp, sp, #12
+ 345              	.LCFI17:
+ 346              		.cfi_def_cfa_offset 16
+ 347 0004 00AF     		add	r7, sp, #0
+ 348              	.LCFI18:
+ 349              		.cfi_def_cfa_register 7
+ 350 0006 7860     		str	r0, [r7, #4]
+ 165:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 166:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   return ((NULL == pHandle) ? false : pHandle->EncAligned);
+ 167:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #else
+ 168:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   return (pHandle->EncAligned);
+ 351              		.loc 1 168 18
+ 352 0008 7B68     		ldr	r3, [r7, #4]
+ 353 000a 9B7B     		ldrb	r3, [r3, #14]	@ zero_extendqisi2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 10
+
+
+ 169:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ 170:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** }
+ 354              		.loc 1 170 1
+ 355 000c 1846     		mov	r0, r3
+ 356 000e 0C37     		adds	r7, r7, #12
+ 357              	.LCFI19:
+ 358              		.cfi_def_cfa_offset 4
+ 359 0010 BD46     		mov	sp, r7
+ 360              	.LCFI20:
+ 361              		.cfi_def_cfa_register 13
+ 362              		@ sp needed
+ 363 0012 5DF8047B 		ldr	r7, [sp], #4
+ 364              	.LCFI21:
+ 365              		.cfi_restore 7
+ 366              		.cfi_def_cfa_offset 0
+ 367 0016 7047     		bx	lr
+ 368              		.cfi_endproc
+ 369              	.LFE1091:
+ 371              		.section	.text.EAC_SetRestartState,"ax",%progbits
+ 372              		.align	1
+ 373              		.weak	EAC_SetRestartState
+ 374              		.syntax unified
+ 375              		.thumb
+ 376              		.thumb_func
+ 378              	EAC_SetRestartState:
+ 379              	.LFB1092:
+ 171:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+ 172:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+ 173:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief  It sets handler ENCrestart variable according to restart parameter
+ 174:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pHandle: handler of the current instance of the EncAlignCtrl component.
+ 175:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  restart: Equal to true if a restart is programmed else false.
+ 176:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+ 177:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** __weak void EAC_SetRestartState(EncAlign_Handle_t *pHandle, bool restart)
+ 178:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** {
+ 380              		.loc 1 178 1
+ 381              		.cfi_startproc
+ 382              		@ args = 0, pretend = 0, frame = 8
+ 383              		@ frame_needed = 1, uses_anonymous_args = 0
+ 384              		@ link register save eliminated.
+ 385 0000 80B4     		push	{r7}
+ 386              	.LCFI22:
+ 387              		.cfi_def_cfa_offset 4
+ 388              		.cfi_offset 7, -4
+ 389 0002 83B0     		sub	sp, sp, #12
+ 390              	.LCFI23:
+ 391              		.cfi_def_cfa_offset 16
+ 392 0004 00AF     		add	r7, sp, #0
+ 393              	.LCFI24:
+ 394              		.cfi_def_cfa_register 7
+ 395 0006 7860     		str	r0, [r7, #4]
+ 396 0008 0B46     		mov	r3, r1
+ 397 000a FB70     		strb	r3, [r7, #3]
+ 179:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 180:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   if (NULL  == pHandle)
+ 181:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+ 182:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Nothing to do */
+ 183:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 11
+
+
+ 184:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   else
+ 185:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
+ 186:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ 187:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     pHandle->EncRestart = restart;
+ 398              		.loc 1 187 25
+ 399 000c 7B68     		ldr	r3, [r7, #4]
+ 400 000e FA78     		ldrb	r2, [r7, #3]
+ 401 0010 DA73     		strb	r2, [r3, #15]
+ 188:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 189:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
+ 190:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ 191:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** }
+ 402              		.loc 1 191 1
+ 403 0012 00BF     		nop
+ 404 0014 0C37     		adds	r7, r7, #12
+ 405              	.LCFI25:
+ 406              		.cfi_def_cfa_offset 4
+ 407 0016 BD46     		mov	sp, r7
+ 408              	.LCFI26:
+ 409              		.cfi_def_cfa_register 13
+ 410              		@ sp needed
+ 411 0018 5DF8047B 		ldr	r7, [sp], #4
+ 412              	.LCFI27:
+ 413              		.cfi_restore 7
+ 414              		.cfi_def_cfa_offset 0
+ 415 001c 7047     		bx	lr
+ 416              		.cfi_endproc
+ 417              	.LFE1092:
+ 419              		.section	.text.EAC_GetRestartState,"ax",%progbits
+ 420              		.align	1
+ 421              		.weak	EAC_GetRestartState
+ 422              		.syntax unified
+ 423              		.thumb
+ 424              		.thumb_func
+ 426              	EAC_GetRestartState:
+ 427              	.LFB1093:
+ 192:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
+ 193:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
+ 194:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @brief  Returns true if a restart after an encoder alignment has been requested.
+ 195:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @param  pHandle: handler of the current instance of the EncAlignCtrl component.
+ 196:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   * @retval bool Encoder Alignment restart order flag
+ 197:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   */
+ 198:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** __weak bool EAC_GetRestartState(EncAlign_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 199:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** {
+ 428              		.loc 1 199 1
+ 429              		.cfi_startproc
+ 430              		@ args = 0, pretend = 0, frame = 8
+ 431              		@ frame_needed = 1, uses_anonymous_args = 0
+ 432              		@ link register save eliminated.
+ 433 0000 80B4     		push	{r7}
+ 434              	.LCFI28:
+ 435              		.cfi_def_cfa_offset 4
+ 436              		.cfi_offset 7, -4
+ 437 0002 83B0     		sub	sp, sp, #12
+ 438              	.LCFI29:
+ 439              		.cfi_def_cfa_offset 16
+ 440 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 12
+
+
+ 441              	.LCFI30:
+ 442              		.cfi_def_cfa_register 7
+ 443 0006 7860     		str	r0, [r7, #4]
+ 200:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
+ 201:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   return ((NULL == pHandle) ? false : pHandle->EncRestart);
+ 202:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #else
+ 203:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   return (pHandle->EncRestart);
+ 444              		.loc 1 203 18
+ 445 0008 7B68     		ldr	r3, [r7, #4]
+ 446 000a DB7B     		ldrb	r3, [r3, #15]	@ zero_extendqisi2
+ 204:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
+ 205:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** }
+ 447              		.loc 1 205 1
+ 448 000c 1846     		mov	r0, r3
+ 449 000e 0C37     		adds	r7, r7, #12
+ 450              	.LCFI31:
+ 451              		.cfi_def_cfa_offset 4
+ 452 0010 BD46     		mov	sp, r7
+ 453              	.LCFI32:
+ 454              		.cfi_def_cfa_register 13
+ 455              		@ sp needed
+ 456 0012 5DF8047B 		ldr	r7, [sp], #4
+ 457              	.LCFI33:
+ 458              		.cfi_restore 7
+ 459              		.cfi_def_cfa_offset 0
+ 460 0016 7047     		bx	lr
+ 461              		.cfi_endproc
+ 462              	.LFE1093:
+ 464              		.text
+ 465              	.Letext0:
+ 466              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 467              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 468              		.file 4 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 469              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 470              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 471              		.file 7 "Inc/mc_type.h"
+ 472              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pid_regulator.h"
+ 473              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
+ 474              		.file 10 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_torq_ctrl.h"
+ 475              		.file 11 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/virtual_speed_sensor.h"
+ 476              		.file 12 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
+ 477              		.file 13 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/enc_align_ctrl.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 enc_align_ctrl.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:56     .text.EAC_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:62     .text.EAC_Init:00000000 EAC_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:122    .text.EAC_StartAlignment:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:128    .text.EAC_StartAlignment:00000000 EAC_StartAlignment
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:229    .text.EAC_StartAlignment:00000090 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:234    .text.EAC_Exec:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:240    .text.EAC_Exec:00000000 EAC_Exec
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:327    .text.EAC_IsAligned:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:333    .text.EAC_IsAligned:00000000 EAC_IsAligned
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:372    .text.EAC_SetRestartState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:378    .text.EAC_SetRestartState:00000000 EAC_SetRestartState
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:420    .text.EAC_GetRestartState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:426    .text.EAC_GetRestartState:00000000 EAC_GetRestartState
+
+UNDEFINED SYMBOLS
+VSS_SetMecAcceleration
+VSS_SetMecAngle
+STC_SetControlMode
+STC_ExecRamp
+ENC_SetMecAngle

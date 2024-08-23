@@ -1,0 +1,120 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mc_parameters.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.global	R3_1_ParamsM1
+  56              		.section	.rodata.R3_1_ParamsM1,"a"
+  57              		.align	2
+  60              	R3_1_ParamsM1:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 2
+
+
+  61 0000 00000450 		.word	1342439424
+  62 0004 002C0140 		.word	1073818624
+  63 0008 01D00300 		.word	249857
+  64 000c 01C60300 		.word	247297
+  65 0010 01C60300 		.word	247297
+  66 0014 01060400 		.word	263681
+  67 0018 01060400 		.word	263681
+  68 001c 01D00300 		.word	249857
+  69 0020 5400     		.short	84
+  70 0022 2A00     		.short	42
+  71 0024 0C00     		.short	12
+  72 0026 6000     		.short	96
+  73 0028 3000     		.short	48
+  74 002a 00000000 		.space	4
+  75 002e 01       		.byte	1
+  76 002f 00       		.space	1
+  77              		.global	scaleParams_M1
+  78              		.section	.data.scaleParams_M1,"aw"
+  79              		.align	2
+  82              	scaleParams_M1:
+  83 0000 99B5DD39 		.word	970831257
+  84 0004 7C26D138 		.word	953230972
+  85 0008 9AF9613D 		.word	1029831066
+  86 000c 00000000 		.space	4
+  87              		.text
+  88              	.Letext0:
+  89              		.file 1 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+  90              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+  91              		.file 3 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+  92              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+  93              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+  94              		.file 6 "Inc/mc_interface.h"
+  95              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/L4xx/Inc/r3_1_l4xx_pwm_curr_fdbk.h"
+  96              		.file 8 "Src/mc_parameters.c"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mc_parameters.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:60     .rodata.R3_1_ParamsM1:00000000 R3_1_ParamsM1
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:57     .rodata.R3_1_ParamsM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:82     .data.scaleParams_M1:00000000 scaleParams_M1
+C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:79     .data.scaleParams_M1:00000000 $d
+
+NO UNDEFINED SYMBOLS

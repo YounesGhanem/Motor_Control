@@ -1,0 +1,2281 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"trajectory_ctrl.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.TC_Init,"ax",%progbits
+  56              		.align	1
+  57              		.global	TC_Init
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	TC_Init:
+  63              	.LFB1088:
+  64              		.file 1 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c"
+   1:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+   2:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   ******************************************************************************
+   3:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @file    trajectory_ctrl.c
+   4:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief   This file provides firmware functions that implements the Position Control
+   6:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *           component of the Motor Control SDK.
+   7:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *
+   8:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   ******************************************************************************
+   9:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @attention
+  10:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *
+  11:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  12:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * All rights reserved.</center></h2>
+  13:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *
+  14:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  15:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  16:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * the License. You may obtain a copy of the License at:
+  17:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *                             www.st.com/SLA0044
+  18:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *
+  19:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   ******************************************************************************
+  20:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @ingroup PositionControl
+  21:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+  22:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  23:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /* Includes ------------------------------------------------------------------*/
+  24:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** #include "trajectory_ctrl.h"
+  25:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** #include "speed_pos_fdbk.h"
+  26:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  27:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /** @addtogroup MCSDK
+  28:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @{
+  29:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+  30:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  31:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+  32:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @defgroup PositionControl Position Control 
+  33:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+  34:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief Position Control component of the Motor Control SDK
+  35:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  36:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * The Position Control component allows to control the movement of the motor in two different way
+  37:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+  38:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * * Trajectory control mode, implemented by the TC_MoveCommand() function: allows to move the mot
+  39:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * target mechanical position in a settled time (duration) following a programmed trajectory compo
+  40:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *  1- acceleration, 2- rotation at constant speed and 3- deceleration.
+  41:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * * Follow mode, implemented by the TC_FollowCommand() function: This mode is for instance useful
+  42:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * computed by an external controller, or by an algorithm defined by the user. 
+  43:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * The user can send at fixed rate, different target positions according to a required trajectory 
+  44:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *  algorithm computes the intermediate points to reach (follow) the target with a smooth movement
+  45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+  46:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * The position controller uses a PID (with a proportional, integral and derivative action) to reg
+  47:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *
+  48:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @{
+  49:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+  50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+  52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Initializes the handle of position control.
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 3
+
+
+  53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+  54:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pPIDPosReg pointer on the handler of the current instance of PID used for the position 
+  55:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pSTC pointer on the handler of the current instance of the SpeednTorqCtrl component.
+  56:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pENC handler of the current instance of the EncAlignCtrl component.
+  57:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****  
+  58:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+  59:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_Init(PosCtrl_Handle_t *pHandle, PID_Handle_t *pPIDPosReg, SpeednTorqCtrl_Handle_t *pSTC, EN
+  60:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+  65              		.loc 1 60 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 16
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  70 0000 80B4     		push	{r7}
+  71              	.LCFI0:
+  72              		.cfi_def_cfa_offset 4
+  73              		.cfi_offset 7, -4
+  74 0002 85B0     		sub	sp, sp, #20
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 24
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 F860     		str	r0, [r7, #12]
+  81 0008 B960     		str	r1, [r7, #8]
+  82 000a 7A60     		str	r2, [r7, #4]
+  83 000c 3B60     		str	r3, [r7]
+  61:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  62:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->MovementDuration = 0.0f;
+  84              		.loc 1 62 29
+  85 000e FB68     		ldr	r3, [r7, #12]
+  86 0010 4FF00002 		mov	r2, #0
+  87 0014 1A60     		str	r2, [r3]	@ float
+  63:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->AngleStep = 0.0f;
+  88              		.loc 1 63 22
+  89 0016 FB68     		ldr	r3, [r7, #12]
+  90 0018 4FF00002 		mov	r2, #0
+  91 001c DA60     		str	r2, [r3, #12]	@ float
+  64:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStep[0] = 0.0f;
+  92              		.loc 1 64 23
+  93 001e FB68     		ldr	r3, [r7, #12]
+  94 0020 4FF00002 		mov	r2, #0
+  95 0024 1A61     		str	r2, [r3, #16]	@ float
+  65:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStep[1] = 0.0f;
+  96              		.loc 1 65 23
+  97 0026 FB68     		ldr	r3, [r7, #12]
+  98 0028 4FF00002 		mov	r2, #0
+  99 002c 5A61     		str	r2, [r3, #20]	@ float
+  66:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStep[2] = 0.0f;
+ 100              		.loc 1 66 23
+ 101 002e FB68     		ldr	r3, [r7, #12]
+ 102 0030 4FF00002 		mov	r2, #0
+ 103 0034 9A61     		str	r2, [r3, #24]	@ float
+  67:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStep[3] = 0.0f;
+ 104              		.loc 1 67 23
+ 105 0036 FB68     		ldr	r3, [r7, #12]
+ 106 0038 4FF00002 		mov	r2, #0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 4
+
+
+ 107 003c DA61     		str	r2, [r3, #28]	@ float
+  68:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStep[4] = 0.0f;
+ 108              		.loc 1 68 23
+ 109 003e FB68     		ldr	r3, [r7, #12]
+ 110 0040 4FF00002 		mov	r2, #0
+ 111 0044 1A62     		str	r2, [r3, #32]	@ float
+  69:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStep[5] = 0.0f;
+ 112              		.loc 1 69 23
+ 113 0046 FB68     		ldr	r3, [r7, #12]
+ 114 0048 4FF00002 		mov	r2, #0
+ 115 004c 5A62     		str	r2, [r3, #36]	@ float
+  70:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  71:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->SubStepDuration = 0;
+ 116              		.loc 1 71 28
+ 117 004e FB68     		ldr	r3, [r7, #12]
+ 118 0050 4FF00002 		mov	r2, #0
+ 119 0054 9A62     		str	r2, [r3, #40]	@ float
+  72:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  73:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Jerk = 0.0f;
+ 120              		.loc 1 73 17
+ 121 0056 FB68     		ldr	r3, [r7, #12]
+ 122 0058 4FF00002 		mov	r2, #0
+ 123 005c 5A63     		str	r2, [r3, #52]	@ float
+  74:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->CruiseSpeed = 0.0f;
+ 124              		.loc 1 74 24
+ 125 005e FB68     		ldr	r3, [r7, #12]
+ 126 0060 4FF00002 		mov	r2, #0
+ 127 0064 9A63     		str	r2, [r3, #56]	@ float
+  75:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Acceleration = 0.0f;
+ 128              		.loc 1 75 25
+ 129 0066 FB68     		ldr	r3, [r7, #12]
+ 130 0068 4FF00002 		mov	r2, #0
+ 131 006c DA63     		str	r2, [r3, #60]	@ float
+  76:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Omega = 0.0f;
+ 132              		.loc 1 76 18
+ 133 006e FB68     		ldr	r3, [r7, #12]
+ 134 0070 4FF00002 		mov	r2, #0
+ 135 0074 1A64     		str	r2, [r3, #64]	@ float
+  77:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->OmegaPrev = 0.0f;
+ 136              		.loc 1 77 22
+ 137 0076 FB68     		ldr	r3, [r7, #12]
+ 138 0078 4FF00002 		mov	r2, #0
+ 139 007c 5A64     		str	r2, [r3, #68]	@ float
+  78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Theta = 0.0f;
+ 140              		.loc 1 78 18
+ 141 007e FB68     		ldr	r3, [r7, #12]
+ 142 0080 4FF00002 		mov	r2, #0
+ 143 0084 9A64     		str	r2, [r3, #72]	@ float
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->ThetaPrev = 0.0f;
+ 144              		.loc 1 79 22
+ 145 0086 FB68     		ldr	r3, [r7, #12]
+ 146 0088 4FF00002 		mov	r2, #0
+ 147 008c DA64     		str	r2, [r3, #76]	@ float
+  80:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->ReceivedTh = 0.0f;
+ 148              		.loc 1 80 23
+ 149 008e FB68     		ldr	r3, [r7, #12]
+ 150 0090 0022     		movs	r2, #0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 5
+
+
+ 151 0092 83F85020 		strb	r2, [r3, #80]
+  81:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->TcTick = 0;
+ 152              		.loc 1 81 19
+ 153 0096 FB68     		ldr	r3, [r7, #12]
+ 154 0098 0022     		movs	r2, #0
+ 155 009a 9A65     		str	r2, [r3, #88]
+  82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->ElapseTime = 0.0f;
+ 156              		.loc 1 82 23
+ 157 009c FB68     		ldr	r3, [r7, #12]
+ 158 009e 4FF00002 		mov	r2, #0
+ 159 00a2 DA62     		str	r2, [r3, #44]	@ float
+  83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  84:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->PositionControlRegulation = DISABLE;
+ 160              		.loc 1 84 38
+ 161 00a4 FB68     		ldr	r3, [r7, #12]
+ 162 00a6 0022     		movs	r2, #0
+ 163 00a8 83F85120 		strb	r2, [r3, #81]
+  85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 164              		.loc 1 85 31
+ 165 00ac FB68     		ldr	r3, [r7, #12]
+ 166 00ae 0022     		movs	r2, #0
+ 167 00b0 83F86020 		strb	r2, [r3, #96]
+  86:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  87:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->pENC = pENC;
+ 168              		.loc 1 87 17
+ 169 00b4 FB68     		ldr	r3, [r7, #12]
+ 170 00b6 3A68     		ldr	r2, [r7]
+ 171 00b8 5A66     		str	r2, [r3, #100]
+  88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->pSTC = pSTC;
+ 172              		.loc 1 88 17
+ 173 00ba FB68     		ldr	r3, [r7, #12]
+ 174 00bc 7A68     		ldr	r2, [r7, #4]
+ 175 00be 9A66     		str	r2, [r3, #104]
+  89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->PIDPosRegulator = pPIDPosReg;
+ 176              		.loc 1 89 28
+ 177 00c0 FB68     		ldr	r3, [r7, #12]
+ 178 00c2 BA68     		ldr	r2, [r7, #8]
+ 179 00c4 DA66     		str	r2, [r3, #108]
+  90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->MecAngleOffset = 0;
+ 180              		.loc 1 91 27
+ 181 00c6 FB68     		ldr	r3, [r7, #12]
+ 182 00c8 0022     		movs	r2, #0
+ 183 00ca A3F85420 		strh	r2, [r3, #84]	@ movhi
+  92:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 184              		.loc 1 92 1
+ 185 00ce 00BF     		nop
+ 186 00d0 1437     		adds	r7, r7, #20
+ 187              	.LCFI3:
+ 188              		.cfi_def_cfa_offset 4
+ 189 00d2 BD46     		mov	sp, r7
+ 190              	.LCFI4:
+ 191              		.cfi_def_cfa_register 13
+ 192              		@ sp needed
+ 193 00d4 5DF8047B 		ldr	r7, [sp], #4
+ 194              	.LCFI5:
+ 195              		.cfi_restore 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 6
+
+
+ 196              		.cfi_def_cfa_offset 0
+ 197 00d8 7047     		bx	lr
+ 198              		.cfi_endproc
+ 199              	.LFE1088:
+ 201              		.section	.text.TC_MoveCommand,"ax",%progbits
+ 202              		.align	1
+ 203              		.global	TC_MoveCommand
+ 204              		.syntax unified
+ 205              		.thumb
+ 206              		.thumb_func
+ 208              	TC_MoveCommand:
+ 209              	.LFB1089:
+  93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+  94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+  95:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Configures the trapezoidal speed trajectory.
+  96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+  97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  startingAngle Current mechanical position.
+  98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  angleStep Target mechanical position.
+  99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  movementDuration Duration to reach the final position (in seconds).
+ 100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @retval ConfigurationStatus set to true when Trajectory command is programmed
+ 101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *                             otherwise not yet ready for a new trajectory configuration.
+ 102:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+ 103:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * This function implements the Trajectory Control mode. When fDuration is different from 0,
+ 104:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * the trajectory of the movement, and therefore its acceleration and speed, are computed. 
+ 105:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+ 106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** bool TC_MoveCommand(PosCtrl_Handle_t *pHandle, float startingAngle, float angleStep, float movement
+ 108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 210              		.loc 1 108 1
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 24
+ 213              		@ frame_needed = 1, uses_anonymous_args = 0
+ 214              		@ link register save eliminated.
+ 215 0000 80B4     		push	{r7}
+ 216              	.LCFI6:
+ 217              		.cfi_def_cfa_offset 4
+ 218              		.cfi_offset 7, -4
+ 219 0002 87B0     		sub	sp, sp, #28
+ 220              	.LCFI7:
+ 221              		.cfi_def_cfa_offset 32
+ 222 0004 00AF     		add	r7, sp, #0
+ 223              	.LCFI8:
+ 224              		.cfi_def_cfa_register 7
+ 225 0006 F860     		str	r0, [r7, #12]
+ 226 0008 87ED020A 		vstr.32	s0, [r7, #8]
+ 227 000c C7ED010A 		vstr.32	s1, [r7, #4]
+ 228 0010 87ED001A 		vstr.32	s2, [r7]
+ 109:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 110:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   bool RetConfigStatus = false;
+ 229              		.loc 1 110 8
+ 230 0014 0023     		movs	r3, #0
+ 231 0016 FB75     		strb	r3, [r7, #23]
+ 111:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   float fMinimumStepDuration;
+ 112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 113:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if ((pHandle->PositionCtrlStatus == TC_FOLLOWING_ON_GOING) && (movementDuration > 0))
+ 232              		.loc 1 113 15
+ 233 0018 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 7
+
+
+ 234 001a 93F86030 		ldrb	r3, [r3, #96]	@ zero_extendqisi2
+ 235              		.loc 1 113 6
+ 236 001e 032B     		cmp	r3, #3
+ 237 0020 0AD1     		bne	.L3
+ 238              		.loc 1 113 62 discriminator 1
+ 239 0022 D7ED007A 		vldr.32	s15, [r7]
+ 240 0026 F5EEC07A 		vcmpe.f32	s15, #0
+ 241 002a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 242 002e 03DD     		ble	.L3
+ 114:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 115:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Back to Move command as the movement duration is different from 0 */
+ 116:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 243              		.loc 1 116 33
+ 244 0030 FB68     		ldr	r3, [r7, #12]
+ 245 0032 0022     		movs	r2, #0
+ 246 0034 83F86020 		strb	r2, [r3, #96]
+ 247              	.L3:
+ 117:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 118:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 119:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if ((pHandle->PositionCtrlStatus == TC_READY_FOR_COMMAND) && (movementDuration > 0))
+ 248              		.loc 1 123 15
+ 249 0038 FB68     		ldr	r3, [r7, #12]
+ 250 003a 93F86030 		ldrb	r3, [r3, #96]	@ zero_extendqisi2
+ 251              		.loc 1 123 6
+ 252 003e 002B     		cmp	r3, #0
+ 253 0040 40F0B380 		bne	.L5
+ 254              		.loc 1 123 61 discriminator 1
+ 255 0044 D7ED007A 		vldr.32	s15, [r7]
+ 256 0048 F5EEC07A 		vcmpe.f32	s15, #0
+ 257 004c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 258 0050 40F3AB80 		ble	.L5
+ 124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionControlRegulation = ENABLE;
+ 259              		.loc 1 125 40
+ 260 0054 FB68     		ldr	r3, [r7, #12]
+ 261 0056 0122     		movs	r2, #1
+ 262 0058 83F85120 		strb	r2, [r3, #81]
+ 126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 127:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     fMinimumStepDuration = (9.0f * pHandle->SamplingTime);
+ 263              		.loc 1 127 43
+ 264 005c FB68     		ldr	r3, [r7, #12]
+ 265 005e D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 266              		.loc 1 127 26
+ 267 0062 B2EE027A 		vmov.f32	s14, #9.0e+0
+ 268 0066 67EE877A 		vmul.f32	s15, s15, s14
+ 269 006a C7ED047A 		vstr.32	s15, [r7, #16]
+ 128:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 129:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* WARNING: Movement duration value is rounded to the nearest valid value
+ 130:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****        [(DeltaT/9) / SamplingTime]:  shall be an integer value */
+ 131:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->MovementDuration = (float)((int)(movementDuration / fMinimumStepDuration)) * fMinimumS
+ 270              		.loc 1 131 64
+ 271 006e D7ED006A 		vldr.32	s13, [r7]
+ 272 0072 97ED047A 		vldr.32	s14, [r7, #16]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 8
+
+
+ 273 0076 C6EE877A 		vdiv.f32	s15, s13, s14
+ 274              		.loc 1 131 41
+ 275 007a FDEEE77A 		vcvt.s32.f32	s15, s15
+ 276              		.loc 1 131 33
+ 277 007e B8EEE77A 		vcvt.f32.s32	s14, s15
+ 278              		.loc 1 131 89
+ 279 0082 D7ED047A 		vldr.32	s15, [r7, #16]
+ 280 0086 67EE277A 		vmul.f32	s15, s14, s15
+ 281              		.loc 1 131 31
+ 282 008a FB68     		ldr	r3, [r7, #12]
+ 283 008c C3ED007A 		vstr.32	s15, [r3]
+ 132:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 133:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->StartingAngle = startingAngle;
+ 284              		.loc 1 133 28
+ 285 0090 FB68     		ldr	r3, [r7, #12]
+ 286 0092 BA68     		ldr	r2, [r7, #8]	@ float
+ 287 0094 5A60     		str	r2, [r3, #4]	@ float
+ 134:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->AngleStep = angleStep;
+ 288              		.loc 1 134 24
+ 289 0096 FB68     		ldr	r3, [r7, #12]
+ 290 0098 7A68     		ldr	r2, [r7, #4]	@ float
+ 291 009a DA60     		str	r2, [r3, #12]	@ float
+ 135:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->FinalAngle = startingAngle + angleStep;
+ 292              		.loc 1 135 41
+ 293 009c 97ED027A 		vldr.32	s14, [r7, #8]
+ 294 00a0 D7ED017A 		vldr.32	s15, [r7, #4]
+ 295 00a4 77EE277A 		vadd.f32	s15, s14, s15
+ 296              		.loc 1 135 25
+ 297 00a8 FB68     		ldr	r3, [r7, #12]
+ 298 00aa C3ED027A 		vstr.32	s15, [r3, #8]
+ 136:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 137:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* SubStep duration = DeltaT/9  (DeltaT represents the total duration of the programmed movemen
+ 138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStepDuration = pHandle->MovementDuration / 9.0f;
+ 299              		.loc 1 138 39
+ 300 00ae FB68     		ldr	r3, [r7, #12]
+ 301 00b0 93ED007A 		vldr.32	s14, [r3]
+ 302              		.loc 1 138 58
+ 303 00b4 F2EE026A 		vmov.f32	s13, #9.0e+0
+ 304 00b8 C7EE267A 		vdiv.f32	s15, s14, s13
+ 305              		.loc 1 138 30
+ 306 00bc FB68     		ldr	r3, [r7, #12]
+ 307 00be C3ED0A7A 		vstr.32	s15, [r3, #40]
+ 139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 140:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Sub step of acceleration phase */
+ 141:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStep[0] = 1 * pHandle->SubStepDuration;   /* Sub-step 1 of acceleration phase */
+ 308              		.loc 1 141 29
+ 309 00c2 FB68     		ldr	r3, [r7, #12]
+ 310 00c4 9A6A     		ldr	r2, [r3, #40]	@ float
+ 311              		.loc 1 141 25
+ 312 00c6 FB68     		ldr	r3, [r7, #12]
+ 313 00c8 1A61     		str	r2, [r3, #16]	@ float
+ 142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStep[1] = 2 * pHandle->SubStepDuration;   /* Sub-step 2 of acceleration phase */
+ 314              		.loc 1 142 38
+ 315 00ca FB68     		ldr	r3, [r7, #12]
+ 316 00cc D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 317              		.loc 1 142 29
+ 318 00d0 77EEA77A 		vadd.f32	s15, s15, s15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 9
+
+
+ 319              		.loc 1 142 25
+ 320 00d4 FB68     		ldr	r3, [r7, #12]
+ 321 00d6 C3ED057A 		vstr.32	s15, [r3, #20]
+ 143:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStep[2] = 3 * pHandle->SubStepDuration;   /* Sub-step 3 of acceleration phase */
+ 322              		.loc 1 143 38
+ 323 00da FB68     		ldr	r3, [r7, #12]
+ 324 00dc D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 325              		.loc 1 143 29
+ 326 00e0 B0EE087A 		vmov.f32	s14, #3.0e+0
+ 327 00e4 67EE877A 		vmul.f32	s15, s15, s14
+ 328              		.loc 1 143 25
+ 329 00e8 FB68     		ldr	r3, [r7, #12]
+ 330 00ea C3ED067A 		vstr.32	s15, [r3, #24]
+ 144:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 145:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Sub step of  deceleration Phase */
+ 146:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStep[3] = 6 * pHandle->SubStepDuration;   /* Sub-step 1 of deceleration phase */
+ 331              		.loc 1 146 38
+ 332 00ee FB68     		ldr	r3, [r7, #12]
+ 333 00f0 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 334              		.loc 1 146 29
+ 335 00f4 B1EE087A 		vmov.f32	s14, #6.0e+0
+ 336 00f8 67EE877A 		vmul.f32	s15, s15, s14
+ 337              		.loc 1 146 25
+ 338 00fc FB68     		ldr	r3, [r7, #12]
+ 339 00fe C3ED077A 		vstr.32	s15, [r3, #28]
+ 147:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStep[4] = 7 * pHandle->SubStepDuration;   /* Sub-step 2 of deceleration phase */
+ 340              		.loc 1 147 38
+ 341 0102 FB68     		ldr	r3, [r7, #12]
+ 342 0104 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 343              		.loc 1 147 29
+ 344 0108 B1EE0C7A 		vmov.f32	s14, #7.0e+0
+ 345 010c 67EE877A 		vmul.f32	s15, s15, s14
+ 346              		.loc 1 147 25
+ 347 0110 FB68     		ldr	r3, [r7, #12]
+ 348 0112 C3ED087A 		vstr.32	s15, [r3, #32]
+ 148:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->SubStep[5] = 8 * pHandle->SubStepDuration;   /* Sub-step 3 of deceleration phase */
+ 349              		.loc 1 148 38
+ 350 0116 FB68     		ldr	r3, [r7, #12]
+ 351 0118 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 352              		.loc 1 148 29
+ 353 011c B2EE007A 		vmov.f32	s14, #8.0e+0
+ 354 0120 67EE877A 		vmul.f32	s15, s15, s14
+ 355              		.loc 1 148 25
+ 356 0124 FB68     		ldr	r3, [r7, #12]
+ 357 0126 C3ED097A 		vstr.32	s15, [r3, #36]
+ 149:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 150:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Jerk (J) to be used by the trajectory calculator to integrate (step by step) the target posi
+ 151:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****        J = DeltaTheta/(12 * A * A * A)  => DeltaTheta = final position and A = Sub-Step duration */
+ 152:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Jerk = pHandle->AngleStep / (12 * pHandle->SubStepDuration * pHandle->SubStepDuration 
+ 358              		.loc 1 152 28
+ 359 012a FB68     		ldr	r3, [r7, #12]
+ 360 012c D3ED036A 		vldr.32	s13, [r3, #12]
+ 361              		.loc 1 152 55
+ 362 0130 FB68     		ldr	r3, [r7, #12]
+ 363 0132 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 364              		.loc 1 152 46
+ 365 0136 B2EE087A 		vmov.f32	s14, #1.2e+1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 10
+
+
+ 366 013a 27EE877A 		vmul.f32	s14, s15, s14
+ 367              		.loc 1 152 82
+ 368 013e FB68     		ldr	r3, [r7, #12]
+ 369 0140 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 370              		.loc 1 152 73
+ 371 0144 27EE277A 		vmul.f32	s14, s14, s15
+ 372              		.loc 1 152 109
+ 373 0148 FB68     		ldr	r3, [r7, #12]
+ 374 014a D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 375              		.loc 1 152 100
+ 376 014e 27EE277A 		vmul.f32	s14, s14, s15
+ 377              		.loc 1 152 40
+ 378 0152 C6EE877A 		vdiv.f32	s15, s13, s14
+ 379              		.loc 1 152 19
+ 380 0156 FB68     		ldr	r3, [r7, #12]
+ 381 0158 C3ED0D7A 		vstr.32	s15, [r3, #52]
+ 153:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 154:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Speed cruiser = 2*J*A*A) */
+ 155:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->CruiseSpeed = 2 * pHandle->Jerk * pHandle->SubStepDuration * pHandle->SubStepDuration;
+ 382              		.loc 1 155 39
+ 383 015c FB68     		ldr	r3, [r7, #12]
+ 384 015e D3ED0D7A 		vldr.32	s15, [r3, #52]
+ 385              		.loc 1 155 30
+ 386 0162 37EEA77A 		vadd.f32	s14, s15, s15
+ 387              		.loc 1 155 55
+ 388 0166 FB68     		ldr	r3, [r7, #12]
+ 389 0168 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 390              		.loc 1 155 46
+ 391 016c 27EE277A 		vmul.f32	s14, s14, s15
+ 392              		.loc 1 155 82
+ 393 0170 FB68     		ldr	r3, [r7, #12]
+ 394 0172 D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 395              		.loc 1 155 73
+ 396 0176 67EE277A 		vmul.f32	s15, s14, s15
+ 397              		.loc 1 155 26
+ 398 017a FB68     		ldr	r3, [r7, #12]
+ 399 017c C3ED0E7A 		vstr.32	s15, [r3, #56]
+ 156:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 157:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->ElapseTime = 0.0f;
+ 400              		.loc 1 157 25
+ 401 0180 FB68     		ldr	r3, [r7, #12]
+ 402 0182 4FF00002 		mov	r2, #0
+ 403 0186 DA62     		str	r2, [r3, #44]	@ float
+ 158:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 159:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Omega = 0.0f;
+ 404              		.loc 1 159 20
+ 405 0188 FB68     		ldr	r3, [r7, #12]
+ 406 018a 4FF00002 		mov	r2, #0
+ 407 018e 1A64     		str	r2, [r3, #64]	@ float
+ 160:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Acceleration = 0.0f;
+ 408              		.loc 1 160 27
+ 409 0190 FB68     		ldr	r3, [r7, #12]
+ 410 0192 4FF00002 		mov	r2, #0
+ 411 0196 DA63     		str	r2, [r3, #60]	@ float
+ 161:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Theta = startingAngle;
+ 412              		.loc 1 161 20
+ 413 0198 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 11
+
+
+ 414 019a BA68     		ldr	r2, [r7, #8]	@ float
+ 415 019c 9A64     		str	r2, [r3, #72]	@ float
+ 162:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 163:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionCtrlStatus = TC_MOVEMENT_ON_GOING;   /* new trajectory has been programmed */
+ 416              		.loc 1 163 33
+ 417 019e FB68     		ldr	r3, [r7, #12]
+ 418 01a0 0122     		movs	r2, #1
+ 419 01a2 83F86020 		strb	r2, [r3, #96]
+ 164:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 165:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     RetConfigStatus = true;
+ 420              		.loc 1 165 21
+ 421 01a6 0123     		movs	r3, #1
+ 422 01a8 FB75     		strb	r3, [r7, #23]
+ 423              	.L5:
+ 166:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 167:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 168:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 169:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 170:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 171:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 172:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return (RetConfigStatus);
+ 424              		.loc 1 172 10
+ 425 01aa FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 173:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 426              		.loc 1 173 1
+ 427 01ac 1846     		mov	r0, r3
+ 428 01ae 1C37     		adds	r7, r7, #28
+ 429              	.LCFI9:
+ 430              		.cfi_def_cfa_offset 4
+ 431 01b0 BD46     		mov	sp, r7
+ 432              	.LCFI10:
+ 433              		.cfi_def_cfa_register 13
+ 434              		@ sp needed
+ 435 01b2 5DF8047B 		ldr	r7, [sp], #4
+ 436              	.LCFI11:
+ 437              		.cfi_restore 7
+ 438              		.cfi_def_cfa_offset 0
+ 439 01b6 7047     		bx	lr
+ 440              		.cfi_endproc
+ 441              	.LFE1089:
+ 443              		.section	.text.TC_FollowCommand,"ax",%progbits
+ 444              		.align	1
+ 445              		.global	TC_FollowCommand
+ 446              		.syntax unified
+ 447              		.thumb
+ 448              		.thumb_func
+ 450              	TC_FollowCommand:
+ 451              	.LFB1090:
+ 174:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 175:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 176:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Follows an angular position command.
+ 177:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+ 178:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  Angle Target mechanical position.
+ 179:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+ 180:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * This function implements the Follow mode. When the duration is set to zero, the user can send a
+ 181:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * fixed rate different target positions according to a required trajectory and the position contr
+ 182:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * algorithm computes the intermediate points to reach (follow) the target with a smooth movement.
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 12
+
+
+ 183:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * This mode is for instance useful when the trajectory is computed by an external controller, or 
+ 184:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * an algorithm defined by the user and executed by the same microcontroller.
+ 185:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * 
+ 186:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 187:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_FollowCommand(PosCtrl_Handle_t *pHandle, float Angle)
+ 188:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 452              		.loc 1 188 1
+ 453              		.cfi_startproc
+ 454              		@ args = 0, pretend = 0, frame = 24
+ 455              		@ frame_needed = 1, uses_anonymous_args = 0
+ 456              		@ link register save eliminated.
+ 457 0000 80B4     		push	{r7}
+ 458              	.LCFI12:
+ 459              		.cfi_def_cfa_offset 4
+ 460              		.cfi_offset 7, -4
+ 461 0002 87B0     		sub	sp, sp, #28
+ 462              	.LCFI13:
+ 463              		.cfi_def_cfa_offset 32
+ 464 0004 00AF     		add	r7, sp, #0
+ 465              	.LCFI14:
+ 466              		.cfi_def_cfa_register 7
+ 467 0006 7860     		str	r0, [r7, #4]
+ 468 0008 87ED000A 		vstr.32	s0, [r7]
+ 189:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   float omega = 0, acceleration = 0, dt = 0;
+ 469              		.loc 1 189 9
+ 470 000c 4FF00003 		mov	r3, #0
+ 471 0010 7B61     		str	r3, [r7, #20]	@ float
+ 472              		.loc 1 189 20
+ 473 0012 4FF00003 		mov	r3, #0
+ 474 0016 3B61     		str	r3, [r7, #16]	@ float
+ 475              		.loc 1 189 38
+ 476 0018 4FF00003 		mov	r3, #0
+ 477 001c FB60     		str	r3, [r7, #12]	@ float
+ 190:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 191:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   /* Estimate speed */
+ 192:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->ReceivedTh > 0)
+ 478              		.loc 1 192 14
+ 479 001e 7B68     		ldr	r3, [r7, #4]
+ 480 0020 93F85030 		ldrb	r3, [r3, #80]	@ zero_extendqisi2
+ 481              		.loc 1 192 6
+ 482 0024 002B     		cmp	r3, #0
+ 483 0026 23D0     		beq	.L11
+ 193:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 194:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Calculate dt */
+ 195:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     dt = pHandle->TcTick * pHandle->SysTickPeriod;
+ 484              		.loc 1 195 17
+ 485 0028 7B68     		ldr	r3, [r7, #4]
+ 486 002a 9B6D     		ldr	r3, [r3, #88]
+ 487              		.loc 1 195 26
+ 488 002c 07EE903A 		vmov	s15, r3	@ int
+ 489 0030 B8EE677A 		vcvt.f32.u32	s14, s15
+ 490              		.loc 1 195 35
+ 491 0034 7B68     		ldr	r3, [r7, #4]
+ 492 0036 D3ED177A 		vldr.32	s15, [r3, #92]
+ 493              		.loc 1 195 8
+ 494 003a 67EE277A 		vmul.f32	s15, s14, s15
+ 495 003e C7ED037A 		vstr.32	s15, [r7, #12]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 13
+
+
+ 196:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->TcTick = 0;
+ 496              		.loc 1 196 21
+ 497 0042 7B68     		ldr	r3, [r7, #4]
+ 498 0044 0022     		movs	r2, #0
+ 499 0046 9A65     		str	r2, [r3, #88]
+ 197:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     if (dt > 0)
+ 500              		.loc 1 197 8
+ 501 0048 D7ED037A 		vldr.32	s15, [r7, #12]
+ 502 004c F5EEC07A 		vcmpe.f32	s15, #0
+ 503 0050 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 504 0054 0CDD     		ble	.L11
+ 198:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 199:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       omega = (Angle - pHandle->ThetaPrev) / dt;
+ 505              		.loc 1 199 31
+ 506 0056 7B68     		ldr	r3, [r7, #4]
+ 507 0058 D3ED137A 		vldr.32	s15, [r3, #76]
+ 508              		.loc 1 199 22
+ 509 005c 97ED007A 		vldr.32	s14, [r7]
+ 510 0060 77EE676A 		vsub.f32	s13, s14, s15
+ 511              		.loc 1 199 13
+ 512 0064 97ED037A 		vldr.32	s14, [r7, #12]
+ 513 0068 C6EE877A 		vdiv.f32	s15, s13, s14
+ 514 006c C7ED057A 		vstr.32	s15, [r7, #20]
+ 515              	.L11:
+ 200:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 201:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     else
+ 202:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 203:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       /* Nothing to do */
+ 204:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 205:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 206:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 207:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 208:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 209:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 210:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 211:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   /* Estimated acceleration */
+ 212:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->ReceivedTh > 1)
+ 516              		.loc 1 212 14
+ 517 0070 7B68     		ldr	r3, [r7, #4]
+ 518 0072 93F85030 		ldrb	r3, [r3, #80]	@ zero_extendqisi2
+ 519              		.loc 1 212 6
+ 520 0076 012B     		cmp	r3, #1
+ 521 0078 13D9     		bls	.L13
+ 213:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 214:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     if (dt > 0)
+ 522              		.loc 1 214 8
+ 523 007a D7ED037A 		vldr.32	s15, [r7, #12]
+ 524 007e F5EEC07A 		vcmpe.f32	s15, #0
+ 525 0082 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 526 0086 0CDD     		ble	.L13
+ 215:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 216:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       acceleration = (omega - pHandle->OmegaPrev) / dt;
+ 527              		.loc 1 216 38
+ 528 0088 7B68     		ldr	r3, [r7, #4]
+ 529 008a D3ED117A 		vldr.32	s15, [r3, #68]
+ 530              		.loc 1 216 29
+ 531 008e 97ED057A 		vldr.32	s14, [r7, #20]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 14
+
+
+ 532 0092 77EE676A 		vsub.f32	s13, s14, s15
+ 533              		.loc 1 216 20
+ 534 0096 97ED037A 		vldr.32	s14, [r7, #12]
+ 535 009a C6EE877A 		vdiv.f32	s15, s13, s14
+ 536 009e C7ED047A 		vstr.32	s15, [r7, #16]
+ 537              	.L13:
+ 217:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 218:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     else
+ 219:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 220:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       /* nothing to do */
+ 221:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 222:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 223:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 224:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 225:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 226:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 227:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 228:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   /* Update state variable */
+ 229:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->ThetaPrev  = Angle;
+ 538              		.loc 1 229 23
+ 539 00a2 7B68     		ldr	r3, [r7, #4]
+ 540 00a4 3A68     		ldr	r2, [r7]	@ float
+ 541 00a6 DA64     		str	r2, [r3, #76]	@ float
+ 230:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->OmegaPrev = omega;
+ 542              		.loc 1 230 22
+ 543 00a8 7B68     		ldr	r3, [r7, #4]
+ 544 00aa 7A69     		ldr	r2, [r7, #20]	@ float
+ 545 00ac 5A64     		str	r2, [r3, #68]	@ float
+ 231:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->ReceivedTh < 2)
+ 546              		.loc 1 231 14
+ 547 00ae 7B68     		ldr	r3, [r7, #4]
+ 548 00b0 93F85030 		ldrb	r3, [r3, #80]	@ zero_extendqisi2
+ 549              		.loc 1 231 6
+ 550 00b4 012B     		cmp	r3, #1
+ 551 00b6 07D8     		bhi	.L15
+ 232:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 233:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->ReceivedTh++;
+ 552              		.loc 1 233 12
+ 553 00b8 7B68     		ldr	r3, [r7, #4]
+ 554 00ba 93F85030 		ldrb	r3, [r3, #80]	@ zero_extendqisi2
+ 555              		.loc 1 233 24
+ 556 00be 0133     		adds	r3, r3, #1
+ 557 00c0 DAB2     		uxtb	r2, r3
+ 558 00c2 7B68     		ldr	r3, [r7, #4]
+ 559 00c4 83F85020 		strb	r2, [r3, #80]
+ 560              	.L15:
+ 234:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 235:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 236:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 237:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 238:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 239:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 240:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Acceleration = acceleration;
+ 561              		.loc 1 240 25
+ 562 00c8 7B68     		ldr	r3, [r7, #4]
+ 563 00ca 3A69     		ldr	r2, [r7, #16]	@ float
+ 564 00cc DA63     		str	r2, [r3, #60]	@ float
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 15
+
+
+ 241:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Omega = omega;
+ 565              		.loc 1 241 18
+ 566 00ce 7B68     		ldr	r3, [r7, #4]
+ 567 00d0 7A69     		ldr	r2, [r7, #20]	@ float
+ 568 00d2 1A64     		str	r2, [r3, #64]	@ float
+ 242:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Theta = Angle;
+ 569              		.loc 1 242 18
+ 570 00d4 7B68     		ldr	r3, [r7, #4]
+ 571 00d6 3A68     		ldr	r2, [r7]	@ float
+ 572 00d8 9A64     		str	r2, [r3, #72]	@ float
+ 243:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 244:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->PositionCtrlStatus = TC_FOLLOWING_ON_GOING;   /* follow mode has been programmed */
+ 573              		.loc 1 244 31
+ 574 00da 7B68     		ldr	r3, [r7, #4]
+ 575 00dc 0322     		movs	r2, #3
+ 576 00de 83F86020 		strb	r2, [r3, #96]
+ 245:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->MovementDuration = 0;
+ 577              		.loc 1 245 29
+ 578 00e2 7B68     		ldr	r3, [r7, #4]
+ 579 00e4 4FF00002 		mov	r2, #0
+ 580 00e8 1A60     		str	r2, [r3]	@ float
+ 246:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 581              		.loc 1 246 1
+ 582 00ea 00BF     		nop
+ 583 00ec 1C37     		adds	r7, r7, #28
+ 584              	.LCFI15:
+ 585              		.cfi_def_cfa_offset 4
+ 586 00ee BD46     		mov	sp, r7
+ 587              	.LCFI16:
+ 588              		.cfi_def_cfa_register 13
+ 589              		@ sp needed
+ 590 00f0 5DF8047B 		ldr	r7, [sp], #4
+ 591              	.LCFI17:
+ 592              		.cfi_restore 7
+ 593              		.cfi_def_cfa_offset 0
+ 594 00f4 7047     		bx	lr
+ 595              		.cfi_endproc
+ 596              	.LFE1090:
+ 598              		.section	.text.TC_PositionRegulation,"ax",%progbits
+ 599              		.align	1
+ 600              		.global	TC_PositionRegulation
+ 601              		.syntax unified
+ 602              		.thumb
+ 603              		.thumb_func
+ 605              	TC_PositionRegulation:
+ 606              	.LFB1091:
+ 247:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 248:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 249:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Proceeds on the position control loop.
+ 250:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 251:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 252:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_PositionRegulation(PosCtrl_Handle_t *pHandle)
+ 253:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 607              		.loc 1 253 1
+ 608              		.cfi_startproc
+ 609              		@ args = 0, pretend = 0, frame = 24
+ 610              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 16
+
+
+ 611 0000 80B5     		push	{r7, lr}
+ 612              	.LCFI18:
+ 613              		.cfi_def_cfa_offset 8
+ 614              		.cfi_offset 7, -8
+ 615              		.cfi_offset 14, -4
+ 616 0002 86B0     		sub	sp, sp, #24
+ 617              	.LCFI19:
+ 618              		.cfi_def_cfa_offset 32
+ 619 0004 00AF     		add	r7, sp, #0
+ 620              	.LCFI20:
+ 621              		.cfi_def_cfa_register 7
+ 622 0006 7860     		str	r0, [r7, #4]
+ 254:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 255:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   int32_t wMecAngleRef;
+ 256:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   int32_t wMecAngle;
+ 257:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   int32_t wError;
+ 258:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   int32_t hTorqueRef_Pos;
+ 259:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 260:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->PositionCtrlStatus == TC_MOVEMENT_ON_GOING)
+ 623              		.loc 1 260 14
+ 624 0008 7B68     		ldr	r3, [r7, #4]
+ 625 000a 93F86030 		ldrb	r3, [r3, #96]	@ zero_extendqisi2
+ 626              		.loc 1 260 6
+ 627 000e 012B     		cmp	r3, #1
+ 628 0010 02D1     		bne	.L19
+ 261:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 262:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     TC_MoveExecution(pHandle);
+ 629              		.loc 1 262 5
+ 630 0012 7868     		ldr	r0, [r7, #4]
+ 631 0014 FFF7FEFF 		bl	TC_MoveExecution
+ 632              	.L19:
+ 263:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 264:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 265:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 266:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 267:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 268:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 269:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->PositionCtrlStatus == TC_FOLLOWING_ON_GOING)
+ 633              		.loc 1 269 14
+ 634 0018 7B68     		ldr	r3, [r7, #4]
+ 635 001a 93F86030 		ldrb	r3, [r3, #96]	@ zero_extendqisi2
+ 636              		.loc 1 269 6
+ 637 001e 032B     		cmp	r3, #3
+ 638 0020 02D1     		bne	.L20
+ 270:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 271:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     TC_FollowExecution(pHandle);
+ 639              		.loc 1 271 5
+ 640 0022 7868     		ldr	r0, [r7, #4]
+ 641 0024 FFF7FEFF 		bl	TC_FollowExecution
+ 642              	.L20:
+ 272:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 273:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 274:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 275:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 276:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 277:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 278:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->PositionControlRegulation == ENABLE)
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 17
+
+
+ 643              		.loc 1 278 14
+ 644 0028 7B68     		ldr	r3, [r7, #4]
+ 645 002a 93F85130 		ldrb	r3, [r3, #81]	@ zero_extendqisi2
+ 646              		.loc 1 278 6
+ 647 002e 002B     		cmp	r3, #0
+ 648 0030 2FD0     		beq	.L22
+ 279:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 280:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     wMecAngleRef = (int32_t)(pHandle->Theta * RADTOS16);
+ 649              		.loc 1 280 37
+ 650 0032 7B68     		ldr	r3, [r7, #4]
+ 651 0034 D3ED127A 		vldr.32	s15, [r3, #72]
+ 652              		.loc 1 280 45
+ 653 0038 9FED187A 		vldr.32	s14, .L23
+ 654 003c 67EE877A 		vmul.f32	s15, s15, s14
+ 655              		.loc 1 280 18
+ 656 0040 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 657 0044 17EE903A 		vmov	r3, s15	@ int
+ 658 0048 7B61     		str	r3, [r7, #20]
+ 281:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 282:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     wMecAngle = SPD_GetMecAngle(STC_GetSpeedSensor(pHandle->pSTC));
+ 659              		.loc 1 282 33
+ 660 004a 7B68     		ldr	r3, [r7, #4]
+ 661 004c 9B6E     		ldr	r3, [r3, #104]
+ 662 004e 1846     		mov	r0, r3
+ 663 0050 FFF7FEFF 		bl	STC_GetSpeedSensor
+ 664 0054 0346     		mov	r3, r0
+ 665              		.loc 1 282 17
+ 666 0056 1846     		mov	r0, r3
+ 667 0058 FFF7FEFF 		bl	SPD_GetMecAngle
+ 668 005c 3861     		str	r0, [r7, #16]
+ 283:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     wError = wMecAngleRef - wMecAngle;
+ 669              		.loc 1 283 12
+ 670 005e 7A69     		ldr	r2, [r7, #20]
+ 671 0060 3B69     		ldr	r3, [r7, #16]
+ 672 0062 D31A     		subs	r3, r2, r3
+ 673 0064 FB60     		str	r3, [r7, #12]
+ 284:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     hTorqueRef_Pos = PID_Controller(pHandle->PIDPosRegulator, wError);
+ 674              		.loc 1 284 22
+ 675 0066 7B68     		ldr	r3, [r7, #4]
+ 676 0068 DB6E     		ldr	r3, [r3, #108]
+ 677 006a F968     		ldr	r1, [r7, #12]
+ 678 006c 1846     		mov	r0, r3
+ 679 006e FFF7FEFF 		bl	PID_Controller
+ 680 0072 0346     		mov	r3, r0
+ 681              		.loc 1 284 20
+ 682 0074 BB60     		str	r3, [r7, #8]
+ 285:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 286:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     STC_SetControlMode(pHandle->pSTC, MCM_TORQUE_MODE);
+ 683              		.loc 1 286 5
+ 684 0076 7B68     		ldr	r3, [r7, #4]
+ 685 0078 9B6E     		ldr	r3, [r3, #104]
+ 686 007a 0421     		movs	r1, #4
+ 687 007c 1846     		mov	r0, r3
+ 688 007e FFF7FEFF 		bl	STC_SetControlMode
+ 287:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     STC_ExecRamp(pHandle->pSTC, hTorqueRef_Pos, 0);
+ 689              		.loc 1 287 5
+ 690 0082 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 18
+
+
+ 691 0084 9B6E     		ldr	r3, [r3, #104]
+ 692 0086 BA68     		ldr	r2, [r7, #8]
+ 693 0088 11B2     		sxth	r1, r2
+ 694 008a 0022     		movs	r2, #0
+ 695 008c 1846     		mov	r0, r3
+ 696 008e FFF7FEFF 		bl	STC_ExecRamp
+ 697              	.L22:
+ 288:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 289:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 290:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 291:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 292:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 293:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 294:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 698              		.loc 1 294 1
+ 699 0092 00BF     		nop
+ 700 0094 1837     		adds	r7, r7, #24
+ 701              	.LCFI21:
+ 702              		.cfi_def_cfa_offset 8
+ 703 0096 BD46     		mov	sp, r7
+ 704              	.LCFI22:
+ 705              		.cfi_def_cfa_register 13
+ 706              		@ sp needed
+ 707 0098 80BD     		pop	{r7, pc}
+ 708              	.L24:
+ 709 009a 00BF     		.align	2
+ 710              	.L23:
+ 711 009c 83F92246 		.word	1176697219
+ 712              		.cfi_endproc
+ 713              	.LFE1091:
+ 715              		.section	.text.TC_MoveExecution,"ax",%progbits
+ 716              		.align	1
+ 717              		.global	TC_MoveExecution
+ 718              		.syntax unified
+ 719              		.thumb
+ 720              		.thumb_func
+ 722              	TC_MoveExecution:
+ 723              	.LFB1092:
+ 295:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 296:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 297:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Executes the programmed trajectory movement.
+ 298:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+ 299:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 300:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_MoveExecution(PosCtrl_Handle_t *pHandle)
+ 301:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 724              		.loc 1 301 1
+ 725              		.cfi_startproc
+ 726              		@ args = 0, pretend = 0, frame = 16
+ 727              		@ frame_needed = 1, uses_anonymous_args = 0
+ 728 0000 80B5     		push	{r7, lr}
+ 729              	.LCFI23:
+ 730              		.cfi_def_cfa_offset 8
+ 731              		.cfi_offset 7, -8
+ 732              		.cfi_offset 14, -4
+ 733 0002 84B0     		sub	sp, sp, #16
+ 734              	.LCFI24:
+ 735              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 19
+
+
+ 736 0004 00AF     		add	r7, sp, #0
+ 737              	.LCFI25:
+ 738              		.cfi_def_cfa_register 7
+ 739 0006 7860     		str	r0, [r7, #4]
+ 302:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 303:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   float jerkApplied = 0;
+ 740              		.loc 1 303 9
+ 741 0008 4FF00003 		mov	r3, #0
+ 742 000c FB60     		str	r3, [r7, #12]	@ float
+ 304:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 305:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->ElapseTime < pHandle->SubStep[0])            /* 1st Sub-Step interval time of accele
+ 743              		.loc 1 305 14
+ 744 000e 7B68     		ldr	r3, [r7, #4]
+ 745 0010 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 746              		.loc 1 305 45
+ 747 0014 7B68     		ldr	r3, [r7, #4]
+ 748 0016 D3ED047A 		vldr.32	s15, [r3, #16]
+ 749              		.loc 1 305 6
+ 750 001a B4EEE77A 		vcmpe.f32	s14, s15
+ 751 001e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 752 0022 03D5     		bpl	.L45
+ 306:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 307:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     jerkApplied = pHandle->Jerk;
+ 753              		.loc 1 307 17
+ 754 0024 7B68     		ldr	r3, [r7, #4]
+ 755 0026 5B6B     		ldr	r3, [r3, #52]	@ float
+ 756 0028 FB60     		str	r3, [r7, #12]	@ float
+ 757 002a 66E0     		b	.L28
+ 758              	.L45:
+ 308:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 309:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else if (pHandle->ElapseTime < pHandle->SubStep[1])       /* 2nd Sub-Step interval time of accele
+ 759              		.loc 1 309 19
+ 760 002c 7B68     		ldr	r3, [r7, #4]
+ 761 002e 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 762              		.loc 1 309 50
+ 763 0032 7B68     		ldr	r3, [r7, #4]
+ 764 0034 D3ED057A 		vldr.32	s15, [r3, #20]
+ 765              		.loc 1 309 11
+ 766 0038 B4EEE77A 		vcmpe.f32	s14, s15
+ 767 003c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 768 0040 5BD4     		bmi	.L28
+ 310:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 311:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 312:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else if (pHandle->ElapseTime < pHandle->SubStep[2])       /* 3rd Sub-Step interval time of accele
+ 769              		.loc 1 312 19
+ 770 0042 7B68     		ldr	r3, [r7, #4]
+ 771 0044 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 772              		.loc 1 312 50
+ 773 0048 7B68     		ldr	r3, [r7, #4]
+ 774 004a D3ED067A 		vldr.32	s15, [r3, #24]
+ 775              		.loc 1 312 11
+ 776 004e B4EEE77A 		vcmpe.f32	s14, s15
+ 777 0052 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 778 0056 07D5     		bpl	.L46
+ 313:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 314:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     jerkApplied = -(pHandle->Jerk);
+ 779              		.loc 1 314 28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 20
+
+
+ 780 0058 7B68     		ldr	r3, [r7, #4]
+ 781 005a D3ED0D7A 		vldr.32	s15, [r3, #52]
+ 782              		.loc 1 314 17
+ 783 005e F1EE677A 		vneg.f32	s15, s15
+ 784 0062 C7ED037A 		vstr.32	s15, [r7, #12]
+ 785 0066 48E0     		b	.L28
+ 786              	.L46:
+ 315:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 316:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else if (pHandle->ElapseTime < pHandle->SubStep[3])       /* Speed Cruise phase (after accelerati
+ 787              		.loc 1 316 19
+ 788 0068 7B68     		ldr	r3, [r7, #4]
+ 789 006a 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 790              		.loc 1 316 50
+ 791 006e 7B68     		ldr	r3, [r7, #4]
+ 792 0070 D3ED077A 		vldr.32	s15, [r3, #28]
+ 793              		.loc 1 316 11
+ 794 0074 B4EEE77A 		vcmpe.f32	s14, s15
+ 795 0078 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 796 007c 08D5     		bpl	.L47
+ 317:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****                                                                deceleration phases) */
+ 318:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 319:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Acceleration = 0.0f;
+ 797              		.loc 1 319 27
+ 798 007e 7B68     		ldr	r3, [r7, #4]
+ 799 0080 4FF00002 		mov	r2, #0
+ 800 0084 DA63     		str	r2, [r3, #60]	@ float
+ 320:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Omega = pHandle->CruiseSpeed;
+ 801              		.loc 1 320 29
+ 802 0086 7B68     		ldr	r3, [r7, #4]
+ 803 0088 9A6B     		ldr	r2, [r3, #56]	@ float
+ 804              		.loc 1 320 20
+ 805 008a 7B68     		ldr	r3, [r7, #4]
+ 806 008c 1A64     		str	r2, [r3, #64]	@ float
+ 807 008e 34E0     		b	.L28
+ 808              	.L47:
+ 321:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 322:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else if (pHandle->ElapseTime < pHandle->SubStep[4])       /* 1st Sub-Step interval time of decele
+ 809              		.loc 1 322 19
+ 810 0090 7B68     		ldr	r3, [r7, #4]
+ 811 0092 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 812              		.loc 1 322 50
+ 813 0096 7B68     		ldr	r3, [r7, #4]
+ 814 0098 D3ED087A 		vldr.32	s15, [r3, #32]
+ 815              		.loc 1 322 11
+ 816 009c B4EEE77A 		vcmpe.f32	s14, s15
+ 817 00a0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 818 00a4 07D5     		bpl	.L48
+ 323:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 324:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     jerkApplied = -(pHandle->Jerk);
+ 819              		.loc 1 324 28
+ 820 00a6 7B68     		ldr	r3, [r7, #4]
+ 821 00a8 D3ED0D7A 		vldr.32	s15, [r3, #52]
+ 822              		.loc 1 324 17
+ 823 00ac F1EE677A 		vneg.f32	s15, s15
+ 824 00b0 C7ED037A 		vstr.32	s15, [r7, #12]
+ 825 00b4 21E0     		b	.L28
+ 826              	.L48:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 21
+
+
+ 325:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 326:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else if (pHandle->ElapseTime < pHandle->SubStep[5])       /* 2nd Sub-Step interval time of decele
+ 827              		.loc 1 326 19
+ 828 00b6 7B68     		ldr	r3, [r7, #4]
+ 829 00b8 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 830              		.loc 1 326 50
+ 831 00bc 7B68     		ldr	r3, [r7, #4]
+ 832 00be D3ED097A 		vldr.32	s15, [r3, #36]
+ 833              		.loc 1 326 11
+ 834 00c2 B4EEE77A 		vcmpe.f32	s14, s15
+ 835 00c6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 836 00ca 16D4     		bmi	.L28
+ 327:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 328:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 329:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 330:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else if (pHandle->ElapseTime < pHandle->MovementDuration) /* 3rd Sub-Step interval time of decele
+ 837              		.loc 1 330 19
+ 838 00cc 7B68     		ldr	r3, [r7, #4]
+ 839 00ce 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 840              		.loc 1 330 41
+ 841 00d2 7B68     		ldr	r3, [r7, #4]
+ 842 00d4 D3ED007A 		vldr.32	s15, [r3]
+ 843              		.loc 1 330 11
+ 844 00d8 B4EEE77A 		vcmpe.f32	s14, s15
+ 845 00dc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 846 00e0 03D5     		bpl	.L49
+ 331:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 332:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     jerkApplied = pHandle->Jerk;
+ 847              		.loc 1 332 17
+ 848 00e2 7B68     		ldr	r3, [r7, #4]
+ 849 00e4 5B6B     		ldr	r3, [r3, #52]	@ float
+ 850 00e6 FB60     		str	r3, [r7, #12]	@ float
+ 851 00e8 07E0     		b	.L28
+ 852              	.L49:
+ 333:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 334:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 335:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 336:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Theta = pHandle->FinalAngle;
+ 853              		.loc 1 336 29
+ 854 00ea 7B68     		ldr	r3, [r7, #4]
+ 855 00ec 9A68     		ldr	r2, [r3, #8]	@ float
+ 856              		.loc 1 336 20
+ 857 00ee 7B68     		ldr	r3, [r7, #4]
+ 858 00f0 9A64     		str	r2, [r3, #72]	@ float
+ 337:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionCtrlStatus = TC_TARGET_POSITION_REACHED;
+ 859              		.loc 1 337 33
+ 860 00f2 7B68     		ldr	r3, [r7, #4]
+ 861 00f4 0222     		movs	r2, #2
+ 862 00f6 83F86020 		strb	r2, [r3, #96]
+ 863              	.L28:
+ 338:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 339:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 340:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (TC_MOVEMENT_ON_GOING == pHandle->PositionCtrlStatus)
+ 864              		.loc 1 340 38
+ 865 00fa 7B68     		ldr	r3, [r7, #4]
+ 866 00fc 93F86030 		ldrb	r3, [r3, #96]	@ zero_extendqisi2
+ 867              		.loc 1 340 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 22
+
+
+ 868 0100 012B     		cmp	r3, #1
+ 869 0102 2ED1     		bne	.L37
+ 341:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 342:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Acceleration += jerkApplied * pHandle->SamplingTime;
+ 870              		.loc 1 342 27
+ 871 0104 7B68     		ldr	r3, [r7, #4]
+ 872 0106 93ED0F7A 		vldr.32	s14, [r3, #60]
+ 873              		.loc 1 342 51
+ 874 010a 7B68     		ldr	r3, [r7, #4]
+ 875 010c D3ED0C6A 		vldr.32	s13, [r3, #48]
+ 876              		.loc 1 342 42
+ 877 0110 D7ED037A 		vldr.32	s15, [r7, #12]
+ 878 0114 66EEA77A 		vmul.f32	s15, s13, s15
+ 879              		.loc 1 342 27
+ 880 0118 77EE277A 		vadd.f32	s15, s14, s15
+ 881 011c 7B68     		ldr	r3, [r7, #4]
+ 882 011e C3ED0F7A 		vstr.32	s15, [r3, #60]
+ 343:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Omega += pHandle->Acceleration * pHandle->SamplingTime;
+ 883              		.loc 1 343 20
+ 884 0122 7B68     		ldr	r3, [r7, #4]
+ 885 0124 93ED107A 		vldr.32	s14, [r3, #64]
+ 886              		.loc 1 343 30
+ 887 0128 7B68     		ldr	r3, [r7, #4]
+ 888 012a D3ED0F6A 		vldr.32	s13, [r3, #60]
+ 889              		.loc 1 343 54
+ 890 012e 7B68     		ldr	r3, [r7, #4]
+ 891 0130 D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 892              		.loc 1 343 45
+ 893 0134 66EEA77A 		vmul.f32	s15, s13, s15
+ 894              		.loc 1 343 20
+ 895 0138 77EE277A 		vadd.f32	s15, s14, s15
+ 896 013c 7B68     		ldr	r3, [r7, #4]
+ 897 013e C3ED107A 		vstr.32	s15, [r3, #64]
+ 344:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Theta += pHandle->Omega * pHandle->SamplingTime;
+ 898              		.loc 1 344 20
+ 899 0142 7B68     		ldr	r3, [r7, #4]
+ 900 0144 93ED127A 		vldr.32	s14, [r3, #72]
+ 901              		.loc 1 344 30
+ 902 0148 7B68     		ldr	r3, [r7, #4]
+ 903 014a D3ED106A 		vldr.32	s13, [r3, #64]
+ 904              		.loc 1 344 47
+ 905 014e 7B68     		ldr	r3, [r7, #4]
+ 906 0150 D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 907              		.loc 1 344 38
+ 908 0154 66EEA77A 		vmul.f32	s15, s13, s15
+ 909              		.loc 1 344 20
+ 910 0158 77EE277A 		vadd.f32	s15, s14, s15
+ 911 015c 7B68     		ldr	r3, [r7, #4]
+ 912 015e C3ED127A 		vstr.32	s15, [r3, #72]
+ 913              	.L37:
+ 345:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 346:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 347:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 348:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 349:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 350:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 351:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->ElapseTime += pHandle->SamplingTime;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 23
+
+
+ 914              		.loc 1 351 23
+ 915 0162 7B68     		ldr	r3, [r7, #4]
+ 916 0164 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 917              		.loc 1 351 33
+ 918 0168 7B68     		ldr	r3, [r7, #4]
+ 919 016a D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 920              		.loc 1 351 23
+ 921 016e 77EE277A 		vadd.f32	s15, s14, s15
+ 922 0172 7B68     		ldr	r3, [r7, #4]
+ 923 0174 C3ED0B7A 		vstr.32	s15, [r3, #44]
+ 352:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 353:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (TC_RampCompleted(pHandle))
+ 924              		.loc 1 353 7
+ 925 0178 7868     		ldr	r0, [r7, #4]
+ 926 017a FFF7FEFF 		bl	TC_RampCompleted
+ 927 017e 0346     		mov	r3, r0
+ 928              		.loc 1 353 6
+ 929 0180 002B     		cmp	r3, #0
+ 930 0182 10D0     		beq	.L50
+ 354:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 355:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     if (TC_ZERO_ALIGNMENT_START == pHandle->AlignmentStatus)
+ 931              		.loc 1 355 43
+ 932 0184 7B68     		ldr	r3, [r7, #4]
+ 933 0186 93F86230 		ldrb	r3, [r3, #98]	@ zero_extendqisi2
+ 934              		.loc 1 355 8
+ 935 018a 012B     		cmp	r3, #1
+ 936 018c 03D1     		bne	.L39
+ 356:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 357:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       /* Ramp is used to search the zero index, if completed there is no z signal */
+ 358:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ALIGNMENT_ERROR;
+ 937              		.loc 1 358 32
+ 938 018e 7B68     		ldr	r3, [r7, #4]
+ 939 0190 0522     		movs	r2, #5
+ 940 0192 83F86220 		strb	r2, [r3, #98]
+ 941              	.L39:
+ 359:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 360:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     else
+ 361:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 362:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       /* Nothing to do */
+ 363:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 364:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->ElapseTime = 0;
+ 942              		.loc 1 364 25
+ 943 0196 7B68     		ldr	r3, [r7, #4]
+ 944 0198 4FF00002 		mov	r2, #0
+ 945 019c DA62     		str	r2, [r3, #44]	@ float
+ 365:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 946              		.loc 1 365 33
+ 947 019e 7B68     		ldr	r3, [r7, #4]
+ 948 01a0 0022     		movs	r2, #0
+ 949 01a2 83F86020 		strb	r2, [r3, #96]
+ 950              	.L50:
+ 366:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 367:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 368:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 369:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 370:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 371:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 24
+
+
+ 951              		.loc 1 371 1
+ 952 01a6 00BF     		nop
+ 953 01a8 1037     		adds	r7, r7, #16
+ 954              	.LCFI26:
+ 955              		.cfi_def_cfa_offset 8
+ 956 01aa BD46     		mov	sp, r7
+ 957              	.LCFI27:
+ 958              		.cfi_def_cfa_register 13
+ 959              		@ sp needed
+ 960 01ac 80BD     		pop	{r7, pc}
+ 961              		.cfi_endproc
+ 962              	.LFE1092:
+ 964              		.section	.text.TC_FollowExecution,"ax",%progbits
+ 965              		.align	1
+ 966              		.global	TC_FollowExecution
+ 967              		.syntax unified
+ 968              		.thumb
+ 969              		.thumb_func
+ 971              	TC_FollowExecution:
+ 972              	.LFB1093:
+ 372:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 373:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 374:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Updates the angular position.
+ 375:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+ 376:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 377:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_FollowExecution(PosCtrl_Handle_t *pHandle)
+ 378:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 973              		.loc 1 378 1
+ 974              		.cfi_startproc
+ 975              		@ args = 0, pretend = 0, frame = 8
+ 976              		@ frame_needed = 1, uses_anonymous_args = 0
+ 977              		@ link register save eliminated.
+ 978 0000 80B4     		push	{r7}
+ 979              	.LCFI28:
+ 980              		.cfi_def_cfa_offset 4
+ 981              		.cfi_offset 7, -4
+ 982 0002 83B0     		sub	sp, sp, #12
+ 983              	.LCFI29:
+ 984              		.cfi_def_cfa_offset 16
+ 985 0004 00AF     		add	r7, sp, #0
+ 986              	.LCFI30:
+ 987              		.cfi_def_cfa_register 7
+ 988 0006 7860     		str	r0, [r7, #4]
+ 379:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Omega += pHandle->Acceleration * pHandle->SamplingTime;
+ 989              		.loc 1 379 18
+ 990 0008 7B68     		ldr	r3, [r7, #4]
+ 991 000a 93ED107A 		vldr.32	s14, [r3, #64]
+ 992              		.loc 1 379 28
+ 993 000e 7B68     		ldr	r3, [r7, #4]
+ 994 0010 D3ED0F6A 		vldr.32	s13, [r3, #60]
+ 995              		.loc 1 379 52
+ 996 0014 7B68     		ldr	r3, [r7, #4]
+ 997 0016 D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 998              		.loc 1 379 43
+ 999 001a 66EEA77A 		vmul.f32	s15, s13, s15
+ 1000              		.loc 1 379 18
+ 1001 001e 77EE277A 		vadd.f32	s15, s14, s15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 25
+
+
+ 1002 0022 7B68     		ldr	r3, [r7, #4]
+ 1003 0024 C3ED107A 		vstr.32	s15, [r3, #64]
+ 380:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->Theta += pHandle->Omega        * pHandle->SamplingTime;
+ 1004              		.loc 1 380 18
+ 1005 0028 7B68     		ldr	r3, [r7, #4]
+ 1006 002a 93ED127A 		vldr.32	s14, [r3, #72]
+ 1007              		.loc 1 380 28
+ 1008 002e 7B68     		ldr	r3, [r7, #4]
+ 1009 0030 D3ED106A 		vldr.32	s13, [r3, #64]
+ 1010              		.loc 1 380 52
+ 1011 0034 7B68     		ldr	r3, [r7, #4]
+ 1012 0036 D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 1013              		.loc 1 380 43
+ 1014 003a 66EEA77A 		vmul.f32	s15, s13, s15
+ 1015              		.loc 1 380 18
+ 1016 003e 77EE277A 		vadd.f32	s15, s14, s15
+ 1017 0042 7B68     		ldr	r3, [r7, #4]
+ 1018 0044 C3ED127A 		vstr.32	s15, [r3, #72]
+ 381:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1019              		.loc 1 381 1
+ 1020 0048 00BF     		nop
+ 1021 004a 0C37     		adds	r7, r7, #12
+ 1022              	.LCFI31:
+ 1023              		.cfi_def_cfa_offset 4
+ 1024 004c BD46     		mov	sp, r7
+ 1025              	.LCFI32:
+ 1026              		.cfi_def_cfa_register 13
+ 1027              		@ sp needed
+ 1028 004e 5DF8047B 		ldr	r7, [sp], #4
+ 1029              	.LCFI33:
+ 1030              		.cfi_restore 7
+ 1031              		.cfi_def_cfa_offset 0
+ 1032 0052 7047     		bx	lr
+ 1033              		.cfi_endproc
+ 1034              	.LFE1093:
+ 1036              		.section	.text.TC_EncAlignmentCommand,"ax",%progbits
+ 1037              		.align	1
+ 1038              		.global	TC_EncAlignmentCommand
+ 1039              		.syntax unified
+ 1040              		.thumb
+ 1041              		.thumb_func
+ 1043              	TC_EncAlignmentCommand:
+ 1044              	.LFB1094:
+ 382:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 383:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 384:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Handles the alignment phase at starting before any position commands.
+ 385:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 386:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 387:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_EncAlignmentCommand(PosCtrl_Handle_t *pHandle)
+ 388:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1045              		.loc 1 388 1
+ 1046              		.cfi_startproc
+ 1047              		@ args = 0, pretend = 0, frame = 16
+ 1048              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1049 0000 80B5     		push	{r7, lr}
+ 1050              	.LCFI34:
+ 1051              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 26
+
+
+ 1052              		.cfi_offset 7, -8
+ 1053              		.cfi_offset 14, -4
+ 1054 0002 84B0     		sub	sp, sp, #16
+ 1055              	.LCFI35:
+ 1056              		.cfi_def_cfa_offset 24
+ 1057 0004 00AF     		add	r7, sp, #0
+ 1058              	.LCFI36:
+ 1059              		.cfi_def_cfa_register 7
+ 1060 0006 7860     		str	r0, [r7, #4]
+ 389:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   int32_t wMecAngleRef;
+ 390:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 391:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (TC_ALIGNMENT_COMPLETED == pHandle->AlignmentStatus)
+ 1061              		.loc 1 391 40
+ 1062 0008 7B68     		ldr	r3, [r7, #4]
+ 1063 000a 93F86230 		ldrb	r3, [r3, #98]	@ zero_extendqisi2
+ 1064              		.loc 1 391 6
+ 1065 000e 022B     		cmp	r3, #2
+ 1066 0010 04D1     		bne	.L53
+ 392:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 393:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 1067              		.loc 1 393 33
+ 1068 0012 7B68     		ldr	r3, [r7, #4]
+ 1069 0014 0022     		movs	r2, #0
+ 1070 0016 83F86020 		strb	r2, [r3, #96]
+ 394:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Do nothing - EncAlignment must be done only one time after the power on */
+ 395:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 396:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 397:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 398:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     if (pHandle->AlignmentCfg == TC_ABSOLUTE_ALIGNMENT_SUPPORTED)
+ 399:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 400:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       /* If index is supported start the search of the zero */
+ 401:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->EncoderAbsoluteAligned = false;
+ 402:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       wMecAngleRef = SPD_GetMecAngle(STC_GetSpeedSensor(pHandle->pSTC));
+ 403:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       TC_MoveCommand(pHandle, (float)(wMecAngleRef) / RADTOS16, Z_ALIGNMENT_NB_ROTATION, Z_ALIGNMEN
+ 404:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ZERO_ALIGNMENT_START;
+ 405:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 406:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     else
+ 407:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 408:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       /* If index is not supprted set the alignment angle as zero reference */
+ 409:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->pENC->_Super.wMecAngle = 0;
+ 410:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ALIGNMENT_COMPLETED;
+ 411:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 412:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->PositionControlRegulation = ENABLE;
+ 413:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 414:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 415:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1071              		.loc 1 415 1
+ 1072 001a 39E0     		b	.L56
+ 1073              	.L53:
+ 398:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 1074              		.loc 1 398 16
+ 1075 001c 7B68     		ldr	r3, [r7, #4]
+ 1076 001e 93F86130 		ldrb	r3, [r3, #97]	@ zero_extendqisi2
+ 398:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     {
+ 1077              		.loc 1 398 8
+ 1078 0022 042B     		cmp	r3, #4
+ 1079 0024 24D1     		bne	.L55
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 27
+
+
+ 401:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       wMecAngleRef = SPD_GetMecAngle(STC_GetSpeedSensor(pHandle->pSTC));
+ 1080              		.loc 1 401 39
+ 1081 0026 7B68     		ldr	r3, [r7, #4]
+ 1082 0028 0022     		movs	r2, #0
+ 1083 002a 83F85220 		strb	r2, [r3, #82]
+ 402:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       TC_MoveCommand(pHandle, (float)(wMecAngleRef) / RADTOS16, Z_ALIGNMENT_NB_ROTATION, Z_ALIGNMEN
+ 1084              		.loc 1 402 38
+ 1085 002e 7B68     		ldr	r3, [r7, #4]
+ 1086 0030 9B6E     		ldr	r3, [r3, #104]
+ 1087 0032 1846     		mov	r0, r3
+ 1088 0034 FFF7FEFF 		bl	STC_GetSpeedSensor
+ 1089 0038 0346     		mov	r3, r0
+ 402:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       TC_MoveCommand(pHandle, (float)(wMecAngleRef) / RADTOS16, Z_ALIGNMENT_NB_ROTATION, Z_ALIGNMEN
+ 1090              		.loc 1 402 22
+ 1091 003a 1846     		mov	r0, r3
+ 1092 003c FFF7FEFF 		bl	SPD_GetMecAngle
+ 1093 0040 F860     		str	r0, [r7, #12]
+ 403:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ZERO_ALIGNMENT_START;
+ 1094              		.loc 1 403 31
+ 1095 0042 FB68     		ldr	r3, [r7, #12]
+ 1096 0044 07EE903A 		vmov	s15, r3	@ int
+ 1097 0048 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 403:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ZERO_ALIGNMENT_START;
+ 1098              		.loc 1 403 7
+ 1099 004c DFED126A 		vldr.32	s13, .L57
+ 1100 0050 87EEA67A 		vdiv.f32	s14, s15, s13
+ 1101 0054 B0EE001A 		vmov.f32	s2, #2.0e+0
+ 1102 0058 DFED100A 		vldr.32	s1, .L57+4
+ 1103 005c B0EE470A 		vmov.f32	s0, s14
+ 1104 0060 7868     		ldr	r0, [r7, #4]
+ 1105 0062 FFF7FEFF 		bl	TC_MoveCommand
+ 404:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 1106              		.loc 1 404 32
+ 1107 0066 7B68     		ldr	r3, [r7, #4]
+ 1108 0068 0122     		movs	r2, #1
+ 1109 006a 83F86220 		strb	r2, [r3, #98]
+ 1110              		.loc 1 415 1
+ 1111 006e 0FE0     		b	.L56
+ 1112              	.L55:
+ 409:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ALIGNMENT_COMPLETED;
+ 1113              		.loc 1 409 14
+ 1114 0070 7B68     		ldr	r3, [r7, #4]
+ 1115 0072 5B6E     		ldr	r3, [r3, #100]
+ 409:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->AlignmentStatus = TC_ALIGNMENT_COMPLETED;
+ 1116              		.loc 1 409 39
+ 1117 0074 0022     		movs	r2, #0
+ 1118 0076 9A60     		str	r2, [r3, #8]
+ 410:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 1119              		.loc 1 410 32
+ 1120 0078 7B68     		ldr	r3, [r7, #4]
+ 1121 007a 0222     		movs	r2, #2
+ 1122 007c 83F86220 		strb	r2, [r3, #98]
+ 411:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****       pHandle->PositionControlRegulation = ENABLE;
+ 1123              		.loc 1 411 35
+ 1124 0080 7B68     		ldr	r3, [r7, #4]
+ 1125 0082 0022     		movs	r2, #0
+ 1126 0084 83F86020 		strb	r2, [r3, #96]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 28
+
+
+ 412:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     }
+ 1127              		.loc 1 412 42
+ 1128 0088 7B68     		ldr	r3, [r7, #4]
+ 1129 008a 0122     		movs	r2, #1
+ 1130 008c 83F85120 		strb	r2, [r3, #81]
+ 1131              	.L56:
+ 1132              		.loc 1 415 1
+ 1133 0090 00BF     		nop
+ 1134 0092 1037     		adds	r7, r7, #16
+ 1135              	.LCFI37:
+ 1136              		.cfi_def_cfa_offset 8
+ 1137 0094 BD46     		mov	sp, r7
+ 1138              	.LCFI38:
+ 1139              		.cfi_def_cfa_register 13
+ 1140              		@ sp needed
+ 1141 0096 80BD     		pop	{r7, pc}
+ 1142              	.L58:
+ 1143              		.align	2
+ 1144              	.L57:
+ 1145 0098 83F92246 		.word	1176697219
+ 1146 009c DB0FC940 		.word	1086918619
+ 1147              		.cfi_endproc
+ 1148              	.LFE1094:
+ 1150              		.section	.text.TC_RampCompleted,"ax",%progbits
+ 1151              		.align	1
+ 1152              		.global	TC_RampCompleted
+ 1153              		.syntax unified
+ 1154              		.thumb
+ 1155              		.thumb_func
+ 1157              	TC_RampCompleted:
+ 1158              	.LFB1095:
+ 416:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 417:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 418:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  It controls if time allowed for movement is completed.
+ 419:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 420:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @retval Status return true when the programmed trajectory movement is completed
+ 421:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   *                       false when the trajectory movement execution is still ongoing.
+ 422:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 423:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** bool TC_RampCompleted(PosCtrl_Handle_t *pHandle)
+ 424:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1159              		.loc 1 424 1
+ 1160              		.cfi_startproc
+ 1161              		@ args = 0, pretend = 0, frame = 16
+ 1162              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1163              		@ link register save eliminated.
+ 1164 0000 80B4     		push	{r7}
+ 1165              	.LCFI39:
+ 1166              		.cfi_def_cfa_offset 4
+ 1167              		.cfi_offset 7, -4
+ 1168 0002 85B0     		sub	sp, sp, #20
+ 1169              	.LCFI40:
+ 1170              		.cfi_def_cfa_offset 24
+ 1171 0004 00AF     		add	r7, sp, #0
+ 1172              	.LCFI41:
+ 1173              		.cfi_def_cfa_register 7
+ 1174 0006 7860     		str	r0, [r7, #4]
+ 425:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   bool retVal = false;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 29
+
+
+ 1175              		.loc 1 425 8
+ 1176 0008 0023     		movs	r3, #0
+ 1177 000a FB73     		strb	r3, [r7, #15]
+ 426:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 427:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   /* Check that entire sequence (Acceleration - Cruise - Deceleration) is completed */
+ 428:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if (pHandle->ElapseTime > pHandle->MovementDuration + pHandle->SamplingTime)
+ 1178              		.loc 1 428 14
+ 1179 000c 7B68     		ldr	r3, [r7, #4]
+ 1180 000e 93ED0B7A 		vldr.32	s14, [r3, #44]
+ 1181              		.loc 1 428 36
+ 1182 0012 7B68     		ldr	r3, [r7, #4]
+ 1183 0014 D3ED006A 		vldr.32	s13, [r3]
+ 1184              		.loc 1 428 64
+ 1185 0018 7B68     		ldr	r3, [r7, #4]
+ 1186 001a D3ED0C7A 		vldr.32	s15, [r3, #48]
+ 1187              		.loc 1 428 55
+ 1188 001e 76EEA77A 		vadd.f32	s15, s13, s15
+ 1189              		.loc 1 428 6
+ 1190 0022 B4EEE77A 		vcmpe.f32	s14, s15
+ 1191 0026 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1192 002a 01DD     		ble	.L60
+ 429:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 430:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     retVal = true;
+ 1193              		.loc 1 430 12
+ 1194 002c 0123     		movs	r3, #1
+ 1195 002e FB73     		strb	r3, [r7, #15]
+ 1196              	.L60:
+ 431:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 432:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 433:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 434:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 435:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 436:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return (retVal);
+ 1197              		.loc 1 436 10
+ 1198 0030 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 437:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1199              		.loc 1 437 1
+ 1200 0032 1846     		mov	r0, r3
+ 1201 0034 1437     		adds	r7, r7, #20
+ 1202              	.LCFI42:
+ 1203              		.cfi_def_cfa_offset 4
+ 1204 0036 BD46     		mov	sp, r7
+ 1205              	.LCFI43:
+ 1206              		.cfi_def_cfa_register 13
+ 1207              		@ sp needed
+ 1208 0038 5DF8047B 		ldr	r7, [sp], #4
+ 1209              	.LCFI44:
+ 1210              		.cfi_restore 7
+ 1211              		.cfi_def_cfa_offset 0
+ 1212 003c 7047     		bx	lr
+ 1213              		.cfi_endproc
+ 1214              	.LFE1095:
+ 1216              		.section	.text.TC_EncoderReset,"ax",%progbits
+ 1217              		.align	1
+ 1218              		.global	TC_EncoderReset
+ 1219              		.syntax unified
+ 1220              		.thumb
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 30
+
+
+ 1221              		.thumb_func
+ 1223              	TC_EncoderReset:
+ 1224              	.LFB1096:
+ 438:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 439:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 440:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Set the absolute zero mechanical position.
+ 441:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 442:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 443:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_EncoderReset(PosCtrl_Handle_t *pHandle)
+ 444:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1225              		.loc 1 444 1
+ 1226              		.cfi_startproc
+ 1227              		@ args = 0, pretend = 0, frame = 8
+ 1228              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1229 0000 80B5     		push	{r7, lr}
+ 1230              	.LCFI45:
+ 1231              		.cfi_def_cfa_offset 8
+ 1232              		.cfi_offset 7, -8
+ 1233              		.cfi_offset 14, -4
+ 1234 0002 82B0     		sub	sp, sp, #8
+ 1235              	.LCFI46:
+ 1236              		.cfi_def_cfa_offset 16
+ 1237 0004 00AF     		add	r7, sp, #0
+ 1238              	.LCFI47:
+ 1239              		.cfi_def_cfa_register 7
+ 1240 0006 7860     		str	r0, [r7, #4]
+ 445:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   if ((!pHandle->EncoderAbsoluteAligned) && (pHandle->AlignmentStatus == TC_ZERO_ALIGNMENT_START))
+ 1241              		.loc 1 445 16
+ 1242 0008 7B68     		ldr	r3, [r7, #4]
+ 1243 000a 93F85230 		ldrb	r3, [r3, #82]	@ zero_extendqisi2
+ 1244              		.loc 1 445 8
+ 1245 000e 83F00103 		eor	r3, r3, #1
+ 1246 0012 DBB2     		uxtb	r3, r3
+ 1247              		.loc 1 445 6
+ 1248 0014 002B     		cmp	r3, #0
+ 1249 0016 28D0     		beq	.L66
+ 1250              		.loc 1 445 53 discriminator 1
+ 1251 0018 7B68     		ldr	r3, [r7, #4]
+ 1252 001a 93F86230 		ldrb	r3, [r3, #98]	@ zero_extendqisi2
+ 1253              		.loc 1 445 42 discriminator 1
+ 1254 001e 012B     		cmp	r3, #1
+ 1255 0020 23D1     		bne	.L66
+ 446:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 447:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->MecAngleOffset = pHandle->pENC->_Super.hMecAngle;
+ 1256              		.loc 1 447 38
+ 1257 0022 7B68     		ldr	r3, [r7, #4]
+ 1258 0024 5B6E     		ldr	r3, [r3, #100]
+ 1259              		.loc 1 447 52
+ 1260 0026 B3F90620 		ldrsh	r2, [r3, #6]
+ 1261              		.loc 1 447 29
+ 1262 002a 7B68     		ldr	r3, [r7, #4]
+ 1263 002c A3F85420 		strh	r2, [r3, #84]	@ movhi
+ 448:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->pENC->_Super.wMecAngle = 0;
+ 1264              		.loc 1 448 12
+ 1265 0030 7B68     		ldr	r3, [r7, #4]
+ 1266 0032 5B6E     		ldr	r3, [r3, #100]
+ 1267              		.loc 1 448 37
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 31
+
+
+ 1268 0034 0022     		movs	r2, #0
+ 1269 0036 9A60     		str	r2, [r3, #8]
+ 449:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->EncoderAbsoluteAligned = true;
+ 1270              		.loc 1 449 37
+ 1271 0038 7B68     		ldr	r3, [r7, #4]
+ 1272 003a 0122     		movs	r2, #1
+ 1273 003c 83F85220 		strb	r2, [r3, #82]
+ 450:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->AlignmentStatus = TC_ALIGNMENT_COMPLETED;
+ 1274              		.loc 1 450 30
+ 1275 0040 7B68     		ldr	r3, [r7, #4]
+ 1276 0042 0222     		movs	r2, #2
+ 1277 0044 83F86220 		strb	r2, [r3, #98]
+ 451:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->PositionCtrlStatus = TC_READY_FOR_COMMAND;
+ 1278              		.loc 1 451 33
+ 1279 0048 7B68     		ldr	r3, [r7, #4]
+ 1280 004a 0022     		movs	r2, #0
+ 1281 004c 83F86020 		strb	r2, [r3, #96]
+ 452:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     pHandle->Theta = 0.0f;
+ 1282              		.loc 1 452 20
+ 1283 0050 7B68     		ldr	r3, [r7, #4]
+ 1284 0052 4FF00002 		mov	r2, #0
+ 1285 0056 9A64     		str	r2, [r3, #72]	@ float
+ 453:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     ENC_SetMecAngle(pHandle->pENC, pHandle->MecAngleOffset);
+ 1286              		.loc 1 453 5
+ 1287 0058 7B68     		ldr	r3, [r7, #4]
+ 1288 005a 5A6E     		ldr	r2, [r3, #100]
+ 1289 005c 7B68     		ldr	r3, [r7, #4]
+ 1290 005e B3F95430 		ldrsh	r3, [r3, #84]
+ 1291 0062 1946     		mov	r1, r3
+ 1292 0064 1046     		mov	r0, r2
+ 1293 0066 FFF7FEFF 		bl	ENC_SetMecAngle
+ 1294              	.L66:
+ 454:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 455:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   else
+ 456:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   {
+ 457:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****     /* Nothing to do */
+ 458:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   }
+ 459:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1295              		.loc 1 459 1
+ 1296 006a 00BF     		nop
+ 1297 006c 0837     		adds	r7, r7, #8
+ 1298              	.LCFI48:
+ 1299              		.cfi_def_cfa_offset 8
+ 1300 006e BD46     		mov	sp, r7
+ 1301              	.LCFI49:
+ 1302              		.cfi_def_cfa_register 13
+ 1303              		@ sp needed
+ 1304 0070 80BD     		pop	{r7, pc}
+ 1305              		.cfi_endproc
+ 1306              	.LFE1096:
+ 1308              		.section	.text.TC_GetCurrentPosition,"ax",%progbits
+ 1309              		.align	1
+ 1310              		.global	TC_GetCurrentPosition
+ 1311              		.syntax unified
+ 1312              		.thumb
+ 1313              		.thumb_func
+ 1315              	TC_GetCurrentPosition:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 32
+
+
+ 1316              	.LFB1097:
+ 460:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 461:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 462:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Returns the current rotor mechanical angle, expressed in radiant.
+ 463:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 464:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @retval current mechanical position
+ 465:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 466:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** float TC_GetCurrentPosition(PosCtrl_Handle_t *pHandle)
+ 467:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1317              		.loc 1 467 1
+ 1318              		.cfi_startproc
+ 1319              		@ args = 0, pretend = 0, frame = 8
+ 1320              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1321 0000 80B5     		push	{r7, lr}
+ 1322              	.LCFI50:
+ 1323              		.cfi_def_cfa_offset 8
+ 1324              		.cfi_offset 7, -8
+ 1325              		.cfi_offset 14, -4
+ 1326 0002 82B0     		sub	sp, sp, #8
+ 1327              	.LCFI51:
+ 1328              		.cfi_def_cfa_offset 16
+ 1329 0004 00AF     		add	r7, sp, #0
+ 1330              	.LCFI52:
+ 1331              		.cfi_def_cfa_register 7
+ 1332 0006 7860     		str	r0, [r7, #4]
+ 468:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 469:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return ((float)((SPD_GetMecAngle(STC_GetSpeedSensor(pHandle->pSTC))) / RADTOS16));
+ 1333              		.loc 1 469 36
+ 1334 0008 7B68     		ldr	r3, [r7, #4]
+ 1335 000a 9B6E     		ldr	r3, [r3, #104]
+ 1336 000c 1846     		mov	r0, r3
+ 1337 000e FFF7FEFF 		bl	STC_GetSpeedSensor
+ 1338 0012 0346     		mov	r3, r0
+ 1339              		.loc 1 469 20
+ 1340 0014 1846     		mov	r0, r3
+ 1341 0016 FFF7FEFF 		bl	SPD_GetMecAngle
+ 1342 001a 07EE900A 		vmov	s15, r0	@ int
+ 1343              		.loc 1 469 11
+ 1344 001e F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1345 0022 9FED057A 		vldr.32	s14, .L69
+ 1346 0026 C7EE876A 		vdiv.f32	s13, s15, s14
+ 1347 002a F0EE667A 		vmov.f32	s15, s13
+ 470:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1348              		.loc 1 470 1
+ 1349 002e B0EE670A 		vmov.f32	s0, s15
+ 1350 0032 0837     		adds	r7, r7, #8
+ 1351              	.LCFI53:
+ 1352              		.cfi_def_cfa_offset 8
+ 1353 0034 BD46     		mov	sp, r7
+ 1354              	.LCFI54:
+ 1355              		.cfi_def_cfa_register 13
+ 1356              		@ sp needed
+ 1357 0036 80BD     		pop	{r7, pc}
+ 1358              	.L70:
+ 1359              		.align	2
+ 1360              	.L69:
+ 1361 0038 83F92246 		.word	1176697219
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 33
+
+
+ 1362              		.cfi_endproc
+ 1363              	.LFE1097:
+ 1365              		.section	.text.TC_GetTargetPosition,"ax",%progbits
+ 1366              		.align	1
+ 1367              		.global	TC_GetTargetPosition
+ 1368              		.syntax unified
+ 1369              		.thumb
+ 1370              		.thumb_func
+ 1372              	TC_GetTargetPosition:
+ 1373              	.LFB1098:
+ 471:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 472:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 473:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Returns the target rotor mechanical angle, expressed in radiant.
+ 474:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 475:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @retval Target mechanical position
+ 476:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 477:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** float TC_GetTargetPosition(PosCtrl_Handle_t *pHandle)
+ 478:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1374              		.loc 1 478 1
+ 1375              		.cfi_startproc
+ 1376              		@ args = 0, pretend = 0, frame = 8
+ 1377              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1378              		@ link register save eliminated.
+ 1379 0000 80B4     		push	{r7}
+ 1380              	.LCFI55:
+ 1381              		.cfi_def_cfa_offset 4
+ 1382              		.cfi_offset 7, -4
+ 1383 0002 83B0     		sub	sp, sp, #12
+ 1384              	.LCFI56:
+ 1385              		.cfi_def_cfa_offset 16
+ 1386 0004 00AF     		add	r7, sp, #0
+ 1387              	.LCFI57:
+ 1388              		.cfi_def_cfa_register 7
+ 1389 0006 7860     		str	r0, [r7, #4]
+ 479:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return (pHandle->FinalAngle);
+ 1390              		.loc 1 479 18
+ 1391 0008 7B68     		ldr	r3, [r7, #4]
+ 1392 000a 9B68     		ldr	r3, [r3, #8]	@ float
+ 1393 000c 07EE903A 		vmov	s15, r3
+ 480:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1394              		.loc 1 480 1
+ 1395 0010 B0EE670A 		vmov.f32	s0, s15
+ 1396 0014 0C37     		adds	r7, r7, #12
+ 1397              	.LCFI58:
+ 1398              		.cfi_def_cfa_offset 4
+ 1399 0016 BD46     		mov	sp, r7
+ 1400              	.LCFI59:
+ 1401              		.cfi_def_cfa_register 13
+ 1402              		@ sp needed
+ 1403 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1404              	.LCFI60:
+ 1405              		.cfi_restore 7
+ 1406              		.cfi_def_cfa_offset 0
+ 1407 001c 7047     		bx	lr
+ 1408              		.cfi_endproc
+ 1409              	.LFE1098:
+ 1411              		.section	.text.TC_GetMoveDuration,"ax",%progbits
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 34
+
+
+ 1412              		.align	1
+ 1413              		.global	TC_GetMoveDuration
+ 1414              		.syntax unified
+ 1415              		.thumb
+ 1416              		.thumb_func
+ 1418              	TC_GetMoveDuration:
+ 1419              	.LFB1099:
+ 481:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 482:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 483:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Returns the duration used to execute the movement, expressed in seconds.
+ 484:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+ 485:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @retval Duration of programmed movement
+ 486:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 487:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** float TC_GetMoveDuration(PosCtrl_Handle_t *pHandle)
+ 488:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1420              		.loc 1 488 1
+ 1421              		.cfi_startproc
+ 1422              		@ args = 0, pretend = 0, frame = 8
+ 1423              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1424              		@ link register save eliminated.
+ 1425 0000 80B4     		push	{r7}
+ 1426              	.LCFI61:
+ 1427              		.cfi_def_cfa_offset 4
+ 1428              		.cfi_offset 7, -4
+ 1429 0002 83B0     		sub	sp, sp, #12
+ 1430              	.LCFI62:
+ 1431              		.cfi_def_cfa_offset 16
+ 1432 0004 00AF     		add	r7, sp, #0
+ 1433              	.LCFI63:
+ 1434              		.cfi_def_cfa_register 7
+ 1435 0006 7860     		str	r0, [r7, #4]
+ 489:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return (pHandle->MovementDuration);
+ 1436              		.loc 1 489 18
+ 1437 0008 7B68     		ldr	r3, [r7, #4]
+ 1438 000a 1B68     		ldr	r3, [r3]	@ float
+ 1439 000c 07EE903A 		vmov	s15, r3
+ 490:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1440              		.loc 1 490 1
+ 1441 0010 B0EE670A 		vmov.f32	s0, s15
+ 1442 0014 0C37     		adds	r7, r7, #12
+ 1443              	.LCFI64:
+ 1444              		.cfi_def_cfa_offset 4
+ 1445 0016 BD46     		mov	sp, r7
+ 1446              	.LCFI65:
+ 1447              		.cfi_def_cfa_register 13
+ 1448              		@ sp needed
+ 1449 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1450              	.LCFI66:
+ 1451              		.cfi_restore 7
+ 1452              		.cfi_def_cfa_offset 0
+ 1453 001c 7047     		bx	lr
+ 1454              		.cfi_endproc
+ 1455              	.LFE1099:
+ 1457              		.section	.text.TC_GetControlPositionStatus,"ax",%progbits
+ 1458              		.align	1
+ 1459              		.global	TC_GetControlPositionStatus
+ 1460              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 35
+
+
+ 1461              		.thumb
+ 1462              		.thumb_func
+ 1464              	TC_GetControlPositionStatus:
+ 1465              	.LFB1100:
+ 491:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 492:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 493:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Returns the status of the position control execution.
+ 494:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle: handler of the current instance of the Position Control component.
+ 495:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @retval Position Control Status
+ 496:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 497:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** PosCtrlStatus_t TC_GetControlPositionStatus(PosCtrl_Handle_t *pHandle)
+ 498:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1466              		.loc 1 498 1
+ 1467              		.cfi_startproc
+ 1468              		@ args = 0, pretend = 0, frame = 8
+ 1469              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1470              		@ link register save eliminated.
+ 1471 0000 80B4     		push	{r7}
+ 1472              	.LCFI67:
+ 1473              		.cfi_def_cfa_offset 4
+ 1474              		.cfi_offset 7, -4
+ 1475 0002 83B0     		sub	sp, sp, #12
+ 1476              	.LCFI68:
+ 1477              		.cfi_def_cfa_offset 16
+ 1478 0004 00AF     		add	r7, sp, #0
+ 1479              	.LCFI69:
+ 1480              		.cfi_def_cfa_register 7
+ 1481 0006 7860     		str	r0, [r7, #4]
+ 499:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return (pHandle->PositionCtrlStatus);
+ 1482              		.loc 1 499 18
+ 1483 0008 7B68     		ldr	r3, [r7, #4]
+ 1484 000a 93F86030 		ldrb	r3, [r3, #96]	@ zero_extendqisi2
+ 500:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1485              		.loc 1 500 1
+ 1486 000e 1846     		mov	r0, r3
+ 1487 0010 0C37     		adds	r7, r7, #12
+ 1488              	.LCFI70:
+ 1489              		.cfi_def_cfa_offset 4
+ 1490 0012 BD46     		mov	sp, r7
+ 1491              	.LCFI71:
+ 1492              		.cfi_def_cfa_register 13
+ 1493              		@ sp needed
+ 1494 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1495              	.LCFI72:
+ 1496              		.cfi_restore 7
+ 1497              		.cfi_def_cfa_offset 0
+ 1498 0018 7047     		bx	lr
+ 1499              		.cfi_endproc
+ 1500              	.LFE1100:
+ 1502              		.section	.text.TC_GetAlignmentStatus,"ax",%progbits
+ 1503              		.align	1
+ 1504              		.global	TC_GetAlignmentStatus
+ 1505              		.syntax unified
+ 1506              		.thumb
+ 1507              		.thumb_func
+ 1509              	TC_GetAlignmentStatus:
+ 1510              	.LFB1101:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 36
+
+
+ 501:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 502:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 503:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Returns the status after the rotor alignment phase.
+ 504:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+ 505:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ 506:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** AlignStatus_t TC_GetAlignmentStatus(PosCtrl_Handle_t *pHandle)
+ 507:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1511              		.loc 1 507 1
+ 1512              		.cfi_startproc
+ 1513              		@ args = 0, pretend = 0, frame = 8
+ 1514              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1515              		@ link register save eliminated.
+ 1516 0000 80B4     		push	{r7}
+ 1517              	.LCFI73:
+ 1518              		.cfi_def_cfa_offset 4
+ 1519              		.cfi_offset 7, -4
+ 1520 0002 83B0     		sub	sp, sp, #12
+ 1521              	.LCFI74:
+ 1522              		.cfi_def_cfa_offset 16
+ 1523 0004 00AF     		add	r7, sp, #0
+ 1524              	.LCFI75:
+ 1525              		.cfi_def_cfa_register 7
+ 1526 0006 7860     		str	r0, [r7, #4]
+ 508:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   return (pHandle->AlignmentStatus);
+ 1527              		.loc 1 508 18
+ 1528 0008 7B68     		ldr	r3, [r7, #4]
+ 1529 000a 93F86230 		ldrb	r3, [r3, #98]	@ zero_extendqisi2
+ 509:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1530              		.loc 1 509 1
+ 1531 000e 1846     		mov	r0, r3
+ 1532 0010 0C37     		adds	r7, r7, #12
+ 1533              	.LCFI76:
+ 1534              		.cfi_def_cfa_offset 4
+ 1535 0012 BD46     		mov	sp, r7
+ 1536              	.LCFI77:
+ 1537              		.cfi_def_cfa_register 13
+ 1538              		@ sp needed
+ 1539 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1540              	.LCFI78:
+ 1541              		.cfi_restore 7
+ 1542              		.cfi_def_cfa_offset 0
+ 1543 0018 7047     		bx	lr
+ 1544              		.cfi_endproc
+ 1545              	.LFE1101:
+ 1547              		.section	.text.TC_IncTick,"ax",%progbits
+ 1548              		.align	1
+ 1549              		.global	TC_IncTick
+ 1550              		.syntax unified
+ 1551              		.thumb
+ 1552              		.thumb_func
+ 1554              	TC_IncTick:
+ 1555              	.LFB1102:
+ 510:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** 
+ 511:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** /**
+ 512:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @brief  Increments Tick counter used in follow mode.
+ 513:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   * @param  pHandle handler of the current instance of the Position Control component.
+ 514:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   */
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 37
+
+
+ 515:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** void TC_IncTick(PosCtrl_Handle_t *pHandle)
+ 516:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** {
+ 1556              		.loc 1 516 1
+ 1557              		.cfi_startproc
+ 1558              		@ args = 0, pretend = 0, frame = 8
+ 1559              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1560              		@ link register save eliminated.
+ 1561 0000 80B4     		push	{r7}
+ 1562              	.LCFI79:
+ 1563              		.cfi_def_cfa_offset 4
+ 1564              		.cfi_offset 7, -4
+ 1565 0002 83B0     		sub	sp, sp, #12
+ 1566              	.LCFI80:
+ 1567              		.cfi_def_cfa_offset 16
+ 1568 0004 00AF     		add	r7, sp, #0
+ 1569              	.LCFI81:
+ 1570              		.cfi_def_cfa_register 7
+ 1571 0006 7860     		str	r0, [r7, #4]
+ 517:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c ****   pHandle->TcTick++;
+ 1572              		.loc 1 517 10
+ 1573 0008 7B68     		ldr	r3, [r7, #4]
+ 1574 000a 9B6D     		ldr	r3, [r3, #88]
+ 1575              		.loc 1 517 18
+ 1576 000c 5A1C     		adds	r2, r3, #1
+ 1577 000e 7B68     		ldr	r3, [r7, #4]
+ 1578 0010 9A65     		str	r2, [r3, #88]
+ 518:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c **** }
+ 1579              		.loc 1 518 1
+ 1580 0012 00BF     		nop
+ 1581 0014 0C37     		adds	r7, r7, #12
+ 1582              	.LCFI82:
+ 1583              		.cfi_def_cfa_offset 4
+ 1584 0016 BD46     		mov	sp, r7
+ 1585              	.LCFI83:
+ 1586              		.cfi_def_cfa_register 13
+ 1587              		@ sp needed
+ 1588 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1589              	.LCFI84:
+ 1590              		.cfi_restore 7
+ 1591              		.cfi_def_cfa_offset 0
+ 1592 001c 7047     		bx	lr
+ 1593              		.cfi_endproc
+ 1594              	.LFE1102:
+ 1596              		.text
+ 1597              	.Letext0:
+ 1598              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1599              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1600              		.file 4 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 1601              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 1602              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 1603              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h"
+ 1604              		.file 8 "Inc/mc_type.h"
+ 1605              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pid_regulator.h"
+ 1606              		.file 10 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
+ 1607              		.file 11 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_torq_ctrl.h"
+ 1608              		.file 12 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
+ 1609              		.file 13 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/trajectory_ctrl.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 38
+
+
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s 			page 39
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 trajectory_ctrl.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:56     .text.TC_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:62     .text.TC_Init:00000000 TC_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:202    .text.TC_MoveCommand:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:208    .text.TC_MoveCommand:00000000 TC_MoveCommand
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:444    .text.TC_FollowCommand:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:450    .text.TC_FollowCommand:00000000 TC_FollowCommand
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:599    .text.TC_PositionRegulation:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:605    .text.TC_PositionRegulation:00000000 TC_PositionRegulation
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:722    .text.TC_MoveExecution:00000000 TC_MoveExecution
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:971    .text.TC_FollowExecution:00000000 TC_FollowExecution
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:711    .text.TC_PositionRegulation:0000009c $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:716    .text.TC_MoveExecution:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1157   .text.TC_RampCompleted:00000000 TC_RampCompleted
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:965    .text.TC_FollowExecution:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1037   .text.TC_EncAlignmentCommand:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1043   .text.TC_EncAlignmentCommand:00000000 TC_EncAlignmentCommand
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1145   .text.TC_EncAlignmentCommand:00000098 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1151   .text.TC_RampCompleted:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1217   .text.TC_EncoderReset:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1223   .text.TC_EncoderReset:00000000 TC_EncoderReset
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1309   .text.TC_GetCurrentPosition:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1315   .text.TC_GetCurrentPosition:00000000 TC_GetCurrentPosition
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1361   .text.TC_GetCurrentPosition:00000038 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1366   .text.TC_GetTargetPosition:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1372   .text.TC_GetTargetPosition:00000000 TC_GetTargetPosition
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1412   .text.TC_GetMoveDuration:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1418   .text.TC_GetMoveDuration:00000000 TC_GetMoveDuration
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1458   .text.TC_GetControlPositionStatus:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1464   .text.TC_GetControlPositionStatus:00000000 TC_GetControlPositionStatus
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1503   .text.TC_GetAlignmentStatus:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1509   .text.TC_GetAlignmentStatus:00000000 TC_GetAlignmentStatus
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1548   .text.TC_IncTick:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccxpR483.s:1554   .text.TC_IncTick:00000000 TC_IncTick
+
+UNDEFINED SYMBOLS
+STC_GetSpeedSensor
+SPD_GetMecAngle
+PID_Controller
+STC_SetControlMode
+STC_ExecRamp
+ENC_SetMecAngle

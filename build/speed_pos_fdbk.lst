@@ -1,0 +1,1155 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"speed_pos_fdbk.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.SPD_GetElAngle,"ax",%progbits
+  56              		.align	1
+  57              		.weak	SPD_GetElAngle
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	SPD_GetElAngle:
+  63              	.LFB1088:
+  64              		.file 1 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c"
+   1:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+   2:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   ******************************************************************************
+   3:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @file    speed_pos_fdbk.c
+   4:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief   This file provides firmware functions that implement the  features
+   6:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *          of the Speed & Position Feedback component of the Motor Control SDK.
+   7:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+   8:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   ******************************************************************************
+   9:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @attention
+  10:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  11:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  12:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * All rights reserved.</center></h2>
+  13:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  14:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  15:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  16:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * the License. You may obtain a copy of the License at:
+  17:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *                             www.st.com/SLA0044
+  18:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  19:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   ******************************************************************************
+  20:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+  21:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+  22:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /* Includes ------------------------------------------------------------------*/
+  23:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #include "speed_pos_fdbk.h"
+  24:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+  25:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /** @addtogroup MCSDK
+  26:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @{
+  27:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+  28:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+  29:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /** @defgroup SpeednPosFdbk Speed & Position Feedback
+  30:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  31:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief Speed & Position Feedback components of the Motor Control SDK
+  32:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  33:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * These components provide the speed and the angular position of the rotor of a motor (both
+  34:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * electrical and mechanical). These informations are expressed in units defined into [measurement
+  35:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  36:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * Several implementations of the Speed and Position Feedback feature are provided by the Motor
+  37:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * to account for the specificities of the motor used on the application:
+  38:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  39:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - @ref hall_speed_pos_fdbk "Hall Speed & Position Feedback" for motors with Hall effect sensors
+  40:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - @ref Encoder "Encoder Speed & Position Feedback" for motors with a quadrature encoder.
+  41:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Two general purpose sensorless implementations are provided:
+  42:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *   @ref SpeednPosFdbk_STO "State Observer with PLL" and
+  43:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *   @ref STO_CORDIC_SpeednPosFdbk "State Observer with CORDIC"
+  44:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - A @ref VirtualSpeedSensor "Virtual Speed & Position Feedback" implementation used during the
+  45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *   @ref RevUpCtrl "Rev-Up Control" phases of the motor in a sensorless subsystem.
+  46:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - @ref In the future a High Frequency Injection for anisotropic I-PMSM motors will be supported
+  47:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  48:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *   For more information see the user manual [Speed position and sensorless BEMF reconstruction](
+  49:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @{
+  50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+  51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+  52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #if defined (CCMRAM)
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 3
+
+
+  53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #if defined (__ICCARM__)
+  54:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #pragma location = ".ccmram"
+  55:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+  56:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __attribute__((section(".ccmram")))
+  57:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+  58:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+  59:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+  60:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the last computed rotor electrical angle, expressed in [s16degrees](measurement
+  61:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+  62:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval int16_t rotor electrical angle.
+  63:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+  64:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak int16_t SPD_GetElAngle(const SpeednPosFdbk_Handle_t *pHandle)
+  65:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+  65              		.loc 1 65 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 8
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  70 0000 80B4     		push	{r7}
+  71              	.LCFI0:
+  72              		.cfi_def_cfa_offset 4
+  73              		.cfi_offset 7, -4
+  74 0002 83B0     		sub	sp, sp, #12
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 16
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 7860     		str	r0, [r7, #4]
+  66:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+  67:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hElAngle);
+  68:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+  69:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (pHandle->hElAngle);
+  81              		.loc 1 69 18
+  82 0008 7B68     		ldr	r3, [r7, #4]
+  83 000a B3F90430 		ldrsh	r3, [r3, #4]
+  70:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+  71:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+  84              		.loc 1 71 1
+  85 000e 1846     		mov	r0, r3
+  86 0010 0C37     		adds	r7, r7, #12
+  87              	.LCFI3:
+  88              		.cfi_def_cfa_offset 4
+  89 0012 BD46     		mov	sp, r7
+  90              	.LCFI4:
+  91              		.cfi_def_cfa_register 13
+  92              		@ sp needed
+  93 0014 5DF8047B 		ldr	r7, [sp], #4
+  94              	.LCFI5:
+  95              		.cfi_restore 7
+  96              		.cfi_def_cfa_offset 0
+  97 0018 7047     		bx	lr
+  98              		.cfi_endproc
+  99              	.LFE1088:
+ 101              		.section	.text.SPD_GetMecAngle,"ax",%progbits
+ 102              		.align	1
+ 103              		.weak	SPD_GetMecAngle
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 4
+
+
+ 104              		.syntax unified
+ 105              		.thumb
+ 106              		.thumb_func
+ 108              	SPD_GetMecAngle:
+ 109              	.LFB1089:
+  72:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+  73:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+  74:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the last computed rotor mechanical angle, expressed in [s16degrees](measurement
+  75:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @note   Both Hall sensor and Sensor-less application do not implement either mechanical angle c
+  76:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         acceleration computation.
+  77:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+  78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval int16_t rotor mechanical angle.
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+  80:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Mechanical angle frame is based on parameter @ref SpeednPosFdbk_Handle_t::bElToMecRatio "bElT
+  81:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * and, if occasionally provided through Encoder function of a measured mechanical angle, on infor
+  82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * thereof.
+  83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called to set a mechanical position ot the rotor.
+  84:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+  85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak int32_t SPD_GetMecAngle(const SpeednPosFdbk_Handle_t *pHandle)
+  86:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 110              		.loc 1 86 1
+ 111              		.cfi_startproc
+ 112              		@ args = 0, pretend = 0, frame = 8
+ 113              		@ frame_needed = 1, uses_anonymous_args = 0
+ 114              		@ link register save eliminated.
+ 115 0000 80B4     		push	{r7}
+ 116              	.LCFI6:
+ 117              		.cfi_def_cfa_offset 4
+ 118              		.cfi_offset 7, -4
+ 119 0002 83B0     		sub	sp, sp, #12
+ 120              	.LCFI7:
+ 121              		.cfi_def_cfa_offset 16
+ 122 0004 00AF     		add	r7, sp, #0
+ 123              	.LCFI8:
+ 124              		.cfi_def_cfa_register 7
+ 125 0006 7860     		str	r0, [r7, #4]
+  87:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+  88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->wMecAngle);
+  89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+  90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (pHandle->wMecAngle);
+ 126              		.loc 1 90 18
+ 127 0008 7B68     		ldr	r3, [r7, #4]
+ 128 000a 9B68     		ldr	r3, [r3, #8]
+  91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+  92:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 129              		.loc 1 92 1
+ 130 000c 1846     		mov	r0, r3
+ 131 000e 0C37     		adds	r7, r7, #12
+ 132              	.LCFI9:
+ 133              		.cfi_def_cfa_offset 4
+ 134 0010 BD46     		mov	sp, r7
+ 135              	.LCFI10:
+ 136              		.cfi_def_cfa_register 13
+ 137              		@ sp needed
+ 138 0012 5DF8047B 		ldr	r7, [sp], #4
+ 139              	.LCFI11:
+ 140              		.cfi_restore 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 5
+
+
+ 141              		.cfi_def_cfa_offset 0
+ 142 0016 7047     		bx	lr
+ 143              		.cfi_endproc
+ 144              	.LFE1089:
+ 146              		.section	.text.SPD_GetAvrgMecSpeedUnit,"ax",%progbits
+ 147              		.align	1
+ 148              		.weak	SPD_GetAvrgMecSpeedUnit
+ 149              		.syntax unified
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	SPD_GetAvrgMecSpeedUnit:
+ 154              	.LFB1090:
+  93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+  94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+  95:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the last computed average mechanical speed, expressed in
+  96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         the unit defined by [SPEED_UNIT](measurement_units.md).
+  97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+  98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+  99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak int16_t SPD_GetAvrgMecSpeedUnit(const SpeednPosFdbk_Handle_t *pHandle)
+ 100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 155              		.loc 1 100 1
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 8
+ 158              		@ frame_needed = 1, uses_anonymous_args = 0
+ 159              		@ link register save eliminated.
+ 160 0000 80B4     		push	{r7}
+ 161              	.LCFI12:
+ 162              		.cfi_def_cfa_offset 4
+ 163              		.cfi_offset 7, -4
+ 164 0002 83B0     		sub	sp, sp, #12
+ 165              	.LCFI13:
+ 166              		.cfi_def_cfa_offset 16
+ 167 0004 00AF     		add	r7, sp, #0
+ 168              	.LCFI14:
+ 169              		.cfi_def_cfa_register 7
+ 170 0006 7860     		str	r0, [r7, #4]
+ 101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 102:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hAvrMecSpeedUnit);
+ 103:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+ 104:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (pHandle->hAvrMecSpeedUnit);
+ 171              		.loc 1 104 18
+ 172 0008 7B68     		ldr	r3, [r7, #4]
+ 173 000a B3F90C30 		ldrsh	r3, [r3, #12]
+ 105:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 174              		.loc 1 106 1
+ 175 000e 1846     		mov	r0, r3
+ 176 0010 0C37     		adds	r7, r7, #12
+ 177              	.LCFI15:
+ 178              		.cfi_def_cfa_offset 4
+ 179 0012 BD46     		mov	sp, r7
+ 180              	.LCFI16:
+ 181              		.cfi_def_cfa_register 13
+ 182              		@ sp needed
+ 183 0014 5DF8047B 		ldr	r7, [sp], #4
+ 184              	.LCFI17:
+ 185              		.cfi_restore 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 6
+
+
+ 186              		.cfi_def_cfa_offset 0
+ 187 0018 7047     		bx	lr
+ 188              		.cfi_endproc
+ 189              	.LFE1090:
+ 191              		.section	.text.SPD_GetElSpeedDpp,"ax",%progbits
+ 192              		.align	1
+ 193              		.weak	SPD_GetElSpeedDpp
+ 194              		.syntax unified
+ 195              		.thumb
+ 196              		.thumb_func
+ 198              	SPD_GetElSpeedDpp:
+ 199              	.LFB1091:
+ 107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 109:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the last computed electrical speed, expressed in [dpp](measurement_units.md).
+ 110:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+ 111:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval int16_t rotor electrical speed ([dpp](measurement_units.md)).
+ 112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 113:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - The control period is the period on which the rotor electrical angle is computed thanks
+ 114:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *   to HALL effect sensor functions.
+ 115:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called during feed-forward controller computation and during Motor profiling.
+ 116:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 117:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak int16_t SPD_GetElSpeedDpp(const SpeednPosFdbk_Handle_t *pHandle)
+ 118:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 200              		.loc 1 118 1
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 8
+ 203              		@ frame_needed = 1, uses_anonymous_args = 0
+ 204              		@ link register save eliminated.
+ 205 0000 80B4     		push	{r7}
+ 206              	.LCFI18:
+ 207              		.cfi_def_cfa_offset 4
+ 208              		.cfi_offset 7, -4
+ 209 0002 83B0     		sub	sp, sp, #12
+ 210              	.LCFI19:
+ 211              		.cfi_def_cfa_offset 16
+ 212 0004 00AF     		add	r7, sp, #0
+ 213              	.LCFI20:
+ 214              		.cfi_def_cfa_register 7
+ 215 0006 7860     		str	r0, [r7, #4]
+ 119:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hElSpeedDpp);
+ 121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+ 122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (pHandle->hElSpeedDpp);
+ 216              		.loc 1 122 18
+ 217 0008 7B68     		ldr	r3, [r7, #4]
+ 218 000a B3F90E30 		ldrsh	r3, [r3, #14]
+ 123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 219              		.loc 1 124 1
+ 220 000e 1846     		mov	r0, r3
+ 221 0010 0C37     		adds	r7, r7, #12
+ 222              	.LCFI21:
+ 223              		.cfi_def_cfa_offset 4
+ 224 0012 BD46     		mov	sp, r7
+ 225              	.LCFI22:
+ 226              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 7
+
+
+ 227              		@ sp needed
+ 228 0014 5DF8047B 		ldr	r7, [sp], #4
+ 229              	.LCFI23:
+ 230              		.cfi_restore 7
+ 231              		.cfi_def_cfa_offset 0
+ 232 0018 7047     		bx	lr
+ 233              		.cfi_endproc
+ 234              	.LFE1091:
+ 236              		.section	.text.SPD_GetInstElSpeedDpp,"ax",%progbits
+ 237              		.align	1
+ 238              		.weak	SPD_GetInstElSpeedDpp
+ 239              		.syntax unified
+ 240              		.thumb
+ 241              		.thumb_func
+ 243              	SPD_GetInstElSpeedDpp:
+ 244              	.LFB1092:
+ 125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #if defined (CCMRAM)
+ 127:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #if defined (__ICCARM__)
+ 128:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #pragma location = ".ccmram"
+ 129:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 130:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __attribute__((section(".ccmram")))
+ 131:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 132:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 133:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 134:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the last instantaneous computed electrical speed, expressed in [dpp](measuremen
+ 135:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+ 136:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval int16_t rotor instantaneous electrical speed ([dpp](measurement_units.md)).
+ 137:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - The control period is the period on which the rotor electrical angle is computed thanks to HA
+ 139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *   functions.
+ 140:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called during FOC drive control for Iqd currents regulation.
+ 141:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak int16_t SPD_GetInstElSpeedDpp(const SpeednPosFdbk_Handle_t *pHandle)
+ 143:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 245              		.loc 1 143 1
+ 246              		.cfi_startproc
+ 247              		@ args = 0, pretend = 0, frame = 8
+ 248              		@ frame_needed = 1, uses_anonymous_args = 0
+ 249              		@ link register save eliminated.
+ 250 0000 80B4     		push	{r7}
+ 251              	.LCFI24:
+ 252              		.cfi_def_cfa_offset 4
+ 253              		.cfi_offset 7, -4
+ 254 0002 83B0     		sub	sp, sp, #12
+ 255              	.LCFI25:
+ 256              		.cfi_def_cfa_offset 16
+ 257 0004 00AF     		add	r7, sp, #0
+ 258              	.LCFI26:
+ 259              		.cfi_def_cfa_register 7
+ 260 0006 7860     		str	r0, [r7, #4]
+ 144:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 145:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->InstantaneousElSpeedDpp);
+ 146:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+ 147:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (pHandle->InstantaneousElSpeedDpp);
+ 261              		.loc 1 147 18
+ 262 0008 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 8
+
+
+ 263 000a B3F91030 		ldrsh	r3, [r3, #16]
+ 148:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 149:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 264              		.loc 1 149 1
+ 265 000e 1846     		mov	r0, r3
+ 266 0010 0C37     		adds	r7, r7, #12
+ 267              	.LCFI27:
+ 268              		.cfi_def_cfa_offset 4
+ 269 0012 BD46     		mov	sp, r7
+ 270              	.LCFI28:
+ 271              		.cfi_def_cfa_register 13
+ 272              		@ sp needed
+ 273 0014 5DF8047B 		ldr	r7, [sp], #4
+ 274              	.LCFI29:
+ 275              		.cfi_restore 7
+ 276              		.cfi_def_cfa_offset 0
+ 277 0018 7047     		bx	lr
+ 278              		.cfi_endproc
+ 279              	.LFE1092:
+ 281              		.section	.text.SPD_Check,"ax",%progbits
+ 282              		.align	1
+ 283              		.weak	SPD_Check
+ 284              		.syntax unified
+ 285              		.thumb
+ 286              		.thumb_func
+ 288              	SPD_Check:
+ 289              	.LFB1093:
+ 150:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 151:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 152:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the result of the last reliability check performed.
+ 153:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+ 154:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval bool sensor reliability state.
+ 155:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 156:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Reliability is measured with reference to parameters
+ 157:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @ref SpeednPosFdbk_Handle_t::hMaxReliableMecSpeedUnit "hMaxReliableMecSpeedUnit",
+ 158:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @ref SpeednPosFdbk_Handle_t::hMinReliableMecSpeedUnit "hMaxReliableMecSpeedUnit",
+ 159:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @ref SpeednPosFdbk_Handle_t::bMaximumSpeedErrorsNumber "bMaximumSpeedErrorsNumber".
+ 160:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - If the number of time the average mechanical speed is not valid matches the
+ 161:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *  maximum value of not valid speed measurements, sensor information is not reliable.
+ 162:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Embedded into construction of the MC_GetSpeedSensorReliabilityMotor API.
+ 163:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - The return value is a boolean that expresses:\n
+ 164:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * -- true  = sensor information is reliable.\n
+ 165:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * -- false = sensor information is not reliable.
+ 166:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 167:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak bool SPD_Check(const SpeednPosFdbk_Handle_t *pHandle)
+ 168:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 290              		.loc 1 168 1
+ 291              		.cfi_startproc
+ 292              		@ args = 0, pretend = 0, frame = 16
+ 293              		@ frame_needed = 1, uses_anonymous_args = 0
+ 294              		@ link register save eliminated.
+ 295 0000 80B4     		push	{r7}
+ 296              	.LCFI30:
+ 297              		.cfi_def_cfa_offset 4
+ 298              		.cfi_offset 7, -4
+ 299 0002 85B0     		sub	sp, sp, #20
+ 300              	.LCFI31:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 9
+
+
+ 301              		.cfi_def_cfa_offset 24
+ 302 0004 00AF     		add	r7, sp, #0
+ 303              	.LCFI32:
+ 304              		.cfi_def_cfa_register 7
+ 305 0006 7860     		str	r0, [r7, #4]
+ 169:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   bool SpeedSensorReliability = true;
+ 306              		.loc 1 169 8
+ 307 0008 0123     		movs	r3, #1
+ 308 000a FB73     		strb	r3, [r7, #15]
+ 170:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 171:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   if ((MC_NULL == pHandle) || (pHandle->bSpeedErrorNumber == pHandle->bMaximumSpeedErrorsNumber))
+ 172:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+ 173:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   if (pHandle->bSpeedErrorNumber == pHandle->bMaximumSpeedErrorsNumber)
+ 309              		.loc 1 173 14
+ 310 000c 7B68     		ldr	r3, [r7, #4]
+ 311 000e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 312              		.loc 1 173 44
+ 313 0010 7B68     		ldr	r3, [r7, #4]
+ 314 0012 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 315              		.loc 1 173 6
+ 316 0014 9A42     		cmp	r2, r3
+ 317 0016 01D1     		bne	.L12
+ 174:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 175:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 176:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     SpeedSensorReliability = false;
+ 318              		.loc 1 176 28
+ 319 0018 0023     		movs	r3, #0
+ 320 001a FB73     		strb	r3, [r7, #15]
+ 321              	.L12:
+ 177:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 178:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   else
+ 179:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 180:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     /* Nothing to do */
+ 181:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 182:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (SpeedSensorReliability);
+ 322              		.loc 1 182 10
+ 323 001c FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 183:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 324              		.loc 1 183 1
+ 325 001e 1846     		mov	r0, r3
+ 326 0020 1437     		adds	r7, r7, #20
+ 327              	.LCFI33:
+ 328              		.cfi_def_cfa_offset 4
+ 329 0022 BD46     		mov	sp, r7
+ 330              	.LCFI34:
+ 331              		.cfi_def_cfa_register 13
+ 332              		@ sp needed
+ 333 0024 5DF8047B 		ldr	r7, [sp], #4
+ 334              	.LCFI35:
+ 335              		.cfi_restore 7
+ 336              		.cfi_def_cfa_offset 0
+ 337 0028 7047     		bx	lr
+ 338              		.cfi_endproc
+ 339              	.LFE1093:
+ 341              		.section	.text.SPD_IsMecSpeedReliable,"ax",%progbits
+ 342              		.align	1
+ 343              		.weak	SPD_IsMecSpeedReliable
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 10
+
+
+ 344              		.syntax unified
+ 345              		.thumb
+ 346              		.thumb_func
+ 348              	SPD_IsMecSpeedReliable:
+ 349              	.LFB1094:
+ 184:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 185:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #if defined (CCMRAM)
+ 186:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #if defined (__ICCARM__)
+ 187:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #pragma location = ".ccmram"
+ 188:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 189:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __attribute__((section(".ccmram")))
+ 190:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 191:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 192:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 193:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 194:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Computes and returns through parameter @ref SpeednPosFdbk_Handle_t::pMecSpeedUnit "pMec
+ 195:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         the rotor average mechanical speed, expressed in the unit defined by
+ 196:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         @ref SpeednPosFdbk_Handle_t::SpeedUnit "SpeedUnit".
+ 197:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+ 198:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pMecSpeedUnit: pointer to int16_t, used to return the rotor average
+ 199:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         mechanical speed (expressed in the unit defined by [SPEED_UNIT](measurement_units.md).
+ 200:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval none
+ 201:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 202:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Computes and returns the reliability state of the sensor. Reliability is measured with
+ 203:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * reference to parameters @ref SpeednPosFdbk_Handle_t::hMinReliableMecSpeedUnit "hMinReliableMecS
+ 204:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @ref SpeednPosFdbk_Handle_t::hMaxReliableMecSpeedUnit "hMaxReliableMecSpeedUnit",
+ 205:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @ref SpeednPosFdbk_Handle_t::bMaximumSpeedErrorsNumber "bMaximumSpeedErrorsNumber"\n
+ 206:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * -- true  = sensor information is reliable.\n
+ 207:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * -- false = sensor information is not reliable.\n
+ 208:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called at least with the same periodicity on which speed control is executed.
+ 209:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         -
+ 210:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 211:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 212:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak bool SPD_IsMecSpeedReliable(SpeednPosFdbk_Handle_t *pHandle, const int16_t *pMecSpeedUnit)
+ 213:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 350              		.loc 1 213 1
+ 351              		.cfi_startproc
+ 352              		@ args = 0, pretend = 0, frame = 24
+ 353              		@ frame_needed = 1, uses_anonymous_args = 0
+ 354              		@ link register save eliminated.
+ 355 0000 80B4     		push	{r7}
+ 356              	.LCFI36:
+ 357              		.cfi_def_cfa_offset 4
+ 358              		.cfi_offset 7, -4
+ 359 0002 87B0     		sub	sp, sp, #28
+ 360              	.LCFI37:
+ 361              		.cfi_def_cfa_offset 32
+ 362 0004 00AF     		add	r7, sp, #0
+ 363              	.LCFI38:
+ 364              		.cfi_def_cfa_register 7
+ 365 0006 7860     		str	r0, [r7, #4]
+ 366 0008 3960     		str	r1, [r7]
+ 214:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   bool SpeedSensorReliability = true;
+ 367              		.loc 1 214 8
+ 368 000a 0123     		movs	r3, #1
+ 369 000c FB75     		strb	r3, [r7, #23]
+ 215:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 11
+
+
+ 216:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   if ((MC_NULL == pHandle) || (MC_NULL == pMecSpeedUnit))
+ 217:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 218:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     SpeedSensorReliability = false;
+ 219:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 220:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   else
+ 221:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 222:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 223:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     uint16_t hAbsMecSpeedUnit;
+ 224:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     uint16_t hAbsMecAccelUnitP;
+ 225:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     int16_t hAux;
+ 226:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     uint8_t bSpeedErrorNumber;
+ 227:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     uint8_t bMaximumSpeedErrorsNumber = pHandle->bMaximumSpeedErrorsNumber;
+ 370              		.loc 1 227 13
+ 371 000e 7B68     		ldr	r3, [r7, #4]
+ 372 0010 DB78     		ldrb	r3, [r3, #3]
+ 373 0012 FB73     		strb	r3, [r7, #15]
+ 228:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     bool SpeedError = false;
+ 374              		.loc 1 228 10
+ 375 0014 0023     		movs	r3, #0
+ 376 0016 3B74     		strb	r3, [r7, #16]
+ 229:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 230:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     bSpeedErrorNumber = pHandle->bSpeedErrorNumber;
+ 377              		.loc 1 230 23
+ 378 0018 7B68     		ldr	r3, [r7, #4]
+ 379 001a 1B78     		ldrb	r3, [r3]
+ 380 001c 7B74     		strb	r3, [r7, #17]
+ 231:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 232:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     /* Compute absoulte value of mechanical speed */
+ 233:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (*pMecSpeedUnit < 0)
+ 381              		.loc 1 233 9
+ 382 001e 3B68     		ldr	r3, [r7]
+ 383 0020 B3F90030 		ldrsh	r3, [r3]
+ 384              		.loc 1 233 8
+ 385 0024 002B     		cmp	r3, #0
+ 386 0026 09DA     		bge	.L15
+ 234:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 235:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       hAux = -(*pMecSpeedUnit);
+ 387              		.loc 1 235 16
+ 388 0028 3B68     		ldr	r3, [r7]
+ 389 002a B3F90030 		ldrsh	r3, [r3]
+ 390 002e 9BB2     		uxth	r3, r3
+ 391              		.loc 1 235 12
+ 392 0030 5B42     		rsbs	r3, r3, #0
+ 393 0032 9BB2     		uxth	r3, r3
+ 394 0034 BB81     		strh	r3, [r7, #12]	@ movhi
+ 236:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       hAbsMecSpeedUnit = (uint16_t)hAux;
+ 395              		.loc 1 236 24
+ 396 0036 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 397 0038 BB82     		strh	r3, [r7, #20]	@ movhi
+ 398 003a 03E0     		b	.L16
+ 399              	.L15:
+ 237:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 238:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 239:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 240:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       hAbsMecSpeedUnit = (uint16_t)(*pMecSpeedUnit);
+ 400              		.loc 1 240 37
+ 401 003c 3B68     		ldr	r3, [r7]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 12
+
+
+ 402 003e B3F90030 		ldrsh	r3, [r3]
+ 403              		.loc 1 240 24
+ 404 0042 BB82     		strh	r3, [r7, #20]	@ movhi
+ 405              	.L16:
+ 241:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 242:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 243:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (hAbsMecSpeedUnit > pHandle->hMaxReliableMecSpeedUnit)
+ 406              		.loc 1 243 35
+ 407 0044 7B68     		ldr	r3, [r7, #4]
+ 408 0046 9B8A     		ldrh	r3, [r3, #20]
+ 409              		.loc 1 243 8
+ 410 0048 BA8A     		ldrh	r2, [r7, #20]
+ 411 004a 9A42     		cmp	r2, r3
+ 412 004c 01D9     		bls	.L17
+ 244:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 245:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       SpeedError = true;
+ 413              		.loc 1 245 18
+ 414 004e 0123     		movs	r3, #1
+ 415 0050 3B74     		strb	r3, [r7, #16]
+ 416              	.L17:
+ 246:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 247:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 248:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 249:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       /* Nothing to do */
+ 250:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 251:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 252:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (hAbsMecSpeedUnit < pHandle->hMinReliableMecSpeedUnit)
+ 417              		.loc 1 252 35
+ 418 0052 7B68     		ldr	r3, [r7, #4]
+ 419 0054 DB8A     		ldrh	r3, [r3, #22]
+ 420              		.loc 1 252 8
+ 421 0056 BA8A     		ldrh	r2, [r7, #20]
+ 422 0058 9A42     		cmp	r2, r3
+ 423 005a 01D2     		bcs	.L18
+ 253:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 254:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       SpeedError = true;
+ 424              		.loc 1 254 18
+ 425 005c 0123     		movs	r3, #1
+ 426 005e 3B74     		strb	r3, [r7, #16]
+ 427              	.L18:
+ 255:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 256:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 257:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 258:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       /* Nothing to do */
+ 259:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 260:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 261:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     /* Compute absoulte value of mechanical acceleration */
+ 262:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (pHandle->hMecAccelUnitP < 0)
+ 428              		.loc 1 262 16
+ 429 0060 7B68     		ldr	r3, [r7, #4]
+ 430 0062 B3F91230 		ldrsh	r3, [r3, #18]
+ 431              		.loc 1 262 8
+ 432 0066 002B     		cmp	r3, #0
+ 433 0068 09DA     		bge	.L19
+ 263:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 264:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       hAux = -(pHandle->hMecAccelUnitP);
+ 434              		.loc 1 264 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 13
+
+
+ 435 006a 7B68     		ldr	r3, [r7, #4]
+ 436 006c B3F91230 		ldrsh	r3, [r3, #18]
+ 437 0070 9BB2     		uxth	r3, r3
+ 438              		.loc 1 264 12
+ 439 0072 5B42     		rsbs	r3, r3, #0
+ 440 0074 9BB2     		uxth	r3, r3
+ 441 0076 BB81     		strh	r3, [r7, #12]	@ movhi
+ 265:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       hAbsMecAccelUnitP = (uint16_t)hAux;
+ 442              		.loc 1 265 25
+ 443 0078 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 444 007a 7B82     		strh	r3, [r7, #18]	@ movhi
+ 445 007c 03E0     		b	.L20
+ 446              	.L19:
+ 266:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 267:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 268:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 269:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       hAbsMecAccelUnitP = (uint16_t)pHandle->hMecAccelUnitP;
+ 447              		.loc 1 269 44
+ 448 007e 7B68     		ldr	r3, [r7, #4]
+ 449 0080 B3F91230 		ldrsh	r3, [r3, #18]
+ 450              		.loc 1 269 25
+ 451 0084 7B82     		strh	r3, [r7, #18]	@ movhi
+ 452              	.L20:
+ 270:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 271:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 272:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (hAbsMecAccelUnitP > pHandle->hMaxReliableMecAccelUnitP)
+ 453              		.loc 1 272 36
+ 454 0086 7B68     		ldr	r3, [r7, #4]
+ 455 0088 1B8B     		ldrh	r3, [r3, #24]
+ 456              		.loc 1 272 8
+ 457 008a 7A8A     		ldrh	r2, [r7, #18]
+ 458 008c 9A42     		cmp	r2, r3
+ 459 008e 01D9     		bls	.L21
+ 273:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 274:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       SpeedError = true;
+ 460              		.loc 1 274 18
+ 461 0090 0123     		movs	r3, #1
+ 462 0092 3B74     		strb	r3, [r7, #16]
+ 463              	.L21:
+ 275:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 276:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 277:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 278:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       /* Nothing to do */
+ 279:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 280:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 281:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (true == SpeedError)
+ 464              		.loc 1 281 8
+ 465 0094 3B7C     		ldrb	r3, [r7, #16]	@ zero_extendqisi2
+ 466 0096 002B     		cmp	r3, #0
+ 467 0098 07D0     		beq	.L22
+ 282:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 283:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       if (bSpeedErrorNumber < bMaximumSpeedErrorsNumber)
+ 468              		.loc 1 283 10
+ 469 009a 7A7C     		ldrb	r2, [r7, #17]	@ zero_extendqisi2
+ 470 009c FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 471 009e 9A42     		cmp	r2, r3
+ 472 00a0 09D2     		bcs	.L23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 14
+
+
+ 284:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       {
+ 285:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****         bSpeedErrorNumber++;
+ 473              		.loc 1 285 26
+ 474 00a2 7B7C     		ldrb	r3, [r7, #17]	@ zero_extendqisi2
+ 475 00a4 0133     		adds	r3, r3, #1
+ 476 00a6 7B74     		strb	r3, [r7, #17]
+ 477 00a8 05E0     		b	.L23
+ 478              	.L22:
+ 286:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       }
+ 287:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       else
+ 288:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       {
+ 289:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****         /* Nothing to do */
+ 290:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       }
+ 291:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 292:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 293:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 294:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       if (bSpeedErrorNumber < bMaximumSpeedErrorsNumber)
+ 479              		.loc 1 294 10
+ 480 00aa 7A7C     		ldrb	r2, [r7, #17]	@ zero_extendqisi2
+ 481 00ac FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 482 00ae 9A42     		cmp	r2, r3
+ 483 00b0 01D2     		bcs	.L23
+ 295:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       {
+ 296:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****         bSpeedErrorNumber = 0u;
+ 484              		.loc 1 296 27
+ 485 00b2 0023     		movs	r3, #0
+ 486 00b4 7B74     		strb	r3, [r7, #17]
+ 487              	.L23:
+ 297:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       }
+ 298:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       else
+ 299:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       {
+ 300:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****         /* Nothing to do */
+ 301:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       }
+ 302:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 303:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 304:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     if (bSpeedErrorNumber == bMaximumSpeedErrorsNumber)
+ 488              		.loc 1 304 8
+ 489 00b6 7A7C     		ldrb	r2, [r7, #17]	@ zero_extendqisi2
+ 490 00b8 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 491 00ba 9A42     		cmp	r2, r3
+ 492 00bc 01D1     		bne	.L24
+ 305:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 306:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       SpeedSensorReliability = false;
+ 493              		.loc 1 306 30
+ 494 00be 0023     		movs	r3, #0
+ 495 00c0 FB75     		strb	r3, [r7, #23]
+ 496              	.L24:
+ 307:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 308:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     else
+ 309:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     {
+ 310:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****       /* Nothing to do */
+ 311:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     }
+ 312:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 313:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     pHandle->bSpeedErrorNumber = bSpeedErrorNumber;
+ 497              		.loc 1 313 32
+ 498 00c2 7B68     		ldr	r3, [r7, #4]
+ 499 00c4 7A7C     		ldrb	r2, [r7, #17]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 15
+
+
+ 500 00c6 1A70     		strb	r2, [r3]
+ 314:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 315:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 316:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 317:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (SpeedSensorReliability);
+ 501              		.loc 1 317 10
+ 502 00c8 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 318:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 503              		.loc 1 318 1
+ 504 00ca 1846     		mov	r0, r3
+ 505 00cc 1C37     		adds	r7, r7, #28
+ 506              	.LCFI39:
+ 507              		.cfi_def_cfa_offset 4
+ 508 00ce BD46     		mov	sp, r7
+ 509              	.LCFI40:
+ 510              		.cfi_def_cfa_register 13
+ 511              		@ sp needed
+ 512 00d0 5DF8047B 		ldr	r7, [sp], #4
+ 513              	.LCFI41:
+ 514              		.cfi_restore 7
+ 515              		.cfi_def_cfa_offset 0
+ 516 00d4 7047     		bx	lr
+ 517              		.cfi_endproc
+ 518              	.LFE1094:
+ 520              		.section	.text.SPD_GetS16Speed,"ax",%progbits
+ 521              		.align	1
+ 522              		.weak	SPD_GetS16Speed
+ 523              		.syntax unified
+ 524              		.thumb
+ 525              		.thumb_func
+ 527              	SPD_GetS16Speed:
+ 528              	.LFB1095:
+ 319:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 320:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 321:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the average mechanical rotor speed expressed in [S16Speed](measurement_units.md
+ 322:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component
+ 323:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval int16_t The average mechanical rotor speed.
+ 324:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 325:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - The value equals:\n
+ 326:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * -- zero      when the average mechanical speed is equal zero,\n
+ 327:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * -- INT16_MAX when the average mechanical speed is equal to
+ 328:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @ref SpeednPosFdbk_Handle_t::hMaxReliableMecSpeedUnit "hMaxReliableMecSpeedUnit" ,\n
+ 329:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called for speed monitoring through MotorPilote.
+ 330:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 331:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak int16_t SPD_GetS16Speed(const SpeednPosFdbk_Handle_t *pHandle)
+ 332:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 529              		.loc 1 332 1
+ 530              		.cfi_startproc
+ 531              		@ args = 0, pretend = 0, frame = 16
+ 532              		@ frame_needed = 1, uses_anonymous_args = 0
+ 533              		@ link register save eliminated.
+ 534 0000 80B4     		push	{r7}
+ 535              	.LCFI42:
+ 536              		.cfi_def_cfa_offset 4
+ 537              		.cfi_offset 7, -4
+ 538 0002 85B0     		sub	sp, sp, #20
+ 539              	.LCFI43:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 16
+
+
+ 540              		.cfi_def_cfa_offset 24
+ 541 0004 00AF     		add	r7, sp, #0
+ 542              	.LCFI44:
+ 543              		.cfi_def_cfa_register 7
+ 544 0006 7860     		str	r0, [r7, #4]
+ 333:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   int16_t tempValue;
+ 334:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 335:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   if (MC_NULL == pHandle)
+ 336:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 337:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     tempValue = 0;
+ 338:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 339:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   else
+ 340:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 341:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 342:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     int32_t wAux = (int32_t)pHandle->hAvrMecSpeedUnit;
+ 545              		.loc 1 342 36
+ 546 0008 7B68     		ldr	r3, [r7, #4]
+ 547 000a B3F90C30 		ldrsh	r3, [r3, #12]
+ 548              		.loc 1 342 13
+ 549 000e FB60     		str	r3, [r7, #12]
+ 343:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     wAux *= INT16_MAX;
+ 550              		.loc 1 343 10
+ 551 0010 FA68     		ldr	r2, [r7, #12]
+ 552 0012 1346     		mov	r3, r2
+ 553 0014 DB03     		lsls	r3, r3, #15
+ 554 0016 9B1A     		subs	r3, r3, r2
+ 555 0018 FB60     		str	r3, [r7, #12]
+ 344:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     wAux /= (int16_t)pHandle->hMaxReliableMecSpeedUnit;
+ 556              		.loc 1 344 29
+ 557 001a 7B68     		ldr	r3, [r7, #4]
+ 558 001c 9B8A     		ldrh	r3, [r3, #20]
+ 559              		.loc 1 344 13
+ 560 001e 1BB2     		sxth	r3, r3
+ 561 0020 1A46     		mov	r2, r3
+ 562              		.loc 1 344 10
+ 563 0022 FB68     		ldr	r3, [r7, #12]
+ 564 0024 93FBF2F3 		sdiv	r3, r3, r2
+ 565 0028 FB60     		str	r3, [r7, #12]
+ 345:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     tempValue = (int16_t)wAux;
+ 566              		.loc 1 345 15
+ 567 002a FB68     		ldr	r3, [r7, #12]
+ 568 002c 7B81     		strh	r3, [r7, #10]	@ movhi
+ 346:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 347:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 348:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 349:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (tempValue);
+ 569              		.loc 1 349 10
+ 570 002e B7F90A30 		ldrsh	r3, [r7, #10]
+ 350:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 571              		.loc 1 350 1
+ 572 0032 1846     		mov	r0, r3
+ 573 0034 1437     		adds	r7, r7, #20
+ 574              	.LCFI45:
+ 575              		.cfi_def_cfa_offset 4
+ 576 0036 BD46     		mov	sp, r7
+ 577              	.LCFI46:
+ 578              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 17
+
+
+ 579              		@ sp needed
+ 580 0038 5DF8047B 		ldr	r7, [sp], #4
+ 581              	.LCFI47:
+ 582              		.cfi_restore 7
+ 583              		.cfi_def_cfa_offset 0
+ 584 003c 7047     		bx	lr
+ 585              		.cfi_endproc
+ 586              	.LFE1095:
+ 588              		.section	.text.SPD_GetElToMecRatio,"ax",%progbits
+ 589              		.align	1
+ 590              		.weak	SPD_GetElToMecRatio
+ 591              		.syntax unified
+ 592              		.thumb
+ 593              		.thumb_func
+ 595              	SPD_GetElToMecRatio:
+ 596              	.LFB1096:
+ 351:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 352:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 353:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Returns the coefficient used to transform electrical to
+ 354:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         mechanical quantities and viceversa. It usually coincides with motor
+ 355:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         pole pairs number.
+ 356:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+ 357:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @retval uint8_t The motor pole pairs number.
+ 358:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 359:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called by motor profiling functions and for monitoring through motorPilote.
+ 360:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 361:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak uint8_t SPD_GetElToMecRatio(const SpeednPosFdbk_Handle_t *pHandle)
+ 362:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 597              		.loc 1 362 1
+ 598              		.cfi_startproc
+ 599              		@ args = 0, pretend = 0, frame = 8
+ 600              		@ frame_needed = 1, uses_anonymous_args = 0
+ 601              		@ link register save eliminated.
+ 602 0000 80B4     		push	{r7}
+ 603              	.LCFI48:
+ 604              		.cfi_def_cfa_offset 4
+ 605              		.cfi_offset 7, -4
+ 606 0002 83B0     		sub	sp, sp, #12
+ 607              	.LCFI49:
+ 608              		.cfi_def_cfa_offset 16
+ 609 0004 00AF     		add	r7, sp, #0
+ 610              	.LCFI50:
+ 611              		.cfi_def_cfa_register 7
+ 612 0006 7860     		str	r0, [r7, #4]
+ 363:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 364:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->bElToMecRatio);
+ 365:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #else
+ 366:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   return (pHandle->bElToMecRatio);
+ 613              		.loc 1 366 18
+ 614 0008 7B68     		ldr	r3, [r7, #4]
+ 615 000a 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 367:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 368:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 616              		.loc 1 368 1
+ 617 000c 1846     		mov	r0, r3
+ 618 000e 0C37     		adds	r7, r7, #12
+ 619              	.LCFI51:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 18
+
+
+ 620              		.cfi_def_cfa_offset 4
+ 621 0010 BD46     		mov	sp, r7
+ 622              	.LCFI52:
+ 623              		.cfi_def_cfa_register 13
+ 624              		@ sp needed
+ 625 0012 5DF8047B 		ldr	r7, [sp], #4
+ 626              	.LCFI53:
+ 627              		.cfi_restore 7
+ 628              		.cfi_def_cfa_offset 0
+ 629 0016 7047     		bx	lr
+ 630              		.cfi_endproc
+ 631              	.LFE1096:
+ 633              		.section	.text.SPD_SetElToMecRatio,"ax",%progbits
+ 634              		.align	1
+ 635              		.weak	SPD_SetElToMecRatio
+ 636              		.syntax unified
+ 637              		.thumb
+ 638              		.thumb_func
+ 640              	SPD_SetElToMecRatio:
+ 641              	.LFB1097:
+ 369:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** 
+ 370:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** /**
+ 371:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @brief  Sets the coefficient used to transform electrical to
+ 372:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         mechanical quantities and viceversa. It usually coincides with motor
+ 373:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *         pole pairs number.
+ 374:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  pHandle: handler of the current instance of the SpeednPosFdbk component.
+ 375:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * @param  bPP The motor pole pairs number to be set.
+ 376:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   *
+ 377:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   * - Called only for monitoring through motorPilote.
+ 378:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   */
+ 379:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** __weak void SPD_SetElToMecRatio(SpeednPosFdbk_Handle_t *pHandle, uint8_t bPP)
+ 380:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** {
+ 642              		.loc 1 380 1
+ 643              		.cfi_startproc
+ 644              		@ args = 0, pretend = 0, frame = 8
+ 645              		@ frame_needed = 1, uses_anonymous_args = 0
+ 646              		@ link register save eliminated.
+ 647 0000 80B4     		push	{r7}
+ 648              	.LCFI54:
+ 649              		.cfi_def_cfa_offset 4
+ 650              		.cfi_offset 7, -4
+ 651 0002 83B0     		sub	sp, sp, #12
+ 652              	.LCFI55:
+ 653              		.cfi_def_cfa_offset 16
+ 654 0004 00AF     		add	r7, sp, #0
+ 655              	.LCFI56:
+ 656              		.cfi_def_cfa_register 7
+ 657 0006 7860     		str	r0, [r7, #4]
+ 658 0008 0B46     		mov	r3, r1
+ 659 000a FB70     		strb	r3, [r7, #3]
+ 381:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 382:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   if (MC_NULL == pHandle)
+ 383:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ 384:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     /* Nothing to do */
+ 385:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 386:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   else
+ 387:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   {
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 19
+
+
+ 388:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 389:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****     pHandle->bElToMecRatio = bPP;
+ 660              		.loc 1 389 28
+ 661 000c 7B68     		ldr	r3, [r7, #4]
+ 662 000e FA78     		ldrb	r2, [r7, #3]
+ 663 0010 5A70     		strb	r2, [r3, #1]
+ 390:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #ifdef NULL_PTR_CHECK_SPD_POS_FBK
+ 391:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c ****   }
+ 392:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** #endif
+ 393:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/speed_pos_fdbk.c **** }
+ 664              		.loc 1 393 1
+ 665 0012 00BF     		nop
+ 666 0014 0C37     		adds	r7, r7, #12
+ 667              	.LCFI57:
+ 668              		.cfi_def_cfa_offset 4
+ 669 0016 BD46     		mov	sp, r7
+ 670              	.LCFI58:
+ 671              		.cfi_def_cfa_register 13
+ 672              		@ sp needed
+ 673 0018 5DF8047B 		ldr	r7, [sp], #4
+ 674              	.LCFI59:
+ 675              		.cfi_restore 7
+ 676              		.cfi_def_cfa_offset 0
+ 677 001c 7047     		bx	lr
+ 678              		.cfi_endproc
+ 679              	.LFE1097:
+ 681              		.text
+ 682              	.Letext0:
+ 683              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 684              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 685              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 686              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 687              		.file 6 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 speed_pos_fdbk.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:56     .text.SPD_GetElAngle:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:62     .text.SPD_GetElAngle:00000000 SPD_GetElAngle
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:102    .text.SPD_GetMecAngle:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:108    .text.SPD_GetMecAngle:00000000 SPD_GetMecAngle
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:147    .text.SPD_GetAvrgMecSpeedUnit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:153    .text.SPD_GetAvrgMecSpeedUnit:00000000 SPD_GetAvrgMecSpeedUnit
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:192    .text.SPD_GetElSpeedDpp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:198    .text.SPD_GetElSpeedDpp:00000000 SPD_GetElSpeedDpp
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:237    .text.SPD_GetInstElSpeedDpp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:243    .text.SPD_GetInstElSpeedDpp:00000000 SPD_GetInstElSpeedDpp
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:282    .text.SPD_Check:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:288    .text.SPD_Check:00000000 SPD_Check
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:342    .text.SPD_IsMecSpeedReliable:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:348    .text.SPD_IsMecSpeedReliable:00000000 SPD_IsMecSpeedReliable
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:521    .text.SPD_GetS16Speed:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:527    .text.SPD_GetS16Speed:00000000 SPD_GetS16Speed
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:589    .text.SPD_GetElToMecRatio:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:595    .text.SPD_GetElToMecRatio:00000000 SPD_GetElToMecRatio
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:634    .text.SPD_SetElToMecRatio:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccaWefLC.s:640    .text.SPD_SetElToMecRatio:00000000 SPD_SetElToMecRatio
+
+NO UNDEFINED SYMBOLS

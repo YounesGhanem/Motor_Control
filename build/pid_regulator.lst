@@ -1,0 +1,2602 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"pid_regulator.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.PID_HandleInit,"ax",%progbits
+  56              		.align	1
+  57              		.weak	PID_HandleInit
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	PID_HandleInit:
+  63              	.LFB1088:
+  64              		.file 1 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c"
+   1:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+   2:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   ******************************************************************************
+   3:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @file    pid_regulator.c
+   4:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief   This file provides firmware functions that implement the features
+   6:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *          of the PID regulator component of the Motor Control SDK.
+   7:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+   8:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *  The PID regulator component provides the functions needed to implement 
+   9:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * a proportional–integral–derivative controller. 
+  10:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  11:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * See @link PIDRegulator @endlink for more details.
+  12:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  13:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   ******************************************************************************
+  14:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @attention
+  15:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  16:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  17:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * All rights reserved.</center></h2>
+  18:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  19:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  20:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  21:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * the License. You may obtain a copy of the License at:
+  22:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *                             www.st.com/SLA0044
+  23:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  24:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   ******************************************************************************
+  25:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @ingroup PIDRegulator
+  26:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+  27:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+  28:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /* Includes ------------------------------------------------------------------*/
+  29:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #include "pid_regulator.h"
+  30:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #include "mc_type.h"
+  31:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+  32:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /** @addtogroup MCSDK
+  33:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @{
+  34:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+  35:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+  36:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+  37:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @defgroup PIDRegulator PID Regulator
+  38:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief PID Regulator component of the Motor Control SDK
+  39:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  40:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The PID regulator component implements the following two control functions:
+  41:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  42:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * * A simple proportional-integral controller, implemented by the PI_Controller() function:
+  43:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @f[
+  44:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * r(t_k) = K_p \times \epsilon(t_k) + K_i \times \sum_{j=0}^k\epsilon(t_j)
+  45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @f]
+  46:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * * A complete proportional–integral–derivative controller, implemented by the PID_Controller
+  47:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @f[
+  48:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * r(t_k) = K_p \times \epsilon(t_k) + K_i \times \sum_{j=0}^k\epsilon(t_j) + K_d \times (\epsilon
+  49:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @f]
+  50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The proportional, integral and derivative gains are expressed as rational numbers, with a gain 
+  52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * and a divisor (denominator) parameters:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 3
+
+
+  53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  54:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * * Proportional gain: @f$ K_{p} = K_{pg} / K_{pd} @f$
+  55:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * * Integral gain: @f$ K_{i} = K_{ig} / K_{id} @f$
+  56:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * * Derivative gain: @f$ K_{d} = K_{dg} / K_{dd} @f$
+  57:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  58:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * Each of the gain numerator and divisor parameters, @f$K_{{p}g}@f$, @f$K_{{i}g}@f$, @f$K_{{d}g}@
+  59:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @f$K_{id}@f$, @f$K_{dd}@f$, can be set, at run time and independently, via the PID_SetKP(), PID
+  60:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * PID_SetKPDivisorPOW2(), PID_SetKIDivisorPOW2() and PID_SetKDDivisorPOW2() functions, respective
+  61:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  62:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * A PID Regulator component needs to be initialized before it can be used. This is done with the 
+  63:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * function that sets the intergral term and the derivative term base (the previous value of the p
+  64:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * to 0 and that also resets the numerators of the proportional, integral and derivative gains to 
+  65:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * These default values are literally written in the code of the application, so they are set at c
+  66:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * can be retrieved with the PID_GetDefaultKP(), PID_GetDefaultKI() and PID_GetDefaultKD() functio
+  67:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  68:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The controller functions implemented by the PI_Controller() and the PID_Controller() functions 
+  69:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * integer arithmetics: the gains are expressed as fractional numbers, with 16-bit numerators and 
+  70:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * controller output values returned by these functions are also 16-bit integers. This makes it po
+  71:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * component efficiently on all STM2 MCUs. 
+  72:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  73:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * To keep the computed values within limits, the component features the possibility to constrain 
+  74:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * within a range of values bounded by the PID_SetLowerIntegralTermLimit() and PID_SetUpperIntegra
+  75:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  76:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The output valud of the controller can also be bounded between a high and a low limit thanks to
+  77:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * PID_SetLowerOutputLimit() and PID_SetUpperOutputLimit() functions.
+  78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * Hanlding a process with a PID Controller may require some adjustment to cope with specific situ
+  80:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * PID regulator component provides functions to set the integral term (PID_SetIntegralTerm()) or 
+  81:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * previous process error (PID_SetPrevError()).
+  82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * See the [PID chapter of the User Manual](PID_regulator_theoretical_background.md) for more deta
+  84:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * background of this regulator.
+  85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @{
+  86:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+  87:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+  88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+  89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Initializes the handle of a PID component
+  90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle A Handle on the PID component to initialize
+  91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  92:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The integral term and the derivative base of the PID component are 
+  93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * set to zero. 
+  94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+  95:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The numerators of the proportional, integral and derivative gains 
+  96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * are set to their default values. These default values are the ones 
+  97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * set to the PID_Handle_t::hDefKpGain, PID_Handle_t::hDefKiGain and
+  98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * PID_Handle_t::hDefKdGain fields of the PID_Handle_t structure.
+  99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_HandleInit(PID_Handle_t *pHandle)
+ 101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+  65              		.loc 1 101 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 8
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  70 0000 80B4     		push	{r7}
+  71              	.LCFI0:
+  72              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 4
+
+
+  73              		.cfi_offset 7, -4
+  74 0002 83B0     		sub	sp, sp, #12
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 16
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 7860     		str	r0, [r7, #4]
+ 102:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 103:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 104:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 105:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 109:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 110:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKpGain =  pHandle->hDefKpGain;
+  81              		.loc 1 110 32
+  82 0008 7B68     		ldr	r3, [r7, #4]
+  83 000a B3F90020 		ldrsh	r2, [r3]
+  84              		.loc 1 110 22
+  85 000e 7B68     		ldr	r3, [r7, #4]
+  86 0010 9A80     		strh	r2, [r3, #4]	@ movhi
+ 111:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKiGain =  pHandle->hDefKiGain;
+  87              		.loc 1 111 32
+  88 0012 7B68     		ldr	r3, [r7, #4]
+  89 0014 B3F90220 		ldrsh	r2, [r3, #2]
+  90              		.loc 1 111 22
+  91 0018 7B68     		ldr	r3, [r7, #4]
+  92 001a DA80     		strh	r2, [r3, #6]	@ movhi
+ 112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKdGain =  pHandle->hDefKdGain;
+  93              		.loc 1 112 32
+  94 001c 7B68     		ldr	r3, [r7, #4]
+  95 001e B3F92020 		ldrsh	r2, [r3, #32]
+  96              		.loc 1 112 22
+  97 0022 7B68     		ldr	r3, [r7, #4]
+  98 0024 5A84     		strh	r2, [r3, #34]	@ movhi
+ 113:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wIntegralTerm = 0;
+  99              		.loc 1 113 28
+ 100 0026 7B68     		ldr	r3, [r7, #4]
+ 101 0028 0022     		movs	r2, #0
+ 102 002a 9A60     		str	r2, [r3, #8]
+ 114:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wPrevProcessVarError = 0;
+ 103              		.loc 1 114 35
+ 104 002c 7B68     		ldr	r3, [r7, #4]
+ 105 002e 0022     		movs	r2, #0
+ 106 0030 9A62     		str	r2, [r3, #40]
+ 115:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 116:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 117:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 118:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 107              		.loc 1 118 1
+ 108 0032 00BF     		nop
+ 109 0034 0C37     		adds	r7, r7, #12
+ 110              	.LCFI3:
+ 111              		.cfi_def_cfa_offset 4
+ 112 0036 BD46     		mov	sp, r7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 5
+
+
+ 113              	.LCFI4:
+ 114              		.cfi_def_cfa_register 13
+ 115              		@ sp needed
+ 116 0038 5DF8047B 		ldr	r7, [sp], #4
+ 117              	.LCFI5:
+ 118              		.cfi_restore 7
+ 119              		.cfi_def_cfa_offset 0
+ 120 003c 7047     		bx	lr
+ 121              		.cfi_endproc
+ 122              	.LFE1088:
+ 124              		.section	.text.PID_SetKP,"ax",%progbits
+ 125              		.align	1
+ 126              		.weak	PID_SetKP
+ 127              		.syntax unified
+ 128              		.thumb
+ 129              		.thumb_func
+ 131              	PID_SetKP:
+ 132              	.LFB1089:
+ 119:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets @f$K_{pg}@f$, the numerator of the proportional gain of a PID component
+ 122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hKpGain New @f$K_{pg}@f$ value
+ 124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetKP(PID_Handle_t *pHandle, int16_t hKpGain)
+ 126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 133              		.loc 1 126 1
+ 134              		.cfi_startproc
+ 135              		@ args = 0, pretend = 0, frame = 8
+ 136              		@ frame_needed = 1, uses_anonymous_args = 0
+ 137              		@ link register save eliminated.
+ 138 0000 80B4     		push	{r7}
+ 139              	.LCFI6:
+ 140              		.cfi_def_cfa_offset 4
+ 141              		.cfi_offset 7, -4
+ 142 0002 83B0     		sub	sp, sp, #12
+ 143              	.LCFI7:
+ 144              		.cfi_def_cfa_offset 16
+ 145 0004 00AF     		add	r7, sp, #0
+ 146              	.LCFI8:
+ 147              		.cfi_def_cfa_register 7
+ 148 0006 7860     		str	r0, [r7, #4]
+ 149 0008 0B46     		mov	r3, r1
+ 150 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 127:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 128:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 129:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 130:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 131:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 132:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 133:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 134:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 135:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKpGain = hKpGain;
+ 151              		.loc 1 135 22
+ 152 000c 7B68     		ldr	r3, [r7, #4]
+ 153 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 154 0010 9A80     		strh	r2, [r3, #4]	@ movhi
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 6
+
+
+ 136:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 137:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 155              		.loc 1 139 1
+ 156 0012 00BF     		nop
+ 157 0014 0C37     		adds	r7, r7, #12
+ 158              	.LCFI9:
+ 159              		.cfi_def_cfa_offset 4
+ 160 0016 BD46     		mov	sp, r7
+ 161              	.LCFI10:
+ 162              		.cfi_def_cfa_register 13
+ 163              		@ sp needed
+ 164 0018 5DF8047B 		ldr	r7, [sp], #4
+ 165              	.LCFI11:
+ 166              		.cfi_restore 7
+ 167              		.cfi_def_cfa_offset 0
+ 168 001c 7047     		bx	lr
+ 169              		.cfi_endproc
+ 170              	.LFE1089:
+ 172              		.section	.text.PID_SetKI,"ax",%progbits
+ 173              		.align	1
+ 174              		.weak	PID_SetKI
+ 175              		.syntax unified
+ 176              		.thumb
+ 177              		.thumb_func
+ 179              	PID_SetKI:
+ 180              	.LFB1090:
+ 140:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 141:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the @f$K_{ig}@f$, the numrerator of the integral gain of a PID component
+ 143:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 144:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hKiGain new @f$K_{ig}@f$ value
+ 145:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 146:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetKI(PID_Handle_t *pHandle, int16_t hKiGain)
+ 147:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 181              		.loc 1 147 1
+ 182              		.cfi_startproc
+ 183              		@ args = 0, pretend = 0, frame = 8
+ 184              		@ frame_needed = 1, uses_anonymous_args = 0
+ 185              		@ link register save eliminated.
+ 186 0000 80B4     		push	{r7}
+ 187              	.LCFI12:
+ 188              		.cfi_def_cfa_offset 4
+ 189              		.cfi_offset 7, -4
+ 190 0002 83B0     		sub	sp, sp, #12
+ 191              	.LCFI13:
+ 192              		.cfi_def_cfa_offset 16
+ 193 0004 00AF     		add	r7, sp, #0
+ 194              	.LCFI14:
+ 195              		.cfi_def_cfa_register 7
+ 196 0006 7860     		str	r0, [r7, #4]
+ 197 0008 0B46     		mov	r3, r1
+ 198 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 148:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 149:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 150:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 7
+
+
+ 151:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 152:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 153:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 154:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 155:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 156:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKiGain = hKiGain;
+ 199              		.loc 1 156 22
+ 200 000c 7B68     		ldr	r3, [r7, #4]
+ 201 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 202 0010 DA80     		strh	r2, [r3, #6]	@ movhi
+ 157:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 158:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 159:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 160:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 203              		.loc 1 160 1
+ 204 0012 00BF     		nop
+ 205 0014 0C37     		adds	r7, r7, #12
+ 206              	.LCFI15:
+ 207              		.cfi_def_cfa_offset 4
+ 208 0016 BD46     		mov	sp, r7
+ 209              	.LCFI16:
+ 210              		.cfi_def_cfa_register 13
+ 211              		@ sp needed
+ 212 0018 5DF8047B 		ldr	r7, [sp], #4
+ 213              	.LCFI17:
+ 214              		.cfi_restore 7
+ 215              		.cfi_def_cfa_offset 0
+ 216 001c 7047     		bx	lr
+ 217              		.cfi_endproc
+ 218              	.LFE1090:
+ 220              		.section	.text.PID_GetKP,"ax",%progbits
+ 221              		.align	1
+ 222              		.weak	PID_GetKP
+ 223              		.syntax unified
+ 224              		.thumb
+ 225              		.thumb_func
+ 227              	PID_GetKP:
+ 228              	.LFB1091:
+ 161:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 162:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 163:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns @f$K_{pg}@f$, the numerator of the proportional gain of a PID component
+ 164:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 165:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 166:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PID_GetKP(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 167:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 229              		.loc 1 167 1
+ 230              		.cfi_startproc
+ 231              		@ args = 0, pretend = 0, frame = 8
+ 232              		@ frame_needed = 1, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234 0000 80B4     		push	{r7}
+ 235              	.LCFI18:
+ 236              		.cfi_def_cfa_offset 4
+ 237              		.cfi_offset 7, -4
+ 238 0002 83B0     		sub	sp, sp, #12
+ 239              	.LCFI19:
+ 240              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 8
+
+
+ 241 0004 00AF     		add	r7, sp, #0
+ 242              	.LCFI20:
+ 243              		.cfi_def_cfa_register 7
+ 244 0006 7860     		str	r0, [r7, #4]
+ 168:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 169:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hKpGain);
+ 170:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 171:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKpGain);
+ 245              		.loc 1 171 18
+ 246 0008 7B68     		ldr	r3, [r7, #4]
+ 247 000a B3F90430 		ldrsh	r3, [r3, #4]
+ 172:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 173:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 248              		.loc 1 173 1
+ 249 000e 1846     		mov	r0, r3
+ 250 0010 0C37     		adds	r7, r7, #12
+ 251              	.LCFI21:
+ 252              		.cfi_def_cfa_offset 4
+ 253 0012 BD46     		mov	sp, r7
+ 254              	.LCFI22:
+ 255              		.cfi_def_cfa_register 13
+ 256              		@ sp needed
+ 257 0014 5DF8047B 		ldr	r7, [sp], #4
+ 258              	.LCFI23:
+ 259              		.cfi_restore 7
+ 260              		.cfi_def_cfa_offset 0
+ 261 0018 7047     		bx	lr
+ 262              		.cfi_endproc
+ 263              	.LFE1091:
+ 265              		.section	.text.PID_GetKI,"ax",%progbits
+ 266              		.align	1
+ 267              		.weak	PID_GetKI
+ 268              		.syntax unified
+ 269              		.thumb
+ 270              		.thumb_func
+ 272              	PID_GetKI:
+ 273              	.LFB1092:
+ 174:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 175:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 176:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns @f$K_{ig}@f$, the numrerator of the integral gain of a PID component
+ 177:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 178:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 179:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PID_GetKI(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 180:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 274              		.loc 1 180 1
+ 275              		.cfi_startproc
+ 276              		@ args = 0, pretend = 0, frame = 8
+ 277              		@ frame_needed = 1, uses_anonymous_args = 0
+ 278              		@ link register save eliminated.
+ 279 0000 80B4     		push	{r7}
+ 280              	.LCFI24:
+ 281              		.cfi_def_cfa_offset 4
+ 282              		.cfi_offset 7, -4
+ 283 0002 83B0     		sub	sp, sp, #12
+ 284              	.LCFI25:
+ 285              		.cfi_def_cfa_offset 16
+ 286 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 9
+
+
+ 287              	.LCFI26:
+ 288              		.cfi_def_cfa_register 7
+ 289 0006 7860     		str	r0, [r7, #4]
+ 181:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 182:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hKiGain);
+ 183:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 184:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKiGain);
+ 290              		.loc 1 184 18
+ 291 0008 7B68     		ldr	r3, [r7, #4]
+ 292 000a B3F90630 		ldrsh	r3, [r3, #6]
+ 185:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 186:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 293              		.loc 1 186 1
+ 294 000e 1846     		mov	r0, r3
+ 295 0010 0C37     		adds	r7, r7, #12
+ 296              	.LCFI27:
+ 297              		.cfi_def_cfa_offset 4
+ 298 0012 BD46     		mov	sp, r7
+ 299              	.LCFI28:
+ 300              		.cfi_def_cfa_register 13
+ 301              		@ sp needed
+ 302 0014 5DF8047B 		ldr	r7, [sp], #4
+ 303              	.LCFI29:
+ 304              		.cfi_restore 7
+ 305              		.cfi_def_cfa_offset 0
+ 306 0018 7047     		bx	lr
+ 307              		.cfi_endproc
+ 308              	.LFE1092:
+ 310              		.section	.text.PID_GetDefaultKP,"ax",%progbits
+ 311              		.align	1
+ 312              		.weak	PID_GetDefaultKP
+ 313              		.syntax unified
+ 314              		.thumb
+ 315              		.thumb_func
+ 317              	PID_GetDefaultKP:
+ 318              	.LFB1093:
+ 187:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 188:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 189:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns the default @f$K_{pg}@f$ value, the numerator of the proportional
+ 190:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         gain of a PID component
+ 191:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 192:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 193:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *  The default @f$K_{pg}@f$ value is the one that is being used at startup time,
+ 194:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * when the MCU is reset or when the PID_HandleInit() function gets called. When 
+ 195:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * any of the last two event occurs, any proportional gain numerator that may 
+ 196:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * have been previously set with the PID_SetKP() function is replaced by this 
+ 197:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * default value.
+ 198:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 199:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PID_GetDefaultKP(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 200:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 319              		.loc 1 200 1
+ 320              		.cfi_startproc
+ 321              		@ args = 0, pretend = 0, frame = 8
+ 322              		@ frame_needed = 1, uses_anonymous_args = 0
+ 323              		@ link register save eliminated.
+ 324 0000 80B4     		push	{r7}
+ 325              	.LCFI30:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 10
+
+
+ 326              		.cfi_def_cfa_offset 4
+ 327              		.cfi_offset 7, -4
+ 328 0002 83B0     		sub	sp, sp, #12
+ 329              	.LCFI31:
+ 330              		.cfi_def_cfa_offset 16
+ 331 0004 00AF     		add	r7, sp, #0
+ 332              	.LCFI32:
+ 333              		.cfi_def_cfa_register 7
+ 334 0006 7860     		str	r0, [r7, #4]
+ 201:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 202:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hDefKpGain);
+ 203:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 204:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hDefKpGain);
+ 335              		.loc 1 204 18
+ 336 0008 7B68     		ldr	r3, [r7, #4]
+ 337 000a B3F90030 		ldrsh	r3, [r3]
+ 205:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 206:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 338              		.loc 1 206 1
+ 339 000e 1846     		mov	r0, r3
+ 340 0010 0C37     		adds	r7, r7, #12
+ 341              	.LCFI33:
+ 342              		.cfi_def_cfa_offset 4
+ 343 0012 BD46     		mov	sp, r7
+ 344              	.LCFI34:
+ 345              		.cfi_def_cfa_register 13
+ 346              		@ sp needed
+ 347 0014 5DF8047B 		ldr	r7, [sp], #4
+ 348              	.LCFI35:
+ 349              		.cfi_restore 7
+ 350              		.cfi_def_cfa_offset 0
+ 351 0018 7047     		bx	lr
+ 352              		.cfi_endproc
+ 353              	.LFE1093:
+ 355              		.section	.text.PID_GetDefaultKI,"ax",%progbits
+ 356              		.align	1
+ 357              		.weak	PID_GetDefaultKI
+ 358              		.syntax unified
+ 359              		.thumb
+ 360              		.thumb_func
+ 362              	PID_GetDefaultKI:
+ 363              	.LFB1094:
+ 207:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 208:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 209:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns the default @f$K_{ig}@f$ value, the numerator of the integral
+ 210:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         gain of a PID component
+ 211:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 212:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 213:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *  The default @f$K_{ig}@f$ value is the one that is being used at startup time,
+ 214:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * when the MCU is reset or when the PID_HandleInit() function gets called. When 
+ 215:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * any of the last two event occurs, any gain that may have been previously set 
+ 216:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * with the PID_SetKI() function is replaced by this default value.
+ 217:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 218:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PID_GetDefaultKI(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 219:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 364              		.loc 1 219 1
+ 365              		.cfi_startproc
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 11
+
+
+ 366              		@ args = 0, pretend = 0, frame = 8
+ 367              		@ frame_needed = 1, uses_anonymous_args = 0
+ 368              		@ link register save eliminated.
+ 369 0000 80B4     		push	{r7}
+ 370              	.LCFI36:
+ 371              		.cfi_def_cfa_offset 4
+ 372              		.cfi_offset 7, -4
+ 373 0002 83B0     		sub	sp, sp, #12
+ 374              	.LCFI37:
+ 375              		.cfi_def_cfa_offset 16
+ 376 0004 00AF     		add	r7, sp, #0
+ 377              	.LCFI38:
+ 378              		.cfi_def_cfa_register 7
+ 379 0006 7860     		str	r0, [r7, #4]
+ 220:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 221:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hDefKiGain);
+ 222:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 223:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hDefKiGain);
+ 380              		.loc 1 223 18
+ 381 0008 7B68     		ldr	r3, [r7, #4]
+ 382 000a B3F90230 		ldrsh	r3, [r3, #2]
+ 224:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 225:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 383              		.loc 1 225 1
+ 384 000e 1846     		mov	r0, r3
+ 385 0010 0C37     		adds	r7, r7, #12
+ 386              	.LCFI39:
+ 387              		.cfi_def_cfa_offset 4
+ 388 0012 BD46     		mov	sp, r7
+ 389              	.LCFI40:
+ 390              		.cfi_def_cfa_register 13
+ 391              		@ sp needed
+ 392 0014 5DF8047B 		ldr	r7, [sp], #4
+ 393              	.LCFI41:
+ 394              		.cfi_restore 7
+ 395              		.cfi_def_cfa_offset 0
+ 396 0018 7047     		bx	lr
+ 397              		.cfi_endproc
+ 398              	.LFE1094:
+ 400              		.section	.text.PID_SetIntegralTerm,"ax",%progbits
+ 401              		.align	1
+ 402              		.weak	PID_SetIntegralTerm
+ 403              		.syntax unified
+ 404              		.thumb
+ 405              		.thumb_func
+ 407              	PID_SetIntegralTerm:
+ 408              	.LFB1095:
+ 226:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 227:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #if defined (CCMRAM)
+ 228:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #if defined (__ICCARM__)
+ 229:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #pragma location = ".ccmram"
+ 230:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 231:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __attribute__((section(".ccmram")))
+ 232:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 233:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 234:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 235:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the value of the integral term of a PID component
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 12
+
+
+ 236:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 237:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  wIntegralTermValue new integral term value multiplied by the divisor 
+ 238:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *                            of the integral gain
+ 239:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 240:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * If @f$T_{i}@f$ is the target integral term, the @p wIntegralTermValue term is stored
+ 241:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * before the division by @f$K_{id}@f$ to maximize the available dynamics.
+ 242:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 243:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @attention @p wIntegralTermValue divided by @f$K_{id}@f$ must fit in a 16-bit signed 
+ 244:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * integer value.
+ 245:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 246:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetIntegralTerm(PID_Handle_t *pHandle, int32_t wIntegralTermValue)
+ 247:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 409              		.loc 1 247 1
+ 410              		.cfi_startproc
+ 411              		@ args = 0, pretend = 0, frame = 8
+ 412              		@ frame_needed = 1, uses_anonymous_args = 0
+ 413              		@ link register save eliminated.
+ 414 0000 80B4     		push	{r7}
+ 415              	.LCFI42:
+ 416              		.cfi_def_cfa_offset 4
+ 417              		.cfi_offset 7, -4
+ 418 0002 83B0     		sub	sp, sp, #12
+ 419              	.LCFI43:
+ 420              		.cfi_def_cfa_offset 16
+ 421 0004 00AF     		add	r7, sp, #0
+ 422              	.LCFI44:
+ 423              		.cfi_def_cfa_register 7
+ 424 0006 7860     		str	r0, [r7, #4]
+ 425 0008 3960     		str	r1, [r7]
+ 248:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 249:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 250:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 251:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 252:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 253:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 254:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 255:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 256:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wIntegralTerm = wIntegralTermValue;
+ 426              		.loc 1 256 28
+ 427 000a 7B68     		ldr	r3, [r7, #4]
+ 428 000c 3A68     		ldr	r2, [r7]
+ 429 000e 9A60     		str	r2, [r3, #8]
+ 257:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 258:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 259:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 260:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return;
+ 430              		.loc 1 260 3
+ 431 0010 00BF     		nop
+ 261:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 432              		.loc 1 261 1
+ 433 0012 0C37     		adds	r7, r7, #12
+ 434              	.LCFI45:
+ 435              		.cfi_def_cfa_offset 4
+ 436 0014 BD46     		mov	sp, r7
+ 437              	.LCFI46:
+ 438              		.cfi_def_cfa_register 13
+ 439              		@ sp needed
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 13
+
+
+ 440 0016 5DF8047B 		ldr	r7, [sp], #4
+ 441              	.LCFI47:
+ 442              		.cfi_restore 7
+ 443              		.cfi_def_cfa_offset 0
+ 444 001a 7047     		bx	lr
+ 445              		.cfi_endproc
+ 446              	.LFE1095:
+ 448              		.section	.text.PID_GetKPDivisor,"ax",%progbits
+ 449              		.align	1
+ 450              		.weak	PID_GetKPDivisor
+ 451              		.syntax unified
+ 452              		.thumb
+ 453              		.thumb_func
+ 455              	PID_GetKPDivisor:
+ 456              	.LFB1096:
+ 262:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 263:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 264:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns @f$K_{pd}@f$, the divisor of the proportional gain of a PID component
+ 265:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 266:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+ 267:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 268:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 269:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 270:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @sa PID_GetKPDivisorPOW2()
+ 271:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 272:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak uint16_t PID_GetKPDivisor(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 273:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 457              		.loc 1 273 1
+ 458              		.cfi_startproc
+ 459              		@ args = 0, pretend = 0, frame = 8
+ 460              		@ frame_needed = 1, uses_anonymous_args = 0
+ 461              		@ link register save eliminated.
+ 462 0000 80B4     		push	{r7}
+ 463              	.LCFI48:
+ 464              		.cfi_def_cfa_offset 4
+ 465              		.cfi_offset 7, -4
+ 466 0002 83B0     		sub	sp, sp, #12
+ 467              	.LCFI49:
+ 468              		.cfi_def_cfa_offset 16
+ 469 0004 00AF     		add	r7, sp, #0
+ 470              	.LCFI50:
+ 471              		.cfi_def_cfa_register 7
+ 472 0006 7860     		str	r0, [r7, #4]
+ 274:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 275:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->hKpDivisor);
+ 276:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 277:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKpDivisor);
+ 473              		.loc 1 277 18
+ 474 0008 7B68     		ldr	r3, [r7, #4]
+ 475 000a 1B8B     		ldrh	r3, [r3, #24]
+ 278:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 279:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 476              		.loc 1 279 1
+ 477 000c 1846     		mov	r0, r3
+ 478 000e 0C37     		adds	r7, r7, #12
+ 479              	.LCFI51:
+ 480              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 14
+
+
+ 481 0010 BD46     		mov	sp, r7
+ 482              	.LCFI52:
+ 483              		.cfi_def_cfa_register 13
+ 484              		@ sp needed
+ 485 0012 5DF8047B 		ldr	r7, [sp], #4
+ 486              	.LCFI53:
+ 487              		.cfi_restore 7
+ 488              		.cfi_def_cfa_offset 0
+ 489 0016 7047     		bx	lr
+ 490              		.cfi_endproc
+ 491              	.LFE1096:
+ 493              		.section	.text.PID_GetKPDivisorPOW2,"ax",%progbits
+ 494              		.align	1
+ 495              		.weak	PID_GetKPDivisorPOW2
+ 496              		.syntax unified
+ 497              		.thumb
+ 498              		.thumb_func
+ 500              	PID_GetKPDivisorPOW2:
+ 501              	.LFB1097:
+ 280:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 281:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 282:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns the power of two that makes @f$K_{pd}@f$, the divisor of the proportional 
+ 283:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         gain of a PID component
+ 284:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 285:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 286:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 287:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 288:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 289:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @sa PID_GetKPDivisor()
+ 290:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 291:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak uint16_t PID_GetKPDivisorPOW2(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 292:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 502              		.loc 1 292 1
+ 503              		.cfi_startproc
+ 504              		@ args = 0, pretend = 0, frame = 8
+ 505              		@ frame_needed = 1, uses_anonymous_args = 0
+ 506              		@ link register save eliminated.
+ 507 0000 80B4     		push	{r7}
+ 508              	.LCFI54:
+ 509              		.cfi_def_cfa_offset 4
+ 510              		.cfi_offset 7, -4
+ 511 0002 83B0     		sub	sp, sp, #12
+ 512              	.LCFI55:
+ 513              		.cfi_def_cfa_offset 16
+ 514 0004 00AF     		add	r7, sp, #0
+ 515              	.LCFI56:
+ 516              		.cfi_def_cfa_register 7
+ 517 0006 7860     		str	r0, [r7, #4]
+ 293:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 294:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->hKpDivisorPOW2);
+ 295:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 296:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKpDivisorPOW2);
+ 518              		.loc 1 296 18
+ 519 0008 7B68     		ldr	r3, [r7, #4]
+ 520 000a 9B8B     		ldrh	r3, [r3, #28]
+ 297:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 298:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 15
+
+
+ 521              		.loc 1 298 1
+ 522 000c 1846     		mov	r0, r3
+ 523 000e 0C37     		adds	r7, r7, #12
+ 524              	.LCFI57:
+ 525              		.cfi_def_cfa_offset 4
+ 526 0010 BD46     		mov	sp, r7
+ 527              	.LCFI58:
+ 528              		.cfi_def_cfa_register 13
+ 529              		@ sp needed
+ 530 0012 5DF8047B 		ldr	r7, [sp], #4
+ 531              	.LCFI59:
+ 532              		.cfi_restore 7
+ 533              		.cfi_def_cfa_offset 0
+ 534 0016 7047     		bx	lr
+ 535              		.cfi_endproc
+ 536              	.LFE1097:
+ 538              		.section	.text.PID_SetKPDivisorPOW2,"ax",%progbits
+ 539              		.align	1
+ 540              		.weak	PID_SetKPDivisorPOW2
+ 541              		.syntax unified
+ 542              		.thumb
+ 543              		.thumb_func
+ 545              	PID_SetKPDivisorPOW2:
+ 546              	.LFB1098:
+ 299:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 300:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 301:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the power of two that makes @f$K_{pd}@f$, the divisor of the proportional gain
+ 302:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         of a PID component
+ 303:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 304:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hKpDivisorPOW2 new @f$K_{pd}@f$ divisor value, expressed as power of 2
+ 305:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 306:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 307:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 308:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 309:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * This function sets @f$K_{pd}@f$ to 2 to the power of @p hKpDivisorPOW2.
+ 310:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 311:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetKPDivisorPOW2(PID_Handle_t *pHandle, uint16_t hKpDivisorPOW2)
+ 312:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 547              		.loc 1 312 1
+ 548              		.cfi_startproc
+ 549              		@ args = 0, pretend = 0, frame = 8
+ 550              		@ frame_needed = 1, uses_anonymous_args = 0
+ 551              		@ link register save eliminated.
+ 552 0000 80B4     		push	{r7}
+ 553              	.LCFI60:
+ 554              		.cfi_def_cfa_offset 4
+ 555              		.cfi_offset 7, -4
+ 556 0002 83B0     		sub	sp, sp, #12
+ 557              	.LCFI61:
+ 558              		.cfi_def_cfa_offset 16
+ 559 0004 00AF     		add	r7, sp, #0
+ 560              	.LCFI62:
+ 561              		.cfi_def_cfa_register 7
+ 562 0006 7860     		str	r0, [r7, #4]
+ 563 0008 0B46     		mov	r3, r1
+ 564 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 313:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 16
+
+
+ 314:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 315:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 316:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 317:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 318:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 319:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 320:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 321:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKpDivisorPOW2 = hKpDivisorPOW2;
+ 565              		.loc 1 321 29
+ 566 000c 7B68     		ldr	r3, [r7, #4]
+ 567 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 568 0010 9A83     		strh	r2, [r3, #28]	@ movhi
+ 322:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKpDivisor = (((uint16_t)1) << hKpDivisorPOW2);
+ 569              		.loc 1 322 42
+ 570 0012 7B88     		ldrh	r3, [r7, #2]
+ 571 0014 0122     		movs	r2, #1
+ 572 0016 02FA03F3 		lsl	r3, r2, r3
+ 573              		.loc 1 322 25
+ 574 001a 9AB2     		uxth	r2, r3
+ 575 001c 7B68     		ldr	r3, [r7, #4]
+ 576 001e 1A83     		strh	r2, [r3, #24]	@ movhi
+ 323:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 324:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 325:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 326:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 577              		.loc 1 326 1
+ 578 0020 00BF     		nop
+ 579 0022 0C37     		adds	r7, r7, #12
+ 580              	.LCFI63:
+ 581              		.cfi_def_cfa_offset 4
+ 582 0024 BD46     		mov	sp, r7
+ 583              	.LCFI64:
+ 584              		.cfi_def_cfa_register 13
+ 585              		@ sp needed
+ 586 0026 5DF8047B 		ldr	r7, [sp], #4
+ 587              	.LCFI65:
+ 588              		.cfi_restore 7
+ 589              		.cfi_def_cfa_offset 0
+ 590 002a 7047     		bx	lr
+ 591              		.cfi_endproc
+ 592              	.LFE1098:
+ 594              		.section	.text.PID_GetKIDivisor,"ax",%progbits
+ 595              		.align	1
+ 596              		.weak	PID_GetKIDivisor
+ 597              		.syntax unified
+ 598              		.thumb
+ 599              		.thumb_func
+ 601              	PID_GetKIDivisor:
+ 602              	.LFB1099:
+ 327:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 328:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 329:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns @f$K_{id}@f$, the divisor of the integral gain of a PID component
+ 330:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 331:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+ 332:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 333:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 334:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 17
+
+
+ 335:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @sa PID_GetKIDivisorPOW2()
+ 336:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 337:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak uint16_t PID_GetKIDivisor(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 338:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 603              		.loc 1 338 1
+ 604              		.cfi_startproc
+ 605              		@ args = 0, pretend = 0, frame = 8
+ 606              		@ frame_needed = 1, uses_anonymous_args = 0
+ 607              		@ link register save eliminated.
+ 608 0000 80B4     		push	{r7}
+ 609              	.LCFI66:
+ 610              		.cfi_def_cfa_offset 4
+ 611              		.cfi_offset 7, -4
+ 612 0002 83B0     		sub	sp, sp, #12
+ 613              	.LCFI67:
+ 614              		.cfi_def_cfa_offset 16
+ 615 0004 00AF     		add	r7, sp, #0
+ 616              	.LCFI68:
+ 617              		.cfi_def_cfa_register 7
+ 618 0006 7860     		str	r0, [r7, #4]
+ 339:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 340:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->hKiDivisor);
+ 341:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 342:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKiDivisor);
+ 619              		.loc 1 342 18
+ 620 0008 7B68     		ldr	r3, [r7, #4]
+ 621 000a 5B8B     		ldrh	r3, [r3, #26]
+ 343:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 344:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 622              		.loc 1 344 1
+ 623 000c 1846     		mov	r0, r3
+ 624 000e 0C37     		adds	r7, r7, #12
+ 625              	.LCFI69:
+ 626              		.cfi_def_cfa_offset 4
+ 627 0010 BD46     		mov	sp, r7
+ 628              	.LCFI70:
+ 629              		.cfi_def_cfa_register 13
+ 630              		@ sp needed
+ 631 0012 5DF8047B 		ldr	r7, [sp], #4
+ 632              	.LCFI71:
+ 633              		.cfi_restore 7
+ 634              		.cfi_def_cfa_offset 0
+ 635 0016 7047     		bx	lr
+ 636              		.cfi_endproc
+ 637              	.LFE1099:
+ 639              		.section	.text.PID_GetKIDivisorPOW2,"ax",%progbits
+ 640              		.align	1
+ 641              		.weak	PID_GetKIDivisorPOW2
+ 642              		.syntax unified
+ 643              		.thumb
+ 644              		.thumb_func
+ 646              	PID_GetKIDivisorPOW2:
+ 647              	.LFB1100:
+ 345:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 346:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 347:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief Returns the power of two that makes @f$K_{id}@f$, the divisor of the integral 
+ 348:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *        gain of a PID component
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 18
+
+
+ 349:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 350:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 351:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 352:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 353:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 354:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @sa PID_GetKIDivisor()
+ 355:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 356:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak uint16_t PID_GetKIDivisorPOW2(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 357:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 648              		.loc 1 357 1
+ 649              		.cfi_startproc
+ 650              		@ args = 0, pretend = 0, frame = 8
+ 651              		@ frame_needed = 1, uses_anonymous_args = 0
+ 652              		@ link register save eliminated.
+ 653 0000 80B4     		push	{r7}
+ 654              	.LCFI72:
+ 655              		.cfi_def_cfa_offset 4
+ 656              		.cfi_offset 7, -4
+ 657 0002 83B0     		sub	sp, sp, #12
+ 658              	.LCFI73:
+ 659              		.cfi_def_cfa_offset 16
+ 660 0004 00AF     		add	r7, sp, #0
+ 661              	.LCFI74:
+ 662              		.cfi_def_cfa_register 7
+ 663 0006 7860     		str	r0, [r7, #4]
+ 358:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 359:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->hKiDivisorPOW2);
+ 360:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 361:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKiDivisorPOW2);
+ 664              		.loc 1 361 18
+ 665 0008 7B68     		ldr	r3, [r7, #4]
+ 666 000a DB8B     		ldrh	r3, [r3, #30]
+ 362:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 363:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 667              		.loc 1 363 1
+ 668 000c 1846     		mov	r0, r3
+ 669 000e 0C37     		adds	r7, r7, #12
+ 670              	.LCFI75:
+ 671              		.cfi_def_cfa_offset 4
+ 672 0010 BD46     		mov	sp, r7
+ 673              	.LCFI76:
+ 674              		.cfi_def_cfa_register 13
+ 675              		@ sp needed
+ 676 0012 5DF8047B 		ldr	r7, [sp], #4
+ 677              	.LCFI77:
+ 678              		.cfi_restore 7
+ 679              		.cfi_def_cfa_offset 0
+ 680 0016 7047     		bx	lr
+ 681              		.cfi_endproc
+ 682              	.LFE1100:
+ 684              		.section	.text.PID_SetKIDivisorPOW2,"ax",%progbits
+ 685              		.align	1
+ 686              		.weak	PID_SetKIDivisorPOW2
+ 687              		.syntax unified
+ 688              		.thumb
+ 689              		.thumb_func
+ 691              	PID_SetKIDivisorPOW2:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 19
+
+
+ 692              	.LFB1101:
+ 364:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 365:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 366:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the power of two that makes @f$K_{id}@f$, the divisor of the integral gain
+ 367:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         of a PID component
+ 368:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 369:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hKiDivisorPOW2 new @f$K_{id}@f$ divisor value, expressed as power of 2
+ 370:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 371:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 372:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 373:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 374:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * This function sets @f$K_{id}@f$ to 2 to the power of @p hKiDivisorPOW2. 
+ 375:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 376:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * Note that the upper and lower limits of the integral term are also updated to
+ 377:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * accept any 16-bit value. If the limits of the integral term need to be different 
+ 378:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * use the PID_SetUpperIntegralTermLimit() and PID_SetLowerIntegralTermLimit() functions
+ 379:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * after this one.
+ 380:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 381:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetKIDivisorPOW2(PID_Handle_t *pHandle, uint16_t hKiDivisorPOW2)
+ 382:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 693              		.loc 1 382 1
+ 694              		.cfi_startproc
+ 695              		@ args = 0, pretend = 0, frame = 16
+ 696              		@ frame_needed = 1, uses_anonymous_args = 0
+ 697 0000 80B5     		push	{r7, lr}
+ 698              	.LCFI78:
+ 699              		.cfi_def_cfa_offset 8
+ 700              		.cfi_offset 7, -8
+ 701              		.cfi_offset 14, -4
+ 702 0002 84B0     		sub	sp, sp, #16
+ 703              	.LCFI79:
+ 704              		.cfi_def_cfa_offset 24
+ 705 0004 00AF     		add	r7, sp, #0
+ 706              	.LCFI80:
+ 707              		.cfi_def_cfa_register 7
+ 708 0006 7860     		str	r0, [r7, #4]
+ 709 0008 0B46     		mov	r3, r1
+ 710 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 383:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 384:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 385:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 386:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 387:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 388:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 389:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 390:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 391:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     uint32_t wKiDiv = (((uint32_t)1) << hKiDivisorPOW2);
+ 711              		.loc 1 391 38
+ 712 000c 7B88     		ldrh	r3, [r7, #2]
+ 713              		.loc 1 391 14
+ 714 000e 0122     		movs	r2, #1
+ 715 0010 02FA03F3 		lsl	r3, r2, r3
+ 716 0014 FB60     		str	r3, [r7, #12]
+ 392:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKiDivisorPOW2 = hKiDivisorPOW2;
+ 717              		.loc 1 392 29
+ 718 0016 7B68     		ldr	r3, [r7, #4]
+ 719 0018 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 20
+
+
+ 720 001a DA83     		strh	r2, [r3, #30]	@ movhi
+ 393:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKiDivisor = (uint16_t)wKiDiv;
+ 721              		.loc 1 393 27
+ 722 001c FB68     		ldr	r3, [r7, #12]
+ 723 001e 9AB2     		uxth	r2, r3
+ 724              		.loc 1 393 25
+ 725 0020 7B68     		ldr	r3, [r7, #4]
+ 726 0022 5A83     		strh	r2, [r3, #26]	@ movhi
+ 394:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     PID_SetUpperIntegralTermLimit(pHandle, (int32_t)INT16_MAX * (int32_t)wKiDiv);
+ 727              		.loc 1 394 65
+ 728 0024 FA68     		ldr	r2, [r7, #12]
+ 729              		.loc 1 394 5
+ 730 0026 1346     		mov	r3, r2
+ 731 0028 DB03     		lsls	r3, r3, #15
+ 732 002a 9B1A     		subs	r3, r3, r2
+ 733 002c 1946     		mov	r1, r3
+ 734 002e 7868     		ldr	r0, [r7, #4]
+ 735 0030 FFF7FEFF 		bl	PID_SetUpperIntegralTermLimit
+ 395:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     PID_SetLowerIntegralTermLimit(pHandle, (int32_t)(-INT16_MAX) * (int32_t)wKiDiv);
+ 736              		.loc 1 395 68
+ 737 0034 FB68     		ldr	r3, [r7, #12]
+ 738              		.loc 1 395 5
+ 739 0036 1A46     		mov	r2, r3
+ 740 0038 DB03     		lsls	r3, r3, #15
+ 741 003a D31A     		subs	r3, r2, r3
+ 742 003c 1946     		mov	r1, r3
+ 743 003e 7868     		ldr	r0, [r7, #4]
+ 744 0040 FFF7FEFF 		bl	PID_SetLowerIntegralTermLimit
+ 396:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 397:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 398:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 399:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 745              		.loc 1 399 1
+ 746 0044 00BF     		nop
+ 747 0046 1037     		adds	r7, r7, #16
+ 748              	.LCFI81:
+ 749              		.cfi_def_cfa_offset 8
+ 750 0048 BD46     		mov	sp, r7
+ 751              	.LCFI82:
+ 752              		.cfi_def_cfa_register 13
+ 753              		@ sp needed
+ 754 004a 80BD     		pop	{r7, pc}
+ 755              		.cfi_endproc
+ 756              	.LFE1101:
+ 758              		.section	.text.PID_SetLowerIntegralTermLimit,"ax",%progbits
+ 759              		.align	1
+ 760              		.weak	PID_SetLowerIntegralTermLimit
+ 761              		.syntax unified
+ 762              		.thumb
+ 763              		.thumb_func
+ 765              	PID_SetLowerIntegralTermLimit:
+ 766              	.LFB1102:
+ 400:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 401:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 402:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the lower limit of the integral term of a PID component
+ 403:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 404:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 21
+
+
+ 405:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  wLowerLimit new lower integral term limit multiplied by the divisor 
+ 406:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *                     of the integral gain
+ 407:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 408:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * If @f$T_{iL}@f$ is the target lower limit, the @p wLowerLimit parameter must 
+ 409:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * be set to @f$T_{iL}\times K_{id}@f$. This is because the limit is checked before
+ 410:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * applying the divisor in the PI_Controller() and PID_Controller() controller 
+ 411:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * functions.
+ 412:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 413:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * When the PI or PID controller is executed, the value of the integral term is floored
+ 414:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * to this value.
+ 415:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 416:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @attention @p wLowerLimit divided by @f$K_{id}@f$ must fit in a 16-bit signed 
+ 417:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * integer value.
+ 418:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 419:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetLowerIntegralTermLimit(PID_Handle_t *pHandle, int32_t wLowerLimit)
+ 420:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 767              		.loc 1 420 1
+ 768              		.cfi_startproc
+ 769              		@ args = 0, pretend = 0, frame = 8
+ 770              		@ frame_needed = 1, uses_anonymous_args = 0
+ 771              		@ link register save eliminated.
+ 772 0000 80B4     		push	{r7}
+ 773              	.LCFI83:
+ 774              		.cfi_def_cfa_offset 4
+ 775              		.cfi_offset 7, -4
+ 776 0002 83B0     		sub	sp, sp, #12
+ 777              	.LCFI84:
+ 778              		.cfi_def_cfa_offset 16
+ 779 0004 00AF     		add	r7, sp, #0
+ 780              	.LCFI85:
+ 781              		.cfi_def_cfa_register 7
+ 782 0006 7860     		str	r0, [r7, #4]
+ 783 0008 3960     		str	r1, [r7]
+ 421:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 422:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 423:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 424:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 425:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 426:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 427:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 428:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 429:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wLowerIntegralLimit = wLowerLimit;
+ 784              		.loc 1 429 34
+ 785 000a 7B68     		ldr	r3, [r7, #4]
+ 786 000c 3A68     		ldr	r2, [r7]
+ 787 000e 1A61     		str	r2, [r3, #16]
+ 430:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 431:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 432:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 433:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 788              		.loc 1 433 1
+ 789 0010 00BF     		nop
+ 790 0012 0C37     		adds	r7, r7, #12
+ 791              	.LCFI86:
+ 792              		.cfi_def_cfa_offset 4
+ 793 0014 BD46     		mov	sp, r7
+ 794              	.LCFI87:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 22
+
+
+ 795              		.cfi_def_cfa_register 13
+ 796              		@ sp needed
+ 797 0016 5DF8047B 		ldr	r7, [sp], #4
+ 798              	.LCFI88:
+ 799              		.cfi_restore 7
+ 800              		.cfi_def_cfa_offset 0
+ 801 001a 7047     		bx	lr
+ 802              		.cfi_endproc
+ 803              	.LFE1102:
+ 805              		.section	.text.PID_SetUpperIntegralTermLimit,"ax",%progbits
+ 806              		.align	1
+ 807              		.weak	PID_SetUpperIntegralTermLimit
+ 808              		.syntax unified
+ 809              		.thumb
+ 810              		.thumb_func
+ 812              	PID_SetUpperIntegralTermLimit:
+ 813              	.LFB1103:
+ 434:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 435:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 436:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the upper limit of the integral term of a PID component
+ 437:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 438:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 439:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  wUpperLimit new upper integral term limit multiplied by the divisor 
+ 440:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *                     of the integral gain
+ 441:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 442:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * If @f$T_{iU}@f$ is the target upper limit, the @p wUpperLimit parameter must 
+ 443:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * be set to @f$T_{iU}\times K_{id}@f$. This is because the limit is checked before
+ 444:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * applying the divisor in the PI_Controller() and PID_Controller() controller 
+ 445:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * functions.
+ 446:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 447:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * When the controller is executed, the value of the integral term is capped to 
+ 448:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * this value.
+ 449:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 450:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @attention @p wUpperLimit divided by @f$K_{id}@f$ must fit in a 16-bit signed 
+ 451:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * integer value.
+ 452:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 453:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetUpperIntegralTermLimit(PID_Handle_t *pHandle, int32_t wUpperLimit)
+ 454:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 814              		.loc 1 454 1
+ 815              		.cfi_startproc
+ 816              		@ args = 0, pretend = 0, frame = 8
+ 817              		@ frame_needed = 1, uses_anonymous_args = 0
+ 818              		@ link register save eliminated.
+ 819 0000 80B4     		push	{r7}
+ 820              	.LCFI89:
+ 821              		.cfi_def_cfa_offset 4
+ 822              		.cfi_offset 7, -4
+ 823 0002 83B0     		sub	sp, sp, #12
+ 824              	.LCFI90:
+ 825              		.cfi_def_cfa_offset 16
+ 826 0004 00AF     		add	r7, sp, #0
+ 827              	.LCFI91:
+ 828              		.cfi_def_cfa_register 7
+ 829 0006 7860     		str	r0, [r7, #4]
+ 830 0008 3960     		str	r1, [r7]
+ 455:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 456:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 23
+
+
+ 457:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 458:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 459:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 460:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 461:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 462:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 463:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wUpperIntegralLimit = wUpperLimit;
+ 831              		.loc 1 463 34
+ 832 000a 7B68     		ldr	r3, [r7, #4]
+ 833 000c 3A68     		ldr	r2, [r7]
+ 834 000e DA60     		str	r2, [r3, #12]
+ 464:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 465:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 466:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 467:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 835              		.loc 1 467 1
+ 836 0010 00BF     		nop
+ 837 0012 0C37     		adds	r7, r7, #12
+ 838              	.LCFI92:
+ 839              		.cfi_def_cfa_offset 4
+ 840 0014 BD46     		mov	sp, r7
+ 841              	.LCFI93:
+ 842              		.cfi_def_cfa_register 13
+ 843              		@ sp needed
+ 844 0016 5DF8047B 		ldr	r7, [sp], #4
+ 845              	.LCFI94:
+ 846              		.cfi_restore 7
+ 847              		.cfi_def_cfa_offset 0
+ 848 001a 7047     		bx	lr
+ 849              		.cfi_endproc
+ 850              	.LFE1103:
+ 852              		.section	.text.PID_SetLowerOutputLimit,"ax",%progbits
+ 853              		.align	1
+ 854              		.weak	PID_SetLowerOutputLimit
+ 855              		.syntax unified
+ 856              		.thumb
+ 857              		.thumb_func
+ 859              	PID_SetLowerOutputLimit:
+ 860              	.LFB1104:
+ 468:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 469:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 470:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the lower output limit of a PID component
+ 471:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 472:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 473:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hLowerLimit new lower limit of the output value
+ 474:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 475:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * When the controller is executed, the value of its output is floored to this value.
+ 476:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 477:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetLowerOutputLimit(PID_Handle_t *pHandle, int16_t hLowerLimit)
+ 478:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 861              		.loc 1 478 1
+ 862              		.cfi_startproc
+ 863              		@ args = 0, pretend = 0, frame = 8
+ 864              		@ frame_needed = 1, uses_anonymous_args = 0
+ 865              		@ link register save eliminated.
+ 866 0000 80B4     		push	{r7}
+ 867              	.LCFI95:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 24
+
+
+ 868              		.cfi_def_cfa_offset 4
+ 869              		.cfi_offset 7, -4
+ 870 0002 83B0     		sub	sp, sp, #12
+ 871              	.LCFI96:
+ 872              		.cfi_def_cfa_offset 16
+ 873 0004 00AF     		add	r7, sp, #0
+ 874              	.LCFI97:
+ 875              		.cfi_def_cfa_register 7
+ 876 0006 7860     		str	r0, [r7, #4]
+ 877 0008 0B46     		mov	r3, r1
+ 878 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 479:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 480:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 481:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 482:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 483:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 484:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 485:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 486:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 487:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hLowerOutputLimit = hLowerLimit;
+ 879              		.loc 1 487 32
+ 880 000c 7B68     		ldr	r3, [r7, #4]
+ 881 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 882 0010 DA82     		strh	r2, [r3, #22]	@ movhi
+ 488:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 489:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 490:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 491:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 883              		.loc 1 491 1
+ 884 0012 00BF     		nop
+ 885 0014 0C37     		adds	r7, r7, #12
+ 886              	.LCFI98:
+ 887              		.cfi_def_cfa_offset 4
+ 888 0016 BD46     		mov	sp, r7
+ 889              	.LCFI99:
+ 890              		.cfi_def_cfa_register 13
+ 891              		@ sp needed
+ 892 0018 5DF8047B 		ldr	r7, [sp], #4
+ 893              	.LCFI100:
+ 894              		.cfi_restore 7
+ 895              		.cfi_def_cfa_offset 0
+ 896 001c 7047     		bx	lr
+ 897              		.cfi_endproc
+ 898              	.LFE1104:
+ 900              		.section	.text.PID_SetUpperOutputLimit,"ax",%progbits
+ 901              		.align	1
+ 902              		.weak	PID_SetUpperOutputLimit
+ 903              		.syntax unified
+ 904              		.thumb
+ 905              		.thumb_func
+ 907              	PID_SetUpperOutputLimit:
+ 908              	.LFB1105:
+ 492:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 493:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 494:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the upper output limit of a PID component
+ 495:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 496:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 25
+
+
+ 497:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hUpperLimit: new upper limit of the output value
+ 498:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 499:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * When the controller is executed, the value of its output is capped to this value.
+ 500:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 501:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetUpperOutputLimit(PID_Handle_t *pHandle, int16_t hUpperLimit)
+ 502:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 909              		.loc 1 502 1
+ 910              		.cfi_startproc
+ 911              		@ args = 0, pretend = 0, frame = 8
+ 912              		@ frame_needed = 1, uses_anonymous_args = 0
+ 913              		@ link register save eliminated.
+ 914 0000 80B4     		push	{r7}
+ 915              	.LCFI101:
+ 916              		.cfi_def_cfa_offset 4
+ 917              		.cfi_offset 7, -4
+ 918 0002 83B0     		sub	sp, sp, #12
+ 919              	.LCFI102:
+ 920              		.cfi_def_cfa_offset 16
+ 921 0004 00AF     		add	r7, sp, #0
+ 922              	.LCFI103:
+ 923              		.cfi_def_cfa_register 7
+ 924 0006 7860     		str	r0, [r7, #4]
+ 925 0008 0B46     		mov	r3, r1
+ 926 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 503:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 504:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 505:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 506:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 507:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 508:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 509:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 510:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 511:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hUpperOutputLimit = hUpperLimit;
+ 927              		.loc 1 511 32
+ 928 000c 7B68     		ldr	r3, [r7, #4]
+ 929 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 930 0010 9A82     		strh	r2, [r3, #20]	@ movhi
+ 512:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 513:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 514:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 515:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 931              		.loc 1 515 1
+ 932 0012 00BF     		nop
+ 933 0014 0C37     		adds	r7, r7, #12
+ 934              	.LCFI104:
+ 935              		.cfi_def_cfa_offset 4
+ 936 0016 BD46     		mov	sp, r7
+ 937              	.LCFI105:
+ 938              		.cfi_def_cfa_register 13
+ 939              		@ sp needed
+ 940 0018 5DF8047B 		ldr	r7, [sp], #4
+ 941              	.LCFI106:
+ 942              		.cfi_restore 7
+ 943              		.cfi_def_cfa_offset 0
+ 944 001c 7047     		bx	lr
+ 945              		.cfi_endproc
+ 946              	.LFE1105:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 26
+
+
+ 948              		.section	.text.PID_SetPrevError,"ax",%progbits
+ 949              		.align	1
+ 950              		.weak	PID_SetPrevError
+ 951              		.syntax unified
+ 952              		.thumb
+ 953              		.thumb_func
+ 955              	PID_SetPrevError:
+ 956              	.LFB1106:
+ 516:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 517:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 518:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the value of the previous process error of a PID component
+ 519:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 520:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 521:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  wPrevProcessVarError new value of the previous error variable
+ 522:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 523:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetPrevError(PID_Handle_t *pHandle, int32_t wPrevProcessVarError)
+ 524:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 957              		.loc 1 524 1
+ 958              		.cfi_startproc
+ 959              		@ args = 0, pretend = 0, frame = 8
+ 960              		@ frame_needed = 1, uses_anonymous_args = 0
+ 961              		@ link register save eliminated.
+ 962 0000 80B4     		push	{r7}
+ 963              	.LCFI107:
+ 964              		.cfi_def_cfa_offset 4
+ 965              		.cfi_offset 7, -4
+ 966 0002 83B0     		sub	sp, sp, #12
+ 967              	.LCFI108:
+ 968              		.cfi_def_cfa_offset 16
+ 969 0004 00AF     		add	r7, sp, #0
+ 970              	.LCFI109:
+ 971              		.cfi_def_cfa_register 7
+ 972 0006 7860     		str	r0, [r7, #4]
+ 973 0008 3960     		str	r1, [r7]
+ 525:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 526:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 527:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 528:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 529:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 530:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 531:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 532:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 533:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wPrevProcessVarError = wPrevProcessVarError;
+ 974              		.loc 1 533 35
+ 975 000a 7B68     		ldr	r3, [r7, #4]
+ 976 000c 3A68     		ldr	r2, [r7]
+ 977 000e 9A62     		str	r2, [r3, #40]
+ 534:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 535:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 536:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 537:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return;
+ 978              		.loc 1 537 3
+ 979 0010 00BF     		nop
+ 538:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 980              		.loc 1 538 1
+ 981 0012 0C37     		adds	r7, r7, #12
+ 982              	.LCFI110:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 27
+
+
+ 983              		.cfi_def_cfa_offset 4
+ 984 0014 BD46     		mov	sp, r7
+ 985              	.LCFI111:
+ 986              		.cfi_def_cfa_register 13
+ 987              		@ sp needed
+ 988 0016 5DF8047B 		ldr	r7, [sp], #4
+ 989              	.LCFI112:
+ 990              		.cfi_restore 7
+ 991              		.cfi_def_cfa_offset 0
+ 992 001a 7047     		bx	lr
+ 993              		.cfi_endproc
+ 994              	.LFE1106:
+ 996              		.section	.text.PID_SetKD,"ax",%progbits
+ 997              		.align	1
+ 998              		.weak	PID_SetKD
+ 999              		.syntax unified
+ 1000              		.thumb
+ 1001              		.thumb_func
+ 1003              	PID_SetKD:
+ 1004              	.LFB1107:
+ 539:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 540:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 541:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets @f$K_{dg}@f$, the numerator of the derivative gain of a PID component
+ 542:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 543:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hKpGain New @f$K_{dg}@f$ value
+ 544:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 545:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetKD(PID_Handle_t *pHandle, int16_t hKdGain)
+ 546:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1005              		.loc 1 546 1
+ 1006              		.cfi_startproc
+ 1007              		@ args = 0, pretend = 0, frame = 8
+ 1008              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1009              		@ link register save eliminated.
+ 1010 0000 80B4     		push	{r7}
+ 1011              	.LCFI113:
+ 1012              		.cfi_def_cfa_offset 4
+ 1013              		.cfi_offset 7, -4
+ 1014 0002 83B0     		sub	sp, sp, #12
+ 1015              	.LCFI114:
+ 1016              		.cfi_def_cfa_offset 16
+ 1017 0004 00AF     		add	r7, sp, #0
+ 1018              	.LCFI115:
+ 1019              		.cfi_def_cfa_register 7
+ 1020 0006 7860     		str	r0, [r7, #4]
+ 1021 0008 0B46     		mov	r3, r1
+ 1022 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 547:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 548:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 549:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 550:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 551:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 552:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 553:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 554:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 555:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKdGain = hKdGain;
+ 1023              		.loc 1 555 22
+ 1024 000c 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 28
+
+
+ 1025 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 1026 0010 5A84     		strh	r2, [r3, #34]	@ movhi
+ 556:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 557:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 558:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 559:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1027              		.loc 1 559 1
+ 1028 0012 00BF     		nop
+ 1029 0014 0C37     		adds	r7, r7, #12
+ 1030              	.LCFI116:
+ 1031              		.cfi_def_cfa_offset 4
+ 1032 0016 BD46     		mov	sp, r7
+ 1033              	.LCFI117:
+ 1034              		.cfi_def_cfa_register 13
+ 1035              		@ sp needed
+ 1036 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1037              	.LCFI118:
+ 1038              		.cfi_restore 7
+ 1039              		.cfi_def_cfa_offset 0
+ 1040 001c 7047     		bx	lr
+ 1041              		.cfi_endproc
+ 1042              	.LFE1107:
+ 1044              		.section	.text.PID_GetKD,"ax",%progbits
+ 1045              		.align	1
+ 1046              		.weak	PID_GetKD
+ 1047              		.syntax unified
+ 1048              		.thumb
+ 1049              		.thumb_func
+ 1051              	PID_GetKD:
+ 1052              	.LFB1108:
+ 560:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 561:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 562:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns @f$K_{dg}@f$, the numerator of the derivative gain of a PID component
+ 563:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 564:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 565:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PID_GetKD(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 566:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1053              		.loc 1 566 1
+ 1054              		.cfi_startproc
+ 1055              		@ args = 0, pretend = 0, frame = 8
+ 1056              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1057              		@ link register save eliminated.
+ 1058 0000 80B4     		push	{r7}
+ 1059              	.LCFI119:
+ 1060              		.cfi_def_cfa_offset 4
+ 1061              		.cfi_offset 7, -4
+ 1062 0002 83B0     		sub	sp, sp, #12
+ 1063              	.LCFI120:
+ 1064              		.cfi_def_cfa_offset 16
+ 1065 0004 00AF     		add	r7, sp, #0
+ 1066              	.LCFI121:
+ 1067              		.cfi_def_cfa_register 7
+ 1068 0006 7860     		str	r0, [r7, #4]
+ 567:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 568:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0 : pHandle->hKdGain);
+ 569:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 570:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKdGain);
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 29
+
+
+ 1069              		.loc 1 570 18
+ 1070 0008 7B68     		ldr	r3, [r7, #4]
+ 1071 000a B3F92230 		ldrsh	r3, [r3, #34]
+ 571:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 572:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1072              		.loc 1 572 1
+ 1073 000e 1846     		mov	r0, r3
+ 1074 0010 0C37     		adds	r7, r7, #12
+ 1075              	.LCFI122:
+ 1076              		.cfi_def_cfa_offset 4
+ 1077 0012 BD46     		mov	sp, r7
+ 1078              	.LCFI123:
+ 1079              		.cfi_def_cfa_register 13
+ 1080              		@ sp needed
+ 1081 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1082              	.LCFI124:
+ 1083              		.cfi_restore 7
+ 1084              		.cfi_def_cfa_offset 0
+ 1085 0018 7047     		bx	lr
+ 1086              		.cfi_endproc
+ 1087              	.LFE1108:
+ 1089              		.section	.text.PID_GetKDDivisor,"ax",%progbits
+ 1090              		.align	1
+ 1091              		.weak	PID_GetKDDivisor
+ 1092              		.syntax unified
+ 1093              		.thumb
+ 1094              		.thumb_func
+ 1096              	PID_GetKDDivisor:
+ 1097              	.LFB1109:
+ 573:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 574:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 575:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns @f$K_{dd}@f$, the divisor of the derivative gain of a PID component
+ 576:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 577:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *
+ 578:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 579:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 580:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 581:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @sa PID_GetKDDivisorPOW2()
+ 582:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 583:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak uint16_t PID_GetKDDivisor(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 584:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1098              		.loc 1 584 1
+ 1099              		.cfi_startproc
+ 1100              		@ args = 0, pretend = 0, frame = 8
+ 1101              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1102              		@ link register save eliminated.
+ 1103 0000 80B4     		push	{r7}
+ 1104              	.LCFI125:
+ 1105              		.cfi_def_cfa_offset 4
+ 1106              		.cfi_offset 7, -4
+ 1107 0002 83B0     		sub	sp, sp, #12
+ 1108              	.LCFI126:
+ 1109              		.cfi_def_cfa_offset 16
+ 1110 0004 00AF     		add	r7, sp, #0
+ 1111              	.LCFI127:
+ 1112              		.cfi_def_cfa_register 7
+ 1113 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 30
+
+
+ 585:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 586:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->hKdDivisor);
+ 587:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 588:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKdDivisor);
+ 1114              		.loc 1 588 18
+ 1115 0008 7B68     		ldr	r3, [r7, #4]
+ 1116 000a 9B8C     		ldrh	r3, [r3, #36]
+ 589:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 590:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1117              		.loc 1 590 1
+ 1118 000c 1846     		mov	r0, r3
+ 1119 000e 0C37     		adds	r7, r7, #12
+ 1120              	.LCFI128:
+ 1121              		.cfi_def_cfa_offset 4
+ 1122 0010 BD46     		mov	sp, r7
+ 1123              	.LCFI129:
+ 1124              		.cfi_def_cfa_register 13
+ 1125              		@ sp needed
+ 1126 0012 5DF8047B 		ldr	r7, [sp], #4
+ 1127              	.LCFI130:
+ 1128              		.cfi_restore 7
+ 1129              		.cfi_def_cfa_offset 0
+ 1130 0016 7047     		bx	lr
+ 1131              		.cfi_endproc
+ 1132              	.LFE1109:
+ 1134              		.section	.text.PID_GetKDDivisorPOW2,"ax",%progbits
+ 1135              		.align	1
+ 1136              		.weak	PID_GetKDDivisorPOW2
+ 1137              		.syntax unified
+ 1138              		.thumb
+ 1139              		.thumb_func
+ 1141              	PID_GetKDDivisorPOW2:
+ 1142              	.LFB1110:
+ 591:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 592:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 593:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Returns the power of two that makes @f$K_{dd}@f$, the divisor of the derivative 
+ 594:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         gain of a PID component
+ 595:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 596:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 597:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 598:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 599:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 600:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @sa PID_GetKDDivisor()
+ 601:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 602:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak uint16_t PID_GetKDDivisorPOW2(PID_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
+ 603:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1143              		.loc 1 603 1
+ 1144              		.cfi_startproc
+ 1145              		@ args = 0, pretend = 0, frame = 8
+ 1146              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1147              		@ link register save eliminated.
+ 1148 0000 80B4     		push	{r7}
+ 1149              	.LCFI131:
+ 1150              		.cfi_def_cfa_offset 4
+ 1151              		.cfi_offset 7, -4
+ 1152 0002 83B0     		sub	sp, sp, #12
+ 1153              	.LCFI132:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 31
+
+
+ 1154              		.cfi_def_cfa_offset 16
+ 1155 0004 00AF     		add	r7, sp, #0
+ 1156              	.LCFI133:
+ 1157              		.cfi_def_cfa_register 7
+ 1158 0006 7860     		str	r0, [r7, #4]
+ 604:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 605:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return ((MC_NULL == pHandle) ? 0U : pHandle->hKdDivisorPOW2);
+ 606:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 607:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (pHandle->hKdDivisorPOW2);
+ 1159              		.loc 1 607 18
+ 1160 0008 7B68     		ldr	r3, [r7, #4]
+ 1161 000a DB8C     		ldrh	r3, [r3, #38]
+ 608:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 609:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1162              		.loc 1 609 1
+ 1163 000c 1846     		mov	r0, r3
+ 1164 000e 0C37     		adds	r7, r7, #12
+ 1165              	.LCFI134:
+ 1166              		.cfi_def_cfa_offset 4
+ 1167 0010 BD46     		mov	sp, r7
+ 1168              	.LCFI135:
+ 1169              		.cfi_def_cfa_register 13
+ 1170              		@ sp needed
+ 1171 0012 5DF8047B 		ldr	r7, [sp], #4
+ 1172              	.LCFI136:
+ 1173              		.cfi_restore 7
+ 1174              		.cfi_def_cfa_offset 0
+ 1175 0016 7047     		bx	lr
+ 1176              		.cfi_endproc
+ 1177              	.LFE1110:
+ 1179              		.section	.text.PID_SetKDDivisorPOW2,"ax",%progbits
+ 1180              		.align	1
+ 1181              		.weak	PID_SetKDDivisorPOW2
+ 1182              		.syntax unified
+ 1183              		.thumb
+ 1184              		.thumb_func
+ 1186              	PID_SetKDDivisorPOW2:
+ 1187              	.LFB1111:
+ 610:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 611:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 612:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Sets the power of two that makes @f$K_{dd}@f$, the divisor of the derivative gain
+ 613:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         of a PID component
+ 614:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 615:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  hKdDivisorPOW2 new @f$K_{dd}@f$ divisor value, expressed as power of 2
+ 616:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 617:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The divisors that make the gains of the @ref PIDRegulator "PID regulator component" are 
+ 618:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * powers of two. 
+ 619:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 620:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * This function sets @f$K_{dd}@f$ to 2 to the power of @p hKdDivisorPOW2.
+ 621:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 622:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak void PID_SetKDDivisorPOW2(PID_Handle_t *pHandle, uint16_t hKdDivisorPOW2)
+ 623:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1188              		.loc 1 623 1
+ 1189              		.cfi_startproc
+ 1190              		@ args = 0, pretend = 0, frame = 8
+ 1191              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1192              		@ link register save eliminated.
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 32
+
+
+ 1193 0000 80B4     		push	{r7}
+ 1194              	.LCFI137:
+ 1195              		.cfi_def_cfa_offset 4
+ 1196              		.cfi_offset 7, -4
+ 1197 0002 83B0     		sub	sp, sp, #12
+ 1198              	.LCFI138:
+ 1199              		.cfi_def_cfa_offset 16
+ 1200 0004 00AF     		add	r7, sp, #0
+ 1201              	.LCFI139:
+ 1202              		.cfi_def_cfa_register 7
+ 1203 0006 7860     		str	r0, [r7, #4]
+ 1204 0008 0B46     		mov	r3, r1
+ 1205 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 624:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 625:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 626:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 627:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Nothing to do */
+ 628:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 629:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 630:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 631:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 632:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKdDivisorPOW2 = hKdDivisorPOW2;
+ 1206              		.loc 1 632 29
+ 1207 000c 7B68     		ldr	r3, [r7, #4]
+ 1208 000e 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 1209 0010 DA84     		strh	r2, [r3, #38]	@ movhi
+ 633:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->hKdDivisor = (((uint16_t)1) << hKdDivisorPOW2);
+ 1210              		.loc 1 633 42
+ 1211 0012 7B88     		ldrh	r3, [r7, #2]
+ 1212 0014 0122     		movs	r2, #1
+ 1213 0016 02FA03F3 		lsl	r3, r2, r3
+ 1214              		.loc 1 633 25
+ 1215 001a 9AB2     		uxth	r2, r3
+ 1216 001c 7B68     		ldr	r3, [r7, #4]
+ 1217 001e 9A84     		strh	r2, [r3, #36]	@ movhi
+ 634:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 635:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 636:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 637:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1218              		.loc 1 637 1
+ 1219 0020 00BF     		nop
+ 1220 0022 0C37     		adds	r7, r7, #12
+ 1221              	.LCFI140:
+ 1222              		.cfi_def_cfa_offset 4
+ 1223 0024 BD46     		mov	sp, r7
+ 1224              	.LCFI141:
+ 1225              		.cfi_def_cfa_register 13
+ 1226              		@ sp needed
+ 1227 0026 5DF8047B 		ldr	r7, [sp], #4
+ 1228              	.LCFI142:
+ 1229              		.cfi_restore 7
+ 1230              		.cfi_def_cfa_offset 0
+ 1231 002a 7047     		bx	lr
+ 1232              		.cfi_endproc
+ 1233              	.LFE1111:
+ 1235              		.section	.text.PI_Controller,"ax",%progbits
+ 1236              		.align	1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 33
+
+
+ 1237              		.weak	PI_Controller
+ 1238              		.syntax unified
+ 1239              		.thumb
+ 1240              		.thumb_func
+ 1242              	PI_Controller:
+ 1243              	.LFB1112:
+ 638:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 639:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #if defined (CCMRAM)
+ 640:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #if defined (__ICCARM__)
+ 641:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #pragma location = ".ccmram"
+ 642:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 643:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __attribute__((section(".ccmram")))
+ 644:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 645:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 646:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 647:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Computes the output of a PI Regulator component, sum of its proportional and 
+ 648:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         integral terms
+ 649:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 650:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 651:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  wProcessVarError current process variable error (the reference value minus the 
+ 652:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *                          present process variable value)
+ 653:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @retval computed PI controller output
+ 654:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 655:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * This function implements the proportional-integral controller function described by the 
+ 656:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @ref PIDRegulator "PID regulator component". The integral term is saturated by the upper 
+ 657:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * and lower intergral term limit values before it is added to the proportional term. 
+ 658:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 659:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The resulting value is then saturated by the upper and lower output limit values before 
+ 660:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * being returned.
+ 661:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 662:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PI_Controller(PID_Handle_t *pHandle, int32_t wProcessVarError)
+ 663:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1244              		.loc 1 663 1
+ 1245              		.cfi_startproc
+ 1246              		@ args = 0, pretend = 0, frame = 40
+ 1247              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1248              		@ link register save eliminated.
+ 1249 0000 80B4     		push	{r7}
+ 1250              	.LCFI143:
+ 1251              		.cfi_def_cfa_offset 4
+ 1252              		.cfi_offset 7, -4
+ 1253 0002 8BB0     		sub	sp, sp, #44
+ 1254              	.LCFI144:
+ 1255              		.cfi_def_cfa_offset 48
+ 1256 0004 00AF     		add	r7, sp, #0
+ 1257              	.LCFI145:
+ 1258              		.cfi_def_cfa_register 7
+ 1259 0006 7860     		str	r0, [r7, #4]
+ 1260 0008 3960     		str	r1, [r7]
+ 664:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   int16_t returnValue;
+ 665:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 666:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 667:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 668:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     returnValue = 0;
+ 669:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 670:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 671:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 34
+
+
+ 672:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 673:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wProportional_Term;
+ 674:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wIntegral_Term;
+ 675:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wOutput_32;
+ 676:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wIntegral_sum_temp;
+ 677:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wDischarge = 0;
+ 1261              		.loc 1 677 13
+ 1262 000a 0023     		movs	r3, #0
+ 1263 000c FB61     		str	r3, [r7, #28]
+ 678:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int16_t hUpperOutputLimit = pHandle->hUpperOutputLimit;
+ 1264              		.loc 1 678 13
+ 1265 000e 7B68     		ldr	r3, [r7, #4]
+ 1266 0010 9B8A     		ldrh	r3, [r3, #20]	@ movhi
+ 1267 0012 7B83     		strh	r3, [r7, #26]	@ movhi
+ 679:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int16_t hLowerOutputLimit = pHandle->hLowerOutputLimit;
+ 1268              		.loc 1 679 13
+ 1269 0014 7B68     		ldr	r3, [r7, #4]
+ 1270 0016 DB8A     		ldrh	r3, [r3, #22]	@ movhi
+ 1271 0018 3B83     		strh	r3, [r7, #24]	@ movhi
+ 680:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 681:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Proportional term computation*/
+ 682:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     wProportional_Term = pHandle->hKpGain * wProcessVarError;
+ 1272              		.loc 1 682 33
+ 1273 001a 7B68     		ldr	r3, [r7, #4]
+ 1274 001c B3F90430 		ldrsh	r3, [r3, #4]
+ 1275 0020 1A46     		mov	r2, r3
+ 1276              		.loc 1 682 24
+ 1277 0022 3B68     		ldr	r3, [r7]
+ 1278 0024 02FB03F3 		mul	r3, r2, r3
+ 1279 0028 7B61     		str	r3, [r7, #20]
+ 683:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 684:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* Integral term computation */
+ 685:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     if (0 == pHandle->hKiGain)
+ 1280              		.loc 1 685 21
+ 1281 002a 7B68     		ldr	r3, [r7, #4]
+ 1282 002c B3F90630 		ldrsh	r3, [r3, #6]
+ 1283              		.loc 1 685 8
+ 1284 0030 002B     		cmp	r3, #0
+ 1285 0032 03D1     		bne	.L39
+ 686:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 687:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       pHandle->wIntegralTerm = 0;
+ 1286              		.loc 1 687 30
+ 1287 0034 7B68     		ldr	r3, [r7, #4]
+ 1288 0036 0022     		movs	r2, #0
+ 1289 0038 9A60     		str	r2, [r3, #8]
+ 1290 003a 3AE0     		b	.L40
+ 1291              	.L39:
+ 688:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 689:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     else
+ 690:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 691:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wIntegral_Term = pHandle->hKiGain * wProcessVarError;
+ 1292              		.loc 1 691 31
+ 1293 003c 7B68     		ldr	r3, [r7, #4]
+ 1294 003e B3F90630 		ldrsh	r3, [r3, #6]
+ 1295 0042 1A46     		mov	r2, r3
+ 1296              		.loc 1 691 22
+ 1297 0044 3B68     		ldr	r3, [r7]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 35
+
+
+ 1298 0046 02FB03F3 		mul	r3, r2, r3
+ 1299 004a 3B61     		str	r3, [r7, #16]
+ 692:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wIntegral_sum_temp = pHandle->wIntegralTerm + wIntegral_Term;
+ 1300              		.loc 1 692 35
+ 1301 004c 7B68     		ldr	r3, [r7, #4]
+ 1302 004e 9B68     		ldr	r3, [r3, #8]
+ 1303              		.loc 1 692 26
+ 1304 0050 3A69     		ldr	r2, [r7, #16]
+ 1305 0052 1344     		add	r3, r3, r2
+ 1306 0054 3B62     		str	r3, [r7, #32]
+ 693:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 694:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       if (wIntegral_sum_temp < 0)
+ 1307              		.loc 1 694 10
+ 1308 0056 3B6A     		ldr	r3, [r7, #32]
+ 1309 0058 002B     		cmp	r3, #0
+ 1310 005a 0ADA     		bge	.L41
+ 695:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 696:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         if (pHandle->wIntegralTerm > 0)
+ 1311              		.loc 1 696 20
+ 1312 005c 7B68     		ldr	r3, [r7, #4]
+ 1313 005e 9B68     		ldr	r3, [r3, #8]
+ 1314              		.loc 1 696 12
+ 1315 0060 002B     		cmp	r3, #0
+ 1316 0062 0FDD     		ble	.L42
+ 697:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         {
+ 698:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           if (wIntegral_Term > 0)
+ 1317              		.loc 1 698 14
+ 1318 0064 3B69     		ldr	r3, [r7, #16]
+ 1319 0066 002B     		cmp	r3, #0
+ 1320 0068 0CDD     		ble	.L42
+ 699:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           {
+ 700:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****             wIntegral_sum_temp = INT32_MAX;
+ 1321              		.loc 1 700 32
+ 1322 006a 6FF00043 		mvn	r3, #-2147483648
+ 1323 006e 3B62     		str	r3, [r7, #32]
+ 1324 0070 08E0     		b	.L42
+ 1325              	.L41:
+ 701:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           }
+ 702:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           else
+ 703:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           {
+ 704:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****             /* Nothing to do */
+ 705:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           }
+ 706:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         }
+ 707:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         else
+ 708:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         {
+ 709:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           /* Nothing to do */
+ 710:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         }
+ 711:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 712:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       else
+ 713:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 714:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         if (pHandle->wIntegralTerm < 0)
+ 1326              		.loc 1 714 20
+ 1327 0072 7B68     		ldr	r3, [r7, #4]
+ 1328 0074 9B68     		ldr	r3, [r3, #8]
+ 1329              		.loc 1 714 12
+ 1330 0076 002B     		cmp	r3, #0
+ 1331 0078 04DA     		bge	.L42
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 36
+
+
+ 715:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         {
+ 716:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           if (wIntegral_Term < 0)
+ 1332              		.loc 1 716 14
+ 1333 007a 3B69     		ldr	r3, [r7, #16]
+ 1334 007c 002B     		cmp	r3, #0
+ 1335 007e 01DA     		bge	.L42
+ 717:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           {
+ 718:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****             wIntegral_sum_temp = -INT32_MAX;
+ 1336              		.loc 1 718 32
+ 1337 0080 284B     		ldr	r3, .L48
+ 1338 0082 3B62     		str	r3, [r7, #32]
+ 1339              	.L42:
+ 719:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           }
+ 720:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           else
+ 721:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           {
+ 722:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****             /* Nothing to do */
+ 723:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           }
+ 724:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         }
+ 725:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         else
+ 726:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         {
+ 727:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****           /* Nothing to do */
+ 728:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         }
+ 729:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 730:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 731:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       if (wIntegral_sum_temp > pHandle->wUpperIntegralLimit)
+ 1340              		.loc 1 731 39
+ 1341 0084 7B68     		ldr	r3, [r7, #4]
+ 1342 0086 DB68     		ldr	r3, [r3, #12]
+ 1343              		.loc 1 731 10
+ 1344 0088 3A6A     		ldr	r2, [r7, #32]
+ 1345 008a 9A42     		cmp	r2, r3
+ 1346 008c 04DD     		ble	.L43
+ 732:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 733:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         pHandle->wIntegralTerm = pHandle->wUpperIntegralLimit;
+ 1347              		.loc 1 733 41
+ 1348 008e 7B68     		ldr	r3, [r7, #4]
+ 1349 0090 DA68     		ldr	r2, [r3, #12]
+ 1350              		.loc 1 733 32
+ 1351 0092 7B68     		ldr	r3, [r7, #4]
+ 1352 0094 9A60     		str	r2, [r3, #8]
+ 1353 0096 0CE0     		b	.L40
+ 1354              	.L43:
+ 734:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 735:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       else if (wIntegral_sum_temp < pHandle->wLowerIntegralLimit)
+ 1355              		.loc 1 735 44
+ 1356 0098 7B68     		ldr	r3, [r7, #4]
+ 1357 009a 1B69     		ldr	r3, [r3, #16]
+ 1358              		.loc 1 735 15
+ 1359 009c 3A6A     		ldr	r2, [r7, #32]
+ 1360 009e 9A42     		cmp	r2, r3
+ 1361 00a0 04DA     		bge	.L44
+ 736:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 737:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         pHandle->wIntegralTerm = pHandle->wLowerIntegralLimit;
+ 1362              		.loc 1 737 41
+ 1363 00a2 7B68     		ldr	r3, [r7, #4]
+ 1364 00a4 1A69     		ldr	r2, [r3, #16]
+ 1365              		.loc 1 737 32
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 37
+
+
+ 1366 00a6 7B68     		ldr	r3, [r7, #4]
+ 1367 00a8 9A60     		str	r2, [r3, #8]
+ 1368 00aa 02E0     		b	.L40
+ 1369              	.L44:
+ 738:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 739:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       else
+ 740:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 741:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         pHandle->wIntegralTerm = wIntegral_sum_temp;
+ 1370              		.loc 1 741 32
+ 1371 00ac 7B68     		ldr	r3, [r7, #4]
+ 1372 00ae 3A6A     		ldr	r2, [r7, #32]
+ 1373 00b0 9A60     		str	r2, [r3, #8]
+ 1374              	.L40:
+ 742:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 743:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 744:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 745:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifndef FULL_MISRA_C_COMPLIANCY_PID_REGULATOR
+ 746:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 747:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****                that Cortex-M3 assembly instruction ASR (arithmetic shift right)
+ 748:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****                is used by the compiler to perform the shifts (instead of LSR
+ 749:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****                logical shift right)*/
+ 750:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Rule-10.1_R6
+ 751:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     wOutput_32 = (wProportional_Term >> pHandle->hKpDivisorPOW2) + (pHandle->wIntegralTerm >> pHand
+ 1375              		.loc 1 751 48
+ 1376 00b2 7B68     		ldr	r3, [r7, #4]
+ 1377 00b4 9B8B     		ldrh	r3, [r3, #28]
+ 1378 00b6 1A46     		mov	r2, r3
+ 1379              		.loc 1 751 38
+ 1380 00b8 7B69     		ldr	r3, [r7, #20]
+ 1381 00ba 43FA02F2 		asr	r2, r3, r2
+ 1382              		.loc 1 751 76
+ 1383 00be 7B68     		ldr	r3, [r7, #4]
+ 1384 00c0 9B68     		ldr	r3, [r3, #8]
+ 1385              		.loc 1 751 102
+ 1386 00c2 7968     		ldr	r1, [r7, #4]
+ 1387 00c4 C98B     		ldrh	r1, [r1, #30]
+ 1388              		.loc 1 751 92
+ 1389 00c6 0B41     		asrs	r3, r3, r1
+ 1390              		.loc 1 751 16
+ 1391 00c8 1344     		add	r3, r3, r2
+ 1392 00ca 7B62     		str	r3, [r7, #36]
+ 752:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 753:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     wOutput_32 = (wProportional_Term / (int32_t)pHandle->hKpDivisor)
+ 754:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****               + (pHandle->wIntegralTerm / (int32_t)pHandle->hKiDivisor);
+ 755:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 756:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 757:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     if (wOutput_32 > hUpperOutputLimit)
+ 1393              		.loc 1 757 20
+ 1394 00cc B7F91A30 		ldrsh	r3, [r7, #26]
+ 1395              		.loc 1 757 8
+ 1396 00d0 7A6A     		ldr	r2, [r7, #36]
+ 1397 00d2 9A42     		cmp	r2, r3
+ 1398 00d4 08DD     		ble	.L45
+ 758:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 759:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wDischarge = hUpperOutputLimit - wOutput_32;
+ 1399              		.loc 1 759 38
+ 1400 00d6 B7F91A20 		ldrsh	r2, [r7, #26]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 38
+
+
+ 1401              		.loc 1 759 18
+ 1402 00da 7B6A     		ldr	r3, [r7, #36]
+ 1403 00dc D31A     		subs	r3, r2, r3
+ 1404 00de FB61     		str	r3, [r7, #28]
+ 760:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wOutput_32 = hUpperOutputLimit;
+ 1405              		.loc 1 760 18
+ 1406 00e0 B7F91A30 		ldrsh	r3, [r7, #26]
+ 1407 00e4 7B62     		str	r3, [r7, #36]
+ 1408 00e6 0CE0     		b	.L46
+ 1409              	.L45:
+ 761:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 762:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     else if (wOutput_32 < hLowerOutputLimit)
+ 1410              		.loc 1 762 25
+ 1411 00e8 B7F91830 		ldrsh	r3, [r7, #24]
+ 1412              		.loc 1 762 13
+ 1413 00ec 7A6A     		ldr	r2, [r7, #36]
+ 1414 00ee 9A42     		cmp	r2, r3
+ 1415 00f0 07DA     		bge	.L46
+ 763:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 764:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wDischarge = hLowerOutputLimit - wOutput_32;
+ 1416              		.loc 1 764 38
+ 1417 00f2 B7F91820 		ldrsh	r2, [r7, #24]
+ 1418              		.loc 1 764 18
+ 1419 00f6 7B6A     		ldr	r3, [r7, #36]
+ 1420 00f8 D31A     		subs	r3, r2, r3
+ 1421 00fa FB61     		str	r3, [r7, #28]
+ 765:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wOutput_32 = hLowerOutputLimit;
+ 1422              		.loc 1 765 18
+ 1423 00fc B7F91830 		ldrsh	r3, [r7, #24]
+ 1424 0100 7B62     		str	r3, [r7, #36]
+ 1425              	.L46:
+ 766:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 767:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     else
+ 768:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 769:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       /* Nothing to do here */
+ 770:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 771:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 772:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     pHandle->wIntegralTerm += wDischarge;
+ 1426              		.loc 1 772 28
+ 1427 0102 7B68     		ldr	r3, [r7, #4]
+ 1428 0104 9A68     		ldr	r2, [r3, #8]
+ 1429 0106 FB69     		ldr	r3, [r7, #28]
+ 1430 0108 1A44     		add	r2, r2, r3
+ 1431 010a 7B68     		ldr	r3, [r7, #4]
+ 1432 010c 9A60     		str	r2, [r3, #8]
+ 773:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     returnValue = (int16_t)wOutput_32;
+ 1433              		.loc 1 773 17
+ 1434 010e 7B6A     		ldr	r3, [r7, #36]
+ 1435 0110 FB81     		strh	r3, [r7, #14]	@ movhi
+ 774:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 775:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 776:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 777:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (returnValue);
+ 1436              		.loc 1 777 10
+ 1437 0112 B7F90E30 		ldrsh	r3, [r7, #14]
+ 778:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1438              		.loc 1 778 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 39
+
+
+ 1439 0116 1846     		mov	r0, r3
+ 1440 0118 2C37     		adds	r7, r7, #44
+ 1441              	.LCFI146:
+ 1442              		.cfi_def_cfa_offset 4
+ 1443 011a BD46     		mov	sp, r7
+ 1444              	.LCFI147:
+ 1445              		.cfi_def_cfa_register 13
+ 1446              		@ sp needed
+ 1447 011c 5DF8047B 		ldr	r7, [sp], #4
+ 1448              	.LCFI148:
+ 1449              		.cfi_restore 7
+ 1450              		.cfi_def_cfa_offset 0
+ 1451 0120 7047     		bx	lr
+ 1452              	.L49:
+ 1453 0122 00BF     		.align	2
+ 1454              	.L48:
+ 1455 0124 01000080 		.word	-2147483647
+ 1456              		.cfi_endproc
+ 1457              	.LFE1112:
+ 1459              		.section	.text.PID_Controller,"ax",%progbits
+ 1460              		.align	1
+ 1461              		.weak	PID_Controller
+ 1462              		.syntax unified
+ 1463              		.thumb
+ 1464              		.thumb_func
+ 1466              	PID_Controller:
+ 1467              	.LFB1113:
+ 779:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 780:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #if defined (CCMRAM)
+ 781:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #if defined (__ICCARM__)
+ 782:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #pragma location = ".ccmram"
+ 783:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+ 784:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __attribute__((section(".ccmram")))
+ 785:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 786:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 787:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** /**
+ 788:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @brief  Computes the output of a PID Regulator component, sum of its proportional,
+ 789:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *         integral and derivative terms
+ 790:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 791:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  pHandle Handle on the PID component
+ 792:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @param  wProcessVarError current process variable error (the reference value minus the 
+ 793:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   *                          present process variable value)
+ 794:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * @retval computed PID controller output
+ 795:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 796:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * This function implements the proportional-integral-derivative controller function described  
+ 797:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * by the @ref PIDRegulator "PID regulator component". The integral term is saturated by  
+ 798:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * the upper and lower intergral term limit values before it is added to the proportional term
+ 799:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * and derivative terms. 
+ 800:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * 
+ 801:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * The resulting value is then saturated by the upper and lower output limit values before 
+ 802:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   * being returned.
+ 803:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   */
+ 804:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** __weak int16_t PID_Controller(PID_Handle_t *pHandle, int32_t wProcessVarError)
+ 805:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** {
+ 1468              		.loc 1 805 1
+ 1469              		.cfi_startproc
+ 1470              		@ args = 0, pretend = 0, frame = 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 40
+
+
+ 1471              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1472 0000 80B5     		push	{r7, lr}
+ 1473              	.LCFI149:
+ 1474              		.cfi_def_cfa_offset 8
+ 1475              		.cfi_offset 7, -8
+ 1476              		.cfi_offset 14, -4
+ 1477 0002 86B0     		sub	sp, sp, #24
+ 1478              	.LCFI150:
+ 1479              		.cfi_def_cfa_offset 32
+ 1480 0004 00AF     		add	r7, sp, #0
+ 1481              	.LCFI151:
+ 1482              		.cfi_def_cfa_register 7
+ 1483 0006 7860     		str	r0, [r7, #4]
+ 1484 0008 3960     		str	r1, [r7]
+ 806:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   int16_t returnValue;
+ 807:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 808:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   if (MC_NULL == pHandle)
+ 809:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 810:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     returnValue = 0;
+ 811:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 812:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   else
+ 813:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   {
+ 814:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 815:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wDifferential_Term;
+ 816:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wDeltaError;
+ 817:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     int32_t wTemp_output;
+ 818:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 819:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     if (0 == pHandle->hKdGain) /* derivative terms not used */
+ 1485              		.loc 1 819 21
+ 1486 000a 7B68     		ldr	r3, [r7, #4]
+ 1487 000c B3F92230 		ldrsh	r3, [r3, #34]
+ 1488              		.loc 1 819 8
+ 1489 0010 002B     		cmp	r3, #0
+ 1490 0012 06D1     		bne	.L51
+ 820:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 821:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wTemp_output = PI_Controller(pHandle, wProcessVarError);
+ 1491              		.loc 1 821 22
+ 1492 0014 3968     		ldr	r1, [r7]
+ 1493 0016 7868     		ldr	r0, [r7, #4]
+ 1494 0018 FFF7FEFF 		bl	PI_Controller
+ 1495 001c 0346     		mov	r3, r0
+ 1496              		.loc 1 821 20
+ 1497 001e 7B61     		str	r3, [r7, #20]
+ 1498 0020 35E0     		b	.L52
+ 1499              	.L51:
+ 822:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 823:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     else
+ 824:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     {
+ 825:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wDeltaError = wProcessVarError - pHandle->wPrevProcessVarError;
+ 1500              		.loc 1 825 47
+ 1501 0022 7B68     		ldr	r3, [r7, #4]
+ 1502 0024 9B6A     		ldr	r3, [r3, #40]
+ 1503              		.loc 1 825 19
+ 1504 0026 3A68     		ldr	r2, [r7]
+ 1505 0028 D31A     		subs	r3, r2, r3
+ 1506 002a 3B61     		str	r3, [r7, #16]
+ 826:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wDifferential_Term = pHandle->hKdGain * wDeltaError;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 41
+
+
+ 1507              		.loc 1 826 35
+ 1508 002c 7B68     		ldr	r3, [r7, #4]
+ 1509 002e B3F92230 		ldrsh	r3, [r3, #34]
+ 1510 0032 1A46     		mov	r2, r3
+ 1511              		.loc 1 826 26
+ 1512 0034 3B69     		ldr	r3, [r7, #16]
+ 1513 0036 02FB03F3 		mul	r3, r2, r3
+ 1514 003a FB60     		str	r3, [r7, #12]
+ 827:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 828:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifndef FULL_MISRA_C_COMPLIANCY_PID_REGULATOR
+ 829:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       /* WARNING: the below instruction is not MISRA compliant, user should verify
+ 830:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****          that Cortex-M3 assembly instruction ASR (arithmetic shift right)
+ 831:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****          is used by the compiler to perform the shifts (instead of LSR
+ 832:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****          logical shift right)*/
+ 833:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       //cstat !MISRAC2012-Rule-1.3_n !ATH-shift-neg !MISRAC2012-Rule-10.1_R6
+ 834:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wDifferential_Term >>= pHandle->hKdDivisorPOW2;
+ 1515              		.loc 1 834 37
+ 1516 003c 7B68     		ldr	r3, [r7, #4]
+ 1517 003e DB8C     		ldrh	r3, [r3, #38]
+ 1518 0040 1A46     		mov	r2, r3
+ 1519              		.loc 1 834 26
+ 1520 0042 FB68     		ldr	r3, [r7, #12]
+ 1521 0044 1341     		asrs	r3, r3, r2
+ 1522 0046 FB60     		str	r3, [r7, #12]
+ 835:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #else
+ 836:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wDifferential_Term /= ((int32_t)pHandle->hKdDivisor);
+ 837:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 838:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 839:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       pHandle->wPrevProcessVarError = wProcessVarError;
+ 1523              		.loc 1 839 37
+ 1524 0048 7B68     		ldr	r3, [r7, #4]
+ 1525 004a 3A68     		ldr	r2, [r7]
+ 1526 004c 9A62     		str	r2, [r3, #40]
+ 840:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 841:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       wTemp_output = PI_Controller(pHandle, wProcessVarError) + wDifferential_Term;
+ 1527              		.loc 1 841 22
+ 1528 004e 3968     		ldr	r1, [r7]
+ 1529 0050 7868     		ldr	r0, [r7, #4]
+ 1530 0052 FFF7FEFF 		bl	PI_Controller
+ 1531 0056 0346     		mov	r3, r0
+ 1532 0058 1A46     		mov	r2, r3
+ 1533              		.loc 1 841 20
+ 1534 005a FB68     		ldr	r3, [r7, #12]
+ 1535 005c 1344     		add	r3, r3, r2
+ 1536 005e 7B61     		str	r3, [r7, #20]
+ 842:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** 
+ 843:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       if (wTemp_output > pHandle->hUpperOutputLimit)
+ 1537              		.loc 1 843 33
+ 1538 0060 7B68     		ldr	r3, [r7, #4]
+ 1539 0062 B3F91430 		ldrsh	r3, [r3, #20]
+ 1540 0066 1A46     		mov	r2, r3
+ 1541              		.loc 1 843 10
+ 1542 0068 7B69     		ldr	r3, [r7, #20]
+ 1543 006a 9342     		cmp	r3, r2
+ 1544 006c 04DD     		ble	.L53
+ 844:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 845:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         wTemp_output = pHandle->hUpperOutputLimit;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 42
+
+
+ 1545              		.loc 1 845 31
+ 1546 006e 7B68     		ldr	r3, [r7, #4]
+ 1547 0070 B3F91430 		ldrsh	r3, [r3, #20]
+ 1548              		.loc 1 845 22
+ 1549 0074 7B61     		str	r3, [r7, #20]
+ 1550 0076 0AE0     		b	.L52
+ 1551              	.L53:
+ 846:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 847:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       else if (wTemp_output < pHandle->hLowerOutputLimit)
+ 1552              		.loc 1 847 38
+ 1553 0078 7B68     		ldr	r3, [r7, #4]
+ 1554 007a B3F91630 		ldrsh	r3, [r3, #22]
+ 1555 007e 1A46     		mov	r2, r3
+ 1556              		.loc 1 847 15
+ 1557 0080 7B69     		ldr	r3, [r7, #20]
+ 1558 0082 9342     		cmp	r3, r2
+ 1559 0084 03DA     		bge	.L52
+ 848:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 849:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         wTemp_output = pHandle->hLowerOutputLimit;
+ 1560              		.loc 1 849 31
+ 1561 0086 7B68     		ldr	r3, [r7, #4]
+ 1562 0088 B3F91630 		ldrsh	r3, [r3, #22]
+ 1563              		.loc 1 849 22
+ 1564 008c 7B61     		str	r3, [r7, #20]
+ 1565              	.L52:
+ 850:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 851:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       else
+ 852:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       {
+ 853:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****         /* Nothing to do */
+ 854:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****       }
+ 855:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     }
+ 856:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****     returnValue = (int16_t) wTemp_output;
+ 1566              		.loc 1 856 17
+ 1567 008e 7B69     		ldr	r3, [r7, #20]
+ 1568 0090 7B81     		strh	r3, [r7, #10]	@ movhi
+ 857:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #ifdef NULL_PTR_CHECK_PID_REG
+ 858:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   }
+ 859:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** #endif
+ 860:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c ****   return (returnValue);
+ 1569              		.loc 1 860 10
+ 1570 0092 B7F90A30 		ldrsh	r3, [r7, #10]
+ 861:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pid_regulator.c **** }
+ 1571              		.loc 1 861 1
+ 1572 0096 1846     		mov	r0, r3
+ 1573 0098 1837     		adds	r7, r7, #24
+ 1574              	.LCFI152:
+ 1575              		.cfi_def_cfa_offset 8
+ 1576 009a BD46     		mov	sp, r7
+ 1577              	.LCFI153:
+ 1578              		.cfi_def_cfa_register 13
+ 1579              		@ sp needed
+ 1580 009c 80BD     		pop	{r7, pc}
+ 1581              		.cfi_endproc
+ 1582              	.LFE1113:
+ 1584              		.text
+ 1585              	.Letext0:
+ 1586              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 43
+
+
+ 1587              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1588              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 1589              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 1590              		.file 6 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pid_regulator.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 44
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pid_regulator.c
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:56     .text.PID_HandleInit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:62     .text.PID_HandleInit:00000000 PID_HandleInit
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:125    .text.PID_SetKP:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:131    .text.PID_SetKP:00000000 PID_SetKP
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:173    .text.PID_SetKI:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:179    .text.PID_SetKI:00000000 PID_SetKI
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:221    .text.PID_GetKP:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:227    .text.PID_GetKP:00000000 PID_GetKP
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:266    .text.PID_GetKI:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:272    .text.PID_GetKI:00000000 PID_GetKI
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:311    .text.PID_GetDefaultKP:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:317    .text.PID_GetDefaultKP:00000000 PID_GetDefaultKP
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:356    .text.PID_GetDefaultKI:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:362    .text.PID_GetDefaultKI:00000000 PID_GetDefaultKI
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:401    .text.PID_SetIntegralTerm:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:407    .text.PID_SetIntegralTerm:00000000 PID_SetIntegralTerm
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:449    .text.PID_GetKPDivisor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:455    .text.PID_GetKPDivisor:00000000 PID_GetKPDivisor
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:494    .text.PID_GetKPDivisorPOW2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:500    .text.PID_GetKPDivisorPOW2:00000000 PID_GetKPDivisorPOW2
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:539    .text.PID_SetKPDivisorPOW2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:545    .text.PID_SetKPDivisorPOW2:00000000 PID_SetKPDivisorPOW2
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:595    .text.PID_GetKIDivisor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:601    .text.PID_GetKIDivisor:00000000 PID_GetKIDivisor
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:640    .text.PID_GetKIDivisorPOW2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:646    .text.PID_GetKIDivisorPOW2:00000000 PID_GetKIDivisorPOW2
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:685    .text.PID_SetKIDivisorPOW2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:691    .text.PID_SetKIDivisorPOW2:00000000 PID_SetKIDivisorPOW2
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:812    .text.PID_SetUpperIntegralTermLimit:00000000 PID_SetUpperIntegralTermLimit
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:765    .text.PID_SetLowerIntegralTermLimit:00000000 PID_SetLowerIntegralTermLimit
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:759    .text.PID_SetLowerIntegralTermLimit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:806    .text.PID_SetUpperIntegralTermLimit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:853    .text.PID_SetLowerOutputLimit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:859    .text.PID_SetLowerOutputLimit:00000000 PID_SetLowerOutputLimit
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:901    .text.PID_SetUpperOutputLimit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:907    .text.PID_SetUpperOutputLimit:00000000 PID_SetUpperOutputLimit
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:949    .text.PID_SetPrevError:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:955    .text.PID_SetPrevError:00000000 PID_SetPrevError
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:997    .text.PID_SetKD:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1003   .text.PID_SetKD:00000000 PID_SetKD
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1045   .text.PID_GetKD:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1051   .text.PID_GetKD:00000000 PID_GetKD
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1090   .text.PID_GetKDDivisor:00000000 $t
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s 			page 45
+
+
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1096   .text.PID_GetKDDivisor:00000000 PID_GetKDDivisor
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1135   .text.PID_GetKDDivisorPOW2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1141   .text.PID_GetKDDivisorPOW2:00000000 PID_GetKDDivisorPOW2
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1180   .text.PID_SetKDDivisorPOW2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1186   .text.PID_SetKDDivisorPOW2:00000000 PID_SetKDDivisorPOW2
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1236   .text.PI_Controller:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1242   .text.PI_Controller:00000000 PI_Controller
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1455   .text.PI_Controller:00000124 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1460   .text.PID_Controller:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cckMlOyU.s:1466   .text.PID_Controller:00000000 PID_Controller
+
+NO UNDEFINED SYMBOLS

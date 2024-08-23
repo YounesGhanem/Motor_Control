@@ -1,0 +1,483 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"pqd_motor_power_measurement.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.PQD_CalcElMotorPower,"ax",%progbits
+  56              		.align	1
+  57              		.weak	PQD_CalcElMotorPower
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	PQD_CalcElMotorPower:
+  63              	.LFB1088:
+  64              		.file 1 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c"
+   1:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /**
+   2:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   ******************************************************************************
+   3:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @file    pqd_motor_power_measurement.c
+   4:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @brief   This file provides the functions that implement the  features of the 
+   6:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *          PQD Motor Power Measurement component of the Motor Control SDK.
+   7:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *
+   8:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   ******************************************************************************
+   9:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @attention
+  10:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *
+  11:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  12:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * All rights reserved.</center></h2>
+  13:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *
+  14:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  15:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  16:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * the License. You may obtain a copy of the License at:
+  17:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *                             www.st.com/SLA0044
+  18:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *
+  19:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   ******************************************************************************
+  20:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @ingroup pqd_motorpowermeasurement
+  21:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   */
+  22:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  23:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /* Includes ------------------------------------------------------------------*/
+  24:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  25:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #include "pqd_motor_power_measurement.h"
+  26:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #include "mc_type.h"
+  27:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  28:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  29:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /** @addtogroup MCSDK
+  30:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @{
+  31:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   */
+  32:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  33:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /** @defgroup pqd_motorpowermeasurement PQD Motor Power Measurement
+  34:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @brief Motor Power Measurement component using DQ-frame current and voltage values 
+  35:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *
+  36:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * The PQD Motor Power Measurement component uses @f$I_d@f$, @f$I_q@f$, @f$V_d@f$ and @f$V_q@f$
+  37:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * to compute the electrical power flowing through the motor.
+  38:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  39:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * These values are periodically sampled from the current regulation loop and used to compute 
+  40:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * instantaneous power values. The instantaneous values are then used to compute an average
+  41:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * power value that is stored. These computations are done with integer operations and the
+  42:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * average value is store as an integer, in s16 digit format (s16A x s16V unit). 
+  43:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  44:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * The PQD Motor Power Measurement component provides an interface, PQD_GetAvrgElMotorPowerW()
+  45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * that converts the int16_t digit average power into a floating point value expressed in
+  46:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * Watts.
+  47:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *
+  48:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @{
+  49:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   */
+  50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /**
+  52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @brief Updates the average electrical motor power measure with the latest values 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 3
+
+
+  53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *        of the DQ currents and voltages.
+  54:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  55:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * This method should be called with Medium Frequency Task periodicity. It computes an
+  56:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * instantaneous power value using the latest @f$I_{qd}@f$ and @f$V_{qd}@f$ data available
+  57:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * and uses it to update the average motor power value. 
+  58:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  59:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * Computations are done on s16A and s16V integer values defined in
+  60:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * [Current measurement unit](measurement_units.md). The average motor power value is
+  61:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * computed as an int16_t value.
+  62:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  63:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @param pHandle Handle on the related PQD Motor Power Measurement component instance.
+  64:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   */
+  65:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** __weak void PQD_CalcElMotorPower(PQD_MotorPowMeas_Handle_t *pHandle)
+  66:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** {
+  65              		.loc 1 66 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 24
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  70 0000 80B4     		push	{r7}
+  71              	.LCFI0:
+  72              		.cfi_def_cfa_offset 4
+  73              		.cfi_offset 7, -4
+  74 0002 87B0     		sub	sp, sp, #28
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 32
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 7860     		str	r0, [r7, #4]
+  67:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_PQD_MOT_POW_MEAS
+  68:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   if (MC_NULL == pHandle)
+  69:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   {
+  70:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     /* Nothing to do */
+  71:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   }
+  72:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   else
+  73:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   {
+  74:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #endif
+  75:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     int32_t wAux;
+  76:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     qd_t Iqd = pHandle->pFOCVars->Iqd;
+  81              		.loc 1 76 23
+  82 0008 7B68     		ldr	r3, [r7, #4]
+  83 000a 9A68     		ldr	r2, [r3, #8]
+  84              		.loc 1 76 10
+  85 000c 07F11003 		add	r3, r7, #16
+  86 0010 0C32     		adds	r2, r2, #12
+  87 0012 1068     		ldr	r0, [r2]	@ unaligned
+  88 0014 1860     		str	r0, [r3]
+  77:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     qd_t Vqd = pHandle->pFOCVars->Vqd;
+  89              		.loc 1 77 23
+  90 0016 7B68     		ldr	r3, [r7, #4]
+  91 0018 9A68     		ldr	r2, [r3, #8]
+  92              		.loc 1 77 10
+  93 001a 07F10C03 		add	r3, r7, #12
+  94 001e 1632     		adds	r2, r2, #22
+  95 0020 1068     		ldr	r0, [r2]	@ unaligned
+  96 0022 1860     		str	r0, [r3]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 4
+
+
+  78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     wAux = ((int32_t)Iqd.q * (int32_t)Vqd.q)
+  97              		.loc 1 79 25
+  98 0024 B7F91030 		ldrsh	r3, [r7, #16]
+  99              		.loc 1 79 42
+ 100 0028 B7F90C20 		ldrsh	r2, [r7, #12]
+ 101              		.loc 1 79 28
+ 102 002c 03FB02F2 		mul	r2, r3, r2
+  80:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****          + ((int32_t)Iqd.d * (int32_t)Vqd.d);
+ 103              		.loc 1 80 25
+ 104 0030 B7F91230 		ldrsh	r3, [r7, #18]
+ 105              		.loc 1 80 42
+ 106 0034 B7F90E10 		ldrsh	r1, [r7, #14]
+ 107              		.loc 1 80 28
+ 108 0038 01FB03F3 		mul	r3, r1, r3
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****          + ((int32_t)Iqd.d * (int32_t)Vqd.d);
+ 109              		.loc 1 79 10
+ 110 003c 1344     		add	r3, r3, r2
+ 111 003e 7B61     		str	r3, [r7, #20]
+  81:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     wAux /= 65536;
+ 112              		.loc 1 81 10
+ 113 0040 7B69     		ldr	r3, [r7, #20]
+ 114 0042 002B     		cmp	r3, #0
+ 115 0044 02DA     		bge	.L2
+ 116 0046 03F57F43 		add	r3, r3, #65280
+ 117 004a FF33     		adds	r3, r3, #255
+ 118              	.L2:
+ 119 004c 1B14     		asrs	r3, r3, #16
+ 120 004e 7B61     		str	r3, [r7, #20]
+  82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     /* pHandle->hAvrgElMotorPower += (wAux - pHandle->hAvrgElMotorPower) >> 4 */
+  84:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     pHandle->hAvrgElMotorPower += (int16_t)((wAux - (int32_t)pHandle->hAvrgElMotorPower) / 16);
+ 121              		.loc 1 84 32
+ 122 0050 7B68     		ldr	r3, [r7, #4]
+ 123 0052 B3F90030 		ldrsh	r3, [r3]
+ 124 0056 9AB2     		uxth	r2, r3
+ 125              		.loc 1 84 69
+ 126 0058 7B68     		ldr	r3, [r7, #4]
+ 127 005a B3F90030 		ldrsh	r3, [r3]
+ 128              		.loc 1 84 53
+ 129 005e 1946     		mov	r1, r3
+ 130              		.loc 1 84 51
+ 131 0060 7B69     		ldr	r3, [r7, #20]
+ 132 0062 5B1A     		subs	r3, r3, r1
+ 133              		.loc 1 84 90
+ 134 0064 002B     		cmp	r3, #0
+ 135 0066 00DA     		bge	.L3
+ 136 0068 0F33     		adds	r3, r3, #15
+ 137              	.L3:
+ 138 006a 1B11     		asrs	r3, r3, #4
+ 139              		.loc 1 84 35
+ 140 006c 9BB2     		uxth	r3, r3
+ 141              		.loc 1 84 32
+ 142 006e 1344     		add	r3, r3, r2
+ 143 0070 9BB2     		uxth	r3, r3
+ 144 0072 1AB2     		sxth	r2, r3
+ 145 0074 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 5
+
+
+ 146 0076 1A80     		strh	r2, [r3]	@ movhi
+  85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  86:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_PQD_MOT_POW_MEAS
+  87:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   }
+  88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #endif
+  89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** }
+ 147              		.loc 1 89 1
+ 148 0078 00BF     		nop
+ 149 007a 1C37     		adds	r7, r7, #28
+ 150              	.LCFI3:
+ 151              		.cfi_def_cfa_offset 4
+ 152 007c BD46     		mov	sp, r7
+ 153              	.LCFI4:
+ 154              		.cfi_def_cfa_register 13
+ 155              		@ sp needed
+ 156 007e 5DF8047B 		ldr	r7, [sp], #4
+ 157              	.LCFI5:
+ 158              		.cfi_restore 7
+ 159              		.cfi_def_cfa_offset 0
+ 160 0082 7047     		bx	lr
+ 161              		.cfi_endproc
+ 162              	.LFE1088:
+ 164              		.section	.text.PQD_Clear,"ax",%progbits
+ 165              		.align	1
+ 166              		.weak	PQD_Clear
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 171              	PQD_Clear:
+ 172              	.LFB1089:
+  90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+  91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /**
+  92:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @brief  Clears the int16_t digit average motor power value stored in the handle.
+  93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * This function should be called before each motor start.
+  95:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+  96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @param pHandle Handle on the related PQD Motor Power Measurement component instance.
+  97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   */
+  98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** __weak void PQD_Clear(PQD_MotorPowMeas_Handle_t *pHandle)
+  99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** {
+ 173              		.loc 1 99 1
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 8
+ 176              		@ frame_needed = 1, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 178 0000 80B4     		push	{r7}
+ 179              	.LCFI6:
+ 180              		.cfi_def_cfa_offset 4
+ 181              		.cfi_offset 7, -4
+ 182 0002 83B0     		sub	sp, sp, #12
+ 183              	.LCFI7:
+ 184              		.cfi_def_cfa_offset 16
+ 185 0004 00AF     		add	r7, sp, #0
+ 186              	.LCFI8:
+ 187              		.cfi_def_cfa_register 7
+ 188 0006 7860     		str	r0, [r7, #4]
+ 100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_MOT_POW_MES
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 6
+
+
+ 101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   if (MC_NULL == pHandle)
+ 102:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   {
+ 103:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     /* nothing to do */
+ 104:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   }
+ 105:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   else
+ 106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   {
+ 107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #endif
+ 108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     pHandle->hAvrgElMotorPower = 0;
+ 189              		.loc 1 108 32
+ 190 0008 7B68     		ldr	r3, [r7, #4]
+ 191 000a 0022     		movs	r2, #0
+ 192 000c 1A80     		strh	r2, [r3]	@ movhi
+ 109:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_MOT_POW_MES
+ 110:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   }
+ 111:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #endif
+ 112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** }
+ 193              		.loc 1 112 1
+ 194 000e 00BF     		nop
+ 195 0010 0C37     		adds	r7, r7, #12
+ 196              	.LCFI9:
+ 197              		.cfi_def_cfa_offset 4
+ 198 0012 BD46     		mov	sp, r7
+ 199              	.LCFI10:
+ 200              		.cfi_def_cfa_register 13
+ 201              		@ sp needed
+ 202 0014 5DF8047B 		ldr	r7, [sp], #4
+ 203              	.LCFI11:
+ 204              		.cfi_restore 7
+ 205              		.cfi_def_cfa_offset 0
+ 206 0018 7047     		bx	lr
+ 207              		.cfi_endproc
+ 208              	.LFE1089:
+ 210              		.section	.text.PQD_GetAvrgElMotorPowerW,"ax",%progbits
+ 211              		.align	1
+ 212              		.weak	PQD_GetAvrgElMotorPowerW
+ 213              		.syntax unified
+ 214              		.thumb
+ 215              		.thumb_func
+ 217              	PQD_GetAvrgElMotorPowerW:
+ 218              	.LFB1090:
+ 113:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+ 114:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /**
+ 115:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @brief Returns an average value of the measured motor power expressed in Watts
+ 116:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+ 117:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * This function converts the int16_t digit average motor power value stored in the handle
+ 118:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * in a floating point value in Watts.
+ 119:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * 
+ 120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @param pHandle pointer on the related component instance.
+ 121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @retval float_t The average measured motor power expressed in Watts.
+ 122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   */
+ 123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** __weak float_t PQD_GetAvrgElMotorPowerW(const PQD_MotorPowMeas_Handle_t *pHandle)
+ 124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** {
+ 219              		.loc 1 124 1
+ 220              		.cfi_startproc
+ 221              		@ args = 0, pretend = 0, frame = 16
+ 222              		@ frame_needed = 1, uses_anonymous_args = 0
+ 223 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 7
+
+
+ 224              	.LCFI12:
+ 225              		.cfi_def_cfa_offset 8
+ 226              		.cfi_offset 7, -8
+ 227              		.cfi_offset 14, -4
+ 228 0002 2DED028B 		vpush.64	{d8}
+ 229              	.LCFI13:
+ 230              		.cfi_def_cfa_offset 16
+ 231              		.cfi_offset 80, -16
+ 232              		.cfi_offset 81, -12
+ 233 0006 84B0     		sub	sp, sp, #16
+ 234              	.LCFI14:
+ 235              		.cfi_def_cfa_offset 32
+ 236 0008 00AF     		add	r7, sp, #0
+ 237              	.LCFI15:
+ 238              		.cfi_def_cfa_register 7
+ 239 000a 7860     		str	r0, [r7, #4]
+ 125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   float_t PowerW = 0.0f;
+ 240              		.loc 1 125 11
+ 241 000c 4FF00003 		mov	r3, #0
+ 242 0010 FB60     		str	r3, [r7, #12]	@ float
+ 126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   
+ 127:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_PQD_MOT_POW_MEAS
+ 128:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   if (MC_NULL == pHandle)
+ 129:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   {
+ 130:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****     /* Nothing to do */
+ 131:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   }
+ 132:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   else
+ 133:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   {
+ 134:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #endif
+ 135:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+ 136:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   /* First perform an integer multiplication, then a float one. */
+ 137:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   PowerW = ((float_t)pHandle->hAvrgElMotorPower * (float_t)VBS_GetAvBusVoltage_V(pHandle->pVBS)) * 
+ 243              		.loc 1 137 29
+ 244 0012 7B68     		ldr	r3, [r7, #4]
+ 245 0014 B3F90030 		ldrsh	r3, [r3]
+ 246              		.loc 1 137 13
+ 247 0018 07EE903A 		vmov	s15, r3	@ int
+ 248 001c B8EEE78A 		vcvt.f32.s32	s16, s15
+ 249              		.loc 1 137 89
+ 250 0020 7B68     		ldr	r3, [r7, #4]
+ 251 0022 DB68     		ldr	r3, [r3, #12]
+ 252              		.loc 1 137 60
+ 253 0024 1846     		mov	r0, r3
+ 254 0026 FFF7FEFF 		bl	VBS_GetAvBusVoltage_V
+ 255 002a 0346     		mov	r3, r0
+ 256 002c 07EE903A 		vmov	s15, r3	@ int
+ 257              		.loc 1 137 51
+ 258 0030 F8EE677A 		vcvt.f32.u32	s15, s15
+ 259              		.loc 1 137 49
+ 260 0034 28EE277A 		vmul.f32	s14, s16, s15
+ 261              		.loc 1 137 107
+ 262 0038 7B68     		ldr	r3, [r7, #4]
+ 263 003a D3ED017A 		vldr.32	s15, [r3, #4]
+ 264              		.loc 1 137 10
+ 265 003e 67EE277A 		vmul.f32	s15, s14, s15
+ 266 0042 C7ED037A 		vstr.32	s15, [r7, #12]
+ 138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 8
+
+
+ 139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_PQD_MOT_POW_MEAS
+ 140:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   }
+ 141:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #endif
+ 142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   return (PowerW);
+ 267              		.loc 1 142 10
+ 268 0046 FB68     		ldr	r3, [r7, #12]	@ float
+ 269 0048 07EE903A 		vmov	s15, r3
+ 143:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** }
+ 270              		.loc 1 143 1
+ 271 004c B0EE670A 		vmov.f32	s0, s15
+ 272 0050 1037     		adds	r7, r7, #16
+ 273              	.LCFI16:
+ 274              		.cfi_def_cfa_offset 16
+ 275 0052 BD46     		mov	sp, r7
+ 276              	.LCFI17:
+ 277              		.cfi_def_cfa_register 13
+ 278              		@ sp needed
+ 279 0054 BDEC028B 		vldm	sp!, {d8}
+ 280              	.LCFI18:
+ 281              		.cfi_restore 80
+ 282              		.cfi_restore 81
+ 283              		.cfi_def_cfa_offset 8
+ 284 0058 80BD     		pop	{r7, pc}
+ 285              		.cfi_endproc
+ 286              	.LFE1090:
+ 288              		.text
+ 289              	.Letext0:
+ 290              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 291              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 292              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 293              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 294              		.file 6 "Inc/mc_type.h"
+ 295              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/bus_voltage_sensor.h"
+ 296              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pqd_motor_power_measurement.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pqd_motor_power_measurement.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:56     .text.PQD_CalcElMotorPower:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:62     .text.PQD_CalcElMotorPower:00000000 PQD_CalcElMotorPower
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:165    .text.PQD_Clear:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:171    .text.PQD_Clear:00000000 PQD_Clear
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:211    .text.PQD_GetAvrgElMotorPowerW:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:217    .text.PQD_GetAvrgElMotorPowerW:00000000 PQD_GetAvrgElMotorPowerW
+
+UNDEFINED SYMBOLS
+VBS_GetAvBusVoltage_V

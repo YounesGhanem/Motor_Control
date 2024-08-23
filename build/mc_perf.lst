@@ -1,0 +1,1478 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mc_perf.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.MC_Perf_Measure_Init,"ax",%progbits
+  56              		.align	1
+  57              		.global	MC_Perf_Measure_Init
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	MC_Perf_Measure_Init:
+  63              	.LFB1090:
+  64              		.file 1 "Src/mc_perf.c"
+   1:Src/mc_perf.c **** /**
+   2:Src/mc_perf.c ****   ******************************************************************************
+   3:Src/mc_perf.c ****   * @file    mc_perf.c
+   4:Src/mc_perf.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:Src/mc_perf.c ****   * @brief   Execution time measurement
+   6:Src/mc_perf.c ****   ******************************************************************************
+   7:Src/mc_perf.c ****   * @attention
+   8:Src/mc_perf.c ****   *
+   9:Src/mc_perf.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  10:Src/mc_perf.c ****   * All rights reserved.</center></h2>
+  11:Src/mc_perf.c ****   *
+  12:Src/mc_perf.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  13:Src/mc_perf.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  14:Src/mc_perf.c ****   * the License. You may obtain a copy of the License at:
+  15:Src/mc_perf.c ****   *                             www.st.com/SLA0044
+  16:Src/mc_perf.c ****   *
+  17:Src/mc_perf.c ****   ******************************************************************************
+  18:Src/mc_perf.c ****   */
+  19:Src/mc_perf.c **** 
+  20:Src/mc_perf.c **** #include "parameters_conversion.h"
+  21:Src/mc_perf.c **** #include "mc_perf.h"
+  22:Src/mc_perf.c **** 
+  23:Src/mc_perf.c **** void MC_Perf_Measure_Init(MC_Perf_Handle_t *pHandle)
+  24:Src/mc_perf.c **** {
+  65              		.loc 1 24 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 16
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  70 0000 80B4     		push	{r7}
+  71              	.LCFI0:
+  72              		.cfi_def_cfa_offset 4
+  73              		.cfi_offset 7, -4
+  74 0002 85B0     		sub	sp, sp, #20
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 24
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 7860     		str	r0, [r7, #4]
+  25:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+  26:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+  27:Src/mc_perf.c ****   {
+  28:Src/mc_perf.c ****     /* Nothing to do */
+  29:Src/mc_perf.c ****   }
+  30:Src/mc_perf.c ****   else
+  31:Src/mc_perf.c ****   {
+  32:Src/mc_perf.c **** #endif
+  33:Src/mc_perf.c ****   uint8_t  i;
+  34:Src/mc_perf.c ****   Perf_Handle_t  *pHdl;
+  35:Src/mc_perf.c **** 
+  36:Src/mc_perf.c ****   /* Set Debug mod for DWT IP Enabling */
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 3
+
+
+  37:Src/mc_perf.c ****   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  81              		.loc 1 37 20
+  82 0008 1D4B     		ldr	r3, .L5
+  83 000a DB68     		ldr	r3, [r3, #12]
+  84 000c 1C4A     		ldr	r2, .L5
+  85 000e 43F08073 		orr	r3, r3, #16777216
+  86 0012 D360     		str	r3, [r2, #12]
+  38:Src/mc_perf.c **** 
+  39:Src/mc_perf.c ****   if (DWT->CTRL != 0U)
+  87              		.loc 1 39 10
+  88 0014 1B4B     		ldr	r3, .L5+4
+  89 0016 1B68     		ldr	r3, [r3]
+  90              		.loc 1 39 6
+  91 0018 002B     		cmp	r3, #0
+  92 001a 08D0     		beq	.L2
+  40:Src/mc_perf.c ****   {                                        /* Check if DWT is present. */
+  41:Src/mc_perf.c ****     DWT->CYCCNT  = 0;
+  93              		.loc 1 41 8
+  94 001c 194B     		ldr	r3, .L5+4
+  95              		.loc 1 41 18
+  96 001e 0022     		movs	r2, #0
+  97 0020 5A60     		str	r2, [r3, #4]
+  42:Src/mc_perf.c ****     DWT->CTRL   |= DWT_CTRL_CYCCNTENA_Msk; /* Enable Cycle Counter. */
+  98              		.loc 1 42 17
+  99 0022 184B     		ldr	r3, .L5+4
+ 100 0024 1B68     		ldr	r3, [r3]
+ 101 0026 174A     		ldr	r2, .L5+4
+ 102 0028 43F00103 		orr	r3, r3, #1
+ 103 002c 1360     		str	r3, [r2]
+ 104              	.L2:
+  43:Src/mc_perf.c ****   }
+  44:Src/mc_perf.c ****   else
+  45:Src/mc_perf.c ****   {
+  46:Src/mc_perf.c ****     /* Nothing to do */
+  47:Src/mc_perf.c ****   }
+  48:Src/mc_perf.c **** 
+  49:Src/mc_perf.c ****     for (i = 0U; i < MC_PERF_NB_TRACES; i++)
+ 105              		.loc 1 49 12
+ 106 002e 0023     		movs	r3, #0
+ 107 0030 FB73     		strb	r3, [r7, #15]
+ 108              		.loc 1 49 5
+ 109 0032 15E0     		b	.L3
+ 110              	.L4:
+  50:Src/mc_perf.c ****     {
+  51:Src/mc_perf.c ****       pHdl = &pHandle->MC_Perf_TraceLog[i];
+ 111              		.loc 1 51 40 discriminator 3
+ 112 0034 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 113              		.loc 1 51 12 discriminator 3
+ 114 0036 1B01     		lsls	r3, r3, #4
+ 115 0038 0833     		adds	r3, r3, #8
+ 116 003a 7A68     		ldr	r2, [r7, #4]
+ 117 003c 1344     		add	r3, r3, r2
+ 118 003e BB60     		str	r3, [r7, #8]
+  52:Src/mc_perf.c ****       pHdl->StartMeasure = 0;
+ 119              		.loc 1 52 26 discriminator 3
+ 120 0040 BB68     		ldr	r3, [r7, #8]
+ 121 0042 0022     		movs	r2, #0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 4
+
+
+ 122 0044 1A60     		str	r2, [r3]
+  53:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle = 0;
+ 123              		.loc 1 53 30 discriminator 3
+ 124 0046 BB68     		ldr	r3, [r7, #8]
+ 125 0048 0022     		movs	r2, #0
+ 126 004a 5A60     		str	r2, [r3, #4]
+  54:Src/mc_perf.c ****       pHdl->min = UINT32_MAX;
+ 127              		.loc 1 54 17 discriminator 3
+ 128 004c BB68     		ldr	r3, [r7, #8]
+ 129 004e 4FF0FF32 		mov	r2, #-1
+ 130 0052 9A60     		str	r2, [r3, #8]
+  55:Src/mc_perf.c ****       pHdl->max = 0;
+ 131              		.loc 1 55 17 discriminator 3
+ 132 0054 BB68     		ldr	r3, [r7, #8]
+ 133 0056 0022     		movs	r2, #0
+ 134 0058 DA60     		str	r2, [r3, #12]
+  49:Src/mc_perf.c ****     {
+ 135              		.loc 1 49 42 discriminator 3
+ 136 005a FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 137 005c 0133     		adds	r3, r3, #1
+ 138 005e FB73     		strb	r3, [r7, #15]
+ 139              	.L3:
+  49:Src/mc_perf.c ****     {
+ 140              		.loc 1 49 5 discriminator 1
+ 141 0060 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 142 0062 012B     		cmp	r3, #1
+ 143 0064 E6D9     		bls	.L4
+  56:Src/mc_perf.c ****     }
+  57:Src/mc_perf.c ****     pHandle->BG_Task_OnGoing = false;
+ 144              		.loc 1 57 30
+ 145 0066 7B68     		ldr	r3, [r7, #4]
+ 146 0068 0022     		movs	r2, #0
+ 147 006a 1A70     		strb	r2, [r3]
+  58:Src/mc_perf.c ****     pHandle->AccHighFreqTasksCnt = 0;
+ 148              		.loc 1 58 34
+ 149 006c 7B68     		ldr	r3, [r7, #4]
+ 150 006e 0022     		movs	r2, #0
+ 151 0070 5A60     		str	r2, [r3, #4]
+  59:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+  60:Src/mc_perf.c ****   }
+  61:Src/mc_perf.c **** #endif
+  62:Src/mc_perf.c **** }
+ 152              		.loc 1 62 1
+ 153 0072 00BF     		nop
+ 154 0074 1437     		adds	r7, r7, #20
+ 155              	.LCFI3:
+ 156              		.cfi_def_cfa_offset 4
+ 157 0076 BD46     		mov	sp, r7
+ 158              	.LCFI4:
+ 159              		.cfi_def_cfa_register 13
+ 160              		@ sp needed
+ 161 0078 5DF8047B 		ldr	r7, [sp], #4
+ 162              	.LCFI5:
+ 163              		.cfi_restore 7
+ 164              		.cfi_def_cfa_offset 0
+ 165 007c 7047     		bx	lr
+ 166              	.L6:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 5
+
+
+ 167 007e 00BF     		.align	2
+ 168              	.L5:
+ 169 0080 F0ED00E0 		.word	-536810000
+ 170 0084 001000E0 		.word	-536866816
+ 171              		.cfi_endproc
+ 172              	.LFE1090:
+ 174              		.section	.text.MC_Perf_Clear,"ax",%progbits
+ 175              		.align	1
+ 176              		.global	MC_Perf_Clear
+ 177              		.syntax unified
+ 178              		.thumb
+ 179              		.thumb_func
+ 181              	MC_Perf_Clear:
+ 182              	.LFB1091:
+  63:Src/mc_perf.c **** 
+  64:Src/mc_perf.c **** void MC_Perf_Clear(MC_Perf_Handle_t *pHandle,uint8_t bMotor)
+  65:Src/mc_perf.c **** {
+ 183              		.loc 1 65 1
+ 184              		.cfi_startproc
+ 185              		@ args = 0, pretend = 0, frame = 16
+ 186              		@ frame_needed = 1, uses_anonymous_args = 0
+ 187              		@ link register save eliminated.
+ 188 0000 80B4     		push	{r7}
+ 189              	.LCFI6:
+ 190              		.cfi_def_cfa_offset 4
+ 191              		.cfi_offset 7, -4
+ 192 0002 85B0     		sub	sp, sp, #20
+ 193              	.LCFI7:
+ 194              		.cfi_def_cfa_offset 24
+ 195 0004 00AF     		add	r7, sp, #0
+ 196              	.LCFI8:
+ 197              		.cfi_def_cfa_register 7
+ 198 0006 7860     		str	r0, [r7, #4]
+ 199 0008 0B46     		mov	r3, r1
+ 200 000a FB70     		strb	r3, [r7, #3]
+  66:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+  67:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+  68:Src/mc_perf.c ****   {
+  69:Src/mc_perf.c ****     /* Nothing to do */
+  70:Src/mc_perf.c ****   }
+  71:Src/mc_perf.c ****   else
+  72:Src/mc_perf.c ****   {
+  73:Src/mc_perf.c **** #endif
+  74:Src/mc_perf.c ****     uint8_t  i;
+  75:Src/mc_perf.c ****     Perf_Handle_t  *pHdl;
+  76:Src/mc_perf.c **** 
+  77:Src/mc_perf.c ****     for (i = 0U; i < 2; i++)
+ 201              		.loc 1 77 12
+ 202 000c 0023     		movs	r3, #0
+ 203 000e FB73     		strb	r3, [r7, #15]
+ 204              		.loc 1 77 5
+ 205 0010 15E0     		b	.L8
+ 206              	.L9:
+  78:Src/mc_perf.c ****     {
+  79:Src/mc_perf.c ****       pHdl = &pHandle->MC_Perf_TraceLog[2*bMotor+i];
+ 207              		.loc 1 79 42 discriminator 3
+ 208 0012 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 6
+
+
+ 209 0014 5A00     		lsls	r2, r3, #1
+ 210              		.loc 1 79 49 discriminator 3
+ 211 0016 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 212 0018 1344     		add	r3, r3, r2
+ 213              		.loc 1 79 12 discriminator 3
+ 214 001a 1B01     		lsls	r3, r3, #4
+ 215 001c 0833     		adds	r3, r3, #8
+ 216 001e 7A68     		ldr	r2, [r7, #4]
+ 217 0020 1344     		add	r3, r3, r2
+ 218 0022 BB60     		str	r3, [r7, #8]
+  80:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle = 0;
+ 219              		.loc 1 80 30 discriminator 3
+ 220 0024 BB68     		ldr	r3, [r7, #8]
+ 221 0026 0022     		movs	r2, #0
+ 222 0028 5A60     		str	r2, [r3, #4]
+  81:Src/mc_perf.c ****       pHdl->min = UINT32_MAX;
+ 223              		.loc 1 81 17 discriminator 3
+ 224 002a BB68     		ldr	r3, [r7, #8]
+ 225 002c 4FF0FF32 		mov	r2, #-1
+ 226 0030 9A60     		str	r2, [r3, #8]
+  82:Src/mc_perf.c ****       pHdl->max = 0;
+ 227              		.loc 1 82 17 discriminator 3
+ 228 0032 BB68     		ldr	r3, [r7, #8]
+ 229 0034 0022     		movs	r2, #0
+ 230 0036 DA60     		str	r2, [r3, #12]
+  77:Src/mc_perf.c ****     {
+ 231              		.loc 1 77 26 discriminator 3
+ 232 0038 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 233 003a 0133     		adds	r3, r3, #1
+ 234 003c FB73     		strb	r3, [r7, #15]
+ 235              	.L8:
+  77:Src/mc_perf.c ****     {
+ 236              		.loc 1 77 5 discriminator 1
+ 237 003e FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 238 0040 012B     		cmp	r3, #1
+ 239 0042 E6D9     		bls	.L9
+  83:Src/mc_perf.c ****     }
+  84:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+  85:Src/mc_perf.c ****   }
+  86:Src/mc_perf.c **** #endif
+  87:Src/mc_perf.c **** }
+ 240              		.loc 1 87 1
+ 241 0044 00BF     		nop
+ 242 0046 00BF     		nop
+ 243 0048 1437     		adds	r7, r7, #20
+ 244              	.LCFI9:
+ 245              		.cfi_def_cfa_offset 4
+ 246 004a BD46     		mov	sp, r7
+ 247              	.LCFI10:
+ 248              		.cfi_def_cfa_register 13
+ 249              		@ sp needed
+ 250 004c 5DF8047B 		ldr	r7, [sp], #4
+ 251              	.LCFI11:
+ 252              		.cfi_restore 7
+ 253              		.cfi_def_cfa_offset 0
+ 254 0050 7047     		bx	lr
+ 255              		.cfi_endproc
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 7
+
+
+ 256              	.LFE1091:
+ 258              		.section	.text.MC_Perf_Measure_Start,"ax",%progbits
+ 259              		.align	1
+ 260              		.global	MC_Perf_Measure_Start
+ 261              		.syntax unified
+ 262              		.thumb
+ 263              		.thumb_func
+ 265              	MC_Perf_Measure_Start:
+ 266              	.LFB1092:
+  88:Src/mc_perf.c **** 
+  89:Src/mc_perf.c **** /**
+  90:Src/mc_perf.c ****  * @brief  Start the measure of a code section called in foreground.
+  91:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+  92:Src/mc_perf.c ****  * @param  CodeSection: code section to measure.
+  93:Src/mc_perf.c ****  */
+  94:Src/mc_perf.c **** void MC_Perf_Measure_Start(MC_Perf_Handle_t *pHandle, uint8_t CodeSection)
+  95:Src/mc_perf.c **** {
+ 267              		.loc 1 95 1
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 16
+ 270              		@ frame_needed = 1, uses_anonymous_args = 0
+ 271              		@ link register save eliminated.
+ 272 0000 80B4     		push	{r7}
+ 273              	.LCFI12:
+ 274              		.cfi_def_cfa_offset 4
+ 275              		.cfi_offset 7, -4
+ 276 0002 85B0     		sub	sp, sp, #20
+ 277              	.LCFI13:
+ 278              		.cfi_def_cfa_offset 24
+ 279 0004 00AF     		add	r7, sp, #0
+ 280              	.LCFI14:
+ 281              		.cfi_def_cfa_register 7
+ 282 0006 7860     		str	r0, [r7, #4]
+ 283 0008 0B46     		mov	r3, r1
+ 284 000a FB70     		strb	r3, [r7, #3]
+  96:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+  97:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+  98:Src/mc_perf.c ****   {
+  99:Src/mc_perf.c ****     /* Nothing to do */
+ 100:Src/mc_perf.c ****   }
+ 101:Src/mc_perf.c ****   else
+ 102:Src/mc_perf.c ****   {
+ 103:Src/mc_perf.c **** #endif
+ 104:Src/mc_perf.c ****     uint32_t StartMeasure = DWT->CYCCNT;
+ 285              		.loc 1 104 32
+ 286 000c 074B     		ldr	r3, .L11
+ 287              		.loc 1 104 14
+ 288 000e 5B68     		ldr	r3, [r3, #4]
+ 289 0010 FB60     		str	r3, [r7, #12]
+ 105:Src/mc_perf.c ****     pHandle->MC_Perf_TraceLog[CodeSection].StartMeasure = StartMeasure;
+ 290              		.loc 1 105 43
+ 291 0012 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 292              		.loc 1 105 57
+ 293 0014 7A68     		ldr	r2, [r7, #4]
+ 294 0016 1B01     		lsls	r3, r3, #4
+ 295 0018 1344     		add	r3, r3, r2
+ 296 001a 0833     		adds	r3, r3, #8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 8
+
+
+ 297 001c FA68     		ldr	r2, [r7, #12]
+ 298 001e 1A60     		str	r2, [r3]
+ 106:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 107:Src/mc_perf.c ****   }
+ 108:Src/mc_perf.c **** #endif
+ 109:Src/mc_perf.c **** }
+ 299              		.loc 1 109 1
+ 300 0020 00BF     		nop
+ 301 0022 1437     		adds	r7, r7, #20
+ 302              	.LCFI15:
+ 303              		.cfi_def_cfa_offset 4
+ 304 0024 BD46     		mov	sp, r7
+ 305              	.LCFI16:
+ 306              		.cfi_def_cfa_register 13
+ 307              		@ sp needed
+ 308 0026 5DF8047B 		ldr	r7, [sp], #4
+ 309              	.LCFI17:
+ 310              		.cfi_restore 7
+ 311              		.cfi_def_cfa_offset 0
+ 312 002a 7047     		bx	lr
+ 313              	.L12:
+ 314              		.align	2
+ 315              	.L11:
+ 316 002c 001000E0 		.word	-536866816
+ 317              		.cfi_endproc
+ 318              	.LFE1092:
+ 320              		.section	.text.MC_BG_Perf_Measure_Start,"ax",%progbits
+ 321              		.align	1
+ 322              		.global	MC_BG_Perf_Measure_Start
+ 323              		.syntax unified
+ 324              		.thumb
+ 325              		.thumb_func
+ 327              	MC_BG_Perf_Measure_Start:
+ 328              	.LFB1093:
+ 110:Src/mc_perf.c **** 
+ 111:Src/mc_perf.c **** /**
+ 112:Src/mc_perf.c ****  * @brief  Start the measure of a code section called in background.
+ 113:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+ 114:Src/mc_perf.c ****  * @param  CodeSection: code section to measure.
+ 115:Src/mc_perf.c ****  */
+ 116:Src/mc_perf.c **** void MC_BG_Perf_Measure_Start(MC_Perf_Handle_t *pHandle, uint8_t  CodeSection)
+ 117:Src/mc_perf.c **** {
+ 329              		.loc 1 117 1
+ 330              		.cfi_startproc
+ 331              		@ args = 0, pretend = 0, frame = 16
+ 332              		@ frame_needed = 1, uses_anonymous_args = 0
+ 333              		@ link register save eliminated.
+ 334 0000 80B4     		push	{r7}
+ 335              	.LCFI18:
+ 336              		.cfi_def_cfa_offset 4
+ 337              		.cfi_offset 7, -4
+ 338 0002 85B0     		sub	sp, sp, #20
+ 339              	.LCFI19:
+ 340              		.cfi_def_cfa_offset 24
+ 341 0004 00AF     		add	r7, sp, #0
+ 342              	.LCFI20:
+ 343              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 9
+
+
+ 344 0006 7860     		str	r0, [r7, #4]
+ 345 0008 0B46     		mov	r3, r1
+ 346 000a FB70     		strb	r3, [r7, #3]
+ 118:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 119:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+ 120:Src/mc_perf.c ****   {
+ 121:Src/mc_perf.c ****     /* Nothing to do */
+ 122:Src/mc_perf.c ****   }
+ 123:Src/mc_perf.c ****   else
+ 124:Src/mc_perf.c ****   {
+ 125:Src/mc_perf.c **** #endif
+ 126:Src/mc_perf.c ****     pHandle->BG_Task_OnGoing = true;
+ 347              		.loc 1 126 30
+ 348 000c 7B68     		ldr	r3, [r7, #4]
+ 349 000e 0122     		movs	r2, #1
+ 350 0010 1A70     		strb	r2, [r3]
+ 127:Src/mc_perf.c ****     pHandle->AccHighFreqTasksCnt = 0;
+ 351              		.loc 1 127 34
+ 352 0012 7B68     		ldr	r3, [r7, #4]
+ 353 0014 0022     		movs	r2, #0
+ 354 0016 5A60     		str	r2, [r3, #4]
+ 128:Src/mc_perf.c ****     uint32_t StartMeasure = DWT->CYCCNT;
+ 355              		.loc 1 128 32
+ 356 0018 074B     		ldr	r3, .L14
+ 357              		.loc 1 128 14
+ 358 001a 5B68     		ldr	r3, [r3, #4]
+ 359 001c FB60     		str	r3, [r7, #12]
+ 129:Src/mc_perf.c ****     pHandle->MC_Perf_TraceLog[CodeSection].StartMeasure = StartMeasure;
+ 360              		.loc 1 129 43
+ 361 001e FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 362              		.loc 1 129 57
+ 363 0020 7A68     		ldr	r2, [r7, #4]
+ 364 0022 1B01     		lsls	r3, r3, #4
+ 365 0024 1344     		add	r3, r3, r2
+ 366 0026 0833     		adds	r3, r3, #8
+ 367 0028 FA68     		ldr	r2, [r7, #12]
+ 368 002a 1A60     		str	r2, [r3]
+ 130:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 131:Src/mc_perf.c ****   }
+ 132:Src/mc_perf.c **** #endif
+ 133:Src/mc_perf.c **** }
+ 369              		.loc 1 133 1
+ 370 002c 00BF     		nop
+ 371 002e 1437     		adds	r7, r7, #20
+ 372              	.LCFI21:
+ 373              		.cfi_def_cfa_offset 4
+ 374 0030 BD46     		mov	sp, r7
+ 375              	.LCFI22:
+ 376              		.cfi_def_cfa_register 13
+ 377              		@ sp needed
+ 378 0032 5DF8047B 		ldr	r7, [sp], #4
+ 379              	.LCFI23:
+ 380              		.cfi_restore 7
+ 381              		.cfi_def_cfa_offset 0
+ 382 0036 7047     		bx	lr
+ 383              	.L15:
+ 384              		.align	2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 10
+
+
+ 385              	.L14:
+ 386 0038 001000E0 		.word	-536866816
+ 387              		.cfi_endproc
+ 388              	.LFE1093:
+ 390              		.section	.text.MC_Perf_Measure_Stop,"ax",%progbits
+ 391              		.align	1
+ 392              		.global	MC_Perf_Measure_Stop
+ 393              		.syntax unified
+ 394              		.thumb
+ 395              		.thumb_func
+ 397              	MC_Perf_Measure_Stop:
+ 398              	.LFB1094:
+ 134:Src/mc_perf.c **** 
+ 135:Src/mc_perf.c **** /**
+ 136:Src/mc_perf.c ****  * @brief  Stop the measurement of a code section and compute elapse time.
+ 137:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+ 138:Src/mc_perf.c ****  * @param  CodeSection: code section to measure.
+ 139:Src/mc_perf.c ****  */
+ 140:Src/mc_perf.c **** void MC_Perf_Measure_Stop(MC_Perf_Handle_t *pHandle, uint8_t  CodeSection)
+ 141:Src/mc_perf.c **** {
+ 399              		.loc 1 141 1
+ 400              		.cfi_startproc
+ 401              		@ args = 0, pretend = 0, frame = 16
+ 402              		@ frame_needed = 1, uses_anonymous_args = 0
+ 403              		@ link register save eliminated.
+ 404 0000 80B4     		push	{r7}
+ 405              	.LCFI24:
+ 406              		.cfi_def_cfa_offset 4
+ 407              		.cfi_offset 7, -4
+ 408 0002 85B0     		sub	sp, sp, #20
+ 409              	.LCFI25:
+ 410              		.cfi_def_cfa_offset 24
+ 411 0004 00AF     		add	r7, sp, #0
+ 412              	.LCFI26:
+ 413              		.cfi_def_cfa_register 7
+ 414 0006 7860     		str	r0, [r7, #4]
+ 415 0008 0B46     		mov	r3, r1
+ 416 000a FB70     		strb	r3, [r7, #3]
+ 142:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 143:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+ 144:Src/mc_perf.c ****   {
+ 145:Src/mc_perf.c ****     /* Nothing to do */
+ 146:Src/mc_perf.c ****   }
+ 147:Src/mc_perf.c ****   else
+ 148:Src/mc_perf.c ****   {
+ 149:Src/mc_perf.c **** #endif
+ 150:Src/mc_perf.c ****     uint32_t StopMeasure;
+ 151:Src/mc_perf.c ****     Perf_Handle_t *pHdl;
+ 152:Src/mc_perf.c **** 
+ 153:Src/mc_perf.c ****     StopMeasure = DWT->CYCCNT;
+ 417              		.loc 1 153 22
+ 418 000c 204B     		ldr	r3, .L23
+ 419              		.loc 1 153 17
+ 420 000e 5B68     		ldr	r3, [r3, #4]
+ 421 0010 FB60     		str	r3, [r7, #12]
+ 154:Src/mc_perf.c ****     pHdl = &pHandle->MC_Perf_TraceLog[CodeSection];
+ 422              		.loc 1 154 38
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 11
+
+
+ 423 0012 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 424              		.loc 1 154 10
+ 425 0014 1B01     		lsls	r3, r3, #4
+ 426 0016 0833     		adds	r3, r3, #8
+ 427 0018 7A68     		ldr	r2, [r7, #4]
+ 428 001a 1344     		add	r3, r3, r2
+ 429 001c BB60     		str	r3, [r7, #8]
+ 155:Src/mc_perf.c **** 
+ 156:Src/mc_perf.c ****     /* Check Overflow cases */
+ 157:Src/mc_perf.c ****     if (StopMeasure < pHdl->StartMeasure)
+ 430              		.loc 1 157 27
+ 431 001e BB68     		ldr	r3, [r7, #8]
+ 432 0020 1B68     		ldr	r3, [r3]
+ 433              		.loc 1 157 8
+ 434 0022 FA68     		ldr	r2, [r7, #12]
+ 435 0024 9A42     		cmp	r2, r3
+ 436 0026 07D2     		bcs	.L17
+ 158:Src/mc_perf.c ****     {
+ 159:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle = (UINT32_MAX - pHdl->StartMeasure) + StopMeasure;
+ 437              		.loc 1 159 50
+ 438 0028 BB68     		ldr	r3, [r7, #8]
+ 439 002a 1B68     		ldr	r3, [r3]
+ 440              		.loc 1 159 66
+ 441 002c FA68     		ldr	r2, [r7, #12]
+ 442 002e D31A     		subs	r3, r2, r3
+ 443 0030 5A1E     		subs	r2, r3, #1
+ 444              		.loc 1 159 30
+ 445 0032 BB68     		ldr	r3, [r7, #8]
+ 446 0034 5A60     		str	r2, [r3, #4]
+ 447 0036 05E0     		b	.L18
+ 448              	.L17:
+ 160:Src/mc_perf.c ****     }
+ 161:Src/mc_perf.c ****     else
+ 162:Src/mc_perf.c ****     {
+ 163:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle = StopMeasure - pHdl->StartMeasure;
+ 449              		.loc 1 163 50
+ 450 0038 BB68     		ldr	r3, [r7, #8]
+ 451 003a 1B68     		ldr	r3, [r3]
+ 452              		.loc 1 163 44
+ 453 003c FA68     		ldr	r2, [r7, #12]
+ 454 003e D21A     		subs	r2, r2, r3
+ 455              		.loc 1 163 30
+ 456 0040 BB68     		ldr	r3, [r7, #8]
+ 457 0042 5A60     		str	r2, [r3, #4]
+ 458              	.L18:
+ 164:Src/mc_perf.c ****     }
+ 165:Src/mc_perf.c **** 
+ 166:Src/mc_perf.c ****     if(pHandle->BG_Task_OnGoing)
+ 459              		.loc 1 166 15
+ 460 0044 7B68     		ldr	r3, [r7, #4]
+ 461 0046 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 462              		.loc 1 166 7
+ 463 0048 002B     		cmp	r3, #0
+ 464 004a 06D0     		beq	.L19
+ 167:Src/mc_perf.c ****     {
+ 168:Src/mc_perf.c ****       pHandle->AccHighFreqTasksCnt += pHdl->DeltaTimeInCycle;
+ 465              		.loc 1 168 36
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 12
+
+
+ 466 004c 7B68     		ldr	r3, [r7, #4]
+ 467 004e 5A68     		ldr	r2, [r3, #4]
+ 468              		.loc 1 168 43
+ 469 0050 BB68     		ldr	r3, [r7, #8]
+ 470 0052 5B68     		ldr	r3, [r3, #4]
+ 471              		.loc 1 168 36
+ 472 0054 1A44     		add	r2, r2, r3
+ 473 0056 7B68     		ldr	r3, [r7, #4]
+ 474 0058 5A60     		str	r2, [r3, #4]
+ 475              	.L19:
+ 169:Src/mc_perf.c ****     }
+ 170:Src/mc_perf.c ****     else
+ 171:Src/mc_perf.c ****     {
+ 172:Src/mc_perf.c ****       /* Nothing to do */
+ 173:Src/mc_perf.c ****     }
+ 174:Src/mc_perf.c **** 
+ 175:Src/mc_perf.c ****     if (pHdl->max < pHdl->DeltaTimeInCycle)
+ 476              		.loc 1 175 13
+ 477 005a BB68     		ldr	r3, [r7, #8]
+ 478 005c DA68     		ldr	r2, [r3, #12]
+ 479              		.loc 1 175 25
+ 480 005e BB68     		ldr	r3, [r7, #8]
+ 481 0060 5B68     		ldr	r3, [r3, #4]
+ 482              		.loc 1 175 8
+ 483 0062 9A42     		cmp	r2, r3
+ 484 0064 03D2     		bcs	.L20
+ 176:Src/mc_perf.c ****     {
+ 177:Src/mc_perf.c ****       pHdl->max = pHdl->DeltaTimeInCycle;
+ 485              		.loc 1 177 23
+ 486 0066 BB68     		ldr	r3, [r7, #8]
+ 487 0068 5A68     		ldr	r2, [r3, #4]
+ 488              		.loc 1 177 17
+ 489 006a BB68     		ldr	r3, [r7, #8]
+ 490 006c DA60     		str	r2, [r3, #12]
+ 491              	.L20:
+ 178:Src/mc_perf.c ****     }
+ 179:Src/mc_perf.c ****     else
+ 180:Src/mc_perf.c ****     {
+ 181:Src/mc_perf.c ****       /* Nothing to do */
+ 182:Src/mc_perf.c ****     }
+ 183:Src/mc_perf.c **** 
+ 184:Src/mc_perf.c ****     if (pHdl->min > pHdl->DeltaTimeInCycle)
+ 492              		.loc 1 184 13
+ 493 006e BB68     		ldr	r3, [r7, #8]
+ 494 0070 9A68     		ldr	r2, [r3, #8]
+ 495              		.loc 1 184 25
+ 496 0072 BB68     		ldr	r3, [r7, #8]
+ 497 0074 5B68     		ldr	r3, [r3, #4]
+ 498              		.loc 1 184 8
+ 499 0076 9A42     		cmp	r2, r3
+ 500 0078 03D9     		bls	.L22
+ 185:Src/mc_perf.c ****     {
+ 186:Src/mc_perf.c ****       pHdl->min = pHdl->DeltaTimeInCycle;
+ 501              		.loc 1 186 23
+ 502 007a BB68     		ldr	r3, [r7, #8]
+ 503 007c 5A68     		ldr	r2, [r3, #4]
+ 504              		.loc 1 186 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 13
+
+
+ 505 007e BB68     		ldr	r3, [r7, #8]
+ 506 0080 9A60     		str	r2, [r3, #8]
+ 507              	.L22:
+ 187:Src/mc_perf.c ****     }
+ 188:Src/mc_perf.c ****     else
+ 189:Src/mc_perf.c ****     {
+ 190:Src/mc_perf.c ****       /* Nothing to do */
+ 191:Src/mc_perf.c ****     }
+ 192:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 193:Src/mc_perf.c ****   }
+ 194:Src/mc_perf.c **** #endif
+ 195:Src/mc_perf.c **** }
+ 508              		.loc 1 195 1
+ 509 0082 00BF     		nop
+ 510 0084 1437     		adds	r7, r7, #20
+ 511              	.LCFI27:
+ 512              		.cfi_def_cfa_offset 4
+ 513 0086 BD46     		mov	sp, r7
+ 514              	.LCFI28:
+ 515              		.cfi_def_cfa_register 13
+ 516              		@ sp needed
+ 517 0088 5DF8047B 		ldr	r7, [sp], #4
+ 518              	.LCFI29:
+ 519              		.cfi_restore 7
+ 520              		.cfi_def_cfa_offset 0
+ 521 008c 7047     		bx	lr
+ 522              	.L24:
+ 523 008e 00BF     		.align	2
+ 524              	.L23:
+ 525 0090 001000E0 		.word	-536866816
+ 526              		.cfi_endproc
+ 527              	.LFE1094:
+ 529              		.section	.text.MC_BG_Perf_Measure_Stop,"ax",%progbits
+ 530              		.align	1
+ 531              		.global	MC_BG_Perf_Measure_Stop
+ 532              		.syntax unified
+ 533              		.thumb
+ 534              		.thumb_func
+ 536              	MC_BG_Perf_Measure_Stop:
+ 537              	.LFB1095:
+ 196:Src/mc_perf.c **** 
+ 197:Src/mc_perf.c **** /**
+ 198:Src/mc_perf.c ****  * @brief  Stop the measurement of a code section in BG and compute elapse time.
+ 199:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+ 200:Src/mc_perf.c ****  * @param  CodeSection: code section to measure.
+ 201:Src/mc_perf.c ****  */
+ 202:Src/mc_perf.c **** void MC_BG_Perf_Measure_Stop(MC_Perf_Handle_t *pHandle, uint8_t CodeSection)
+ 203:Src/mc_perf.c **** {
+ 538              		.loc 1 203 1
+ 539              		.cfi_startproc
+ 540              		@ args = 0, pretend = 0, frame = 16
+ 541              		@ frame_needed = 1, uses_anonymous_args = 0
+ 542              		@ link register save eliminated.
+ 543 0000 80B4     		push	{r7}
+ 544              	.LCFI30:
+ 545              		.cfi_def_cfa_offset 4
+ 546              		.cfi_offset 7, -4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 14
+
+
+ 547 0002 85B0     		sub	sp, sp, #20
+ 548              	.LCFI31:
+ 549              		.cfi_def_cfa_offset 24
+ 550 0004 00AF     		add	r7, sp, #0
+ 551              	.LCFI32:
+ 552              		.cfi_def_cfa_register 7
+ 553 0006 7860     		str	r0, [r7, #4]
+ 554 0008 0B46     		mov	r3, r1
+ 555 000a FB70     		strb	r3, [r7, #3]
+ 204:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 205:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+ 206:Src/mc_perf.c ****   {
+ 207:Src/mc_perf.c ****     /* Nothing to do */
+ 208:Src/mc_perf.c ****   }
+ 209:Src/mc_perf.c ****   else
+ 210:Src/mc_perf.c ****   {
+ 211:Src/mc_perf.c **** #endif
+ 212:Src/mc_perf.c ****     Perf_Handle_t *pHdl;
+ 213:Src/mc_perf.c ****     uint32_t StopMeasure = DWT->CYCCNT;
+ 556              		.loc 1 213 31
+ 557 000c 224B     		ldr	r3, .L32
+ 558              		.loc 1 213 14
+ 559 000e 5B68     		ldr	r3, [r3, #4]
+ 560 0010 FB60     		str	r3, [r7, #12]
+ 214:Src/mc_perf.c ****     pHandle->BG_Task_OnGoing = false;
+ 561              		.loc 1 214 30
+ 562 0012 7B68     		ldr	r3, [r7, #4]
+ 563 0014 0022     		movs	r2, #0
+ 564 0016 1A70     		strb	r2, [r3]
+ 215:Src/mc_perf.c **** 
+ 216:Src/mc_perf.c ****     pHdl  = &pHandle->MC_Perf_TraceLog[CodeSection];
+ 565              		.loc 1 216 39
+ 566 0018 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 567              		.loc 1 216 11
+ 568 001a 1B01     		lsls	r3, r3, #4
+ 569 001c 0833     		adds	r3, r3, #8
+ 570 001e 7A68     		ldr	r2, [r7, #4]
+ 571 0020 1344     		add	r3, r3, r2
+ 572 0022 BB60     		str	r3, [r7, #8]
+ 217:Src/mc_perf.c **** 
+ 218:Src/mc_perf.c ****     /* Check Overflow cases */
+ 219:Src/mc_perf.c ****     if (StopMeasure < pHdl->StartMeasure)
+ 573              		.loc 1 219 27
+ 574 0024 BB68     		ldr	r3, [r7, #8]
+ 575 0026 1B68     		ldr	r3, [r3]
+ 576              		.loc 1 219 8
+ 577 0028 FA68     		ldr	r2, [r7, #12]
+ 578 002a 9A42     		cmp	r2, r3
+ 579 002c 07D2     		bcs	.L26
+ 220:Src/mc_perf.c ****     {
+ 221:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle = (UINT32_MAX - pHdl->StartMeasure) + StopMeasure;
+ 580              		.loc 1 221 50
+ 581 002e BB68     		ldr	r3, [r7, #8]
+ 582 0030 1B68     		ldr	r3, [r3]
+ 583              		.loc 1 221 66
+ 584 0032 FA68     		ldr	r2, [r7, #12]
+ 585 0034 D31A     		subs	r3, r2, r3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 15
+
+
+ 586 0036 5A1E     		subs	r2, r3, #1
+ 587              		.loc 1 221 30
+ 588 0038 BB68     		ldr	r3, [r7, #8]
+ 589 003a 5A60     		str	r2, [r3, #4]
+ 590 003c 05E0     		b	.L27
+ 591              	.L26:
+ 222:Src/mc_perf.c ****     }
+ 223:Src/mc_perf.c ****     else
+ 224:Src/mc_perf.c ****     {
+ 225:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle = StopMeasure - pHdl->StartMeasure;
+ 592              		.loc 1 225 50
+ 593 003e BB68     		ldr	r3, [r7, #8]
+ 594 0040 1B68     		ldr	r3, [r3]
+ 595              		.loc 1 225 44
+ 596 0042 FA68     		ldr	r2, [r7, #12]
+ 597 0044 D21A     		subs	r2, r2, r3
+ 598              		.loc 1 225 30
+ 599 0046 BB68     		ldr	r3, [r7, #8]
+ 600 0048 5A60     		str	r2, [r3, #4]
+ 601              	.L27:
+ 226:Src/mc_perf.c ****     }
+ 227:Src/mc_perf.c **** 
+ 228:Src/mc_perf.c ****     if (pHdl->DeltaTimeInCycle > pHandle->AccHighFreqTasksCnt)
+ 602              		.loc 1 228 13
+ 603 004a BB68     		ldr	r3, [r7, #8]
+ 604 004c 5A68     		ldr	r2, [r3, #4]
+ 605              		.loc 1 228 41
+ 606 004e 7B68     		ldr	r3, [r7, #4]
+ 607 0050 5B68     		ldr	r3, [r3, #4]
+ 608              		.loc 1 228 8
+ 609 0052 9A42     		cmp	r2, r3
+ 610 0054 06D9     		bls	.L28
+ 229:Src/mc_perf.c ****     {
+ 230:Src/mc_perf.c ****       pHdl->DeltaTimeInCycle -= pHandle->AccHighFreqTasksCnt;
+ 611              		.loc 1 230 30
+ 612 0056 BB68     		ldr	r3, [r7, #8]
+ 613 0058 5A68     		ldr	r2, [r3, #4]
+ 614              		.loc 1 230 40
+ 615 005a 7B68     		ldr	r3, [r7, #4]
+ 616 005c 5B68     		ldr	r3, [r3, #4]
+ 617              		.loc 1 230 30
+ 618 005e D21A     		subs	r2, r2, r3
+ 619 0060 BB68     		ldr	r3, [r7, #8]
+ 620 0062 5A60     		str	r2, [r3, #4]
+ 621              	.L28:
+ 231:Src/mc_perf.c ****     }
+ 232:Src/mc_perf.c ****     else
+ 233:Src/mc_perf.c ****     {
+ 234:Src/mc_perf.c ****       /* Nothing to do */
+ 235:Src/mc_perf.c ****     }
+ 236:Src/mc_perf.c ****     if (pHdl->max < pHdl->DeltaTimeInCycle)
+ 622              		.loc 1 236 13
+ 623 0064 BB68     		ldr	r3, [r7, #8]
+ 624 0066 DA68     		ldr	r2, [r3, #12]
+ 625              		.loc 1 236 25
+ 626 0068 BB68     		ldr	r3, [r7, #8]
+ 627 006a 5B68     		ldr	r3, [r3, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 16
+
+
+ 628              		.loc 1 236 8
+ 629 006c 9A42     		cmp	r2, r3
+ 630 006e 03D2     		bcs	.L29
+ 237:Src/mc_perf.c ****     {
+ 238:Src/mc_perf.c ****       pHdl->max = pHdl->DeltaTimeInCycle;
+ 631              		.loc 1 238 23
+ 632 0070 BB68     		ldr	r3, [r7, #8]
+ 633 0072 5A68     		ldr	r2, [r3, #4]
+ 634              		.loc 1 238 17
+ 635 0074 BB68     		ldr	r3, [r7, #8]
+ 636 0076 DA60     		str	r2, [r3, #12]
+ 637              	.L29:
+ 239:Src/mc_perf.c ****     }
+ 240:Src/mc_perf.c ****     else
+ 241:Src/mc_perf.c ****     {
+ 242:Src/mc_perf.c ****       /* Nothing to do */
+ 243:Src/mc_perf.c ****     }
+ 244:Src/mc_perf.c **** 
+ 245:Src/mc_perf.c ****     if (pHdl->min > pHdl->DeltaTimeInCycle)
+ 638              		.loc 1 245 13
+ 639 0078 BB68     		ldr	r3, [r7, #8]
+ 640 007a 9A68     		ldr	r2, [r3, #8]
+ 641              		.loc 1 245 25
+ 642 007c BB68     		ldr	r3, [r7, #8]
+ 643 007e 5B68     		ldr	r3, [r3, #4]
+ 644              		.loc 1 245 8
+ 645 0080 9A42     		cmp	r2, r3
+ 646 0082 03D9     		bls	.L31
+ 246:Src/mc_perf.c ****     {
+ 247:Src/mc_perf.c ****       pHdl->min = pHdl->DeltaTimeInCycle;
+ 647              		.loc 1 247 23
+ 648 0084 BB68     		ldr	r3, [r7, #8]
+ 649 0086 5A68     		ldr	r2, [r3, #4]
+ 650              		.loc 1 247 17
+ 651 0088 BB68     		ldr	r3, [r7, #8]
+ 652 008a 9A60     		str	r2, [r3, #8]
+ 653              	.L31:
+ 248:Src/mc_perf.c ****     }
+ 249:Src/mc_perf.c ****     else
+ 250:Src/mc_perf.c ****     {
+ 251:Src/mc_perf.c ****       /* Nothing to do */
+ 252:Src/mc_perf.c ****     }
+ 253:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 254:Src/mc_perf.c ****   }
+ 255:Src/mc_perf.c **** #endif
+ 256:Src/mc_perf.c **** }
+ 654              		.loc 1 256 1
+ 655 008c 00BF     		nop
+ 656 008e 1437     		adds	r7, r7, #20
+ 657              	.LCFI33:
+ 658              		.cfi_def_cfa_offset 4
+ 659 0090 BD46     		mov	sp, r7
+ 660              	.LCFI34:
+ 661              		.cfi_def_cfa_register 13
+ 662              		@ sp needed
+ 663 0092 5DF8047B 		ldr	r7, [sp], #4
+ 664              	.LCFI35:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 17
+
+
+ 665              		.cfi_restore 7
+ 666              		.cfi_def_cfa_offset 0
+ 667 0096 7047     		bx	lr
+ 668              	.L33:
+ 669              		.align	2
+ 670              	.L32:
+ 671 0098 001000E0 		.word	-536866816
+ 672              		.cfi_endproc
+ 673              	.LFE1095:
+ 675              		.section	.text.MC_Perf_GetCPU_Load,"ax",%progbits
+ 676              		.align	1
+ 677              		.global	MC_Perf_GetCPU_Load
+ 678              		.syntax unified
+ 679              		.thumb
+ 680              		.thumb_func
+ 682              	MC_Perf_GetCPU_Load:
+ 683              	.LFB1096:
+ 257:Src/mc_perf.c **** 
+ 258:Src/mc_perf.c **** /**
+ 259:Src/mc_perf.c ****  * @brief  It returns the current CPU load of both High and Medium frequency tasks.
+ 260:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+ 261:Src/mc_perf.c ****  * @retval CPU load.
+ 262:Src/mc_perf.c ****  */
+ 263:Src/mc_perf.c **** float_t MC_Perf_GetCPU_Load(const MC_Perf_Handle_t *pHandle)
+ 264:Src/mc_perf.c **** {
+ 684              		.loc 1 264 1
+ 685              		.cfi_startproc
+ 686              		@ args = 0, pretend = 0, frame = 24
+ 687              		@ frame_needed = 1, uses_anonymous_args = 0
+ 688              		@ link register save eliminated.
+ 689 0000 80B4     		push	{r7}
+ 690              	.LCFI36:
+ 691              		.cfi_def_cfa_offset 4
+ 692              		.cfi_offset 7, -4
+ 693 0002 87B0     		sub	sp, sp, #28
+ 694              	.LCFI37:
+ 695              		.cfi_def_cfa_offset 32
+ 696 0004 00AF     		add	r7, sp, #0
+ 697              	.LCFI38:
+ 698              		.cfi_def_cfa_register 7
+ 699 0006 7860     		str	r0, [r7, #4]
+ 265:Src/mc_perf.c ****   float_t cpuLoad = 0.0f;
+ 700              		.loc 1 265 11
+ 701 0008 4FF00003 		mov	r3, #0
+ 702 000c 7B61     		str	r3, [r7, #20]	@ float
+ 266:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 267:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+ 268:Src/mc_perf.c ****   {
+ 269:Src/mc_perf.c ****     /* Nothing to do */
+ 270:Src/mc_perf.c ****   }
+ 271:Src/mc_perf.c ****   else
+ 272:Src/mc_perf.c ****   {
+ 273:Src/mc_perf.c **** #endif
+ 274:Src/mc_perf.c ****     float_t MFT_cpu_loadM1;
+ 275:Src/mc_perf.c ****     float_t HFT_cpu_loadM1;
+ 276:Src/mc_perf.c **** 
+ 277:Src/mc_perf.c ****     MFT_cpu_loadM1 = (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_MediumFrequencyTaskM1].DeltaT
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 18
+
+
+ 703              		.loc 1 277 93
+ 704 000e 7B68     		ldr	r3, [r7, #4]
+ 705 0010 DB69     		ldr	r3, [r3, #28]
+ 706              		.loc 1 277 24
+ 707 0012 07EE903A 		vmov	s15, r3	@ int
+ 708 0016 B8EE677A 		vcvt.f32.u32	s14, s15
+ 278:Src/mc_perf.c ****                    / (float_t)SYSCLK_FREQ ) * (float_t)MEDIUM_FREQUENCY_TASK_RATE);
+ 709              		.loc 1 278 20
+ 710 001a DFED216A 		vldr.32	s13, .L41
+ 711 001e C7EE267A 		vdiv.f32	s15, s14, s13
+ 277:Src/mc_perf.c ****                    / (float_t)SYSCLK_FREQ ) * (float_t)MEDIUM_FREQUENCY_TASK_RATE);
+ 712              		.loc 1 277 20
+ 713 0022 9FED207A 		vldr.32	s14, .L41+4
+ 714 0026 67EE877A 		vmul.f32	s15, s15, s14
+ 715 002a C7ED047A 		vstr.32	s15, [r7, #16]
+ 279:Src/mc_perf.c ****     HFT_cpu_loadM1 = (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_HighFrequencyTaskM1].DeltaTim
+ 716              		.loc 1 279 91
+ 717 002e 7B68     		ldr	r3, [r7, #4]
+ 718 0030 DB68     		ldr	r3, [r3, #12]
+ 719              		.loc 1 279 24
+ 720 0032 07EE903A 		vmov	s15, r3	@ int
+ 721 0036 B8EE677A 		vcvt.f32.u32	s14, s15
+ 280:Src/mc_perf.c ****                    / (float_t)SYSCLK_FREQ ) * (float_t)(PWM_FREQUENCY/REGULATION_EXECUTION_RATE));
+ 722              		.loc 1 280 20
+ 723 003a DFED196A 		vldr.32	s13, .L41
+ 724 003e C7EE267A 		vdiv.f32	s15, s14, s13
+ 279:Src/mc_perf.c ****     HFT_cpu_loadM1 = (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_HighFrequencyTaskM1].DeltaTim
+ 725              		.loc 1 279 20
+ 726 0042 9FED197A 		vldr.32	s14, .L41+8
+ 727 0046 67EE877A 		vmul.f32	s15, s15, s14
+ 728 004a C7ED037A 		vstr.32	s15, [r7, #12]
+ 281:Src/mc_perf.c **** 
+ 282:Src/mc_perf.c ****     cpuLoad = MFT_cpu_loadM1 + HFT_cpu_loadM1;
+ 729              		.loc 1 282 13
+ 730 004e 97ED047A 		vldr.32	s14, [r7, #16]
+ 731 0052 D7ED037A 		vldr.32	s15, [r7, #12]
+ 732 0056 77EE277A 		vadd.f32	s15, s14, s15
+ 733 005a C7ED057A 		vstr.32	s15, [r7, #20]
+ 283:Src/mc_perf.c **** 
+ 284:Src/mc_perf.c ****     cpuLoad = (cpuLoad > 1.0f) ? 1.0f : cpuLoad;
+ 734              		.loc 1 284 39
+ 735 005e D7ED057A 		vldr.32	s15, [r7, #20]
+ 736 0062 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 737 0066 F4EEC77A 		vcmpe.f32	s15, s14
+ 738 006a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 739 006e 02DD     		ble	.L40
+ 740              		.loc 1 284 39 is_stmt 0 discriminator 1
+ 741 0070 4FF07E53 		mov	r3, #1065353216
+ 742 0074 00E0     		b	.L37
+ 743              	.L40:
+ 744              		.loc 1 284 39 discriminator 2
+ 745 0076 7B69     		ldr	r3, [r7, #20]	@ float
+ 746              	.L37:
+ 747              		.loc 1 284 13 is_stmt 1 discriminator 4
+ 748 0078 7B61     		str	r3, [r7, #20]	@ float
+ 285:Src/mc_perf.c ****     cpuLoad *= 100.0f;
+ 749              		.loc 1 285 13 discriminator 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 19
+
+
+ 750 007a D7ED057A 		vldr.32	s15, [r7, #20]
+ 751 007e 9FED0B7A 		vldr.32	s14, .L41+12
+ 752 0082 67EE877A 		vmul.f32	s15, s15, s14
+ 753 0086 C7ED057A 		vstr.32	s15, [r7, #20]
+ 286:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 287:Src/mc_perf.c ****   }
+ 288:Src/mc_perf.c **** #endif
+ 289:Src/mc_perf.c ****   return (cpuLoad);
+ 754              		.loc 1 289 10 discriminator 4
+ 755 008a 7B69     		ldr	r3, [r7, #20]	@ float
+ 756 008c 07EE903A 		vmov	s15, r3
+ 290:Src/mc_perf.c **** }
+ 757              		.loc 1 290 1 discriminator 4
+ 758 0090 B0EE670A 		vmov.f32	s0, s15
+ 759 0094 1C37     		adds	r7, r7, #28
+ 760              	.LCFI39:
+ 761              		.cfi_def_cfa_offset 4
+ 762 0096 BD46     		mov	sp, r7
+ 763              	.LCFI40:
+ 764              		.cfi_def_cfa_register 13
+ 765              		@ sp needed
+ 766 0098 5DF8047B 		ldr	r7, [sp], #4
+ 767              	.LCFI41:
+ 768              		.cfi_restore 7
+ 769              		.cfi_def_cfa_offset 0
+ 770 009c 7047     		bx	lr
+ 771              	.L42:
+ 772 009e 00BF     		.align	2
+ 773              	.L41:
+ 774 00a0 8096984C 		.word	1285068416
+ 775 00a4 00007A44 		.word	1148846080
+ 776 00a8 00007A46 		.word	1182400512
+ 777 00ac 0000C842 		.word	1120403456
+ 778              		.cfi_endproc
+ 779              	.LFE1096:
+ 781              		.section	.text.MC_Perf_GetMaxCPU_Load,"ax",%progbits
+ 782              		.align	1
+ 783              		.global	MC_Perf_GetMaxCPU_Load
+ 784              		.syntax unified
+ 785              		.thumb
+ 786              		.thumb_func
+ 788              	MC_Perf_GetMaxCPU_Load:
+ 789              	.LFB1097:
+ 291:Src/mc_perf.c **** 
+ 292:Src/mc_perf.c **** /**
+ 293:Src/mc_perf.c ****  * @brief  It returns the maximum CPU load of both High and Medium frequency tasks.
+ 294:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+ 295:Src/mc_perf.c ****  * @retval Max CPU load measured.
+ 296:Src/mc_perf.c ****  */
+ 297:Src/mc_perf.c **** float_t MC_Perf_GetMaxCPU_Load(const MC_Perf_Handle_t *pHandle)
+ 298:Src/mc_perf.c **** {
+ 790              		.loc 1 298 1
+ 791              		.cfi_startproc
+ 792              		@ args = 0, pretend = 0, frame = 16
+ 793              		@ frame_needed = 1, uses_anonymous_args = 0
+ 794              		@ link register save eliminated.
+ 795 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 20
+
+
+ 796              	.LCFI42:
+ 797              		.cfi_def_cfa_offset 4
+ 798              		.cfi_offset 7, -4
+ 799 0002 85B0     		sub	sp, sp, #20
+ 800              	.LCFI43:
+ 801              		.cfi_def_cfa_offset 24
+ 802 0004 00AF     		add	r7, sp, #0
+ 803              	.LCFI44:
+ 804              		.cfi_def_cfa_register 7
+ 805 0006 7860     		str	r0, [r7, #4]
+ 299:Src/mc_perf.c ****   float_t cpuLoad = 0.0f;
+ 806              		.loc 1 299 11
+ 807 0008 4FF00003 		mov	r3, #0
+ 808 000c FB60     		str	r3, [r7, #12]	@ float
+ 300:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 301:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+ 302:Src/mc_perf.c ****   {
+ 303:Src/mc_perf.c ****     /* Nothing to do */
+ 304:Src/mc_perf.c ****   }
+ 305:Src/mc_perf.c ****   else
+ 306:Src/mc_perf.c ****   {
+ 307:Src/mc_perf.c **** #endif
+ 308:Src/mc_perf.c ****     cpuLoad += (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_MediumFrequencyTaskM1].max / (float
+ 809              		.loc 1 308 87
+ 810 000e 7B68     		ldr	r3, [r7, #4]
+ 811 0010 5B6A     		ldr	r3, [r3, #36]
+ 812              		.loc 1 308 18
+ 813 0012 07EE903A 		vmov	s15, r3	@ int
+ 814 0016 B8EE677A 		vcvt.f32.u32	s14, s15
+ 815              		.loc 1 308 92
+ 816 001a DFED216A 		vldr.32	s13, .L50
+ 817 001e C7EE267A 		vdiv.f32	s15, s14, s13
+ 309:Src/mc_perf.c ****                    * (float_t)MEDIUM_FREQUENCY_TASK_RATE);
+ 818              		.loc 1 309 20
+ 819 0022 9FED207A 		vldr.32	s14, .L50+4
+ 820 0026 67EE877A 		vmul.f32	s15, s15, s14
+ 308:Src/mc_perf.c ****                    * (float_t)MEDIUM_FREQUENCY_TASK_RATE);
+ 821              		.loc 1 308 13
+ 822 002a 97ED037A 		vldr.32	s14, [r7, #12]
+ 823 002e 77EE277A 		vadd.f32	s15, s14, s15
+ 824 0032 C7ED037A 		vstr.32	s15, [r7, #12]
+ 310:Src/mc_perf.c ****     cpuLoad += (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_HighFrequencyTaskM1].max / (float_t
+ 825              		.loc 1 310 85
+ 826 0036 7B68     		ldr	r3, [r7, #4]
+ 827 0038 5B69     		ldr	r3, [r3, #20]
+ 828              		.loc 1 310 18
+ 829 003a 07EE903A 		vmov	s15, r3	@ int
+ 830 003e B8EE677A 		vcvt.f32.u32	s14, s15
+ 831              		.loc 1 310 90
+ 832 0042 DFED176A 		vldr.32	s13, .L50
+ 833 0046 C7EE267A 		vdiv.f32	s15, s14, s13
+ 311:Src/mc_perf.c ****                    * (float_t)(PWM_FREQUENCY/REGULATION_EXECUTION_RATE));
+ 834              		.loc 1 311 20
+ 835 004a 9FED177A 		vldr.32	s14, .L50+8
+ 836 004e 67EE877A 		vmul.f32	s15, s15, s14
+ 310:Src/mc_perf.c ****     cpuLoad += (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_HighFrequencyTaskM1].max / (float_t
+ 837              		.loc 1 310 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 21
+
+
+ 838 0052 97ED037A 		vldr.32	s14, [r7, #12]
+ 839 0056 77EE277A 		vadd.f32	s15, s14, s15
+ 840 005a C7ED037A 		vstr.32	s15, [r7, #12]
+ 312:Src/mc_perf.c **** 
+ 313:Src/mc_perf.c ****     cpuLoad = (cpuLoad > 1.0f) ? 1.0f : cpuLoad;
+ 841              		.loc 1 313 39
+ 842 005e D7ED037A 		vldr.32	s15, [r7, #12]
+ 843 0062 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 844 0066 F4EEC77A 		vcmpe.f32	s15, s14
+ 845 006a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 846 006e 02DD     		ble	.L49
+ 847              		.loc 1 313 39 is_stmt 0 discriminator 1
+ 848 0070 4FF07E53 		mov	r3, #1065353216
+ 849 0074 00E0     		b	.L46
+ 850              	.L49:
+ 851              		.loc 1 313 39 discriminator 2
+ 852 0076 FB68     		ldr	r3, [r7, #12]	@ float
+ 853              	.L46:
+ 854              		.loc 1 313 13 is_stmt 1 discriminator 4
+ 855 0078 FB60     		str	r3, [r7, #12]	@ float
+ 314:Src/mc_perf.c ****     cpuLoad *= 100.0f;
+ 856              		.loc 1 314 13 discriminator 4
+ 857 007a D7ED037A 		vldr.32	s15, [r7, #12]
+ 858 007e 9FED0B7A 		vldr.32	s14, .L50+12
+ 859 0082 67EE877A 		vmul.f32	s15, s15, s14
+ 860 0086 C7ED037A 		vstr.32	s15, [r7, #12]
+ 315:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 316:Src/mc_perf.c ****   }
+ 317:Src/mc_perf.c **** #endif
+ 318:Src/mc_perf.c ****   return (cpuLoad);
+ 861              		.loc 1 318 10 discriminator 4
+ 862 008a FB68     		ldr	r3, [r7, #12]	@ float
+ 863 008c 07EE903A 		vmov	s15, r3
+ 319:Src/mc_perf.c **** }
+ 864              		.loc 1 319 1 discriminator 4
+ 865 0090 B0EE670A 		vmov.f32	s0, s15
+ 866 0094 1437     		adds	r7, r7, #20
+ 867              	.LCFI45:
+ 868              		.cfi_def_cfa_offset 4
+ 869 0096 BD46     		mov	sp, r7
+ 870              	.LCFI46:
+ 871              		.cfi_def_cfa_register 13
+ 872              		@ sp needed
+ 873 0098 5DF8047B 		ldr	r7, [sp], #4
+ 874              	.LCFI47:
+ 875              		.cfi_restore 7
+ 876              		.cfi_def_cfa_offset 0
+ 877 009c 7047     		bx	lr
+ 878              	.L51:
+ 879 009e 00BF     		.align	2
+ 880              	.L50:
+ 881 00a0 8096984C 		.word	1285068416
+ 882 00a4 00007A44 		.word	1148846080
+ 883 00a8 00007A46 		.word	1182400512
+ 884 00ac 0000C842 		.word	1120403456
+ 885              		.cfi_endproc
+ 886              	.LFE1097:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 22
+
+
+ 888              		.section	.text.MC_Perf_GetMinCPU_Load,"ax",%progbits
+ 889              		.align	1
+ 890              		.global	MC_Perf_GetMinCPU_Load
+ 891              		.syntax unified
+ 892              		.thumb
+ 893              		.thumb_func
+ 895              	MC_Perf_GetMinCPU_Load:
+ 896              	.LFB1098:
+ 320:Src/mc_perf.c **** 
+ 321:Src/mc_perf.c **** /**
+ 322:Src/mc_perf.c ****  * @brief  It returns the minimum CPU load of both High and Medium frequency tasks.
+ 323:Src/mc_perf.c ****  * @param  pHandle: handler of the performance measurement component.
+ 324:Src/mc_perf.c ****  * @retval Min CPU load measured.
+ 325:Src/mc_perf.c ****  */
+ 326:Src/mc_perf.c **** float_t MC_Perf_GetMinCPU_Load(const MC_Perf_Handle_t *pHandle)
+ 327:Src/mc_perf.c **** {
+ 897              		.loc 1 327 1
+ 898              		.cfi_startproc
+ 899              		@ args = 0, pretend = 0, frame = 16
+ 900              		@ frame_needed = 1, uses_anonymous_args = 0
+ 901              		@ link register save eliminated.
+ 902 0000 80B4     		push	{r7}
+ 903              	.LCFI48:
+ 904              		.cfi_def_cfa_offset 4
+ 905              		.cfi_offset 7, -4
+ 906 0002 85B0     		sub	sp, sp, #20
+ 907              	.LCFI49:
+ 908              		.cfi_def_cfa_offset 24
+ 909 0004 00AF     		add	r7, sp, #0
+ 910              	.LCFI50:
+ 911              		.cfi_def_cfa_register 7
+ 912 0006 7860     		str	r0, [r7, #4]
+ 328:Src/mc_perf.c ****   float_t cpu_load_acc = 0.0f;
+ 913              		.loc 1 328 11
+ 914 0008 4FF00003 		mov	r3, #0
+ 915 000c FB60     		str	r3, [r7, #12]	@ float
+ 329:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 330:Src/mc_perf.c ****   if (MC_NULL == pHandle)
+ 331:Src/mc_perf.c ****   {
+ 332:Src/mc_perf.c ****     /* Nothing to do */
+ 333:Src/mc_perf.c ****   }
+ 334:Src/mc_perf.c ****   else
+ 335:Src/mc_perf.c ****   {
+ 336:Src/mc_perf.c **** #endif
+ 337:Src/mc_perf.c ****     if (pHandle->MC_Perf_TraceLog[MEASURE_TSK_MediumFrequencyTaskM1].min != UINT32_MAX)
+ 916              		.loc 1 337 69
+ 917 000e 7B68     		ldr	r3, [r7, #4]
+ 918 0010 1B6A     		ldr	r3, [r3, #32]
+ 919              		.loc 1 337 8
+ 920 0012 B3F1FF3F 		cmp	r3, #-1
+ 921 0016 13D0     		beq	.L53
+ 338:Src/mc_perf.c ****     {
+ 339:Src/mc_perf.c ****       cpu_load_acc += (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_MediumFrequencyTaskM1].min /
+ 922              		.loc 1 339 94
+ 923 0018 7B68     		ldr	r3, [r7, #4]
+ 924 001a 1B6A     		ldr	r3, [r3, #32]
+ 925              		.loc 1 339 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 23
+
+
+ 926 001c 07EE903A 		vmov	s15, r3	@ int
+ 927 0020 B8EE677A 		vcvt.f32.u32	s14, s15
+ 928              		.loc 1 339 99
+ 929 0024 DFED236A 		vldr.32	s13, .L61
+ 930 0028 C7EE267A 		vdiv.f32	s15, s14, s13
+ 340:Src/mc_perf.c ****                      * (float_t)MEDIUM_FREQUENCY_TASK_RATE);
+ 931              		.loc 1 340 22
+ 932 002c 9FED227A 		vldr.32	s14, .L61+4
+ 933 0030 67EE877A 		vmul.f32	s15, s15, s14
+ 339:Src/mc_perf.c ****                      * (float_t)MEDIUM_FREQUENCY_TASK_RATE);
+ 934              		.loc 1 339 20
+ 935 0034 97ED037A 		vldr.32	s14, [r7, #12]
+ 936 0038 77EE277A 		vadd.f32	s15, s14, s15
+ 937 003c C7ED037A 		vstr.32	s15, [r7, #12]
+ 938              	.L53:
+ 341:Src/mc_perf.c ****     }
+ 342:Src/mc_perf.c ****     if (pHandle->MC_Perf_TraceLog[MEASURE_TSK_HighFrequencyTaskM1].min != UINT32_MAX)
+ 939              		.loc 1 342 67
+ 940 0040 7B68     		ldr	r3, [r7, #4]
+ 941 0042 1B69     		ldr	r3, [r3, #16]
+ 942              		.loc 1 342 8
+ 943 0044 B3F1FF3F 		cmp	r3, #-1
+ 944 0048 13D0     		beq	.L54
+ 343:Src/mc_perf.c ****     {
+ 344:Src/mc_perf.c ****       cpu_load_acc += (((float_t)pHandle->MC_Perf_TraceLog[MEASURE_TSK_HighFrequencyTaskM1].min / (
+ 945              		.loc 1 344 92
+ 946 004a 7B68     		ldr	r3, [r7, #4]
+ 947 004c 1B69     		ldr	r3, [r3, #16]
+ 948              		.loc 1 344 25
+ 949 004e 07EE903A 		vmov	s15, r3	@ int
+ 950 0052 B8EE677A 		vcvt.f32.u32	s14, s15
+ 951              		.loc 1 344 97
+ 952 0056 DFED176A 		vldr.32	s13, .L61
+ 953 005a C7EE267A 		vdiv.f32	s15, s14, s13
+ 345:Src/mc_perf.c ****                    * (float_t)(PWM_FREQUENCY/REGULATION_EXECUTION_RATE));
+ 954              		.loc 1 345 20
+ 955 005e 9FED177A 		vldr.32	s14, .L61+8
+ 956 0062 67EE877A 		vmul.f32	s15, s15, s14
+ 344:Src/mc_perf.c ****                    * (float_t)(PWM_FREQUENCY/REGULATION_EXECUTION_RATE));
+ 957              		.loc 1 344 20
+ 958 0066 97ED037A 		vldr.32	s14, [r7, #12]
+ 959 006a 77EE277A 		vadd.f32	s15, s14, s15
+ 960 006e C7ED037A 		vstr.32	s15, [r7, #12]
+ 961              	.L54:
+ 346:Src/mc_perf.c ****     }
+ 347:Src/mc_perf.c ****     cpu_load_acc = (cpu_load_acc > 1.0f) ? 1.0f : cpu_load_acc;
+ 962              		.loc 1 347 49
+ 963 0072 D7ED037A 		vldr.32	s15, [r7, #12]
+ 964 0076 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 965 007a F4EEC77A 		vcmpe.f32	s15, s14
+ 966 007e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 967 0082 02DD     		ble	.L60
+ 968              		.loc 1 347 49 is_stmt 0 discriminator 1
+ 969 0084 4FF07E53 		mov	r3, #1065353216
+ 970 0088 00E0     		b	.L57
+ 971              	.L60:
+ 972              		.loc 1 347 49 discriminator 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 24
+
+
+ 973 008a FB68     		ldr	r3, [r7, #12]	@ float
+ 974              	.L57:
+ 975              		.loc 1 347 18 is_stmt 1 discriminator 4
+ 976 008c FB60     		str	r3, [r7, #12]	@ float
+ 348:Src/mc_perf.c ****     cpu_load_acc *= 100.0f;
+ 977              		.loc 1 348 18 discriminator 4
+ 978 008e D7ED037A 		vldr.32	s15, [r7, #12]
+ 979 0092 9FED0B7A 		vldr.32	s14, .L61+12
+ 980 0096 67EE877A 		vmul.f32	s15, s15, s14
+ 981 009a C7ED037A 		vstr.32	s15, [r7, #12]
+ 349:Src/mc_perf.c **** #ifdef NULL_PTR_CHECK_MC_PERF
+ 350:Src/mc_perf.c ****   }
+ 351:Src/mc_perf.c **** #endif
+ 352:Src/mc_perf.c ****   return (cpu_load_acc);
+ 982              		.loc 1 352 10 discriminator 4
+ 983 009e FB68     		ldr	r3, [r7, #12]	@ float
+ 984 00a0 07EE903A 		vmov	s15, r3
+ 353:Src/mc_perf.c **** }
+ 985              		.loc 1 353 1 discriminator 4
+ 986 00a4 B0EE670A 		vmov.f32	s0, s15
+ 987 00a8 1437     		adds	r7, r7, #20
+ 988              	.LCFI51:
+ 989              		.cfi_def_cfa_offset 4
+ 990 00aa BD46     		mov	sp, r7
+ 991              	.LCFI52:
+ 992              		.cfi_def_cfa_register 13
+ 993              		@ sp needed
+ 994 00ac 5DF8047B 		ldr	r7, [sp], #4
+ 995              	.LCFI53:
+ 996              		.cfi_restore 7
+ 997              		.cfi_def_cfa_offset 0
+ 998 00b0 7047     		bx	lr
+ 999              	.L62:
+ 1000 00b2 00BF     		.align	2
+ 1001              	.L61:
+ 1002 00b4 8096984C 		.word	1285068416
+ 1003 00b8 00007A44 		.word	1148846080
+ 1004 00bc 00007A46 		.word	1182400512
+ 1005 00c0 0000C842 		.word	1120403456
+ 1006              		.cfi_endproc
+ 1007              	.LFE1098:
+ 1009              		.text
+ 1010              	.Letext0:
+ 1011              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1012              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1013              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 1014              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 1015              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 1016              		.file 7 "Inc/mc_type.h"
+ 1017              		.file 8 "Inc/mc_perf.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mc_perf.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:56     .text.MC_Perf_Measure_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:62     .text.MC_Perf_Measure_Init:00000000 MC_Perf_Measure_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:169    .text.MC_Perf_Measure_Init:00000080 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:175    .text.MC_Perf_Clear:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:181    .text.MC_Perf_Clear:00000000 MC_Perf_Clear
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:259    .text.MC_Perf_Measure_Start:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:265    .text.MC_Perf_Measure_Start:00000000 MC_Perf_Measure_Start
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:316    .text.MC_Perf_Measure_Start:0000002c $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:321    .text.MC_BG_Perf_Measure_Start:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:327    .text.MC_BG_Perf_Measure_Start:00000000 MC_BG_Perf_Measure_Start
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:386    .text.MC_BG_Perf_Measure_Start:00000038 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:391    .text.MC_Perf_Measure_Stop:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:397    .text.MC_Perf_Measure_Stop:00000000 MC_Perf_Measure_Stop
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:525    .text.MC_Perf_Measure_Stop:00000090 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:530    .text.MC_BG_Perf_Measure_Stop:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:536    .text.MC_BG_Perf_Measure_Stop:00000000 MC_BG_Perf_Measure_Stop
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:671    .text.MC_BG_Perf_Measure_Stop:00000098 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:676    .text.MC_Perf_GetCPU_Load:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:682    .text.MC_Perf_GetCPU_Load:00000000 MC_Perf_GetCPU_Load
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:774    .text.MC_Perf_GetCPU_Load:000000a0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:782    .text.MC_Perf_GetMaxCPU_Load:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:788    .text.MC_Perf_GetMaxCPU_Load:00000000 MC_Perf_GetMaxCPU_Load
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:881    .text.MC_Perf_GetMaxCPU_Load:000000a0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:889    .text.MC_Perf_GetMinCPU_Load:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:895    .text.MC_Perf_GetMinCPU_Load:00000000 MC_Perf_GetMinCPU_Load
+C:\Users\ep_ygh\AppData\Local\Temp\ccXE8rY1.s:1002   .text.MC_Perf_GetMinCPU_Load:000000b4 $d
+
+NO UNDEFINED SYMBOLS

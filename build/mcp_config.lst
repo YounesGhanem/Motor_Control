@@ -1,0 +1,268 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mcp_config.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.bss.MCPSyncTxBuff,"aw",%nobits
+  56              		.align	2
+  59              	MCPSyncTxBuff:
+  60 0000 00000000 		.space	134
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s 			page 2
+
+
+  60      00000000 
+  60      00000000 
+  60      00000000 
+  60      00000000 
+  61              		.section	.bss.MCPSyncRXBuff,"aw",%nobits
+  62              		.align	2
+  65              	MCPSyncRXBuff:
+  66 0000 00000000 		.space	130
+  66      00000000 
+  66      00000000 
+  66      00000000 
+  66      00000000 
+  67              		.section	.bss.MCPAsyncBuffUARTA_A,"aw",%nobits
+  68              		.align	2
+  71              	MCPAsyncBuffUARTA_A:
+  72 0000 00000000 		.space	2054
+  72      00000000 
+  72      00000000 
+  72      00000000 
+  72      00000000 
+  73              		.section	.bss.MCPAsyncBuffUARTA_B,"aw",%nobits
+  74              		.align	2
+  77              	MCPAsyncBuffUARTA_B:
+  78 0000 00000000 		.space	2054
+  78      00000000 
+  78      00000000 
+  78      00000000 
+  78      00000000 
+  79              		.section	.bss.dataPtrTableA,"aw",%nobits
+  80              		.align	2
+  83              	dataPtrTableA:
+  84 0000 00000000 		.space	40
+  84      00000000 
+  84      00000000 
+  84      00000000 
+  84      00000000 
+  85              		.section	.bss.dataPtrTableBuffA,"aw",%nobits
+  86              		.align	2
+  89              	dataPtrTableBuffA:
+  90 0000 00000000 		.space	40
+  90      00000000 
+  90      00000000 
+  90      00000000 
+  90      00000000 
+  91              		.section	.bss.dataSizeTableA,"aw",%nobits
+  92              		.align	2
+  95              	dataSizeTableA:
+  96 0000 00000000 		.space	10
+  96      00000000 
+  96      0000
+  97              		.section	.bss.dataSizeTableBuffA,"aw",%nobits
+  98              		.align	2
+ 101              	dataSizeTableBuffA:
+ 102 0000 00000000 		.space	10
+ 102      00000000 
+ 102      0000
+ 103              		.global	MCP_UserCallBack
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s 			page 3
+
+
+ 104              		.section	.bss.MCP_UserCallBack,"aw",%nobits
+ 105              		.align	2
+ 108              	MCP_UserCallBack:
+ 109 0000 00000000 		.space	8
+ 109      00000000 
+ 110              		.section	.data.UASPEP_A,"aw"
+ 111              		.align	2
+ 114              	UASPEP_A:
+ 115 0000 00440040 		.word	1073759232
+ 116 0004 00000240 		.word	1073872896
+ 117 0008 00000240 		.word	1073872896
+ 118 000c 05000000 		.word	5
+ 119 0010 06000000 		.word	6
+ 120              		.global	aspepOverUartA
+ 121              		.section	.data.aspepOverUartA,"aw"
+ 122              		.align	2
+ 125              	aspepOverUartA:
+ 126 0000 00000000 		.word	ASPEP_getBuffer
+ 127 0004 00000000 		.word	ASPEP_sendPacket
+ 128 0008 00000000 		.word	ASPEP_RXframeProcess
+ 129 000c 00000000 		.space	8
+ 129      00000000 
+ 130 0014 00000000 		.word	UASPEP_A
+ 131 0018 00000000 		.word	MCPSyncRXBuff
+ 132 001c 00000000 		.space	12
+ 132      00000000 
+ 132      00000000 
+ 133 0028 00000000 		.word	MCPSyncTxBuff
+ 134 002c 00000000 		.space	4
+ 135 0030 00000000 		.word	MCPAsyncBuffUARTA_A
+ 136 0034 00000000 		.space	4
+ 137 0038 00000000 		.word	MCPAsyncBuffUARTA_B
+ 138 003c 00000000 		.space	4
+ 139 0040 00000000 		.space	12
+ 139      00000000 
+ 139      00000000 
+ 140 004c 00000000 		.word	UASPEP_INIT
+ 141 0050 00000000 		.word	UASPEP_IDLE_ENABLE
+ 142 0054 00000000 		.word	UASPEP_RECEIVE_BUFFER
+ 143 0058 00000000 		.word	UASPEP_SEND_PACKET
+ 144 005c 00000000 		.space	7
+ 144      000000
+ 145 0063 00       		.byte	0
+ 146 0064 00000000 		.space	8
+ 146      00000000 
+ 147 006c 00       		.byte	0
+ 148 006d 03       		.byte	3
+ 149 006e 03       		.byte	3
+ 150 006f 20       		.byte	32
+ 151 0070 00       		.byte	0
+ 152 0071 000000   		.space	3
+ 153              		.global	MCP_Over_UartA
+ 154              		.section	.data.MCP_Over_UartA,"aw"
+ 155              		.align	2
+ 158              	MCP_Over_UartA:
+ 159 0000 00000000 		.word	aspepOverUartA
+ 160 0004 00000000 		.space	12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s 			page 4
+
+
+ 160      00000000 
+ 160      00000000 
+ 161              		.global	MCPA_UART_A
+ 162              		.section	.data.MCPA_UART_A,"aw"
+ 163              		.align	2
+ 166              	MCPA_UART_A:
+ 167 0000 00000000 		.word	aspepOverUartA
+ 168 0004 00000000 		.word	dataPtrTableA
+ 169 0008 00000000 		.word	dataPtrTableBuffA
+ 170 000c 00000000 		.word	dataSizeTableA
+ 171 0010 00000000 		.word	dataSizeTableBuffA
+ 172 0014 00000000 		.space	10
+ 172      00000000 
+ 172      0000
+ 173 001e 0A       		.byte	10
+ 174 001f 00000000 		.space	13
+ 174      00000000 
+ 174      00000000 
+ 174      00
+ 175              		.text
+ 176              	.Letext0:
+ 177              		.file 1 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 178              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 179              		.file 3 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 180              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 181              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 182              		.file 6 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/usart_aspep_driver.h"
+ 183              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcptl.h"
+ 184              		.file 8 "Inc/aspep.h"
+ 185              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcp.h"
+ 186              		.file 10 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcpa.h"
+ 187              		.file 11 "Inc/mcp_config.h"
+ 188              		.file 12 "Src/mcp_config.c"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mcp_config.c
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:56     .bss.MCPSyncTxBuff:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:59     .bss.MCPSyncTxBuff:00000000 MCPSyncTxBuff
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:62     .bss.MCPSyncRXBuff:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:65     .bss.MCPSyncRXBuff:00000000 MCPSyncRXBuff
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:68     .bss.MCPAsyncBuffUARTA_A:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:71     .bss.MCPAsyncBuffUARTA_A:00000000 MCPAsyncBuffUARTA_A
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:74     .bss.MCPAsyncBuffUARTA_B:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:77     .bss.MCPAsyncBuffUARTA_B:00000000 MCPAsyncBuffUARTA_B
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:80     .bss.dataPtrTableA:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:83     .bss.dataPtrTableA:00000000 dataPtrTableA
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:86     .bss.dataPtrTableBuffA:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:89     .bss.dataPtrTableBuffA:00000000 dataPtrTableBuffA
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:92     .bss.dataSizeTableA:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:95     .bss.dataSizeTableA:00000000 dataSizeTableA
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:98     .bss.dataSizeTableBuffA:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:101    .bss.dataSizeTableBuffA:00000000 dataSizeTableBuffA
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:108    .bss.MCP_UserCallBack:00000000 MCP_UserCallBack
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:105    .bss.MCP_UserCallBack:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:111    .data.UASPEP_A:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:114    .data.UASPEP_A:00000000 UASPEP_A
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:125    .data.aspepOverUartA:00000000 aspepOverUartA
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:122    .data.aspepOverUartA:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:158    .data.MCP_Over_UartA:00000000 MCP_Over_UartA
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:155    .data.MCP_Over_UartA:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:166    .data.MCPA_UART_A:00000000 MCPA_UART_A
+C:\Users\ep_ygh\AppData\Local\Temp\cc5IRxlQ.s:163    .data.MCPA_UART_A:00000000 $d
+
+UNDEFINED SYMBOLS
+ASPEP_getBuffer
+ASPEP_sendPacket
+ASPEP_RXframeProcess
+UASPEP_INIT
+UASPEP_IDLE_ENABLE
+UASPEP_RECEIVE_BUFFER
+UASPEP_SEND_PACKET

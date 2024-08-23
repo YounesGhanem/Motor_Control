@@ -1,0 +1,252 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"motorcontrol.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.global	pMCI
+  56              		.section	.bss.pMCI,"aw",%nobits
+  57              		.align	2
+  60              	pMCI:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 2
+
+
+  61 0000 00000000 		.space	4
+  62              		.section	.text.MX_MotorControl_Init,"ax",%progbits
+  63              		.align	1
+  64              		.weak	MX_MotorControl_Init
+  65              		.syntax unified
+  66              		.thumb
+  67              		.thumb_func
+  69              	MX_MotorControl_Init:
+  70              	.LFB1090:
+  71              		.file 1 "Src/motorcontrol.c"
+   1:Src/motorcontrol.c **** /**
+   2:Src/motorcontrol.c ****   ******************************************************************************
+   3:Src/motorcontrol.c ****   * @file    motorcontrol.c
+   4:Src/motorcontrol.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:Src/motorcontrol.c ****   * @brief   Motor Control Subsystem initialization functions.
+   6:Src/motorcontrol.c ****   ******************************************************************************
+   7:Src/motorcontrol.c ****   * @attention
+   8:Src/motorcontrol.c ****   *
+   9:Src/motorcontrol.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  10:Src/motorcontrol.c ****   * All rights reserved.</center></h2>
+  11:Src/motorcontrol.c ****   *
+  12:Src/motorcontrol.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  13:Src/motorcontrol.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  14:Src/motorcontrol.c ****   * the License. You may obtain a copy of the License at:
+  15:Src/motorcontrol.c ****   *                             www.st.com/SLA0044
+  16:Src/motorcontrol.c ****   *
+  17:Src/motorcontrol.c ****   ******************************************************************************
+  18:Src/motorcontrol.c ****   * @ingroup MCInterface
+  19:Src/motorcontrol.c ****   */
+  20:Src/motorcontrol.c **** //cstat -MISRAC2012-Rule-21.1
+  21:Src/motorcontrol.c **** #include "main.h"
+  22:Src/motorcontrol.c **** //cstat +MISRAC2012-Rule-21.1
+  23:Src/motorcontrol.c **** #include "mc_interface.h"
+  24:Src/motorcontrol.c **** #include "mc_tasks.h"
+  25:Src/motorcontrol.c **** 
+  26:Src/motorcontrol.c **** #include "motorcontrol.h"
+  27:Src/motorcontrol.c **** 
+  28:Src/motorcontrol.c **** /** @addtogroup MCSDK
+  29:Src/motorcontrol.c ****   * @{
+  30:Src/motorcontrol.c ****   */
+  31:Src/motorcontrol.c **** 
+  32:Src/motorcontrol.c **** /** @addtogroup MCInterface
+  33:Src/motorcontrol.c ****   * @{
+  34:Src/motorcontrol.c ****   */
+  35:Src/motorcontrol.c **** 
+  36:Src/motorcontrol.c **** MCI_Handle_t* pMCI[NBR_OF_MOTORS];
+  37:Src/motorcontrol.c **** 
+  38:Src/motorcontrol.c **** /**
+  39:Src/motorcontrol.c ****  * @brief Initializes and configures the Motor Control Subsystem
+  40:Src/motorcontrol.c ****  *
+  41:Src/motorcontrol.c ****  *  This function initializes and configures all the structures and components needed
+  42:Src/motorcontrol.c ****  * for the Motor Control subsystem required by the Application. It expects that
+  43:Src/motorcontrol.c ****  * all the peripherals needed for Motor Control purposes are already configured but
+  44:Src/motorcontrol.c ****  * that their interrupts are not enabled yet.
+  45:Src/motorcontrol.c ****  *
+  46:Src/motorcontrol.c ****  * CubeMX calls this function after all peripherals initializations and
+  47:Src/motorcontrol.c ****  * before the NVIC is configured
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 3
+
+
+  48:Src/motorcontrol.c ****  */
+  49:Src/motorcontrol.c **** __weak void MX_MotorControl_Init(void)
+  50:Src/motorcontrol.c **** {
+  72              		.loc 1 50 1
+  73              		.cfi_startproc
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 1, uses_anonymous_args = 0
+  76 0000 80B5     		push	{r7, lr}
+  77              	.LCFI0:
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 7, -8
+  80              		.cfi_offset 14, -4
+  81 0002 00AF     		add	r7, sp, #0
+  82              	.LCFI1:
+  83              		.cfi_def_cfa_register 7
+  51:Src/motorcontrol.c **** 
+  52:Src/motorcontrol.c ****   /* Initialize the Motor Control Subsystem */
+  53:Src/motorcontrol.c ****   MCboot(pMCI);
+  84              		.loc 1 53 3
+  85 0004 0348     		ldr	r0, .L2
+  86 0006 FFF7FEFF 		bl	MCboot
+  54:Src/motorcontrol.c ****   mc_lock_pins();
+  87              		.loc 1 54 3
+  88 000a FFF7FEFF 		bl	mc_lock_pins
+  55:Src/motorcontrol.c **** }
+  89              		.loc 1 55 1
+  90 000e 00BF     		nop
+  91 0010 80BD     		pop	{r7, pc}
+  92              	.L3:
+  93 0012 00BF     		.align	2
+  94              	.L2:
+  95 0014 00000000 		.word	pMCI
+  96              		.cfi_endproc
+  97              	.LFE1090:
+  99              		.section	.text.vPortSetupTimerInterrupt,"ax",%progbits
+ 100              		.align	1
+ 101              		.global	vPortSetupTimerInterrupt
+ 102              		.syntax unified
+ 103              		.thumb
+ 104              		.thumb_func
+ 106              	vPortSetupTimerInterrupt:
+ 107              	.LFB1091:
+  56:Src/motorcontrol.c **** 
+  57:Src/motorcontrol.c **** void vPortSetupTimerInterrupt( void )
+  58:Src/motorcontrol.c **** {
+ 108              		.loc 1 58 1
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 1, uses_anonymous_args = 0
+ 112 0000 80B5     		push	{r7, lr}
+ 113              	.LCFI2:
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 7, -8
+ 116              		.cfi_offset 14, -4
+ 117 0002 00AF     		add	r7, sp, #0
+ 118              	.LCFI3:
+ 119              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 4
+
+
+  59:Src/motorcontrol.c ****   /* Reconfigure the SysTick interrupt to fire every 500 us. */
+  60:Src/motorcontrol.c ****   ( void )HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/SYS_TICK_FREQUENCY);
+ 120              		.loc 1 60 30
+ 121 0004 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 122 0008 0346     		mov	r3, r0
+ 123              		.loc 1 60 11
+ 124 000a 044A     		ldr	r2, .L5
+ 125 000c A2FB0323 		umull	r2, r3, r2, r3
+ 126 0010 DB09     		lsrs	r3, r3, #7
+ 127 0012 1846     		mov	r0, r3
+ 128 0014 FFF7FEFF 		bl	HAL_SYSTICK_Config
+  61:Src/motorcontrol.c **** }
+ 129              		.loc 1 61 1
+ 130 0018 00BF     		nop
+ 131 001a 80BD     		pop	{r7, pc}
+ 132              	.L6:
+ 133              		.align	2
+ 134              	.L5:
+ 135 001c D34D6210 		.word	274877907
+ 136              		.cfi_endproc
+ 137              	.LFE1091:
+ 139              		.text
+ 140              	.Letext0:
+ 141              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 142              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 143              		.file 4 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 144              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 145              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 146              		.file 7 "Inc/mc_type.h"
+ 147              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pid_regulator.h"
+ 148              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
+ 149              		.file 10 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_torq_ctrl.h"
+ 150              		.file 11 "Inc/pwm_curr_fdbk.h"
+ 151              		.file 12 "Inc/mc_perf.h"
+ 152              		.file 13 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
+ 153              		.file 14 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/trajectory_ctrl.h"
+ 154              		.file 15 "Inc/mc_interface.h"
+ 155              		.file 16 "Inc/mc_config.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 motorcontrol.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:60     .bss.pMCI:00000000 pMCI
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:57     .bss.pMCI:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:63     .text.MX_MotorControl_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:69     .text.MX_MotorControl_Init:00000000 MX_MotorControl_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:95     .text.MX_MotorControl_Init:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:100    .text.vPortSetupTimerInterrupt:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:106    .text.vPortSetupTimerInterrupt:00000000 vPortSetupTimerInterrupt
+C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:135    .text.vPortSetupTimerInterrupt:0000001c $d
+
+UNDEFINED SYMBOLS
+MCboot
+mc_lock_pins
+HAL_RCC_GetHCLKFreq
+HAL_SYSTICK_Config

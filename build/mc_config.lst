@@ -1,0 +1,611 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mc_config.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.global	PQD_MotorPowMeasM1
+  56              		.section	.data.PQD_MotorPowMeasM1,"aw"
+  57              		.align	2
+  60              	PQD_MotorPowMeasM1:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 2
+
+
+  61 0000 00000000 		.space	4
+  62 0004 CA1F3539 		.word	959782858
+  63 0008 00000000 		.space	8
+  63      00000000 
+  64              		.global	PIDSpeedHandle_M1
+  65              		.section	.data.PIDSpeedHandle_M1,"aw"
+  66              		.align	2
+  69              	PIDSpeedHandle_M1:
+  70 0000 0308     		.short	2051
+  71 0002 300D     		.short	3376
+  72 0004 00000000 		.space	8
+  72      00000000 
+  73 000c 6666D507 		.word	131425894
+  74 0010 9A992AF8 		.word	-131425894
+  75 0014 551F     		.short	8021
+  76 0016 ABE0     		.short	-8021
+  77 0018 2000     		.short	32
+  78 001a 0040     		.short	16384
+  79 001c 0500     		.short	5
+  80 001e 0E00     		.short	14
+  81 0020 0000     		.short	0
+  82 0022 0000     		.space	2
+  83 0024 0000     		.short	0
+  84 0026 0000     		.short	0
+  85 0028 00000000 		.space	4
+  86              		.global	PIDIqHandle_M1
+  87              		.section	.data.PIDIqHandle_M1,"aw"
+  88              		.align	2
+  91              	PIDIqHandle_M1:
+  92 0000 170D     		.short	3351
+  93 0002 A709     		.short	2471
+  94 0004 00000000 		.space	8
+  94      00000000 
+  95 000c 00F0FF07 		.word	134213632
+  96 0010 001000F8 		.word	-134213632
+  97 0014 FF7F     		.short	32767
+  98 0016 0180     		.short	-32767
+  99 0018 0020     		.short	8192
+ 100 001a 0010     		.short	4096
+ 101 001c 0D00     		.short	13
+ 102 001e 0C00     		.short	12
+ 103 0020 0000     		.short	0
+ 104 0022 0000     		.space	2
+ 105 0024 0000     		.short	0
+ 106 0026 0000     		.short	0
+ 107 0028 00000000 		.space	4
+ 108              		.global	PIDIdHandle_M1
+ 109              		.section	.data.PIDIdHandle_M1,"aw"
+ 110              		.align	2
+ 113              	PIDIdHandle_M1:
+ 114 0000 170D     		.short	3351
+ 115 0002 A709     		.short	2471
+ 116 0004 00000000 		.space	8
+ 116      00000000 
+ 117 000c 00F0FF07 		.word	134213632
+ 118 0010 001000F8 		.word	-134213632
+ 119 0014 FF7F     		.short	32767
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 3
+
+
+ 120 0016 0180     		.short	-32767
+ 121 0018 0020     		.short	8192
+ 122 001a 0010     		.short	4096
+ 123 001c 0D00     		.short	13
+ 124 001e 0C00     		.short	12
+ 125 0020 0000     		.short	0
+ 126 0022 0000     		.space	2
+ 127 0024 0000     		.short	0
+ 128 0026 0000     		.short	0
+ 129 0028 00000000 		.space	4
+ 130              		.global	PID_PosParamsM1
+ 131              		.section	.data.PID_PosParamsM1,"aw"
+ 132              		.align	2
+ 135              	PID_PosParamsM1:
+ 136 0000 1027     		.short	10000
+ 137 0002 E803     		.short	1000
+ 138 0004 00000000 		.space	8
+ 138      00000000 
+ 139 000c CCCCAA0F 		.word	262851788
+ 140 0010 343355F0 		.word	-262851788
+ 141 0014 551F     		.short	8021
+ 142 0016 ABE0     		.short	-8021
+ 143 0018 0004     		.short	1024
+ 144 001a 0080     		.short	-32768
+ 145 001c 0A00     		.short	10
+ 146 001e 0F00     		.short	15
+ 147 0020 E803     		.short	1000
+ 148 0022 0000     		.space	2
+ 149 0024 1000     		.short	16
+ 150 0026 0400     		.short	4
+ 151 0028 00000000 		.space	4
+ 152              		.global	PosCtrlM1
+ 153              		.section	.data.PosCtrlM1,"aw"
+ 154              		.align	2
+ 157              	PosCtrlM1:
+ 158 0000 00000000 		.space	48
+ 158      00000000 
+ 158      00000000 
+ 158      00000000 
+ 158      00000000 
+ 159 0030 6F12833A 		.word	981668463
+ 160 0034 00000000 		.space	40
+ 160      00000000 
+ 160      00000000 
+ 160      00000000 
+ 160      00000000 
+ 161 005c 6F12033A 		.word	973279855
+ 162 0060 00       		.space	1
+ 163 0061 03       		.byte	3
+ 164 0062 00000000 		.space	14
+ 164      00000000 
+ 164      00000000 
+ 164      0000
+ 165              		.global	SpeednTorqCtrlM1
+ 166              		.section	.data.SpeednTorqCtrlM1,"aw"
+ 167              		.align	2
+ 170              	SpeednTorqCtrlM1:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 4
+
+
+ 171 0000 00000000 		.space	28
+ 171      00000000 
+ 171      00000000 
+ 171      00000000 
+ 171      00000000 
+ 172 001c E803     		.short	1000
+ 173 001e 0601     		.short	262
+ 174 0020 0000     		.short	0
+ 175 0022 0000     		.short	0
+ 176 0024 FAFE     		.short	-262
+ 177 0026 551F     		.short	8021
+ 178 0028 ABE0     		.short	-8021
+ 179 002a 03       		.byte	3
+ 180 002b 00       		.space	1
+ 181 002c 5E00     		.short	94
+ 182 002e 0000     		.short	0
+ 183 0030 0000     		.short	0
+ 184 0032 0000     		.space	2
+ 185              		.global	PWM_Handle_M1
+ 186              		.section	.data.PWM_Handle_M1,"aw"
+ 187              		.align	2
+ 190              	PWM_Handle_M1:
+ 191 0000 00000000 		.word	R3_1_GetPhaseCurrents
+ 192 0004 00000000 		.word	R3_1_SwitchOffPWM
+ 193 0008 00000000 		.word	R3_1_SwitchOnPWM
+ 194 000c 00000000 		.word	R3_1_CurrentReadingCalibration
+ 195 0010 00000000 		.word	R3_1_TurnOnLowSides
+ 196 0014 00000000 		.word	R3_1_SetADCSampPointSectX
+ 197 0018 00000000 		.word	0
+ 198 001c 00000000 		.word	R3_1_RLDetectionModeEnable
+ 199 0020 00000000 		.word	R3_1_RLDetectionModeDisable
+ 200 0024 00000000 		.word	R3_1_RLDetectionModeSetDuty
+ 201 0028 00000000 		.word	R3_1_RLTurnOnLowSidesAndStart
+ 202 002c 00000000 		.word	R3_1_SetOffsetCalib
+ 203 0030 00000000 		.word	R3_1_GetOffsetCalib
+ 204 0034 00000000 		.space	8
+ 204      00000000 
+ 205 003c 00040048 		.word	1207960576
+ 206 0040 00040048 		.word	1207960576
+ 207 0044 00040048 		.word	1207960576
+ 208 0048 0020     		.short	8192
+ 209 004a 0040     		.short	16384
+ 210 004c 0080     		.short	-32768
+ 211 004e A843     		.short	17320
+ 212 0050 0000     		.short	0
+ 213 0052 0000     		.short	0
+ 214 0054 0000     		.short	0
+ 215 0056 0000     		.short	0
+ 216 0058 00000000 		.space	8
+ 216      00000000 
+ 217 0060 0000     		.short	0
+ 218 0062 0000     		.short	0
+ 219 0064 0000     		.short	0
+ 220 0066 0000     		.short	0
+ 221 0068 00000000 		.space	6
+ 221      0000
+ 222 006e FF3F     		.short	16383
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 5
+
+
+ 223 0070 0000     		.short	0
+ 224 0072 8813     		.short	5000
+ 225 0074 1600     		.short	22
+ 226 0076 1400     		.short	20
+ 227 0078 1400     		.short	20
+ 228 007a 00       		.byte	0
+ 229 007b 00       		.space	1
+ 230 007c 00       		.byte	0
+ 231 007d 02       		.byte	2
+ 232 007e 00       		.byte	0
+ 233 007f 00       		.space	1
+ 234 0080 00       		.byte	0
+ 235 0081 00       		.space	1
+ 236 0082 00       		.byte	0
+ 237 0083 00       		.byte	0
+ 238 0084 00       		.byte	0
+ 239 0085 00       		.byte	0
+ 240 0086 00       		.space	1
+ 241 0087 00       		.byte	0
+ 242 0088 00000000 		.word	0
+ 243 008c 00000000 		.word	0
+ 244 0090 00000000 		.word	0
+ 245 0094 00000000 		.space	4
+ 246 0098 C409     		.short	2500
+ 247 009a 0000     		.short	0
+ 248 009c 00       		.space	1
+ 249 009d 00       		.byte	0
+ 250 009e 0000     		.space	2
+ 251 00a0 00000000 		.word	R3_1_ParamsM1
+ 252              		.global	VirtualSpeedSensorM1
+ 253              		.section	.data.VirtualSpeedSensorM1,"aw"
+ 254              		.align	2
+ 257              	VirtualSpeedSensorM1:
+ 258 0000 00       		.space	1
+ 259 0001 02       		.byte	2
+ 260 0002 00       		.space	1
+ 261 0003 03       		.byte	3
+ 262 0004 00000000 		.space	16
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 263 0014 2D01     		.short	301
+ 264 0016 0000     		.short	0
+ 265 0018 FFFF     		.short	-1
+ 266 001a 803E     		.short	16000
+ 267 001c 00000100 		.word	65536
+ 268 0020 00000000 		.space	20
+ 268      00000000 
+ 268      00000000 
+ 268      00000000 
+ 268      00000000 
+ 269 0034 E803     		.short	1000
+ 270 0036 9001     		.short	400
+ 271              		.global	ENCODER_M1
+ 272              		.section	.data.ENCODER_M1,"aw"
+ 273              		.align	2
+ 276              	ENCODER_M1:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 6
+
+
+ 277 0000 00       		.space	1
+ 278 0001 02       		.byte	2
+ 279 0002 00       		.space	1
+ 280 0003 03       		.byte	3
+ 281 0004 00000000 		.space	16
+ 281      00000000 
+ 281      00000000 
+ 281      00000000 
+ 282 0014 2D01     		.short	301
+ 283 0016 0000     		.short	0
+ 284 0018 FFFF     		.short	-1
+ 285 001a 803E     		.short	16000
+ 286 001c 00000100 		.word	65536
+ 287 0020 00040040 		.word	1073742848
+ 288 0024 00000000 		.space	72
+ 288      00000000 
+ 288      00000000 
+ 288      00000000 
+ 288      00000000 
+ 289 006c E803     		.short	1000
+ 290 006e 4006     		.short	1600
+ 291 0070 00000000 		.space	4
+ 292 0074 10       		.byte	16
+ 293 0075 000000   		.space	3
+ 294 0078 00000000 		.word	0
+ 295 007c 00000000 		.space	4
+ 296              		.global	HALL_M1
+ 297              		.section	.data.HALL_M1,"aw"
+ 298              		.align	2
+ 301              	HALL_M1:
+ 302 0000 00       		.space	1
+ 303 0001 02       		.byte	2
+ 304 0002 00       		.space	1
+ 305 0003 03       		.byte	3
+ 306 0004 00000000 		.space	16
+ 306      00000000 
+ 306      00000000 
+ 306      00000000 
+ 307 0014 2D01     		.short	301
+ 308 0016 0000     		.short	0
+ 309 0018 FFFF     		.short	-1
+ 310 001a 803E     		.short	16000
+ 311 001c 00000100 		.word	65536
+ 312 0020 00040040 		.word	1073742848
+ 313 0024 00000000 		.space	72
+ 313      00000000 
+ 313      00000000 
+ 313      00000000 
+ 313      00000000 
+ 314 006c E803     		.short	1000
+ 315 006e 4006     		.short	1600
+ 316 0070 00000000 		.space	4
+ 317 0074 10       		.byte	16
+ 318 0075 000000   		.space	3
+ 319 0078 00000000 		.word	0
+ 320 007c 00000000 		.space	4
+ 321              		.global	EncAlignCtrlM1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 7
+
+
+ 322              		.section	.data.EncAlignCtrlM1,"aw"
+ 323              		.align	2
+ 326              	EncAlignCtrlM1:
+ 327 0000 00000000 		.space	16
+ 327      00000000 
+ 327      00000000 
+ 327      00000000 
+ 328 0010 E803     		.short	1000
+ 329 0012 551F     		.short	8021
+ 330 0014 0040     		.short	16384
+ 331 0016 BC02     		.short	700
+ 332 0018 02       		.byte	2
+ 333 0019 000000   		.space	3
+ 334              		.global	TempRegConv_M1
+ 335              		.section	.data.TempRegConv_M1,"aw"
+ 336              		.align	2
+ 339              	TempRegConv_M1:
+ 340 0000 00000450 		.word	1342439424
+ 341 0004 0D       		.byte	13
+ 342 0005 000000   		.space	3
+ 343 0008 05000000 		.word	5
+ 344 000c 00000000 		.space	4
+ 345              		.global	TempSensor_M1
+ 346              		.section	.data.TempSensor_M1,"aw"
+ 347              		.align	2
+ 350              	TempSensor_M1:
+ 351 0000 00       		.byte	0
+ 352 0001 00000000 		.space	9
+ 352      00000000 
+ 352      00
+ 353 000a FA00     		.short	250
+ 354 000c F2DE     		.short	-8462
+ 355 000e 00CA     		.short	-13824
+ 356 0010 7A00     		.short	122
+ 357 0012 0000     		.space	2
+ 358 0014 EA2C0000 		.word	11498
+ 359 0018 1900     		.short	25
+ 360 001a 0000     		.space	2
+ 361              		.section	.bss.RealBusVoltageSensorFilterBufferM1,"aw",%nobits
+ 362              		.align	2
+ 365              	RealBusVoltageSensorFilterBufferM1:
+ 366 0000 00000000 		.space	12
+ 366      00000000 
+ 366      00000000 
+ 367              		.global	VbusRegConv_M1
+ 368              		.section	.data.VbusRegConv_M1,"aw"
+ 369              		.align	2
+ 372              	VbusRegConv_M1:
+ 373 0000 00000450 		.word	1342439424
+ 374 0004 05       		.byte	5
+ 375 0005 000000   		.space	3
+ 376 0008 05000000 		.word	5
+ 377 000c 00000000 		.space	4
+ 378              		.global	BusVoltageSensor_M1
+ 379              		.section	.data.BusVoltageSensor_M1,"aw"
+ 380              		.align	2
+ 383              	BusVoltageSensor_M1:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 8
+
+
+ 384 0000 00       		.byte	0
+ 385 0001 00       		.space	1
+ 386 0002 3400     		.short	52
+ 387 0004 00000000 		.space	6
+ 387      0000
+ 388 000a 0600     		.short	6
+ 389 000c 9A8C     		.short	-29542
+ 390 000e 9A8C     		.short	-29542
+ 391 0010 01       		.byte	1
+ 392 0011 00       		.space	1
+ 393 0012 7622     		.short	8822
+ 394 0014 00000000 		.word	RealBusVoltageSensorFilterBufferM1
+ 395 0018 00000000 		.space	4
+ 396              		.global	RampExtMngrHFParamsM1
+ 397              		.section	.data.RampExtMngrHFParamsM1,"aw"
+ 398              		.align	2
+ 401              	RampExtMngrHFParamsM1:
+ 402 0000 803E0000 		.word	16000
+ 403 0004 00000000 		.space	20
+ 403      00000000 
+ 403      00000000 
+ 403      00000000 
+ 403      00000000 
+ 404              		.global	CircleLimitationM1
+ 405              		.section	.data.CircleLimitationM1,"aw"
+ 406              		.align	2
+ 409              	CircleLimitationM1:
+ 410 0000 FF7F     		.short	32767
+ 411 0002 9879     		.short	31128
+ 412              		.global	Mci
+ 413              		.section	.bss.Mci,"aw",%nobits
+ 414              		.align	2
+ 417              	Mci:
+ 418 0000 00000000 		.space	48
+ 418      00000000 
+ 418      00000000 
+ 418      00000000 
+ 418      00000000 
+ 419              		.global	pSTC
+ 420              		.section	.data.pSTC,"aw"
+ 421              		.align	2
+ 424              	pSTC:
+ 425 0000 00000000 		.word	SpeednTorqCtrlM1
+ 426              		.global	pTemperatureSensor
+ 427              		.section	.data.pTemperatureSensor,"aw"
+ 428              		.align	2
+ 431              	pTemperatureSensor:
+ 432 0000 00000000 		.word	TempSensor_M1
+ 433              		.global	pPIDIq
+ 434              		.section	.data.pPIDIq,"aw"
+ 435              		.align	2
+ 438              	pPIDIq:
+ 439 0000 00000000 		.word	PIDIqHandle_M1
+ 440              		.global	pPIDId
+ 441              		.section	.data.pPIDId,"aw"
+ 442              		.align	2
+ 445              	pPIDId:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 9
+
+
+ 446 0000 00000000 		.word	PIDIdHandle_M1
+ 447              		.global	pMPM
+ 448              		.section	.data.pMPM,"aw"
+ 449              		.align	2
+ 452              	pMPM:
+ 453 0000 00000000 		.word	PQD_MotorPowMeasM1
+ 454              		.global	pPosCtrl
+ 455              		.section	.data.pPosCtrl,"aw"
+ 456              		.align	2
+ 459              	pPosCtrl:
+ 460 0000 00000000 		.word	PosCtrlM1
+ 461              		.text
+ 462              	.Letext0:
+ 463              		.file 1 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 464              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 465              		.file 3 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 466              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 467              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 468              		.file 6 "Inc/mc_type.h"
+ 469              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pid_regulator.h"
+ 470              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
+ 471              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_torq_ctrl.h"
+ 472              		.file 10 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/virtual_speed_sensor.h"
+ 473              		.file 11 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/ntc_temperature_sensor.h"
+ 474              		.file 12 "Inc/pwm_curr_fdbk.h"
+ 475              		.file 13 "Inc/mc_perf.h"
+ 476              		.file 14 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
+ 477              		.file 15 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/enc_align_ctrl.h"
+ 478              		.file 16 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/trajectory_ctrl.h"
+ 479              		.file 17 "Inc/mc_interface.h"
+ 480              		.file 18 "Inc/regular_conversion_manager.h"
+ 481              		.file 19 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/bus_voltage_sensor.h"
+ 482              		.file 20 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/r_divider_bus_voltage_sensor.h"
+ 483              		.file 21 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pqd_motor_power_measurement.h"
+ 484              		.file 22 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/L4xx/Inc/r3_1_l4xx_pwm_curr_fdbk.h"
+ 485              		.file 23 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_speed_pos_fdbk.h"
+ 486              		.file 24 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/ramp_ext_mngr.h"
+ 487              		.file 25 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/circle_limitation.h"
+ 488              		.file 26 "Inc/mc_config.h"
+ 489              		.file 27 "Inc/mc_parameters.h"
+ 490              		.file 28 "Src/mc_config.c"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mc_config.c
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:60     .data.PQD_MotorPowMeasM1:00000000 PQD_MotorPowMeasM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:57     .data.PQD_MotorPowMeasM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:69     .data.PIDSpeedHandle_M1:00000000 PIDSpeedHandle_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:66     .data.PIDSpeedHandle_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:91     .data.PIDIqHandle_M1:00000000 PIDIqHandle_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:88     .data.PIDIqHandle_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:113    .data.PIDIdHandle_M1:00000000 PIDIdHandle_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:110    .data.PIDIdHandle_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:135    .data.PID_PosParamsM1:00000000 PID_PosParamsM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:132    .data.PID_PosParamsM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:157    .data.PosCtrlM1:00000000 PosCtrlM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:154    .data.PosCtrlM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:170    .data.SpeednTorqCtrlM1:00000000 SpeednTorqCtrlM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:167    .data.SpeednTorqCtrlM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:190    .data.PWM_Handle_M1:00000000 PWM_Handle_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:187    .data.PWM_Handle_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:257    .data.VirtualSpeedSensorM1:00000000 VirtualSpeedSensorM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:254    .data.VirtualSpeedSensorM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:276    .data.ENCODER_M1:00000000 ENCODER_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:273    .data.ENCODER_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:301    .data.HALL_M1:00000000 HALL_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:298    .data.HALL_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:326    .data.EncAlignCtrlM1:00000000 EncAlignCtrlM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:323    .data.EncAlignCtrlM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:339    .data.TempRegConv_M1:00000000 TempRegConv_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:336    .data.TempRegConv_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:350    .data.TempSensor_M1:00000000 TempSensor_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:347    .data.TempSensor_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:362    .bss.RealBusVoltageSensorFilterBufferM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:365    .bss.RealBusVoltageSensorFilterBufferM1:00000000 RealBusVoltageSensorFilterBufferM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:372    .data.VbusRegConv_M1:00000000 VbusRegConv_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:369    .data.VbusRegConv_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:383    .data.BusVoltageSensor_M1:00000000 BusVoltageSensor_M1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:380    .data.BusVoltageSensor_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:401    .data.RampExtMngrHFParamsM1:00000000 RampExtMngrHFParamsM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:398    .data.RampExtMngrHFParamsM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:409    .data.CircleLimitationM1:00000000 CircleLimitationM1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:406    .data.CircleLimitationM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:417    .bss.Mci:00000000 Mci
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:414    .bss.Mci:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:424    .data.pSTC:00000000 pSTC
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:421    .data.pSTC:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:431    .data.pTemperatureSensor:00000000 pTemperatureSensor
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s 			page 11
+
+
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:428    .data.pTemperatureSensor:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:438    .data.pPIDIq:00000000 pPIDIq
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:435    .data.pPIDIq:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:445    .data.pPIDId:00000000 pPIDId
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:442    .data.pPIDId:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:452    .data.pMPM:00000000 pMPM
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:449    .data.pMPM:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:459    .data.pPosCtrl:00000000 pPosCtrl
+C:\Users\ep_ygh\AppData\Local\Temp\cc0d03yd.s:456    .data.pPosCtrl:00000000 $d
+
+UNDEFINED SYMBOLS
+R3_1_GetPhaseCurrents
+R3_1_SwitchOffPWM
+R3_1_SwitchOnPWM
+R3_1_CurrentReadingCalibration
+R3_1_TurnOnLowSides
+R3_1_SetADCSampPointSectX
+R3_1_RLDetectionModeEnable
+R3_1_RLDetectionModeDisable
+R3_1_RLDetectionModeSetDuty
+R3_1_RLTurnOnLowSidesAndStart
+R3_1_SetOffsetCalib
+R3_1_GetOffsetCalib
+R3_1_ParamsM1

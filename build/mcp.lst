@@ -1,0 +1,1603 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mcp.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.rodata
+  56              		.align	2
+  57              	.LC0:
+  58 0000 00000000 		.word	RI_SetRegisterGlobal
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 2
+
+
+  59 0004 00000000 		.word	RI_SetRegisterMotor1
+  60              		.section	.text.RI_SetRegCommandParser,"ax",%progbits
+  61              		.align	1
+  62              		.global	RI_SetRegCommandParser
+  63              		.syntax unified
+  64              		.thumb
+  65              		.thumb_func
+  67              	RI_SetRegCommandParser:
+  68              	.LFB1090:
+  69              		.file 1 "Src/mcp.c"
+   1:Src/mcp.c     **** 
+   2:Src/mcp.c     **** /**
+   3:Src/mcp.c     ****   ******************************************************************************
+   4:Src/mcp.c     ****   * @file    mcp.c
+   5:Src/mcp.c     ****   * @author  Motor Control SDK Team, ST Microelectronics
+   6:Src/mcp.c     ****   * @brief   This file provides firmware functions that implement the MCP protocol
+   7:Src/mcp.c     ****   *
+   8:Src/mcp.c     ****   *
+   9:Src/mcp.c     ****   ******************************************************************************
+  10:Src/mcp.c     ****   * @attention
+  11:Src/mcp.c     ****   *
+  12:Src/mcp.c     ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  13:Src/mcp.c     ****   * All rights reserved.</center></h2>
+  14:Src/mcp.c     ****   *
+  15:Src/mcp.c     ****   * This software component is licensed by ST under Ultimate Liberty license
+  16:Src/mcp.c     ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  17:Src/mcp.c     ****   * the License. You may obtain a copy of the License at:
+  18:Src/mcp.c     ****   *                             www.st.com/SLA0044
+  19:Src/mcp.c     ****   *
+  20:Src/mcp.c     ****   ******************************************************************************
+  21:Src/mcp.c     ****   */
+  22:Src/mcp.c     **** 
+  23:Src/mcp.c     **** #include "mc_type.h"
+  24:Src/mcp.c     **** #include "mcp.h"
+  25:Src/mcp.c     **** #include "register_interface.h"
+  26:Src/mcp.c     **** #include "mc_config.h"
+  27:Src/mcp.c     **** #include "mcp_config.h"
+  28:Src/mcp.c     **** #include "mc_api.h"
+  29:Src/mcp.c     **** 
+  30:Src/mcp.c     **** /** @addtogroup MCSDK
+  31:Src/mcp.c     ****   * @{
+  32:Src/mcp.c     ****   */
+  33:Src/mcp.c     **** 
+  34:Src/mcp.c     **** /** @defgroup MCP Motor Control Protocol
+  35:Src/mcp.c     ****   *
+  36:Src/mcp.c     ****   * @brief Motor Control Protocol components of the Motor Control SDK.
+  37:Src/mcp.c     ****   *
+  38:Src/mcp.c     ****   * These components implement the features needed to drive and monitor motor control applications 
+  39:Src/mcp.c     ****   * They mainly focus on the communication with the controller, both on the receiving and the trans
+  40:Src/mcp.c     ****   *
+  41:Src/mcp.c     ****   * @{
+  42:Src/mcp.c     ****   */
+  43:Src/mcp.c     **** 
+  44:Src/mcp.c     **** /**
+  45:Src/mcp.c     ****   * @brief  Parses the payload in the received packet and call the required function in order to mo
+  46:Src/mcp.c     ****   *
+  47:Src/mcp.c     ****   * The function called depends on the targeted motor and/or targeted register : RI_SetRegisterGlob
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 3
+
+
+  48:Src/mcp.c     ****   *
+  49:Src/mcp.c     ****   * @param  pHandle Handler of the current instance of the MCP component
+  50:Src/mcp.c     ****   * @param  txSyncFreeSpace Space available for synchronous transmission
+  51:Src/mcp.c     ****   *
+  52:Src/mcp.c     ****   * @retval Returns #MCP_CMD_OK if the command is acknowledged and #MCP_CMD_NOK if not.
+  53:Src/mcp.c     ****   */
+  54:Src/mcp.c     **** uint8_t RI_SetRegCommandParser (MCP_Handle_t * pHandle, uint16_t txSyncFreeSpace)
+  55:Src/mcp.c     **** {
+  70              		.loc 1 55 1
+  71              		.cfi_startproc
+  72              		@ args = 0, pretend = 0, frame = 48
+  73              		@ frame_needed = 1, uses_anonymous_args = 0
+  74 0000 90B5     		push	{r4, r7, lr}
+  75              	.LCFI0:
+  76              		.cfi_def_cfa_offset 12
+  77              		.cfi_offset 4, -12
+  78              		.cfi_offset 7, -8
+  79              		.cfi_offset 14, -4
+  80 0002 8FB0     		sub	sp, sp, #60
+  81              	.LCFI1:
+  82              		.cfi_def_cfa_offset 72
+  83 0004 02AF     		add	r7, sp, #8
+  84              	.LCFI2:
+  85              		.cfi_def_cfa 7, 64
+  86 0006 7860     		str	r0, [r7, #4]
+  87 0008 0B46     		mov	r3, r1
+  88 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+  56:Src/mcp.c     ****   uint8_t retVal = MCP_CMD_OK;
+  89              		.loc 1 56 11
+  90 000c 0023     		movs	r3, #0
+  91 000e 87F82F30 		strb	r3, [r7, #47]
+  57:Src/mcp.c     **** #ifdef NULL_PTR_CHECK_REG_INT
+  58:Src/mcp.c     ****   if (MC_NULL == pHandle)
+  59:Src/mcp.c     ****   {
+  60:Src/mcp.c     ****     retVal = MCP_CMD_NOK;
+  61:Src/mcp.c     ****   }
+  62:Src/mcp.c     ****   else
+  63:Src/mcp.c     ****   {
+  64:Src/mcp.c     **** #endif
+  65:Src/mcp.c     ****     uint16_t * dataElementID;
+  66:Src/mcp.c     ****     uint8_t * rxData = pHandle->rxBuffer;
+  92              		.loc 1 66 15
+  93 0012 7B68     		ldr	r3, [r7, #4]
+  94 0014 5B68     		ldr	r3, [r3, #4]
+  95 0016 BB62     		str	r3, [r7, #40]
+  67:Src/mcp.c     ****     uint8_t * txData = pHandle->txBuffer;
+  96              		.loc 1 67 15
+  97 0018 7B68     		ldr	r3, [r7, #4]
+  98 001a 9B68     		ldr	r3, [r3, #8]
+  99 001c 7B62     		str	r3, [r7, #36]
+  68:Src/mcp.c     ****     int16_t rxLength = pHandle->rxLength;
+ 100              		.loc 1 68 31
+ 101 001e 7B68     		ldr	r3, [r7, #4]
+ 102 0020 9B89     		ldrh	r3, [r3, #12]
+ 103              		.loc 1 68 13
+ 104 0022 7B84     		strh	r3, [r7, #34]	@ movhi
+  69:Src/mcp.c     ****     uint16_t size = 0U;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 4
+
+
+ 105              		.loc 1 69 14
+ 106 0024 0023     		movs	r3, #0
+ 107 0026 BB82     		strh	r3, [r7, #20]	@ movhi
+  70:Src/mcp.c     ****     uint8_t accessResult;
+  71:Src/mcp.c     **** 
+  72:Src/mcp.c     ****     uint16_t regID;
+  73:Src/mcp.c     ****     uint8_t typeID;
+  74:Src/mcp.c     ****     uint8_t motorID;
+  75:Src/mcp.c     ****     uint8_t (*SetRegFcts[NBR_OF_MOTORS+1])(uint16_t, uint8_t, uint8_t*, uint16_t*, int16_t) = {&RI_
+ 108              		.loc 1 75 15
+ 109 0028 4B4A     		ldr	r2, .L12
+ 110 002a 07F10C03 		add	r3, r7, #12
+ 111 002e 92E80300 		ldm	r2, {r0, r1}
+ 112 0032 83E80300 		stm	r3, {r0, r1}
+  76:Src/mcp.c     ****     uint8_t number_of_item =0;
+ 113              		.loc 1 76 13
+ 114 0036 0023     		movs	r3, #0
+ 115 0038 87F82130 		strb	r3, [r7, #33]
+  77:Src/mcp.c     ****     pHandle->txLength = 0;
+ 116              		.loc 1 77 23
+ 117 003c 7B68     		ldr	r3, [r7, #4]
+ 118 003e 0022     		movs	r2, #0
+ 119 0040 DA81     		strh	r2, [r3, #14]	@ movhi
+  78:Src/mcp.c     **** 
+  79:Src/mcp.c     ****     while (rxLength > 0)
+ 120              		.loc 1 79 11
+ 121 0042 78E0     		b	.L2
+ 122              	.L9:
+  80:Src/mcp.c     ****     {
+  81:Src/mcp.c     ****       number_of_item ++;
+ 123              		.loc 1 81 22
+ 124 0044 97F82130 		ldrb	r3, [r7, #33]	@ zero_extendqisi2
+ 125 0048 0133     		adds	r3, r3, #1
+ 126 004a 87F82130 		strb	r3, [r7, #33]
+  82:Src/mcp.c     ****       dataElementID = (uint16_t *) rxData;
+ 127              		.loc 1 82 21
+ 128 004e BB6A     		ldr	r3, [r7, #40]
+ 129 0050 FB61     		str	r3, [r7, #28]
+  83:Src/mcp.c     ****       rxLength = rxLength-MCP_ID_SIZE; // We consume 2 byte in the DataID
+ 130              		.loc 1 83 26
+ 131 0052 7B8C     		ldrh	r3, [r7, #34]
+ 132 0054 023B     		subs	r3, r3, #2
+ 133 0056 9BB2     		uxth	r3, r3
+ 134              		.loc 1 83 16
+ 135 0058 7B84     		strh	r3, [r7, #34]	@ movhi
+  84:Src/mcp.c     ****       rxData = rxData+MCP_ID_SIZE; // Shift buffer to the next data
+ 136              		.loc 1 84 14
+ 137 005a BB6A     		ldr	r3, [r7, #40]
+ 138 005c 0233     		adds	r3, r3, #2
+ 139 005e BB62     		str	r3, [r7, #40]
+  85:Src/mcp.c     **** 
+  86:Src/mcp.c     ****       regID = *dataElementID & REG_MASK;
+ 140              		.loc 1 86 15
+ 141 0060 FB69     		ldr	r3, [r7, #28]
+ 142 0062 1B88     		ldrh	r3, [r3]
+ 143              		.loc 1 86 13
+ 144 0064 23F00703 		bic	r3, r3, #7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 5
+
+
+ 145 0068 7B83     		strh	r3, [r7, #26]	@ movhi
+  87:Src/mcp.c     ****       typeID = (uint8_t)*dataElementID & TYPE_MASK;
+ 146              		.loc 1 87 25
+ 147 006a FB69     		ldr	r3, [r7, #28]
+ 148 006c 1B88     		ldrh	r3, [r3]
+ 149              		.loc 1 87 16
+ 150 006e DBB2     		uxtb	r3, r3
+ 151              		.loc 1 87 14
+ 152 0070 03F03803 		and	r3, r3, #56
+ 153 0074 7B76     		strb	r3, [r7, #25]
+  88:Src/mcp.c     **** 
+  89:Src/mcp.c     ****       motorID = (uint8_t)((*dataElementID & MOTOR_MASK));
+ 154              		.loc 1 89 28
+ 155 0076 FB69     		ldr	r3, [r7, #28]
+ 156 0078 1B88     		ldrh	r3, [r3]
+ 157              		.loc 1 89 17
+ 158 007a DBB2     		uxtb	r3, r3
+ 159              		.loc 1 89 15
+ 160 007c 03F00703 		and	r3, r3, #7
+ 161 0080 3B76     		strb	r3, [r7, #24]
+  90:Src/mcp.c     **** 
+  91:Src/mcp.c     ****       if (motorID > NBR_OF_MOTORS)
+ 162              		.loc 1 91 10
+ 163 0082 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 164 0084 012B     		cmp	r3, #1
+ 165 0086 05D9     		bls	.L3
+  92:Src/mcp.c     ****       {
+  93:Src/mcp.c     ****         retVal = MCP_CMD_NOK;
+ 166              		.loc 1 93 16
+ 167 0088 0123     		movs	r3, #1
+ 168 008a 87F82F30 		strb	r3, [r7, #47]
+  94:Src/mcp.c     ****         rxLength = 0;
+ 169              		.loc 1 94 18
+ 170 008e 0023     		movs	r3, #0
+ 171 0090 7B84     		strh	r3, [r7, #34]	@ movhi
+ 172 0092 50E0     		b	.L2
+ 173              	.L3:
+  95:Src/mcp.c     ****       }
+  96:Src/mcp.c     ****       else
+  97:Src/mcp.c     ****       {
+  98:Src/mcp.c     ****         accessResult = SetRegFcts[motorID](regID, typeID, rxData, &size, rxLength);
+ 174              		.loc 1 98 34
+ 175 0094 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 176 0096 9B00     		lsls	r3, r3, #2
+ 177 0098 3033     		adds	r3, r3, #48
+ 178 009a 3B44     		add	r3, r3, r7
+ 179 009c 53F8244C 		ldr	r4, [r3, #-36]
+ 180              		.loc 1 98 24
+ 181 00a0 07F11402 		add	r2, r7, #20
+ 182 00a4 797E     		ldrb	r1, [r7, #25]	@ zero_extendqisi2
+ 183 00a6 788B     		ldrh	r0, [r7, #26]
+ 184 00a8 B7F92230 		ldrsh	r3, [r7, #34]
+ 185 00ac 0093     		str	r3, [sp]
+ 186 00ae 1346     		mov	r3, r2
+ 187 00b0 BA6A     		ldr	r2, [r7, #40]
+ 188 00b2 A047     		blx	r4
+ 189              	.LVL0:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 6
+
+
+ 190 00b4 0346     		mov	r3, r0
+ 191 00b6 FB75     		strb	r3, [r7, #23]
+  99:Src/mcp.c     ****         /* Prepare next data*/
+ 100:Src/mcp.c     ****         rxLength = (int16_t) (rxLength - size);
+ 192              		.loc 1 100 40
+ 193 00b8 7A8C     		ldrh	r2, [r7, #34]
+ 194 00ba BB8A     		ldrh	r3, [r7, #20]
+ 195 00bc D31A     		subs	r3, r2, r3
+ 196 00be 9BB2     		uxth	r3, r3
+ 197              		.loc 1 100 18
+ 198 00c0 7B84     		strh	r3, [r7, #34]	@ movhi
+ 101:Src/mcp.c     ****         rxData = rxData+size;
+ 199              		.loc 1 101 24
+ 200 00c2 BB8A     		ldrh	r3, [r7, #20]
+ 201 00c4 1A46     		mov	r2, r3
+ 202              		.loc 1 101 16
+ 203 00c6 BB6A     		ldr	r3, [r7, #40]
+ 204 00c8 1344     		add	r3, r3, r2
+ 205 00ca BB62     		str	r3, [r7, #40]
+ 102:Src/mcp.c     ****         /* If there is only one CMD in the buffer, we do not store the result */
+ 103:Src/mcp.c     ****         if ((1U == number_of_item) && (0 == rxLength))
+ 206              		.loc 1 103 12
+ 207 00cc 97F82130 		ldrb	r3, [r7, #33]	@ zero_extendqisi2
+ 208 00d0 012B     		cmp	r3, #1
+ 209 00d2 07D1     		bne	.L4
+ 210              		.loc 1 103 36 discriminator 1
+ 211 00d4 B7F92230 		ldrsh	r3, [r7, #34]
+ 212 00d8 002B     		cmp	r3, #0
+ 213 00da 03D1     		bne	.L4
+ 104:Src/mcp.c     ****         {
+ 105:Src/mcp.c     ****           retVal = accessResult;
+ 214              		.loc 1 105 18
+ 215 00dc FB7D     		ldrb	r3, [r7, #23]
+ 216 00de 87F82F30 		strb	r3, [r7, #47]
+ 217 00e2 28E0     		b	.L2
+ 218              	.L4:
+ 106:Src/mcp.c     ****         }
+ 107:Src/mcp.c     ****         else
+ 108:Src/mcp.c     ****         {/* Store the result for each access to be able to report failing access */
+ 109:Src/mcp.c     ****           if (txSyncFreeSpace !=0 )
+ 219              		.loc 1 109 14
+ 220 00e4 7B88     		ldrh	r3, [r7, #2]
+ 221 00e6 002B     		cmp	r3, #0
+ 222 00e8 20D0     		beq	.L5
+ 110:Src/mcp.c     ****           {
+ 111:Src/mcp.c     ****             *txData = accessResult;
+ 223              		.loc 1 111 21
+ 224 00ea 7B6A     		ldr	r3, [r7, #36]
+ 225 00ec FA7D     		ldrb	r2, [r7, #23]
+ 226 00ee 1A70     		strb	r2, [r3]
+ 112:Src/mcp.c     ****             txData = txData+1;
+ 227              		.loc 1 112 20
+ 228 00f0 7B6A     		ldr	r3, [r7, #36]
+ 229 00f2 0133     		adds	r3, r3, #1
+ 230 00f4 7B62     		str	r3, [r7, #36]
+ 113:Src/mcp.c     ****             pHandle->txLength++;
+ 231              		.loc 1 113 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 7
+
+
+ 232 00f6 7B68     		ldr	r3, [r7, #4]
+ 233 00f8 DB89     		ldrh	r3, [r3, #14]
+ 234              		.loc 1 113 30
+ 235 00fa 0133     		adds	r3, r3, #1
+ 236 00fc 9AB2     		uxth	r2, r3
+ 237 00fe 7B68     		ldr	r3, [r7, #4]
+ 238 0100 DA81     		strh	r2, [r3, #14]	@ movhi
+ 114:Src/mcp.c     ****             txSyncFreeSpace--; /* decrement one by one no wraparound possible */
+ 239              		.loc 1 114 28
+ 240 0102 7B88     		ldrh	r3, [r7, #2]
+ 241 0104 013B     		subs	r3, r3, #1
+ 242 0106 7B80     		strh	r3, [r7, #2]	@ movhi
+ 115:Src/mcp.c     ****             retVal = (accessResult != MCP_CMD_OK) ? MCP_CMD_NOK : retVal;
+ 243              		.loc 1 115 20
+ 244 0108 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 245 010a 002B     		cmp	r3, #0
+ 246 010c 02D1     		bne	.L6
+ 247              		.loc 1 115 20 is_stmt 0 discriminator 1
+ 248 010e 97F82F30 		ldrb	r3, [r7, #47]	@ zero_extendqisi2
+ 249 0112 00E0     		b	.L7
+ 250              	.L6:
+ 251              		.loc 1 115 20 discriminator 2
+ 252 0114 0123     		movs	r3, #1
+ 253              	.L7:
+ 254              		.loc 1 115 20 discriminator 4
+ 255 0116 87F82F30 		strb	r3, [r7, #47]
+ 116:Src/mcp.c     ****             if ((accessResult == MCP_ERROR_BAD_DATA_TYPE) || (accessResult == MCP_ERROR_BAD_RAW_FOR
+ 256              		.loc 1 116 16 is_stmt 1 discriminator 4
+ 257 011a FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 258 011c 072B     		cmp	r3, #7
+ 259 011e 02D0     		beq	.L8
+ 260              		.loc 1 116 59 discriminator 1
+ 261 0120 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 262 0122 0A2B     		cmp	r3, #10
+ 263 0124 07D1     		bne	.L2
+ 264              	.L8:
+ 117:Src/mcp.c     ****             { /* From this point we are not able to continue to decode CMD buffer*/
+ 118:Src/mcp.c     ****               /* We stop the parsing */
+ 119:Src/mcp.c     ****               rxLength = 0;
+ 265              		.loc 1 119 24
+ 266 0126 0023     		movs	r3, #0
+ 267 0128 7B84     		strh	r3, [r7, #34]	@ movhi
+ 268 012a 04E0     		b	.L2
+ 269              	.L5:
+ 120:Src/mcp.c     ****             }
+ 121:Src/mcp.c     ****           }
+ 122:Src/mcp.c     ****           else
+ 123:Src/mcp.c     ****           {
+ 124:Src/mcp.c     ****             /* Stop parsing the cmd buffer as no space to answer */
+ 125:Src/mcp.c     ****             /* If we reach this state, chances are high the command was badly formated or received 
+ 126:Src/mcp.c     ****             rxLength = 0;
+ 270              		.loc 1 126 22
+ 271 012c 0023     		movs	r3, #0
+ 272 012e 7B84     		strh	r3, [r7, #34]	@ movhi
+ 127:Src/mcp.c     ****             retVal = MCP_ERROR_NO_TXSYNC_SPACE;
+ 273              		.loc 1 127 20
+ 274 0130 0823     		movs	r3, #8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 8
+
+
+ 275 0132 87F82F30 		strb	r3, [r7, #47]
+ 276              	.L2:
+  79:Src/mcp.c     ****     {
+ 277              		.loc 1 79 11
+ 278 0136 B7F92230 		ldrsh	r3, [r7, #34]
+ 279 013a 002B     		cmp	r3, #0
+ 280 013c 82DC     		bgt	.L9
+ 128:Src/mcp.c     ****           }
+ 129:Src/mcp.c     ****         }
+ 130:Src/mcp.c     ****       }
+ 131:Src/mcp.c     ****     }
+ 132:Src/mcp.c     ****     /* If all accesses are fine, just one global MCP_CMD_OK is required*/
+ 133:Src/mcp.c     ****     if (MCP_CMD_OK == retVal)
+ 281              		.loc 1 133 8
+ 282 013e 97F82F30 		ldrb	r3, [r7, #47]	@ zero_extendqisi2
+ 283 0142 002B     		cmp	r3, #0
+ 284 0144 02D1     		bne	.L10
+ 134:Src/mcp.c     ****     {
+ 135:Src/mcp.c     ****       pHandle->txLength = 0;
+ 285              		.loc 1 135 25
+ 286 0146 7B68     		ldr	r3, [r7, #4]
+ 287 0148 0022     		movs	r2, #0
+ 288 014a DA81     		strh	r2, [r3, #14]	@ movhi
+ 289              	.L10:
+ 136:Src/mcp.c     ****     }
+ 137:Src/mcp.c     ****     else
+ 138:Src/mcp.c     ****     {
+ 139:Src/mcp.c     ****       /* Nothing to do */
+ 140:Src/mcp.c     ****     }
+ 141:Src/mcp.c     ****   #ifdef NULL_PTR_CHECK_REG_INT
+ 142:Src/mcp.c     ****   }
+ 143:Src/mcp.c     **** #endif
+ 144:Src/mcp.c     ****   return (retVal);
+ 290              		.loc 1 144 10
+ 291 014c 97F82F30 		ldrb	r3, [r7, #47]	@ zero_extendqisi2
+ 145:Src/mcp.c     **** }
+ 292              		.loc 1 145 1
+ 293 0150 1846     		mov	r0, r3
+ 294 0152 3437     		adds	r7, r7, #52
+ 295              	.LCFI3:
+ 296              		.cfi_def_cfa_offset 12
+ 297 0154 BD46     		mov	sp, r7
+ 298              	.LCFI4:
+ 299              		.cfi_def_cfa_register 13
+ 300              		@ sp needed
+ 301 0156 90BD     		pop	{r4, r7, pc}
+ 302              	.L13:
+ 303              		.align	2
+ 304              	.L12:
+ 305 0158 00000000 		.word	.LC0
+ 306              		.cfi_endproc
+ 307              	.LFE1090:
+ 309              		.section	.rodata
+ 310              		.align	2
+ 311              	.LC1:
+ 312 0008 00000000 		.word	RI_GetRegisterGlobal
+ 313 000c 00000000 		.word	RI_GetRegisterMotor1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 9
+
+
+ 314              		.section	.text.RI_GetRegCommandParser,"ax",%progbits
+ 315              		.align	1
+ 316              		.global	RI_GetRegCommandParser
+ 317              		.syntax unified
+ 318              		.thumb
+ 319              		.thumb_func
+ 321              	RI_GetRegCommandParser:
+ 322              	.LFB1091:
+ 146:Src/mcp.c     **** 
+ 147:Src/mcp.c     **** /**
+ 148:Src/mcp.c     ****   * @brief  Parses the payload in the received packet and call the required function in order to re
+ 149:Src/mcp.c     ****   *
+ 150:Src/mcp.c     ****   * The function called depends on the targeted motor and/or targeted register : RI_GetRegisterGlob
+ 151:Src/mcp.c     ****   *
+ 152:Src/mcp.c     ****   * @param  pHandle Handler of the current instance of the MCP component
+ 153:Src/mcp.c     ****   * @param  txSyncFreeSpace Space available for synchronous transmission
+ 154:Src/mcp.c     ****   *
+ 155:Src/mcp.c     ****   * @retval Returns #MCP_CMD_OK if the command is acknowledged and #MCP_CMD_NOK if not.
+ 156:Src/mcp.c     ****   */
+ 157:Src/mcp.c     **** uint8_t RI_GetRegCommandParser (MCP_Handle_t * pHandle, uint16_t txSyncFreeSpace)
+ 158:Src/mcp.c     **** {
+ 323              		.loc 1 158 1
+ 324              		.cfi_startproc
+ 325              		@ args = 0, pretend = 0, frame = 48
+ 326              		@ frame_needed = 1, uses_anonymous_args = 0
+ 327 0000 90B5     		push	{r4, r7, lr}
+ 328              	.LCFI5:
+ 329              		.cfi_def_cfa_offset 12
+ 330              		.cfi_offset 4, -12
+ 331              		.cfi_offset 7, -8
+ 332              		.cfi_offset 14, -4
+ 333 0002 8FB0     		sub	sp, sp, #60
+ 334              	.LCFI6:
+ 335              		.cfi_def_cfa_offset 72
+ 336 0004 02AF     		add	r7, sp, #8
+ 337              	.LCFI7:
+ 338              		.cfi_def_cfa 7, 64
+ 339 0006 7860     		str	r0, [r7, #4]
+ 340 0008 0B46     		mov	r3, r1
+ 341 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 159:Src/mcp.c     ****   uint8_t retVal = MCP_CMD_NOK;
+ 342              		.loc 1 159 11
+ 343 000c 0123     		movs	r3, #1
+ 344 000e 87F82F30 		strb	r3, [r7, #47]
+ 160:Src/mcp.c     **** #ifdef NULL_PTR_CHECK_REG_INT
+ 161:Src/mcp.c     ****   if (MC_NULL == pHandle)
+ 162:Src/mcp.c     ****   {
+ 163:Src/mcp.c     ****     /* Nothing to do */
+ 164:Src/mcp.c     ****   }
+ 165:Src/mcp.c     ****   else
+ 166:Src/mcp.c     ****   {
+ 167:Src/mcp.c     **** #endif
+ 168:Src/mcp.c     ****     uint16_t * dataElementID;
+ 169:Src/mcp.c     ****     uint8_t * rxData = pHandle->rxBuffer;
+ 345              		.loc 1 169 15
+ 346 0012 7B68     		ldr	r3, [r7, #4]
+ 347 0014 5B68     		ldr	r3, [r3, #4]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 10
+
+
+ 348 0016 BB62     		str	r3, [r7, #40]
+ 170:Src/mcp.c     ****     uint8_t * txData = pHandle->txBuffer;
+ 349              		.loc 1 170 15
+ 350 0018 7B68     		ldr	r3, [r7, #4]
+ 351 001a 9B68     		ldr	r3, [r3, #8]
+ 352 001c 7B62     		str	r3, [r7, #36]
+ 171:Src/mcp.c     ****     uint16_t size = 0U;
+ 353              		.loc 1 171 14
+ 354 001e 0023     		movs	r3, #0
+ 355 0020 FB82     		strh	r3, [r7, #22]	@ movhi
+ 172:Src/mcp.c     ****     uint16_t rxLength = pHandle->rxLength;
+ 356              		.loc 1 172 14
+ 357 0022 7B68     		ldr	r3, [r7, #4]
+ 358 0024 9B89     		ldrh	r3, [r3, #12]	@ movhi
+ 359 0026 7B84     		strh	r3, [r7, #34]	@ movhi
+ 173:Src/mcp.c     ****     int16_t freeSpaceS16 = (int16_t) txSyncFreeSpace;
+ 360              		.loc 1 173 13
+ 361 0028 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 362 002a 3B84     		strh	r3, [r7, #32]	@ movhi
+ 174:Src/mcp.c     **** 
+ 175:Src/mcp.c     ****     uint16_t regID;
+ 176:Src/mcp.c     ****     uint8_t typeID;
+ 177:Src/mcp.c     ****     uint8_t motorID;
+ 178:Src/mcp.c     ****     uint8_t (*GetRegFcts[NBR_OF_MOTORS+1])(uint16_t, uint8_t, uint8_t*, uint16_t*, int16_t) = {&RI_
+ 363              		.loc 1 178 15
+ 364 002c 304A     		ldr	r2, .L20
+ 365 002e 07F10C03 		add	r3, r7, #12
+ 366 0032 92E80300 		ldm	r2, {r0, r1}
+ 367 0036 83E80300 		stm	r3, {r0, r1}
+ 179:Src/mcp.c     ****     pHandle->txLength = 0;
+ 368              		.loc 1 179 23
+ 369 003a 7B68     		ldr	r3, [r7, #4]
+ 370 003c 0022     		movs	r2, #0
+ 371 003e DA81     		strh	r2, [r3, #14]	@ movhi
+ 180:Src/mcp.c     ****     while (rxLength > 0U)
+ 372              		.loc 1 180 11
+ 373 0040 4CE0     		b	.L15
+ 374              	.L18:
+ 181:Src/mcp.c     ****     {
+ 182:Src/mcp.c     ****       dataElementID = (uint16_t *) rxData;
+ 375              		.loc 1 182 21
+ 376 0042 BB6A     		ldr	r3, [r7, #40]
+ 377 0044 FB61     		str	r3, [r7, #28]
+ 183:Src/mcp.c     ****       rxLength = rxLength - MCP_ID_SIZE;
+ 378              		.loc 1 183 16
+ 379 0046 7B8C     		ldrh	r3, [r7, #34]	@ movhi
+ 380 0048 023B     		subs	r3, r3, #2
+ 381 004a 7B84     		strh	r3, [r7, #34]	@ movhi
+ 184:Src/mcp.c     ****       rxData = rxData + MCP_ID_SIZE; // Shift buffer to the next MCP_ID
+ 382              		.loc 1 184 14
+ 383 004c BB6A     		ldr	r3, [r7, #40]
+ 384 004e 0233     		adds	r3, r3, #2
+ 385 0050 BB62     		str	r3, [r7, #40]
+ 185:Src/mcp.c     **** 
+ 186:Src/mcp.c     ****       regID = *dataElementID & REG_MASK;
+ 386              		.loc 1 186 15
+ 387 0052 FB69     		ldr	r3, [r7, #28]
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 11
+
+
+ 388 0054 1B88     		ldrh	r3, [r3]
+ 389              		.loc 1 186 13
+ 390 0056 23F00703 		bic	r3, r3, #7
+ 391 005a 7B83     		strh	r3, [r7, #26]	@ movhi
+ 187:Src/mcp.c     ****       typeID = (uint8_t)*dataElementID & TYPE_MASK;
+ 392              		.loc 1 187 25
+ 393 005c FB69     		ldr	r3, [r7, #28]
+ 394 005e 1B88     		ldrh	r3, [r3]
+ 395              		.loc 1 187 16
+ 396 0060 DBB2     		uxtb	r3, r3
+ 397              		.loc 1 187 14
+ 398 0062 03F03803 		and	r3, r3, #56
+ 399 0066 7B76     		strb	r3, [r7, #25]
+ 188:Src/mcp.c     **** 
+ 189:Src/mcp.c     ****       motorID = (uint8_t)((*dataElementID & MOTOR_MASK));
+ 400              		.loc 1 189 28
+ 401 0068 FB69     		ldr	r3, [r7, #28]
+ 402 006a 1B88     		ldrh	r3, [r3]
+ 403              		.loc 1 189 17
+ 404 006c DBB2     		uxtb	r3, r3
+ 405              		.loc 1 189 15
+ 406 006e 03F00703 		and	r3, r3, #7
+ 407 0072 3B76     		strb	r3, [r7, #24]
+ 190:Src/mcp.c     **** 
+ 191:Src/mcp.c     ****       if (motorID > NBR_OF_MOTORS)
+ 408              		.loc 1 191 10
+ 409 0074 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 410 0076 012B     		cmp	r3, #1
+ 411 0078 05D9     		bls	.L16
+ 192:Src/mcp.c     ****       {
+ 193:Src/mcp.c     ****         retVal = MCP_CMD_NOK;
+ 412              		.loc 1 193 16
+ 413 007a 0123     		movs	r3, #1
+ 414 007c 87F82F30 		strb	r3, [r7, #47]
+ 194:Src/mcp.c     ****         rxLength = 0;
+ 415              		.loc 1 194 18
+ 416 0080 0023     		movs	r3, #0
+ 417 0082 7B84     		strh	r3, [r7, #34]	@ movhi
+ 418 0084 2AE0     		b	.L15
+ 419              	.L16:
+ 195:Src/mcp.c     ****       }
+ 196:Src/mcp.c     ****       else
+ 197:Src/mcp.c     ****       {
+ 198:Src/mcp.c     ****         retVal = GetRegFcts[motorID](regID, typeID, txData, &size, freeSpaceS16);
+ 420              		.loc 1 198 28
+ 421 0086 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 422 0088 9B00     		lsls	r3, r3, #2
+ 423 008a 3033     		adds	r3, r3, #48
+ 424 008c 3B44     		add	r3, r3, r7
+ 425 008e 53F8244C 		ldr	r4, [r3, #-36]
+ 426              		.loc 1 198 18
+ 427 0092 07F11602 		add	r2, r7, #22
+ 428 0096 797E     		ldrb	r1, [r7, #25]	@ zero_extendqisi2
+ 429 0098 788B     		ldrh	r0, [r7, #26]
+ 430 009a B7F92030 		ldrsh	r3, [r7, #32]
+ 431 009e 0093     		str	r3, [sp]
+ 432 00a0 1346     		mov	r3, r2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 12
+
+
+ 433 00a2 7A6A     		ldr	r2, [r7, #36]
+ 434 00a4 A047     		blx	r4
+ 435              	.LVL1:
+ 436 00a6 0346     		mov	r3, r0
+ 437 00a8 87F82F30 		strb	r3, [r7, #47]
+ 199:Src/mcp.c     ****         if (retVal == MCP_CMD_OK )
+ 438              		.loc 1 199 12
+ 439 00ac 97F82F30 		ldrb	r3, [r7, #47]	@ zero_extendqisi2
+ 440 00b0 002B     		cmp	r3, #0
+ 441 00b2 11D1     		bne	.L17
+ 200:Src/mcp.c     ****         {
+ 201:Src/mcp.c     ****           /* Prepare next data */
+ 202:Src/mcp.c     ****           txData = txData+size;
+ 442              		.loc 1 202 26
+ 443 00b4 FB8A     		ldrh	r3, [r7, #22]
+ 444 00b6 1A46     		mov	r2, r3
+ 445              		.loc 1 202 18
+ 446 00b8 7B6A     		ldr	r3, [r7, #36]
+ 447 00ba 1344     		add	r3, r3, r2
+ 448 00bc 7B62     		str	r3, [r7, #36]
+ 203:Src/mcp.c     ****           pHandle->txLength += size;
+ 449              		.loc 1 203 29
+ 450 00be 7B68     		ldr	r3, [r7, #4]
+ 451 00c0 DA89     		ldrh	r2, [r3, #14]
+ 452 00c2 FB8A     		ldrh	r3, [r7, #22]
+ 453 00c4 1344     		add	r3, r3, r2
+ 454 00c6 9AB2     		uxth	r2, r3
+ 455 00c8 7B68     		ldr	r3, [r7, #4]
+ 456 00ca DA81     		strh	r2, [r3, #14]	@ movhi
+ 204:Src/mcp.c     ****           freeSpaceS16 = freeSpaceS16-size;
+ 457              		.loc 1 204 38
+ 458 00cc 3A8C     		ldrh	r2, [r7, #32]
+ 459 00ce FB8A     		ldrh	r3, [r7, #22]
+ 460 00d0 D31A     		subs	r3, r2, r3
+ 461 00d2 9BB2     		uxth	r3, r3
+ 462              		.loc 1 204 24
+ 463 00d4 3B84     		strh	r3, [r7, #32]	@ movhi
+ 464 00d6 01E0     		b	.L15
+ 465              	.L17:
+ 205:Src/mcp.c     ****         }
+ 206:Src/mcp.c     ****         else
+ 207:Src/mcp.c     ****         {
+ 208:Src/mcp.c     ****           rxLength = 0;
+ 466              		.loc 1 208 20
+ 467 00d8 0023     		movs	r3, #0
+ 468 00da 7B84     		strh	r3, [r7, #34]	@ movhi
+ 469              	.L15:
+ 180:Src/mcp.c     ****     {
+ 470              		.loc 1 180 11
+ 471 00dc 7B8C     		ldrh	r3, [r7, #34]
+ 472 00de 002B     		cmp	r3, #0
+ 473 00e0 AFD1     		bne	.L18
+ 209:Src/mcp.c     ****         }
+ 210:Src/mcp.c     ****       }
+ 211:Src/mcp.c     ****     }
+ 212:Src/mcp.c     **** #ifdef NULL_PTR_CHECK_REG_INT
+ 213:Src/mcp.c     ****   }
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 13
+
+
+ 214:Src/mcp.c     **** #endif
+ 215:Src/mcp.c     ****   return (retVal);
+ 474              		.loc 1 215 10
+ 475 00e2 97F82F30 		ldrb	r3, [r7, #47]	@ zero_extendqisi2
+ 216:Src/mcp.c     **** }
+ 476              		.loc 1 216 1
+ 477 00e6 1846     		mov	r0, r3
+ 478 00e8 3437     		adds	r7, r7, #52
+ 479              	.LCFI8:
+ 480              		.cfi_def_cfa_offset 12
+ 481 00ea BD46     		mov	sp, r7
+ 482              	.LCFI9:
+ 483              		.cfi_def_cfa_register 13
+ 484              		@ sp needed
+ 485 00ec 90BD     		pop	{r4, r7, pc}
+ 486              	.L21:
+ 487 00ee 00BF     		.align	2
+ 488              	.L20:
+ 489 00f0 08000000 		.word	.LC1
+ 490              		.cfi_endproc
+ 491              	.LFE1091:
+ 493              		.section	.text.MCP_ReceivedPacket,"ax",%progbits
+ 494              		.align	1
+ 495              		.global	MCP_ReceivedPacket
+ 496              		.syntax unified
+ 497              		.thumb
+ 498              		.thumb_func
+ 500              	MCP_ReceivedPacket:
+ 501              	.LFB1092:
+ 217:Src/mcp.c     **** 
+ 218:Src/mcp.c     **** /**
+ 219:Src/mcp.c     ****   * @brief  Parses the header from the received packet and call the required function depending on 
+ 220:Src/mcp.c     ****   *
+ 221:Src/mcp.c     ****   * @param  pHandle Handler of the current instance of the MCP component
+ 222:Src/mcp.c     ****   */
+ 223:Src/mcp.c     **** void MCP_ReceivedPacket(MCP_Handle_t *pHandle)
+ 224:Src/mcp.c     **** {
+ 502              		.loc 1 224 1
+ 503              		.cfi_startproc
+ 504              		@ args = 0, pretend = 0, frame = 32
+ 505              		@ frame_needed = 1, uses_anonymous_args = 0
+ 506 0000 B0B5     		push	{r4, r5, r7, lr}
+ 507              	.LCFI10:
+ 508              		.cfi_def_cfa_offset 16
+ 509              		.cfi_offset 4, -16
+ 510              		.cfi_offset 5, -12
+ 511              		.cfi_offset 7, -8
+ 512              		.cfi_offset 14, -4
+ 513 0002 8AB0     		sub	sp, sp, #40
+ 514              	.LCFI11:
+ 515              		.cfi_def_cfa_offset 56
+ 516 0004 02AF     		add	r7, sp, #8
+ 517              	.LCFI12:
+ 518              		.cfi_def_cfa 7, 48
+ 519 0006 7860     		str	r0, [r7, #4]
+ 225:Src/mcp.c     ****   const uint16_t *packetHeader;
+ 226:Src/mcp.c     ****   uint16_t command;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 14
+
+
+ 227:Src/mcp.c     ****   int16_t txSyncFreeSpace;
+ 228:Src/mcp.c     ****   uint8_t motorID;
+ 229:Src/mcp.c     ****   uint8_t MCPResponse;
+ 230:Src/mcp.c     ****   uint8_t userCommand=0;
+ 520              		.loc 1 230 11
+ 521 0008 0023     		movs	r3, #0
+ 522 000a 3B77     		strb	r3, [r7, #28]
+ 231:Src/mcp.c     **** 
+ 232:Src/mcp.c     **** #ifdef NULL_PTR_CHECK_MCP
+ 233:Src/mcp.c     ****   if ((MC_NULL == pHandle) || (0U == pHandle->rxLength))
+ 234:Src/mcp.c     ****   {
+ 235:Src/mcp.c     ****     /* Nothing to do, txBuffer and txLength have not been modified */
+ 236:Src/mcp.c     ****   }
+ 237:Src/mcp.c     ****   else /* Length is 0, this is a request to send back the last packet */
+ 238:Src/mcp.c     ****   {
+ 239:Src/mcp.c     **** #endif
+ 240:Src/mcp.c     ****     packetHeader = (uint16_t *)pHandle->rxBuffer; //cstat !MISRAC2012-Rule-11.3
+ 523              		.loc 1 240 18
+ 524 000c 7B68     		ldr	r3, [r7, #4]
+ 525 000e 5B68     		ldr	r3, [r3, #4]
+ 526 0010 BB61     		str	r3, [r7, #24]
+ 241:Src/mcp.c     ****     command = (uint16_t)(*packetHeader & CMD_MASK);
+ 527              		.loc 1 241 26
+ 528 0012 BB69     		ldr	r3, [r7, #24]
+ 529 0014 1B88     		ldrh	r3, [r3]
+ 530              		.loc 1 241 13
+ 531 0016 23F00703 		bic	r3, r3, #7
+ 532 001a FB83     		strh	r3, [r7, #30]	@ movhi
+ 242:Src/mcp.c     **** 
+ 243:Src/mcp.c     ****     if ((command & MCP_USER_CMD_MASK) == MCP_USER_CMD)
+ 533              		.loc 1 243 18
+ 534 001c FB8B     		ldrh	r3, [r7, #30]
+ 535 001e 03F47F43 		and	r3, r3, #65280
+ 536              		.loc 1 243 8
+ 537 0022 B3F5807F 		cmp	r3, #256
+ 538 0026 06D1     		bne	.L23
+ 244:Src/mcp.c     ****     {
+ 245:Src/mcp.c     ****       userCommand = ((uint8_t)(command & 0xF8U) >> 3U);
+ 539              		.loc 1 245 49
+ 540 0028 FB8B     		ldrh	r3, [r7, #30]	@ movhi
+ 541 002a DBB2     		uxtb	r3, r3
+ 542              		.loc 1 245 19
+ 543 002c DB08     		lsrs	r3, r3, #3
+ 544 002e 3B77     		strb	r3, [r7, #28]
+ 246:Src/mcp.c     ****       command = MCP_USER_CMD;
+ 545              		.loc 1 246 15
+ 546 0030 4FF48073 		mov	r3, #256
+ 547 0034 FB83     		strh	r3, [r7, #30]	@ movhi
+ 548              	.L23:
+ 247:Src/mcp.c     ****     }
+ 248:Src/mcp.c     ****     else
+ 249:Src/mcp.c     ****     {
+ 250:Src/mcp.c     ****       /* Nothing to do */
+ 251:Src/mcp.c     ****     }
+ 252:Src/mcp.c     **** 
+ 253:Src/mcp.c     ****     motorID = (uint8_t)((*packetHeader - 1U) & MOTOR_MASK);
+ 549              		.loc 1 253 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 15
+
+
+ 550 0036 BB69     		ldr	r3, [r7, #24]
+ 551 0038 1B88     		ldrh	r3, [r3]
+ 552              		.loc 1 253 40
+ 553 003a DBB2     		uxtb	r3, r3
+ 554 003c 013B     		subs	r3, r3, #1
+ 555 003e DBB2     		uxtb	r3, r3
+ 556              		.loc 1 253 13
+ 557 0040 03F00703 		and	r3, r3, #7
+ 558 0044 FB75     		strb	r3, [r7, #23]
+ 254:Src/mcp.c     ****     MCI_Handle_t *pMCI = &Mci[motorID];
+ 559              		.loc 1 254 30
+ 560 0046 FA7D     		ldrb	r2, [r7, #23]	@ zero_extendqisi2
+ 561              		.loc 1 254 19
+ 562 0048 1346     		mov	r3, r2
+ 563 004a 5B00     		lsls	r3, r3, #1
+ 564 004c 1344     		add	r3, r3, r2
+ 565 004e 1B01     		lsls	r3, r3, #4
+ 566 0050 C94A     		ldr	r2, .L48
+ 567 0052 1344     		add	r3, r3, r2
+ 568 0054 3B61     		str	r3, [r7, #16]
+ 255:Src/mcp.c     **** 
+ 256:Src/mcp.c     ****     /* Removing MCP Header from RxBuffer */
+ 257:Src/mcp.c     ****     pHandle->rxLength = pHandle->rxLength - MCP_HEADER_SIZE;
+ 569              		.loc 1 257 32
+ 570 0056 7B68     		ldr	r3, [r7, #4]
+ 571 0058 9B89     		ldrh	r3, [r3, #12]
+ 572              		.loc 1 257 43
+ 573 005a 023B     		subs	r3, r3, #2
+ 574 005c 9AB2     		uxth	r2, r3
+ 575              		.loc 1 257 23
+ 576 005e 7B68     		ldr	r3, [r7, #4]
+ 577 0060 9A81     		strh	r2, [r3, #12]	@ movhi
+ 258:Src/mcp.c     ****     pHandle->rxBuffer = pHandle->rxBuffer + MCP_HEADER_SIZE;
+ 578              		.loc 1 258 32
+ 579 0062 7B68     		ldr	r3, [r7, #4]
+ 580 0064 5B68     		ldr	r3, [r3, #4]
+ 581              		.loc 1 258 43
+ 582 0066 9A1C     		adds	r2, r3, #2
+ 583              		.loc 1 258 23
+ 584 0068 7B68     		ldr	r3, [r7, #4]
+ 585 006a 5A60     		str	r2, [r3, #4]
+ 259:Src/mcp.c     **** 
+ 260:Src/mcp.c     ****     /* Commands requiering payload response must be aware of space available for the payload */
+ 261:Src/mcp.c     ****     /* Last byte is reserved for MCP response*/
+ 262:Src/mcp.c     ****     txSyncFreeSpace = (int16_t)pHandle->pTransportLayer->txSyncMaxPayload - 1;
+ 586              		.loc 1 262 39
+ 587 006c 7B68     		ldr	r3, [r7, #4]
+ 588 006e 1B68     		ldr	r3, [r3]
+ 589              		.loc 1 262 56
+ 590 0070 9B89     		ldrh	r3, [r3, #12]
+ 591              		.loc 1 262 75
+ 592 0072 013B     		subs	r3, r3, #1
+ 593 0074 9BB2     		uxth	r3, r3
+ 594              		.loc 1 262 21
+ 595 0076 FB81     		strh	r3, [r7, #14]	@ movhi
+ 263:Src/mcp.c     **** 
+ 264:Src/mcp.c     ****     /* Initialization of the tx length, command which send back data has to increment the txLength
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 16
+
+
+ 265:Src/mcp.c     ****      * (case of Read register) */
+ 266:Src/mcp.c     ****     pHandle->txLength = 0U;
+ 596              		.loc 1 266 23
+ 597 0078 7B68     		ldr	r3, [r7, #4]
+ 598 007a 0022     		movs	r2, #0
+ 599 007c DA81     		strh	r2, [r3, #14]	@ movhi
+ 267:Src/mcp.c     **** 
+ 268:Src/mcp.c     ****     switch (command)
+ 600              		.loc 1 268 5
+ 601 007e FB8B     		ldrh	r3, [r7, #30]
+ 602 0080 682B     		cmp	r3, #104
+ 603 0082 00F3DB80 		bgt	.L24
+ 604 0086 002B     		cmp	r3, #0
+ 605 0088 C0F27A81 		blt	.L25
+ 606 008c 682B     		cmp	r3, #104
+ 607 008e 00F27781 		bhi	.L25
+ 608 0092 01A2     		adr	r2, .L27
+ 609 0094 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 610              		.p2align 2
+ 611              	.L27:
+ 612 0098 45020000 		.word	.L38+1
+ 613 009c 81030000 		.word	.L25+1
+ 614 00a0 81030000 		.word	.L25+1
+ 615 00a4 81030000 		.word	.L25+1
+ 616 00a8 81030000 		.word	.L25+1
+ 617 00ac 81030000 		.word	.L25+1
+ 618 00b0 81030000 		.word	.L25+1
+ 619 00b4 81030000 		.word	.L25+1
+ 620 00b8 59020000 		.word	.L37+1
+ 621 00bc 81030000 		.word	.L25+1
+ 622 00c0 81030000 		.word	.L25+1
+ 623 00c4 81030000 		.word	.L25+1
+ 624 00c8 81030000 		.word	.L25+1
+ 625 00cc 81030000 		.word	.L25+1
+ 626 00d0 81030000 		.word	.L25+1
+ 627 00d4 81030000 		.word	.L25+1
+ 628 00d8 69020000 		.word	.L36+1
+ 629 00dc 81030000 		.word	.L25+1
+ 630 00e0 81030000 		.word	.L25+1
+ 631 00e4 81030000 		.word	.L25+1
+ 632 00e8 81030000 		.word	.L25+1
+ 633 00ec 81030000 		.word	.L25+1
+ 634 00f0 81030000 		.word	.L25+1
+ 635 00f4 81030000 		.word	.L25+1
+ 636 00f8 79020000 		.word	.L35+1
+ 637 00fc 81030000 		.word	.L25+1
+ 638 0100 81030000 		.word	.L25+1
+ 639 0104 81030000 		.word	.L25+1
+ 640 0108 81030000 		.word	.L25+1
+ 641 010c 81030000 		.word	.L25+1
+ 642 0110 81030000 		.word	.L25+1
+ 643 0114 81030000 		.word	.L25+1
+ 644 0118 95020000 		.word	.L34+1
+ 645 011c 81030000 		.word	.L25+1
+ 646 0120 81030000 		.word	.L25+1
+ 647 0124 81030000 		.word	.L25+1
+ 648 0128 81030000 		.word	.L25+1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 17
+
+
+ 649 012c 81030000 		.word	.L25+1
+ 650 0130 81030000 		.word	.L25+1
+ 651 0134 81030000 		.word	.L25+1
+ 652 0138 A1020000 		.word	.L33+1
+ 653 013c 81030000 		.word	.L25+1
+ 654 0140 81030000 		.word	.L25+1
+ 655 0144 81030000 		.word	.L25+1
+ 656 0148 81030000 		.word	.L25+1
+ 657 014c 81030000 		.word	.L25+1
+ 658 0150 81030000 		.word	.L25+1
+ 659 0154 81030000 		.word	.L25+1
+ 660 0158 B9020000 		.word	.L32+1
+ 661 015c 81030000 		.word	.L25+1
+ 662 0160 81030000 		.word	.L25+1
+ 663 0164 81030000 		.word	.L25+1
+ 664 0168 81030000 		.word	.L25+1
+ 665 016c 81030000 		.word	.L25+1
+ 666 0170 81030000 		.word	.L25+1
+ 667 0174 81030000 		.word	.L25+1
+ 668 0178 E3020000 		.word	.L31+1
+ 669 017c 81030000 		.word	.L25+1
+ 670 0180 81030000 		.word	.L25+1
+ 671 0184 81030000 		.word	.L25+1
+ 672 0188 81030000 		.word	.L25+1
+ 673 018c 81030000 		.word	.L25+1
+ 674 0190 81030000 		.word	.L25+1
+ 675 0194 81030000 		.word	.L25+1
+ 676 0198 EF020000 		.word	.L30+1
+ 677 019c 81030000 		.word	.L25+1
+ 678 01a0 81030000 		.word	.L25+1
+ 679 01a4 81030000 		.word	.L25+1
+ 680 01a8 81030000 		.word	.L25+1
+ 681 01ac 81030000 		.word	.L25+1
+ 682 01b0 81030000 		.word	.L25+1
+ 683 01b4 81030000 		.word	.L25+1
+ 684 01b8 FD020000 		.word	.L29+1
+ 685 01bc 81030000 		.word	.L25+1
+ 686 01c0 81030000 		.word	.L25+1
+ 687 01c4 81030000 		.word	.L25+1
+ 688 01c8 81030000 		.word	.L25+1
+ 689 01cc 81030000 		.word	.L25+1
+ 690 01d0 81030000 		.word	.L25+1
+ 691 01d4 81030000 		.word	.L25+1
+ 692 01d8 09030000 		.word	.L28+1
+ 693 01dc 81030000 		.word	.L25+1
+ 694 01e0 81030000 		.word	.L25+1
+ 695 01e4 81030000 		.word	.L25+1
+ 696 01e8 81030000 		.word	.L25+1
+ 697 01ec 81030000 		.word	.L25+1
+ 698 01f0 81030000 		.word	.L25+1
+ 699 01f4 81030000 		.word	.L25+1
+ 700 01f8 09030000 		.word	.L28+1
+ 701 01fc 81030000 		.word	.L25+1
+ 702 0200 81030000 		.word	.L25+1
+ 703 0204 81030000 		.word	.L25+1
+ 704 0208 81030000 		.word	.L25+1
+ 705 020c 81030000 		.word	.L25+1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 18
+
+
+ 706 0210 81030000 		.word	.L25+1
+ 707 0214 81030000 		.word	.L25+1
+ 708 0218 09030000 		.word	.L28+1
+ 709 021c 81030000 		.word	.L25+1
+ 710 0220 81030000 		.word	.L25+1
+ 711 0224 81030000 		.word	.L25+1
+ 712 0228 81030000 		.word	.L25+1
+ 713 022c 81030000 		.word	.L25+1
+ 714 0230 81030000 		.word	.L25+1
+ 715 0234 81030000 		.word	.L25+1
+ 716 0238 0F030000 		.word	.L26+1
+ 717              		.p2align 1
+ 718              	.L24:
+ 719 023c B3F5807F 		cmp	r3, #256
+ 720 0240 77D0     		beq	.L39
+ 721 0242 9DE0     		b	.L25
+ 722              	.L38:
+ 269:Src/mcp.c     ****     {
+ 270:Src/mcp.c     ****       case GET_MCP_VERSION:
+ 271:Src/mcp.c     ****       {
+ 272:Src/mcp.c     ****         pHandle->txLength = 4U;
+ 723              		.loc 1 272 27
+ 724 0244 7B68     		ldr	r3, [r7, #4]
+ 725 0246 0422     		movs	r2, #4
+ 726 0248 DA81     		strh	r2, [r3, #14]	@ movhi
+ 273:Src/mcp.c     ****         *pHandle->txBuffer = MCP_VERSION;
+ 727              		.loc 1 273 17
+ 728 024a 7B68     		ldr	r3, [r7, #4]
+ 729 024c 9B68     		ldr	r3, [r3, #8]
+ 730              		.loc 1 273 28
+ 731 024e 0122     		movs	r2, #1
+ 732 0250 1A70     		strb	r2, [r3]
+ 274:Src/mcp.c     ****         MCPResponse = MCP_CMD_OK;
+ 733              		.loc 1 274 21
+ 734 0252 0023     		movs	r3, #0
+ 735 0254 7B77     		strb	r3, [r7, #29]
+ 275:Src/mcp.c     ****         break;
+ 736              		.loc 1 275 9
+ 737 0256 96E0     		b	.L40
+ 738              	.L37:
+ 276:Src/mcp.c     ****       }
+ 277:Src/mcp.c     **** 
+ 278:Src/mcp.c     ****       case SET_DATA_ELEMENT:
+ 279:Src/mcp.c     ****       {
+ 280:Src/mcp.c     ****         MCPResponse = RI_SetRegCommandParser(pHandle, (uint16_t)txSyncFreeSpace);
+ 739              		.loc 1 280 23
+ 740 0258 FB89     		ldrh	r3, [r7, #14]
+ 741 025a 1946     		mov	r1, r3
+ 742 025c 7868     		ldr	r0, [r7, #4]
+ 743 025e FFF7FEFF 		bl	RI_SetRegCommandParser
+ 744 0262 0346     		mov	r3, r0
+ 745 0264 7B77     		strb	r3, [r7, #29]
+ 281:Src/mcp.c     ****         break;
+ 746              		.loc 1 281 9
+ 747 0266 8EE0     		b	.L40
+ 748              	.L36:
+ 282:Src/mcp.c     ****       }
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 19
+
+
+ 283:Src/mcp.c     **** 
+ 284:Src/mcp.c     ****       case GET_DATA_ELEMENT:
+ 285:Src/mcp.c     ****       {
+ 286:Src/mcp.c     ****         MCPResponse = RI_GetRegCommandParser(pHandle, (uint16_t)txSyncFreeSpace);
+ 749              		.loc 1 286 23
+ 750 0268 FB89     		ldrh	r3, [r7, #14]
+ 751 026a 1946     		mov	r1, r3
+ 752 026c 7868     		ldr	r0, [r7, #4]
+ 753 026e FFF7FEFF 		bl	RI_GetRegCommandParser
+ 754 0272 0346     		mov	r3, r0
+ 755 0274 7B77     		strb	r3, [r7, #29]
+ 287:Src/mcp.c     ****         break;
+ 756              		.loc 1 287 9
+ 757 0276 86E0     		b	.L40
+ 758              	.L35:
+ 288:Src/mcp.c     ****       }
+ 289:Src/mcp.c     **** 
+ 290:Src/mcp.c     ****       case START_MOTOR:
+ 291:Src/mcp.c     ****       {
+ 292:Src/mcp.c     ****         MCPResponse = (MCI_StartWithPolarizationMotor(pMCI) == false) ? MCP_CMD_OK : MCP_CMD_NOK;
+ 759              		.loc 1 292 24
+ 760 0278 3869     		ldr	r0, [r7, #16]
+ 761 027a FFF7FEFF 		bl	MCI_StartWithPolarizationMotor
+ 762 027e 0346     		mov	r3, r0
+ 763              		.loc 1 292 61
+ 764 0280 83F00103 		eor	r3, r3, #1
+ 765 0284 DBB2     		uxtb	r3, r3
+ 766              		.loc 1 292 21
+ 767 0286 002B     		cmp	r3, #0
+ 768 0288 01D0     		beq	.L41
+ 769              		.loc 1 292 21 is_stmt 0 discriminator 1
+ 770 028a 0023     		movs	r3, #0
+ 771 028c 00E0     		b	.L42
+ 772              	.L41:
+ 773              		.loc 1 292 21 discriminator 2
+ 774 028e 0123     		movs	r3, #1
+ 775              	.L42:
+ 776              		.loc 1 292 21 discriminator 4
+ 777 0290 7B77     		strb	r3, [r7, #29]
+ 293:Src/mcp.c     **** 
+ 294:Src/mcp.c     ****         break;
+ 778              		.loc 1 294 9 is_stmt 1 discriminator 4
+ 779 0292 78E0     		b	.L40
+ 780              	.L34:
+ 295:Src/mcp.c     ****       }
+ 296:Src/mcp.c     **** 
+ 297:Src/mcp.c     ****       case STOP_MOTOR: /* Todo: Check the pertinance of return value */
+ 298:Src/mcp.c     ****       {
+ 299:Src/mcp.c     ****         (void)MCI_StopMotor(pMCI);
+ 781              		.loc 1 299 15
+ 782 0294 3869     		ldr	r0, [r7, #16]
+ 783 0296 FFF7FEFF 		bl	MCI_StopMotor
+ 300:Src/mcp.c     ****         MCPResponse = MCP_CMD_OK;
+ 784              		.loc 1 300 21
+ 785 029a 0023     		movs	r3, #0
+ 786 029c 7B77     		strb	r3, [r7, #29]
+ 301:Src/mcp.c     ****         break;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 20
+
+
+ 787              		.loc 1 301 9
+ 788 029e 72E0     		b	.L40
+ 789              	.L33:
+ 302:Src/mcp.c     ****       }
+ 303:Src/mcp.c     **** 
+ 304:Src/mcp.c     ****       case STOP_RAMP:
+ 305:Src/mcp.c     ****       {
+ 306:Src/mcp.c     ****         if (RUN == MCI_GetSTMState(pMCI))
+ 790              		.loc 1 306 20
+ 791 02a0 3869     		ldr	r0, [r7, #16]
+ 792 02a2 FFF7FEFF 		bl	MCI_GetSTMState
+ 793 02a6 0346     		mov	r3, r0
+ 794              		.loc 1 306 12
+ 795 02a8 062B     		cmp	r3, #6
+ 796 02aa 02D1     		bne	.L43
+ 307:Src/mcp.c     ****         {
+ 308:Src/mcp.c     ****           MCI_StopRamp(pMCI);
+ 797              		.loc 1 308 11
+ 798 02ac 3869     		ldr	r0, [r7, #16]
+ 799 02ae FFF7FEFF 		bl	MCI_StopRamp
+ 800              	.L43:
+ 309:Src/mcp.c     ****         }
+ 310:Src/mcp.c     ****         else
+ 311:Src/mcp.c     ****         {
+ 312:Src/mcp.c     ****           /* Nothing to do */
+ 313:Src/mcp.c     ****         }
+ 314:Src/mcp.c     ****         MCPResponse = MCP_CMD_OK;
+ 801              		.loc 1 314 21
+ 802 02b2 0023     		movs	r3, #0
+ 803 02b4 7B77     		strb	r3, [r7, #29]
+ 315:Src/mcp.c     ****         break;
+ 804              		.loc 1 315 9
+ 805 02b6 66E0     		b	.L40
+ 806              	.L32:
+ 316:Src/mcp.c     ****       }
+ 317:Src/mcp.c     **** 
+ 318:Src/mcp.c     ****       case START_STOP:
+ 319:Src/mcp.c     ****       {
+ 320:Src/mcp.c     ****         /* Queries the STM and a command start or stop depending on the state */
+ 321:Src/mcp.c     ****         if (IDLE == MCI_GetSTMState(pMCI))
+ 807              		.loc 1 321 21
+ 808 02b8 3869     		ldr	r0, [r7, #16]
+ 809 02ba FFF7FEFF 		bl	MCI_GetSTMState
+ 810 02be 0346     		mov	r3, r0
+ 811              		.loc 1 321 12
+ 812 02c0 002B     		cmp	r3, #0
+ 813 02c2 08D1     		bne	.L44
+ 322:Src/mcp.c     ****         {
+ 323:Src/mcp.c     **** 
+ 324:Src/mcp.c     ****           MCPResponse = (MCI_StartWithPolarizationMotor(pMCI) == true) ? MCP_CMD_OK : MCP_CMD_NOK;
+ 814              		.loc 1 324 26
+ 815 02c4 3869     		ldr	r0, [r7, #16]
+ 816 02c6 FFF7FEFF 		bl	MCI_StartWithPolarizationMotor
+ 817 02ca 0346     		mov	r3, r0
+ 818              		.loc 1 324 85
+ 819 02cc 83F00103 		eor	r3, r3, #1
+ 820 02d0 DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 21
+
+
+ 821              		.loc 1 324 23
+ 822 02d2 7B77     		strb	r3, [r7, #29]
+ 325:Src/mcp.c     **** 
+ 326:Src/mcp.c     ****         }
+ 327:Src/mcp.c     ****         else
+ 328:Src/mcp.c     ****         {
+ 329:Src/mcp.c     ****           (void)MCI_StopMotor(pMCI);
+ 330:Src/mcp.c     ****           MCPResponse = MCP_CMD_OK;
+ 331:Src/mcp.c     ****         }
+ 332:Src/mcp.c     ****         break;
+ 823              		.loc 1 332 9
+ 824 02d4 57E0     		b	.L40
+ 825              	.L44:
+ 329:Src/mcp.c     ****           MCPResponse = MCP_CMD_OK;
+ 826              		.loc 1 329 17
+ 827 02d6 3869     		ldr	r0, [r7, #16]
+ 828 02d8 FFF7FEFF 		bl	MCI_StopMotor
+ 330:Src/mcp.c     ****         }
+ 829              		.loc 1 330 23
+ 830 02dc 0023     		movs	r3, #0
+ 831 02de 7B77     		strb	r3, [r7, #29]
+ 832              		.loc 1 332 9
+ 833 02e0 51E0     		b	.L40
+ 834              	.L31:
+ 333:Src/mcp.c     ****       }
+ 334:Src/mcp.c     **** 
+ 335:Src/mcp.c     ****       case FAULT_ACK:
+ 336:Src/mcp.c     ****       {
+ 337:Src/mcp.c     ****         (void)MCI_FaultAcknowledged(pMCI);
+ 835              		.loc 1 337 15
+ 836 02e2 3869     		ldr	r0, [r7, #16]
+ 837 02e4 FFF7FEFF 		bl	MCI_FaultAcknowledged
+ 338:Src/mcp.c     ****         MCPResponse = MCP_CMD_OK;
+ 838              		.loc 1 338 21
+ 839 02e8 0023     		movs	r3, #0
+ 840 02ea 7B77     		strb	r3, [r7, #29]
+ 339:Src/mcp.c     ****         break;
+ 841              		.loc 1 339 9
+ 842 02ec 4BE0     		b	.L40
+ 843              	.L30:
+ 340:Src/mcp.c     ****       }
+ 341:Src/mcp.c     **** 
+ 342:Src/mcp.c     ****       case CPULOAD_CLEAR:
+ 343:Src/mcp.c     ****       {
+ 344:Src/mcp.c     ****         MCI_Clear_PerfMeasure(pMCI,M1);
+ 844              		.loc 1 344 9
+ 845 02ee 0021     		movs	r1, #0
+ 846 02f0 3869     		ldr	r0, [r7, #16]
+ 847 02f2 FFF7FEFF 		bl	MCI_Clear_PerfMeasure
+ 345:Src/mcp.c     ****         MCPResponse = MCP_CMD_OK;
+ 848              		.loc 1 345 21
+ 849 02f6 0023     		movs	r3, #0
+ 850 02f8 7B77     		strb	r3, [r7, #29]
+ 346:Src/mcp.c     ****         break;
+ 851              		.loc 1 346 9
+ 852 02fa 44E0     		b	.L40
+ 853              	.L29:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 22
+
+
+ 347:Src/mcp.c     ****       }
+ 348:Src/mcp.c     **** 
+ 349:Src/mcp.c     ****       case IQDREF_CLEAR:
+ 350:Src/mcp.c     ****       {
+ 351:Src/mcp.c     ****         MCI_Clear_Iqdref(pMCI);
+ 854              		.loc 1 351 9
+ 855 02fc 3869     		ldr	r0, [r7, #16]
+ 856 02fe FFF7FEFF 		bl	MCI_Clear_Iqdref
+ 352:Src/mcp.c     ****         MCPResponse = MCP_CMD_OK;
+ 857              		.loc 1 352 21
+ 858 0302 0023     		movs	r3, #0
+ 859 0304 7B77     		strb	r3, [r7, #29]
+ 353:Src/mcp.c     ****         break;
+ 860              		.loc 1 353 9
+ 861 0306 3EE0     		b	.L40
+ 862              	.L28:
+ 354:Src/mcp.c     ****       }
+ 355:Src/mcp.c     **** 
+ 356:Src/mcp.c     ****       case PFC_ENABLE:
+ 357:Src/mcp.c     ****       case PFC_DISABLE:
+ 358:Src/mcp.c     ****       case PFC_FAULT_ACK:
+ 359:Src/mcp.c     ****       {
+ 360:Src/mcp.c     ****         MCPResponse = MCP_CMD_UNKNOWN;
+ 863              		.loc 1 360 21
+ 864 0308 0223     		movs	r3, #2
+ 865 030a 7B77     		strb	r3, [r7, #29]
+ 361:Src/mcp.c     ****         break;
+ 866              		.loc 1 361 9
+ 867 030c 3BE0     		b	.L40
+ 868              	.L26:
+ 362:Src/mcp.c     ****       }
+ 363:Src/mcp.c     **** 
+ 364:Src/mcp.c     ****       case PROFILER_CMD:
+ 365:Src/mcp.c     ****       {
+ 366:Src/mcp.c     ****         MCPResponse = MC_ProfilerCommand(pHandle->rxLength, pHandle->rxBuffer, txSyncFreeSpace, &pH
+ 869              		.loc 1 366 23
+ 870 030e 7B68     		ldr	r3, [r7, #4]
+ 871 0310 9889     		ldrh	r0, [r3, #12]
+ 872 0312 7B68     		ldr	r3, [r7, #4]
+ 873 0314 5968     		ldr	r1, [r3, #4]
+ 874 0316 7B68     		ldr	r3, [r7, #4]
+ 875 0318 03F10E04 		add	r4, r3, #14
+ 876 031c 7B68     		ldr	r3, [r7, #4]
+ 877 031e 9B68     		ldr	r3, [r3, #8]
+ 878 0320 B7F90E20 		ldrsh	r2, [r7, #14]
+ 879 0324 0093     		str	r3, [sp]
+ 880 0326 2346     		mov	r3, r4
+ 881 0328 FFF7FEFF 		bl	MC_ProfilerCommand
+ 882 032c 0346     		mov	r3, r0
+ 883 032e 7B77     		strb	r3, [r7, #29]
+ 367:Src/mcp.c     ****                                          pHandle->txBuffer);
+ 368:Src/mcp.c     ****         break;
+ 884              		.loc 1 368 9
+ 885 0330 29E0     		b	.L40
+ 886              	.L39:
+ 369:Src/mcp.c     ****       }
+ 370:Src/mcp.c     **** 
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 23
+
+
+ 371:Src/mcp.c     ****       case MCP_USER_CMD:
+ 372:Src/mcp.c     ****       {
+ 373:Src/mcp.c     ****         if ((userCommand < MCP_USER_CALLBACK_MAX) && (MCP_UserCallBack[userCommand] != NULL))
+ 887              		.loc 1 373 12
+ 888 0332 3B7F     		ldrb	r3, [r7, #28]	@ zero_extendqisi2
+ 889 0334 012B     		cmp	r3, #1
+ 890 0336 1BD8     		bhi	.L46
+ 891              		.loc 1 373 71 discriminator 1
+ 892 0338 3B7F     		ldrb	r3, [r7, #28]	@ zero_extendqisi2
+ 893 033a 104A     		ldr	r2, .L48+4
+ 894 033c 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 895              		.loc 1 373 51 discriminator 1
+ 896 0340 002B     		cmp	r3, #0
+ 897 0342 15D0     		beq	.L46
+ 374:Src/mcp.c     ****         {
+ 375:Src/mcp.c     ****           MCPResponse = MCP_UserCallBack[userCommand](pHandle->rxLength, pHandle->rxBuffer, txSyncF
+ 898              		.loc 1 375 41
+ 899 0344 3B7F     		ldrb	r3, [r7, #28]	@ zero_extendqisi2
+ 900 0346 0D4A     		ldr	r2, .L48+4
+ 901 0348 52F82340 		ldr	r4, [r2, r3, lsl #2]
+ 902              		.loc 1 375 25
+ 903 034c 7B68     		ldr	r3, [r7, #4]
+ 904 034e 9889     		ldrh	r0, [r3, #12]
+ 905 0350 7B68     		ldr	r3, [r7, #4]
+ 906 0352 5968     		ldr	r1, [r3, #4]
+ 907 0354 7B68     		ldr	r3, [r7, #4]
+ 908 0356 03F10E05 		add	r5, r3, #14
+ 909 035a 7B68     		ldr	r3, [r7, #4]
+ 910 035c 9B68     		ldr	r3, [r3, #8]
+ 911 035e B7F90E20 		ldrsh	r2, [r7, #14]
+ 912 0362 0093     		str	r3, [sp]
+ 913 0364 2B46     		mov	r3, r5
+ 914 0366 A047     		blx	r4
+ 915              	.LVL2:
+ 916 0368 0346     		mov	r3, r0
+ 917 036a 7B77     		strb	r3, [r7, #29]
+ 918              		.loc 1 375 23
+ 919 036c 00BF     		nop
+ 376:Src/mcp.c     ****                                                       &pHandle->txLength, pHandle->txBuffer);
+ 377:Src/mcp.c     ****         }
+ 378:Src/mcp.c     ****         else
+ 379:Src/mcp.c     ****         {
+ 380:Src/mcp.c     ****           MCPResponse = MCP_ERROR_CALLBACK_NOT_REGISTRED;
+ 381:Src/mcp.c     ****         }
+ 382:Src/mcp.c     ****         break;
+ 920              		.loc 1 382 9
+ 921 036e 0AE0     		b	.L40
+ 922              	.L46:
+ 380:Src/mcp.c     ****         }
+ 923              		.loc 1 380 23
+ 924 0370 0D23     		movs	r3, #13
+ 925 0372 7B77     		strb	r3, [r7, #29]
+ 926              		.loc 1 382 9
+ 927 0374 07E0     		b	.L40
+ 928              	.L49:
+ 929 0376 00BF     		.align	2
+ 930              	.L48:
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 24
+
+
+ 931 0378 00000000 		.word	Mci
+ 932 037c 00000000 		.word	MCP_UserCallBack
+ 933              	.L25:
+ 383:Src/mcp.c     ****       }
+ 384:Src/mcp.c     **** 
+ 385:Src/mcp.c     ****       default :
+ 386:Src/mcp.c     ****       {
+ 387:Src/mcp.c     ****         MCPResponse = MCP_CMD_UNKNOWN;
+ 934              		.loc 1 387 21
+ 935 0380 0223     		movs	r3, #2
+ 936 0382 7B77     		strb	r3, [r7, #29]
+ 388:Src/mcp.c     ****         break;
+ 937              		.loc 1 388 9
+ 938 0384 00BF     		nop
+ 939              	.L40:
+ 389:Src/mcp.c     ****       }
+ 390:Src/mcp.c     ****     }
+ 391:Src/mcp.c     ****     pHandle->txBuffer[pHandle->txLength] = MCPResponse;
+ 940              		.loc 1 391 12
+ 941 0386 7B68     		ldr	r3, [r7, #4]
+ 942 0388 9B68     		ldr	r3, [r3, #8]
+ 943              		.loc 1 391 30
+ 944 038a 7A68     		ldr	r2, [r7, #4]
+ 945 038c D289     		ldrh	r2, [r2, #14]
+ 946              		.loc 1 391 22
+ 947 038e 1344     		add	r3, r3, r2
+ 948              		.loc 1 391 42
+ 949 0390 7A7F     		ldrb	r2, [r7, #29]
+ 950 0392 1A70     		strb	r2, [r3]
+ 392:Src/mcp.c     ****     pHandle->txLength++;
+ 951              		.loc 1 392 12
+ 952 0394 7B68     		ldr	r3, [r7, #4]
+ 953 0396 DB89     		ldrh	r3, [r3, #14]
+ 954              		.loc 1 392 22
+ 955 0398 0133     		adds	r3, r3, #1
+ 956 039a 9AB2     		uxth	r2, r3
+ 957 039c 7B68     		ldr	r3, [r7, #4]
+ 958 039e DA81     		strh	r2, [r3, #14]	@ movhi
+ 393:Src/mcp.c     **** #ifdef NULL_PTR_CHECK_MCP
+ 394:Src/mcp.c     ****   }
+ 395:Src/mcp.c     **** #endif
+ 396:Src/mcp.c     **** }
+ 959              		.loc 1 396 1
+ 960 03a0 00BF     		nop
+ 961 03a2 2037     		adds	r7, r7, #32
+ 962              	.LCFI13:
+ 963              		.cfi_def_cfa_offset 16
+ 964 03a4 BD46     		mov	sp, r7
+ 965              	.LCFI14:
+ 966              		.cfi_def_cfa_register 13
+ 967              		@ sp needed
+ 968 03a6 B0BD     		pop	{r4, r5, r7, pc}
+ 969              		.cfi_endproc
+ 970              	.LFE1092:
+ 972              		.section	.text.MCP_RegisterCallBack,"ax",%progbits
+ 973              		.align	1
+ 974              		.global	MCP_RegisterCallBack
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 25
+
+
+ 975              		.syntax unified
+ 976              		.thumb
+ 977              		.thumb_func
+ 979              	MCP_RegisterCallBack:
+ 980              	.LFB1093:
+ 397:Src/mcp.c     **** 
+ 398:Src/mcp.c     **** /**
+ 399:Src/mcp.c     ****   * @brief  Stores user's MCP function to be later called as MCP function.
+ 400:Src/mcp.c     ****   *
+ 401:Src/mcp.c     ****   * @param  callBackID: ID used to get to the stored @p fctCB function
+ 402:Src/mcp.c     ****   * @param  fctCB: User call back function structure
+ 403:Src/mcp.c     ****   *
+ 404:Src/mcp.c     ****   * @retval Returns #MCP_CMD_OK if the command is acknowledged and #MCP_CMD_NOK if not
+ 405:Src/mcp.c     ****   */
+ 406:Src/mcp.c     **** uint8_t MCP_RegisterCallBack (uint8_t callBackID, MCP_user_cb_t fctCB)
+ 407:Src/mcp.c     **** {
+ 981              		.loc 1 407 1
+ 982              		.cfi_startproc
+ 983              		@ args = 0, pretend = 0, frame = 16
+ 984              		@ frame_needed = 1, uses_anonymous_args = 0
+ 985              		@ link register save eliminated.
+ 986 0000 80B4     		push	{r7}
+ 987              	.LCFI15:
+ 988              		.cfi_def_cfa_offset 4
+ 989              		.cfi_offset 7, -4
+ 990 0002 85B0     		sub	sp, sp, #20
+ 991              	.LCFI16:
+ 992              		.cfi_def_cfa_offset 24
+ 993 0004 00AF     		add	r7, sp, #0
+ 994              	.LCFI17:
+ 995              		.cfi_def_cfa_register 7
+ 996 0006 0346     		mov	r3, r0
+ 997 0008 3960     		str	r1, [r7]
+ 998 000a FB71     		strb	r3, [r7, #7]
+ 408:Src/mcp.c     ****   uint8_t result;
+ 409:Src/mcp.c     **** 
+ 410:Src/mcp.c     ****   if (callBackID < MCP_USER_CALLBACK_MAX)
+ 999              		.loc 1 410 6
+ 1000 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1001 000e 012B     		cmp	r3, #1
+ 1002 0010 07D8     		bhi	.L51
+ 411:Src/mcp.c     ****   {
+ 412:Src/mcp.c     ****     MCP_UserCallBack[callBackID] = fctCB;
+ 1003              		.loc 1 412 21
+ 1004 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1005              		.loc 1 412 34
+ 1006 0014 0749     		ldr	r1, .L54
+ 1007 0016 3A68     		ldr	r2, [r7]
+ 1008 0018 41F82320 		str	r2, [r1, r3, lsl #2]
+ 413:Src/mcp.c     ****     result = MCP_CMD_OK;
+ 1009              		.loc 1 413 12
+ 1010 001c 0023     		movs	r3, #0
+ 1011 001e FB73     		strb	r3, [r7, #15]
+ 1012 0020 01E0     		b	.L52
+ 1013              	.L51:
+ 414:Src/mcp.c     ****   }
+ 415:Src/mcp.c     ****   else
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 26
+
+
+ 416:Src/mcp.c     ****   {
+ 417:Src/mcp.c     ****     result = MCP_CMD_NOK;
+ 1014              		.loc 1 417 12
+ 1015 0022 0123     		movs	r3, #1
+ 1016 0024 FB73     		strb	r3, [r7, #15]
+ 1017              	.L52:
+ 418:Src/mcp.c     ****   }
+ 419:Src/mcp.c     ****   return (result);
+ 1018              		.loc 1 419 10
+ 1019 0026 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 420:Src/mcp.c     **** }
+ 1020              		.loc 1 420 1
+ 1021 0028 1846     		mov	r0, r3
+ 1022 002a 1437     		adds	r7, r7, #20
+ 1023              	.LCFI18:
+ 1024              		.cfi_def_cfa_offset 4
+ 1025 002c BD46     		mov	sp, r7
+ 1026              	.LCFI19:
+ 1027              		.cfi_def_cfa_register 13
+ 1028              		@ sp needed
+ 1029 002e 5DF8047B 		ldr	r7, [sp], #4
+ 1030              	.LCFI20:
+ 1031              		.cfi_restore 7
+ 1032              		.cfi_def_cfa_offset 0
+ 1033 0032 7047     		bx	lr
+ 1034              	.L55:
+ 1035              		.align	2
+ 1036              	.L54:
+ 1037 0034 00000000 		.word	MCP_UserCallBack
+ 1038              		.cfi_endproc
+ 1039              	.LFE1093:
+ 1041              		.text
+ 1042              	.Letext0:
+ 1043              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1044              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 1045              		.file 4 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 1046              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 1047              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 1048              		.file 7 "Inc/mc_type.h"
+ 1049              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcptl.h"
+ 1050              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcp.h"
+ 1051              		.file 10 "Inc/pwm_curr_fdbk.h"
+ 1052              		.file 11 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pid_regulator.h"
+ 1053              		.file 12 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
+ 1054              		.file 13 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_torq_ctrl.h"
+ 1055              		.file 14 "Inc/mc_perf.h"
+ 1056              		.file 15 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
+ 1057              		.file 16 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/trajectory_ctrl.h"
+ 1058              		.file 17 "Inc/mc_interface.h"
+ 1059              		.file 18 "Inc/mc_config.h"
+ 1060              		.file 19 "Inc/mcp_config.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 27
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mcp.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:56     .rodata:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:61     .text.RI_SetRegCommandParser:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:67     .text.RI_SetRegCommandParser:00000000 RI_SetRegCommandParser
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:305    .text.RI_SetRegCommandParser:00000158 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:315    .text.RI_GetRegCommandParser:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:321    .text.RI_GetRegCommandParser:00000000 RI_GetRegCommandParser
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:489    .text.RI_GetRegCommandParser:000000f0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:494    .text.MCP_ReceivedPacket:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:500    .text.MCP_ReceivedPacket:00000000 MCP_ReceivedPacket
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:612    .text.MCP_ReceivedPacket:00000098 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:717    .text.MCP_ReceivedPacket:0000023c $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:931    .text.MCP_ReceivedPacket:00000378 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:935    .text.MCP_ReceivedPacket:00000380 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:973    .text.MCP_RegisterCallBack:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:979    .text.MCP_RegisterCallBack:00000000 MCP_RegisterCallBack
+C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:1037   .text.MCP_RegisterCallBack:00000034 $d
+
+UNDEFINED SYMBOLS
+RI_SetRegisterGlobal
+RI_SetRegisterMotor1
+RI_GetRegisterGlobal
+RI_GetRegisterMotor1
+MCI_StartWithPolarizationMotor
+MCI_StopMotor
+MCI_GetSTMState
+MCI_StopRamp
+MCI_FaultAcknowledged
+MCI_Clear_PerfMeasure
+MCI_Clear_Iqdref
+MC_ProfilerCommand
+Mci
+MCP_UserCallBack

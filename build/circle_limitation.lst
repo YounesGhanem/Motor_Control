@@ -1,0 +1,420 @@
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"circle_limitation.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata.OFFSET_TAB_CCMRx,"a"
+  20              		.align	2
+  23              	OFFSET_TAB_CCMRx:
+  24 0000 00000000 		.ascii	"\000\000\000\000\004\004\004<<"
+  24      0404043C 
+  24      3C
+  25              		.section	.rodata.SHIFT_TAB_OCxx,"a"
+  26              		.align	2
+  29              	SHIFT_TAB_OCxx:
+  30 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\010"
+  30      00000800 
+  30      08
+  31              		.section	.rodata.SHIFT_TAB_ICxx,"a"
+  32              		.align	2
+  35              	SHIFT_TAB_ICxx:
+  36 0000 00000800 		.ascii	"\000\000\010\000\000\000\010\000\000"
+  36      00000800 
+  36      00
+  37              		.section	.rodata.SHIFT_TAB_CCxP,"a"
+  38              		.align	2
+  41              	SHIFT_TAB_CCxP:
+  42 0000 00020406 		.ascii	"\000\002\004\006\010\012\014\020\024"
+  42      080A0C10 
+  42      14
+  43              		.section	.rodata.SHIFT_TAB_OISx,"a"
+  44              		.align	2
+  47              	SHIFT_TAB_OISx:
+  48 0000 00010203 		.ascii	"\000\001\002\003\004\005\006\010\012"
+  48      04050608 
+  48      0A
+  49              		.section	.rodata.CHANNEL_OFFSET_TAB,"a"
+  50              		.align	2
+  53              	CHANNEL_OFFSET_TAB:
+  54 0000 081C3044 		.ascii	"\010\0340DXl\200"
+  54      586C80
+  55              		.section	.text.Circle_Limitation,"ax",%progbits
+  56              		.align	1
+  57              		.weak	Circle_Limitation
+  58              		.syntax unified
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 2
+
+
+  59              		.thumb
+  60              		.thumb_func
+  62              	Circle_Limitation:
+  63              	.LFB1090:
+  64              		.file 1 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c"
+   1:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** /**
+   2:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   ******************************************************************************
+   3:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @file    circle_limitation.c
+   4:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @author  Motor Control SDK Team, ST Microelectronics
+   5:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @brief   This file provides the functions that implement the circle
+   6:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *          limitation feature of the STM32 Motor Control SDK.
+   7:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+   8:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   ******************************************************************************
+   9:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @attention
+  10:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  11:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  12:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * All rights reserved.</center></h2>
+  13:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  14:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  15:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  16:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * the License. You may obtain a copy of the License at:
+  17:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *                             www.st.com/SLA0044
+  18:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  19:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   ******************************************************************************
+  20:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @ingroup CircleLimitation
+  21:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   */
+  22:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  23:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** /* Includes ------------------------------------------------------------------*/
+  24:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #include "circle_limitation.h"
+  25:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #include "mc_math.h"
+  26:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #include "mc_type.h"
+  27:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  28:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** /** @addtogroup MCSDK
+  29:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @{
+  30:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   */
+  31:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  32:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** /** @defgroup CircleLimitation Circle Limitation
+  33:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @brief Circle Limitation component of the Motor Control SDK
+  34:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  35:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @{
+  36:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   */
+  37:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  38:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #if defined (CCMRAM)
+  39:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #if defined (__ICCARM__)
+  40:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #pragma location = ".ccmram"
+  41:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #elif defined (__CC_ARM) || defined(__GNUC__)
+  42:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** __attribute__((section(".ccmram")))
+  43:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+  44:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+  45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  46:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #if defined CIRCLE_LIMITATION_SQRT_M0
+  47:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** const uint16_t SqrtTable[1025] = SQRT_CIRCLE_LIMITATION;
+  48:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+  49:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** /**
+  50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @brief  Returns the saturated @f$v_q, v_d@f$ component values
+  51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @param  pHandle Handler of the CircleLimitation component
+  52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @param  Vqd @f$v_q, v_d@f$ values
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 3
+
+
+  53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * @retval Saturated @f$v_q, v_d@f$ values
+  54:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  55:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   * This function implements the CircleLimitation feature described CircleLimitation component.
+  56:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  57:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *  @f$v_d = \min(v_d^*, v_d MAX) @f$
+  58:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  59:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *  @f$v_q = \sqrt(MaxModule^2-v_d^2\ ) @f$
+  60:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  61:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   *
+  62:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   */
+  63:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** __weak qd_t Circle_Limitation(const CircleLimitation_Handle_t *pHandle, qd_t Vqd)
+  64:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** {
+  65              		.loc 1 64 1
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 56
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69 0000 80B5     		push	{r7, lr}
+  70              	.LCFI0:
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 7, -8
+  73              		.cfi_offset 14, -4
+  74 0002 8EB0     		sub	sp, sp, #56
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 64
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI2:
+  79              		.cfi_def_cfa_register 7
+  80 0006 7860     		str	r0, [r7, #4]
+  81 0008 3960     		str	r1, [r7]
+  65:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   qd_t local_vqd = Vqd;
+  82              		.loc 1 65 8
+  83 000a 3B68     		ldr	r3, [r7]
+  84 000c FB60     		str	r3, [r7, #12]
+  66:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #ifdef NULL_PTR_CHECK_CRC_LIM
+  67:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   if (MC_NULL == pHandle)
+  68:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   {
+  69:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     local_vqd.q = 0;
+  70:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     local_vqd.d = 0;
+  71:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   }
+  72:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   else
+  73:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   {
+  74:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+  75:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t maxModule;
+  76:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t square_q;
+  77:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t square_temp;
+  78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t square_d;
+  79:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t square_sum;
+  80:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t square_limit;
+  81:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t vd_square_limit;
+  82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t new_q;
+  83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     int32_t new_d;
+  84:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     maxModule = (int32_t)pHandle->MaxModule;
+  85              		.loc 1 85 33
+  86 000e 7B68     		ldr	r3, [r7, #4]
+  87 0010 1B88     		ldrh	r3, [r3]
+  88              		.loc 1 85 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 4
+
+
+  89 0012 FB62     		str	r3, [r7, #44]
+  86:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  87:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     square_q = ((int32_t)(Vqd.q)) * Vqd.q;
+  90              		.loc 1 87 30
+  91 0014 B7F90030 		ldrsh	r3, [r7]
+  92              		.loc 1 87 40
+  93 0018 B7F90020 		ldrsh	r2, [r7]
+  94              		.loc 1 87 14
+  95 001c 02FB03F3 		mul	r3, r2, r3
+  96 0020 BB62     		str	r3, [r7, #40]
+  88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     square_d = ((int32_t)(Vqd.d)) * Vqd.d;
+  97              		.loc 1 88 30
+  98 0022 B7F90230 		ldrsh	r3, [r7, #2]
+  99              		.loc 1 88 40
+ 100 0026 B7F90220 		ldrsh	r2, [r7, #2]
+ 101              		.loc 1 88 14
+ 102 002a 02FB03F3 		mul	r3, r2, r3
+ 103 002e 7B62     		str	r3, [r7, #36]
+  89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     square_limit = maxModule * maxModule;
+ 104              		.loc 1 89 18
+ 105 0030 FB6A     		ldr	r3, [r7, #44]
+ 106 0032 03FB03F3 		mul	r3, r3, r3
+ 107 0036 3B62     		str	r3, [r7, #32]
+  90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     vd_square_limit = ((int32_t)pHandle->MaxVd) * ((int32_t)pHandle->MaxVd);
+ 108              		.loc 1 90 40
+ 109 0038 7B68     		ldr	r3, [r7, #4]
+ 110 003a 5B88     		ldrh	r3, [r3, #2]
+ 111              		.loc 1 90 24
+ 112 003c 1A46     		mov	r2, r3
+ 113              		.loc 1 90 68
+ 114 003e 7B68     		ldr	r3, [r7, #4]
+ 115 0040 5B88     		ldrh	r3, [r3, #2]
+ 116              		.loc 1 90 21
+ 117 0042 02FB03F3 		mul	r3, r2, r3
+ 118 0046 FB61     		str	r3, [r7, #28]
+  91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     square_sum = square_q + square_d;
+ 119              		.loc 1 91 16
+ 120 0048 BA6A     		ldr	r2, [r7, #40]
+ 121 004a 7B6A     		ldr	r3, [r7, #36]
+ 122 004c 1344     		add	r3, r3, r2
+ 123 004e BB61     		str	r3, [r7, #24]
+  92:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** 
+  93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     if (square_sum > square_limit)
+ 124              		.loc 1 93 8
+ 125 0050 BA69     		ldr	r2, [r7, #24]
+ 126 0052 3B6A     		ldr	r3, [r7, #32]
+ 127 0054 9A42     		cmp	r2, r3
+ 128 0056 35DD     		ble	.L2
+  94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     {
+  95:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       if (square_d <= vd_square_limit)
+ 129              		.loc 1 95 10
+ 130 0058 7A6A     		ldr	r2, [r7, #36]
+ 131 005a FB69     		ldr	r3, [r7, #28]
+ 132 005c 9A42     		cmp	r2, r3
+ 133 005e 12DC     		bgt	.L3
+  96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       {
+  97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #if defined CIRCLE_LIMITATION_SQRT_M0
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 5
+
+
+  98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         square_temp = (square_limit - square_d) / 1048576;
+  99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         new_q = SqrtTable[square_temp];
+ 100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #else
+ 101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         square_temp = square_limit - square_d;
+ 134              		.loc 1 101 21
+ 135 0060 3A6A     		ldr	r2, [r7, #32]
+ 136 0062 7B6A     		ldr	r3, [r7, #36]
+ 137 0064 D31A     		subs	r3, r2, r3
+ 138 0066 7B61     		str	r3, [r7, #20]
+ 102:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         new_q = MCM_Sqrt(square_temp);
+ 139              		.loc 1 102 17
+ 140 0068 7869     		ldr	r0, [r7, #20]
+ 141 006a FFF7FEFF 		bl	MCM_Sqrt
+ 142 006e 7863     		str	r0, [r7, #52]
+ 103:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+ 104:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         if (Vqd.q < 0)
+ 143              		.loc 1 104 16
+ 144 0070 B7F90030 		ldrsh	r3, [r7]
+ 145              		.loc 1 104 12
+ 146 0074 002B     		cmp	r3, #0
+ 147 0076 02DA     		bge	.L4
+ 105:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         {
+ 106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****           new_q = -new_q;
+ 148              		.loc 1 106 17
+ 149 0078 7B6B     		ldr	r3, [r7, #52]
+ 150 007a 5B42     		rsbs	r3, r3, #0
+ 151 007c 7B63     		str	r3, [r7, #52]
+ 152              	.L4:
+ 107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         }
+ 108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         else
+ 109:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         {
+ 110:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****           /* Nothing to do */
+ 111:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         }
+ 112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         new_d = Vqd.d;
+ 153              		.loc 1 112 20
+ 154 007e B7F90230 		ldrsh	r3, [r7, #2]
+ 155              		.loc 1 112 15
+ 156 0082 3B63     		str	r3, [r7, #48]
+ 157 0084 18E0     		b	.L5
+ 158              	.L3:
+ 113:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       }
+ 114:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       else
+ 115:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       {
+ 116:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         new_d = (int32_t)pHandle->MaxVd;
+ 159              		.loc 1 116 33
+ 160 0086 7B68     		ldr	r3, [r7, #4]
+ 161 0088 5B88     		ldrh	r3, [r3, #2]
+ 162              		.loc 1 116 15
+ 163 008a 3B63     		str	r3, [r7, #48]
+ 117:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         if (Vqd.d < 0)
+ 164              		.loc 1 117 16
+ 165 008c B7F90230 		ldrsh	r3, [r7, #2]
+ 166              		.loc 1 117 12
+ 167 0090 002B     		cmp	r3, #0
+ 168 0092 02DA     		bge	.L6
+ 118:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         {
+ 119:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****           new_d = -new_d;
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 6
+
+
+ 169              		.loc 1 119 17
+ 170 0094 3B6B     		ldr	r3, [r7, #48]
+ 171 0096 5B42     		rsbs	r3, r3, #0
+ 172 0098 3B63     		str	r3, [r7, #48]
+ 173              	.L6:
+ 120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         }
+ 121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         else
+ 122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         {
+ 123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****           /* Nothing to do */
+ 124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         }
+ 125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #if defined CIRCLE_LIMITATION_SQRT_M0
+ 126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         square_temp = (square_limit - vd_square_limit) / 1048576;
+ 127:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         new_q = SqrtTable[square_temp];
+ 128:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #else
+ 129:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         square_temp = square_limit - vd_square_limit;
+ 174              		.loc 1 129 21
+ 175 009a 3A6A     		ldr	r2, [r7, #32]
+ 176 009c FB69     		ldr	r3, [r7, #28]
+ 177 009e D31A     		subs	r3, r2, r3
+ 178 00a0 7B61     		str	r3, [r7, #20]
+ 130:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         new_q = MCM_Sqrt(square_temp);
+ 179              		.loc 1 130 17
+ 180 00a2 7869     		ldr	r0, [r7, #20]
+ 181 00a4 FFF7FEFF 		bl	MCM_Sqrt
+ 182 00a8 7863     		str	r0, [r7, #52]
+ 131:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+ 132:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         if (Vqd.q < 0)
+ 183              		.loc 1 132 16
+ 184 00aa B7F90030 		ldrsh	r3, [r7]
+ 185              		.loc 1 132 12
+ 186 00ae 002B     		cmp	r3, #0
+ 187 00b0 02DA     		bge	.L5
+ 133:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         {
+ 134:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****           new_q = - new_q;
+ 188              		.loc 1 134 17
+ 189 00b2 7B6B     		ldr	r3, [r7, #52]
+ 190 00b4 5B42     		rsbs	r3, r3, #0
+ 191 00b6 7B63     		str	r3, [r7, #52]
+ 192              	.L5:
+ 135:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         }
+ 136:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         else
+ 137:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         {
+ 138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****           /* Nothing to do */
+ 139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****         }
+ 140:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       }
+ 141:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       local_vqd.q = (int16_t)new_q;
+ 193              		.loc 1 141 21
+ 194 00b8 7B6B     		ldr	r3, [r7, #52]
+ 195 00ba 1BB2     		sxth	r3, r3
+ 196              		.loc 1 141 19
+ 197 00bc BB81     		strh	r3, [r7, #12]	@ movhi
+ 142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****       local_vqd.d = (int16_t)new_d;
+ 198              		.loc 1 142 21
+ 199 00be 3B6B     		ldr	r3, [r7, #48]
+ 200 00c0 1BB2     		sxth	r3, r3
+ 201              		.loc 1 142 19
+ 202 00c2 FB81     		strh	r3, [r7, #14]	@ movhi
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 7
+
+
+ 203              	.L2:
+ 143:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****     }
+ 144:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #ifdef NULL_PTR_CHECK_CRC_LIM
+ 145:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   }
+ 146:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** #endif
+ 147:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c ****   return (local_vqd);
+ 204              		.loc 1 147 10
+ 205 00c4 FB68     		ldr	r3, [r7, #12]
+ 206 00c6 3B61     		str	r3, [r7, #16]
+ 207 00c8 0023     		movs	r3, #0
+ 208 00ca 3A8A     		ldrh	r2, [r7, #16]
+ 209 00cc 62F30F03 		bfi	r3, r2, #0, #16
+ 210 00d0 7A8A     		ldrh	r2, [r7, #18]
+ 211 00d2 62F31F43 		bfi	r3, r2, #16, #16
+ 148:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/circle_limitation.c **** }
+ 212              		.loc 1 148 1
+ 213 00d6 1846     		mov	r0, r3
+ 214 00d8 3837     		adds	r7, r7, #56
+ 215              	.LCFI3:
+ 216              		.cfi_def_cfa_offset 8
+ 217 00da BD46     		mov	sp, r7
+ 218              	.LCFI4:
+ 219              		.cfi_def_cfa_register 13
+ 220              		@ sp needed
+ 221 00dc 80BD     		pop	{r7, pc}
+ 222              		.cfi_endproc
+ 223              	.LFE1090:
+ 225              		.text
+ 226              	.Letext0:
+ 227              		.file 2 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 228              		.file 3 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
+ 229              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
+ 230              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
+ 231              		.file 6 "Inc/mc_type.h"
+ 232              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/circle_limitation.h"
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 circle_limitation.c
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:56     .text.Circle_Limitation:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccSh0ppr.s:62     .text.Circle_Limitation:00000000 Circle_Limitation
+
+UNDEFINED SYMBOLS
+MCM_Sqrt
