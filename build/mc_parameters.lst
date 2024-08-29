@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 1
   56              		.section	.rodata.R3_1_ParamsM1,"a"
   57              		.align	2
   60              	R3_1_ParamsM1:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s 			page 2
 
 
   61 0000 00000450 		.word	1342439424
@@ -95,26 +95,26 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 1
   94              		.file 6 "Inc/mc_interface.h"
   95              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/L4xx/Inc/r3_1_l4xx_pwm_curr_fdbk.h"
   96              		.file 8 "Src/mc_parameters.c"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mc_parameters.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:60     .rodata.R3_1_ParamsM1:00000000 R3_1_ParamsM1
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:57     .rodata.R3_1_ParamsM1:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:82     .data.scaleParams_M1:00000000 scaleParams_M1
-C:\Users\ep_ygh\AppData\Local\Temp\ccH5ZgL4.s:79     .data.scaleParams_M1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:60     .rodata.R3_1_ParamsM1:00000000 R3_1_ParamsM1
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:57     .rodata.R3_1_ParamsM1:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:82     .data.scaleParams_M1:00000000 scaleParams_M1
+C:\Users\ep_ygh\AppData\Local\Temp\ccdCULjW.s:79     .data.scaleParams_M1:00000000 $d
 
 NO UNDEFINED SYMBOLS

@@ -67,14 +67,15 @@ void EXTI15_10_IRQHandler (void);
   */
 void ADC1_2_IRQHandler(void)
 {
-  // Calculation of rotor position every 1ms (TIMER4,ADC2)
+  /* USER CODE BEGIN ADC_IRQn 0 */
 
+  /* USER CODE END ADC_IRQn 0 */
   if ( LL_ADC_IsActiveFlag_JEOS( ADC1 ) )
   {
     LL_ADC_ClearFlag_JEOS( ADC1 );
   }
     // Highfrequency task Single or M1
- TSK_HighFrequencyTask();
+  TSK_HighFrequencyTask();
 
   /* USER CODE BEGIN ADC_IRQn 1 */
 

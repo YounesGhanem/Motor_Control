@@ -20,10 +20,30 @@
 #include "main.h"
 #include "cmsis_os.h"
 
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
+DMA_HandleTypeDef hdma_adc2;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
@@ -35,6 +55,9 @@ DMA_HandleTypeDef hdma_usart2_tx;
 
 osThreadId mediumFrequencyHandle;
 osThreadId safetyHandle;
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -48,8 +71,22 @@ static void MX_ADC2_Init(void);
 static void MX_TIM4_Init(void);
 void startMediumFrequencyTask(void const * argument);
 extern void StartSafetyTask(void const * argument);
+static void MX_ADC2_Calibration(void);
 
 static void MX_NVIC_Init(void);
+
+// Inclure les définitions nécessaires
+
+
+
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
@@ -57,10 +94,26 @@ static void MX_NVIC_Init(void);
   */
 int main(void)
 {
+
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
@@ -70,46 +123,62 @@ int main(void)
   MX_TIM3_Init();
   MX_USART2_UART_Init();
   MX_MotorControl_Init();
+  //Read_VREF();
   MX_ADC2_Init();
   MX_TIM4_Init();
 
+  MX_ADC2_Calibration();
+
   /* Initialize interrupts */
   MX_NVIC_Init();
+  /* USER CODE BEGIN 2 */
 
-  // calibrate ADC for better accuracy and start it w/ interrupt
-  if(HAL_ADCEx_Calibration_Start(&hadc2,  ADC_SINGLE_ENDED) != HAL_OK)
-	  Error_Handler();
+  /* USER CODE END 2 */
 
-  if(HAL_ADC_Start_IT(&hadc2) != HAL_OK)
-	  Error_Handler();
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
 
-  // start pwm generation
-  if(HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1) != HAL_OK)
-	  Error_Handler();
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
 
-  HAL_TIM_Base_Start_IT(&htim4); //Start the timer
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
   /* definition and creation of mediumFrequency */
-   osThreadDef(mediumFrequency, startMediumFrequencyTask, osPriorityNormal, 0, 128);
-   mediumFrequencyHandle = osThreadCreate(osThread(mediumFrequency), NULL);
-
+  osThreadDef(mediumFrequency, startMediumFrequencyTask, osPriorityNormal, 0, 128);
+  mediumFrequencyHandle = osThreadCreate(osThread(mediumFrequency), NULL);
 
   /* definition and creation of safety */
   osThreadDef(safety, StartSafetyTask, osPriorityAboveNormal, 0, 128);
   safetyHandle = osThreadCreate(osThread(safety), NULL);
 
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  /* USER CODE END RTOS_THREADS */
+
   /* Start scheduler */
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
   while (1)
   {
+    /* USER CODE END WHILE */
 
+    /* USER CODE BEGIN 3 */
   }
-
+  /* USER CODE END 3 */
 }
-
 
 /**
   * @brief System Clock Configuration
@@ -308,6 +377,16 @@ static void MX_ADC1_Init(void)
 
 }
 
+static void MX_ADC2_Calibration(void)
+{
+    // Calibrer l'ADC2 avant de démarrer les conversions
+    if (HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED) != HAL_OK)
+    {
+        // Gestion de l'erreur
+        Error_Handler();
+    }
+}
+
 /**
   * @brief ADC2 Initialization Function
   * @param None
@@ -316,6 +395,7 @@ static void MX_ADC1_Init(void)
 static void MX_ADC2_Init(void)
 {
 
+  //static int32_t adcValues[3] = {0};
   /* USER CODE BEGIN ADC2_Init 0 */
 
   /* USER CODE END ADC2_Init 0 */
@@ -333,14 +413,13 @@ static void MX_ADC2_Init(void)
   hadc2.Init.Resolution = ADC_RESOLUTION_12B;
   hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc2.Init.ScanConvMode = ADC_SCAN_ENABLE;
-  hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc2.Init.EOCSelection = ADC_EOC_SEQ_CONV;
   hadc2.Init.LowPowerAutoWait = DISABLE;
   hadc2.Init.ContinuousConvMode = DISABLE;
   hadc2.Init.NbrOfConversion = 3;
   hadc2.Init.DiscontinuousConvMode = DISABLE;
   hadc2.Init.ExternalTrigConv = ADC_EXTERNALTRIG_T4_TRGO;
   hadc2.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
-  //hadc2.Init.DMAContinuousRequests = DISABLE;
   hadc2.Init.DMAContinuousRequests = ENABLE;
   hadc2.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc2.Init.OversamplingMode = DISABLE;
@@ -378,6 +457,12 @@ static void MX_ADC2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN ADC2_Init 2 */
+
+  //if (HAL_ADC_Start_DMA(&hadc2, (uint32_t*)&, 3) != HAL_OK)
+  if (HAL_ADC_Start_DMA(&hadc2,(uint32_t*)(&HALL_M1.AdcRawValues), 6) != HAL_OK )
+{
+    Error_Handler();
+}
 
   /* USER CODE END ADC2_Init 2 */
 
@@ -554,12 +639,10 @@ static void MX_TIM4_Init(void)
   /* USER CODE BEGIN TIM4_Init 1 */
 
   /* USER CODE END TIM4_Init 1 */
-
-  //uint32_t sysclk = HAL_RCC_GetHCLKFreq();
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 79;  // 80 MHz/80 = 1MHz
+  htim4.Init.Prescaler = 79;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 999; // 1MHz/1000 = 1KHz
+  htim4.Init.Period = 999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
@@ -592,7 +675,6 @@ static void MX_TIM4_Init(void)
   /* USER CODE BEGIN TIM4_Init 2 */
 
   /* USER CODE END TIM4_Init 2 */
- 
 
 }
 
@@ -640,6 +722,39 @@ static void MX_DMA_Init(void)
   /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
 
+  /* DMA interrupt init */
+  /* DMA1_Channel2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel2_IRQn);
+
+}
+
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  
+  uint32_t adcRaw[3] = {0};
+
+  if (hadc->Instance == ADC2)
+  {
+     
+    adcRaw[0] = HALL_M1.AdcRawValues[0];
+    adcRaw[1] = HALL_M1.AdcRawValues[1];
+    adcRaw[2] = HALL_M1.AdcRawValues[2];
+    adcRaw[3] = HALL_M1.AdcRawValues[3];
+    adcRaw[4] = HALL_M1.AdcRawValues[4];
+    adcRaw[5] = HALL_M1.AdcRawValues[5];
+  }
+  else
+  {
+    //Resume
+  }
+}
+
+void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  
+
 }
 
 /**
@@ -667,11 +782,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(Start_Stop_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PC2 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  /*Configure GPIO pin : HALL_H3_Pin */
+  GPIO_InitStruct.Pin = HALL_H3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG_ADC_CONTROL;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(HALL_H3_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : M1_PWM_EN_U_Pin M1_PWM_EN_V_Pin M1_PWM_EN_W_Pin */
   GPIO_InitStruct.Pin = M1_PWM_EN_U_Pin|M1_PWM_EN_V_Pin|M1_PWM_EN_W_Pin;
@@ -685,7 +800,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_startMediumFrequencyTask */
@@ -720,11 +834,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   uint32_t val= 0;
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6) 
-  {
+  if (htim->Instance == TIM6) {
     HAL_IncTick();
   }
-  
   /* USER CODE BEGIN Callback 1 */
 
   /* USER CODE END Callback 1 */

@@ -714,6 +714,8 @@ typedef struct __DMA_HandleTypeDef
   */
 #define __HAL_DMA_DISABLE_IT(__HANDLE__, __INTERRUPT__)  ((__HANDLE__)->Instance->CCR &= ~(__INTERRUPT__))
 
+
+
 /**
   * @brief  Check whether the specified DMA Channel interrupt is enabled or not.
   * @param  __HANDLE__ DMA handle

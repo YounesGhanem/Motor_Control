@@ -250,11 +250,11 @@ ENCODER_Handle_t ENCODER_M1 =
   .ICx_Filter                  = M1_ENC_IC_FILTER_LL,
 };
 
-HALL_Handle_t HALL_M1 =
+HALL_Handle_t HALL_M1 = 
 {
-  ._Super =
+  ._Super = 
   {
-    .bElToMecRatio             = POLE_PAIR_NUM,
+    .bElToMecRatio            = POLE_PAIR_NUM,
     .hMaxReliableMecSpeedUnit  = (uint16_t)(1.15 * MAX_APPLICATION_SPEED_UNIT),
     .hMinReliableMecSpeedUnit  = (uint16_t)(MIN_APPLICATION_SPEED_UNIT),
     .bMaximumSpeedErrorsNumber = M1_SS_MEAS_ERRORS_BEFORE_FAULTS,
@@ -262,13 +262,16 @@ HALL_Handle_t HALL_M1 =
     .hMeasurementFrequency     = TF_REGULATION_RATE_SCALED,
     .DPPConvFactor             = DPP_CONV_FACTOR,
   },
-
-  .PulseNumber                 = M1_ENCODER_PPR * 4,
-  .SpeedSamplingFreqHz         = MEDIUM_FREQUENCY_TASK_RATE,
+  .PulseNumber                 = M1_ENCODER_PPR * 4,  // TODO: remove
+  .SpeedSamplingFreqHz         = MEDIUM_FREQUENCY_TASK_RATE, 
   .SpeedBufferSize             = ENC_AVERAGING_FIFO_DEPTH,
   .TIMx                        = TIM3,
   .ICx_Filter                  = M1_ENC_IC_FILTER_LL,
+  .AdcRawValues                = {0},
 };
+
+
+
 
 /**
   * @brief  Encoder Alignment Controller parameters Motor 1.

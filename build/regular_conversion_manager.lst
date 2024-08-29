@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
   29:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
   30:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @addtogroup STM32L4xx_LL_Driver
   31:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @{
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 2
 
 
   32:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
   86:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* Internal mask for ADC group injected sequencer:                            */
   87:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* To select into literal LL_ADC_INJ_RANK_x the relevant bits for:            */
   88:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* - data register offset                                                     */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 3
 
 
   89:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* - sequencer rank bits position into the selected register                  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  143:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* To select into literal LL_ADC_INJ_TRIG_x the relevant bits for:            */
  144:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* - injected trigger source                                                  */
  145:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* - injected trigger edge                                                    */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 4
 
 
  146:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define ADC_INJ_TRIG_EXT_EDGE_DEFAULT      (ADC_JSQR_JEXTEN_0) /* Trigger edge set to rising edge (
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  200:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* Internal register offset for ADC channel sampling time configuration */
  201:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* (offset placed into a spare area of literal definition) */
  202:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define ADC_SMPR1_REGOFFSET                (0x00000000UL)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 5
 
 
  203:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define ADC_SMPR2_REGOFFSET                (0x02000000UL)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  257:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* Definition of channels sampling time information to be inserted into       */
  258:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* channels literals definition.                                              */
  259:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* Value shifted are equivalent to bitfield "ADC_SMPRx_SMPy" position         */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 6
 
 
  260:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* in register.                                                               */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  314:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
  315:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* Register offset gap between AWD1 and AWD2-AWD3 configuration registers */
  316:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* (Set separately as ADC_AWD_CRX_REGOFFSET to spare 32 bits space */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 7
 
 
  317:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define ADC_AWD_CR12_REGOFFSETGAP_MASK     (ADC_AWD2CR_AWD2CH_0)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  371:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define VREFINT_CAL_ADDR                   ((uint16_t*) (0x1FFF75AAUL)) /* Internal voltage referen
  372:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            parameter VREFINT_CAL: VrefInt ADC raw data acquired at 
  373:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            (tolerance: +-5 DegC), Vref+ = 3.0 V (tolerance: +-10 mV
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 8
 
 
  374:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define VREFINT_CAL_VREF                   ( 3000UL)                    /* Analog voltage reference
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  428:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_ES_INIT ADC Exported Init structure
  429:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @{
  430:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 9
 
 
  431:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  485:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (setting possible with ADC enabled without conversion on going,
  486:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC enabled with conversion on going, ...)
  487:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Each feature can be updated afterwards with a unitary function
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 10
 
 
  488:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         and potentially with ADC in a different state than disabled,
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  542:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                              @ref LL_ADC_REG_SetTriggerSource(). */
  543:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
  544:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   uint32_t SequencerLength;             /*!< Set ADC group regular sequencer length.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 11
 
 
  545:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                              This parameter can be a value of @ref ADC_LL_EC_REG_SE
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  599:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
  600:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** typedef struct
  601:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 12
 
 
  602:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   uint32_t TriggerSource;               /*!< Set ADC group injected conversion trigger source: inte
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  656:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_FLAG_OVR                    ADC_ISR_OVR        /*!< ADC flag ADC group regular overr
  657:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_FLAG_EOSMP                  ADC_ISR_EOSMP      /*!< ADC flag ADC group regular end o
  658:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_FLAG_JEOC                   ADC_ISR_JEOC       /*!< ADC flag ADC group injected end 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 13
 
 
  659:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                                                    conversion */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  713:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
  714:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
  715:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EC_IT ADC interruptions for configuration (interruption enable or disable)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 14
 
 
  716:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief    IT defines which can be used with LL_ADC_ReadReg and  LL_ADC_WriteReg functions
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  770:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            AHB clock with prescaler division by 4 */
  771:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_CLOCK_ASYNC_DIV1            (0x00000000UL)                      /*!< ADC asynchronou
  772:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            prescaler */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 15
 
 
  773:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_CLOCK_ASYNC_DIV2            (ADC_CCR_PRESC_0)                   /*!< ADC asynchronou
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  827:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
  828:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
  829:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EC_DATA_ALIGN  ADC instance - Data alignment
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 16
 
 
  830:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @{
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  884:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
  885:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_GROUP_REGULAR               (0x00000001UL)     /*!< ADC group regular (available on 
  886:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_GROUP_INJECTED              (0x00000002UL)     /*!< ADC group injected (not availabl
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 17
 
 
  887:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            devices)*/
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  941:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            connected to Vbat/3: Vbat voltage through a divider ladd
  942:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            to have channel voltage always below Vdda.
  943:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            On STM32L4, ADC channel available only on ADC instances:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 18
 
 
  944:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #if defined(ADC1) && !defined(ADC2)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  998:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_REG_TRIG_EXT_TIM2_TRGO      (ADC_CFGR_EXTSEL_3 | ADC_CFGR_EXTSEL_1 | \
  999:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            ADC_CFGR_EXTSEL_0 | ADC_REG_TRIG_EXT_EDGE_DEFAULT)    /*
 1000:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            conversion trigger from external peripheral: TIM2 TRGO. 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 19
 
 
 1001:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            rising edge (default setting). */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1055:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_REG_TRIG_EXT_RISINGFALLING  (ADC_CFGR_EXTEN_1 | ADC_CFGR_EXTEN_0)   /*!< ADC group r
 1056:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            trigger polarity set to both rising and falling edges */
 1057:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 20
 
 
 1058:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1112:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 1113:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
 1114:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 21
 
 
 1115:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #endif /* ADC_SMPR1_SMPPLUS */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1169:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
 1170:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 1171:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 22
 
 
 1172:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EC_REG_SEQ_DISCONT_MODE  ADC group regular - Sequencer discontinuous mode
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1226:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_REG_RANK_12                 (ADC_SQR3_REGOFFSET | ADC_REG_RANK_12_SQRX_BITOFFSET_POS
 1227:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            regular sequencer rank 12 */
 1228:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_REG_RANK_13                 (ADC_SQR3_REGOFFSET | ADC_REG_RANK_13_SQRX_BITOFFSET_POS
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 23
 
 
 1229:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            regular sequencer rank 13 */
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1283:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            conversion trigger from external peripheral: TIM4 TRGO. 
 1284:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            rising edge (default setting). */
 1285:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_INJ_TRIG_EXT_TIM6_TRGO      (ADC_JSQR_JEXTSEL_3 | ADC_JSQR_JEXTSEL_2 | \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 24
 
 
 1286:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            ADC_JSQR_JEXTSEL_1 | ADC_INJ_TRIG_EXT_EDGE_DEFAULT)   /*
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1340:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
 1341:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 1342:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 25
 
 
 1343:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EC_INJ_CONTEXT_QUEUE  ADC group injected - Context queue mode
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1397:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 1398:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 1399:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EC_CHANNEL_SAMPLINGTIME  Channel - Sampling time
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 26
 
 
 1400:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @{
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1454:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_ALL_CHANNELS_INJ        (ADC_AWD_CR23_CHANNEL_MASK \
 1455:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_JAWD1EN)                      /*!< ADC analo
 1456:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            of all channels, converted by group injected only */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 27
 
 
 1457:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_ALL_CHANNELS_REG_INJ    (ADC_AWD_CR23_CHANNEL_MASK \
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1511:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_AWD1EN | ADC_CFGR_AWD1SGL)    /*!< ADC analo
 1512:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            of ADC channel ADCx_IN5, converted by group regular only
 1513:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_CHANNEL_5_INJ           ((LL_ADC_CHANNEL_5  & ADC_CHANNEL_ID_MASK) \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 28
 
 
 1514:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_JAWD1EN | ADC_CFGR_AWD1SGL)   /*!< ADC analo
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1568:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_AWD1SGL)                      /*!< ADC analo
 1569:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            of ADC channel ADCx_IN10, converted by either group regu
 1570:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_CHANNEL_11_REG          ((LL_ADC_CHANNEL_11 & ADC_CHANNEL_ID_MASK) \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 29
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 29
 
 
 1571:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_AWD1EN | ADC_CFGR_AWD1SGL)    /*!< ADC analo
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1625:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_JAWD1EN | ADC_CFGR_AWD1SGL)   /*!< ADC analo
 1626:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            of ADC channel ADCx_IN16, converted by group injected on
 1627:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_CHANNEL_16_REG_INJ      ((LL_ADC_CHANNEL_16 & ADC_CHANNEL_ID_MASK) \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 30
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 30
 
 
 1628:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_JAWD1EN | ADC_CFGR_AWD1EN \
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1682:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            always below Vdda, converted by group regular only */
 1683:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_CH_VBAT_INJ             ((LL_ADC_CHANNEL_VBAT          & ADC_CHANNEL_ID_MASK) \
 1684:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_JAWD1EN | ADC_CFGR_AWD1SGL)   /*!< ADC analo
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 31
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 31
 
 
 1685:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            of ADC internal channel connected to Vbat/3: Vbat
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1739:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CFGR_JAWD1EN | ADC_CFGR_AWD1SGL)   /*!< ADC analo
 1740:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            of ADC internal channel connected to DAC1 channel 2,
 1741:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            channel specific to ADC2, converted by group injected on
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 32
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 32
 
 
 1742:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_AWD_CH_DAC1CH2_ADC2_REG_INJ ((LL_ADC_CHANNEL_DAC1CH2_ADC2  & ADC_CHANNEL_ID_MASK) \
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1796:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_OVS_GRP_REGULAR_CONTINUED   (ADC_CFGR2_ROVSE)                   /*!< ADC oversamplin
 1797:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            ADC group regular. If group injected interrupts group re
 1798:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            when ADC group injected is triggered, the oversampling o
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 33
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 33
 
 
 1799:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            is temporary stopped and continued afterwards. */
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1853:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 1854:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
 1855:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 34
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 34
 
 
 1856:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1910:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            regular simultaneous + group injected alternate trigger 
 1911:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_MULTI_DUAL_REG_INT_INJ_SIM  (ADC_CCR_DUAL_1 | ADC_CCR_DUAL_0) /*!< ADC dual mode ena
 1912:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            regular interleaved + group injected simultaneous */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 35
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 35
 
 
 1913:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 1967:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_MULTI_TWOSMP_DELAY_7CYCLES  (ADC_CCR_DELAY_2 | ADC_CCR_DELAY_1) /*!< ADC multimode d
 1968:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                            sampling phases: 7 ADC clock cycles */
 1969:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_MULTI_TWOSMP_DELAY_8CYCLES  (ADC_CCR_DELAY_2 | ADC_CCR_DELAY_1 \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 36
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 36
 
 
 1970:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                             | ADC_CCR_DELAY_0)                  /*!< ADC multimode 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2024:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_OVS_DATA_SHIFT_4            (LL_ADC_OVS_SHIFT_RIGHT_4)
 2025:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_OVS_DATA_SHIFT_5            (LL_ADC_OVS_SHIFT_RIGHT_5)
 2026:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_OVS_DATA_SHIFT_6            (LL_ADC_OVS_SHIFT_RIGHT_6)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 37
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 37
 
 
 2027:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_OVS_DATA_SHIFT_7            (LL_ADC_OVS_SHIFT_RIGHT_7)
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2081:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* parameter "tstart_vrefint").                                               */
 2082:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /* Unit: us                                                                   */
 2083:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_DELAY_VREFINT_STAB_US           ( 12UL)        /*!< Delay for internal voltage refer
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 38
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 38
 
 
 2084:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                                                    time */
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2138:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define LL_ADC_ReadReg(__INSTANCE__, __REG__) READ_REG(__INSTANCE__->__REG__)
 2139:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 2140:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 39
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 39
 
 
 2141:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2195:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 2196:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define __LL_ADC_CHANNEL_TO_DECIMAL_NB(__CHANNEL__)                                        \
 2197:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   ((((__CHANNEL__) & ADC_CHANNEL_ID_BITFIELD_MASK) == 0UL) ?                               \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 40
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 40
 
 
 2198:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****    (                                                                                       \
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2252:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             4.21 Ms/s)).\n
 2253:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (1, 2, 3, 4) For ADC channel read back from ADC register,
 2254:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *                      comparison with internal channel parameter to be done
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 41
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 41
 
 
 2255:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *                      using helper macro @ref __LL_ADC_CHANNEL_INTERNAL_TO_EXTERNAL().
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2309:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_VREFINT      (1)
 2310:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_TEMPSENSOR   (4)
 2311:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_VBAT         (4)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 42
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 42
 
 
 2312:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_DAC1CH1         (5)
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2366:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_18
 2367:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_VREFINT      (1)
 2368:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_TEMPSENSOR   (4)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 43
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 43
 
 
 2369:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_VBAT         (4)
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2423:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  __CHANNEL__ This parameter can be one of the following values:
 2424:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_VREFINT      (1)
 2425:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_TEMPSENSOR   (4)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 44
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 44
 
 
 2426:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_VBAT         (4)
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2480:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****     (                                                                          \
 2481:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****      ((__CHANNEL__) == LL_ADC_CHANNEL_VREFINT)      ||                         \
 2482:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****      ((__CHANNEL__) == LL_ADC_CHANNEL_DAC1CH1_ADC2) ||                         \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 45
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 45
 
 
 2483:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****      ((__CHANNEL__) == LL_ADC_CHANNEL_DAC1CH2_ADC2)                            \
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2537:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *
 2538:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (1) On STM32L4, parameter available only on ADC instance: ADC1.\n
 2539:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (2) On STM32L4, parameter available only on ADC instance: ADC2.\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 46
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 46
 
 
 2540:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (3) On STM32L4, parameter available only on ADC instance: ADC3.\n
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2594:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_11_REG_INJ
 2595:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_12_REG          (0)
 2596:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_12_INJ          (0)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 47
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 47
 
 
 2597:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_12_REG_INJ
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2651:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 2652:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define __LL_ADC_ANALOGWD_CHANNEL_GROUP(__CHANNEL__, __GROUP__)                                    
 2653:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   (((__GROUP__) == LL_ADC_GROUP_REGULAR)                                                           
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 48
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 48
 
 
 2654:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****    ? (((__CHANNEL__) & ADC_CHANNEL_ID_MASK) | ADC_CFGR_AWD1EN | ADC_CFGR_AWD1SGL)                  
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2708:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Helper macro to get the ADC analog watchdog threshold high
 2709:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         or low from raw value containing both thresholds concatenated.
 2710:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   To be used with function @ref LL_ADC_GetAnalogWDThresholds().
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 49
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 49
 
 
 2711:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Example, to get analog watchdog threshold high from the register raw value:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2765:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         considered as master instances (do not depend to
 2766:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         any other ADC instance).
 2767:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  __ADCx__ ADC instance
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 50
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 50
 
 
 2768:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval __ADCx__ ADC instance master of the corresponding ADC common instance
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2822:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** #define __LL_ADC_IS_ENABLED_ALL_COMMON_INSTANCE(__ADCXY_COMMON__)              \
 2823:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   (LL_ADC_IsEnabled(ADC1) |                                                    \
 2824:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****    LL_ADC_IsEnabled(ADC2) |                                                    \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 51
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 51
 
 
 2825:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****    LL_ADC_IsEnabled(ADC3)  )
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2879:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         corresponding to a ADC conversion data (unit: digital value).
 2880:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   Analog reference voltage (Vref+) must be either known from
 2881:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         user board environment or can be calculated using ADC measurement
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 52
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 52
 
 
 2882:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         and ADC helper macro @ref __LL_ADC_CALC_VREFANALOG_VOLTAGE().
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2936:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 2937:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Helper macro to calculate the temperature (unit: degree Celsius)
 2938:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         from ADC conversion data of internal temperature sensor.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 53
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 53
 
 
 2939:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   Computation is using temperature sensor calibration values
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 2993:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****    ) / (int32_t)((int32_t)*TEMPSENSOR_CAL2_ADDR - (int32_t)*TEMPSENSOR_CAL1_ADDR) \
 2994:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   ) + TEMPSENSOR_CAL1_TEMP                                                        \
 2995:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****  )                                                                                \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 54
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 54
 
 
 2996:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****  :                                                                                \
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3050:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                              __VREFANALOG_VOLTAGE__,\
 3051:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                              __TEMPSENSOR_ADC_DATA__,\
 3052:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                              __ADC_RESOLUTION__)            \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 55
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 55
 
 
 3053:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** (((((int32_t)((((__TEMPSENSOR_ADC_DATA__) * (__VREFANALOG_VOLTAGE__))       \
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3107:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCx ADC instance
 3108:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  Register This parameter can be one of the following values:
 3109:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_DMA_REG_REGULAR_DATA
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 56
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 56
 
 
 3110:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_DMA_REG_REGULAR_DATA_MULTI (1)
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3164:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @ref __LL_ADC_IS_ENABLED_ALL_COMMON_INSTANCE().
 3165:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll CCR      CKMODE         LL_ADC_SetCommonClock\n
 3166:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         CCR      PRESC          LL_ADC_SetCommonClock
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 57
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 57
 
 
 3167:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCxy_COMMON ADC common instance
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3221:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Set parameter common to several ADC: measurement path to
 3222:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         internal channels (VrefInt, temperature sensor, ...).
 3223:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Configure all paths (overwrite current configuration).
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 58
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 58
 
 
 3224:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   One or several values can be selected.
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3278:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         CCR      VBATEN         LL_ADC_SetCommonPathInternalChAdd
 3279:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCxy_COMMON ADC common instance
 3280:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMO
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 59
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 59
 
 
 3281:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  PathInternal This parameter can be a combination of the following values:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3335:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 3336:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint32_t)(READ_BIT(ADCxy_COMMON->CCR, ADC_CCR_VREFEN | ADC_CCR_TSEN | ADC_CCR_VBATEN));
 3337:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 60
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 60
 
 
 3338:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3392:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   For devices with differential mode available:
 3393:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Calibration of offset is specific to each of
 3394:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         single-ended and differential modes
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 61
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 61
 
 
 3395:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll CALFACT  CALFACT_S      LL_ADC_GetCalibrationFactor\n
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3449:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_GetResolution(const ADC_TypeDef *ADCx)
 3450:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 3451:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint32_t)(READ_BIT(ADCx->CFGR, ADC_CFGR_RES));
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 62
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 62
 
 
 3452:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3506:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           - It is not recommended to use with interruption or DMA
 3507:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             since these modes have to clear immediately the EOC flag
 3508:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             (by CPU to free the IRQ pending event or by DMA).
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 63
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 63
 
 
 3509:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             Auto wait will work but fort a very short time, discarding
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3563:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             2. Later on, when conversion data is needed: poll for end of
 3564:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             conversion  to ensure that conversion is completed and
 3565:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             retrieve ADC conversion data. This will trig another
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 64
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 64
 
 
 3566:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             ADC conversion start.
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3620:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OFFSET_2
 3621:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OFFSET_3
 3622:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OFFSET_4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 65
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 65
 
 
 3623:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  Channel This parameter can be one of the following values:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3677:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         or group injected)
 3678:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   Usage of the returned channel number:
 3679:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - To reinject this channel into another function LL_ADC_xxx:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 66
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 66
 
 
 3680:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           the returned channel number is only partly formatted on definition
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3734:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (4) On STM32L4, parameter available only on ADC instances: ADC1, ADC3.\n
 3735:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (5) On STM32L4, parameter available on devices with only 1 ADC instance.\n
 3736:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (6) On STM32L4, parameter available on devices with several ADC instances.\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 67
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 67
 
 
 3737:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (7) On STM32L4, fast channel (0.188 us for 12-bit resolution (ADC conversion rate up to
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3791:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         OFR4     OFFSET4_EN     LL_ADC_SetOffsetState
 3792:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCx ADC instance
 3793:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  Offsety This parameter can be one of the following values:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 68
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 68
 
 
 3794:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OFFSET_1
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3848:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_SAMPLINGTIME_COMMON_3C5_REPL_2C5
 3849:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval None
 3850:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 69
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 69
 
 
 3851:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_SetSamplingTimeCommonConfig(ADC_TypeDef *ADCx, uint32_t SamplingTimeCom
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3905:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM2_TRGO
 3906:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM2_CH2
 3907:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM3_TRGO
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 70
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 70
 
 
 3908:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM3_CH4
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 3962:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* corresponding to ADC_CFGR_EXTEN {0; 1; 2; 3}.                            */
 3963:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   uint32_t shift_exten = ((trigger_source & ADC_CFGR_EXTEN) >> (ADC_REG_TRIG_EXTEN_BITOFFSET_POS - 
 3964:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 71
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 71
 
 
 3965:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Set bitfield corresponding to ADC_CFGR_EXTEN and ADC_CFGR_EXTSEL         */
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4019:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_REG_GetTriggerEdge(const ADC_TypeDef *ADCx)
 4020:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 4021:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint32_t)(READ_BIT(ADCx->CFGR, ADC_CFGR_EXTEN));
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 72
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 72
 
 
 4022:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4076:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval None
 4077:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 4078:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_REG_SetSequencerLength(ADC_TypeDef *ADCx, uint32_t SequencerNbRanks)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 73
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 73
 
 
 4079:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4085:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   Description of ADC group regular sequencer features:
 4086:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - For devices with sequencer fully configurable
 4087:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           (function "LL_ADC_REG_SetSequencerRanks()" available):
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 74
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 74
 
 
 4088:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           sequencer length and each rank affectation to a channel
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4142:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         continuous mode and sequencer discontinuous mode.
 4143:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   It is not possible to enable both ADC auto-injected mode
 4144:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         and ADC group regular sequencer discontinuous mode.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 75
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 75
 
 
 4145:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4199:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         fully configurable: sequencer length and each rank
 4200:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         affectation to a channel are configurable.
 4201:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Refer to description of function @ref LL_ADC_REG_SetSequencerLength().
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 76
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 76
 
 
 4202:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   Depending on devices and packages, some channels may not be available.
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4256:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_9
 4257:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_10
 4258:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_11
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 77
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 77
 
 
 4259:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_12
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
   98 000e 3033     		adds	r3, r3, #48
   99 0010 1A46     		mov	r2, r3
  100 0012 BB68     		ldr	r3, [r7, #8]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 78
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 78
 
 
  101 0014 1B0A     		lsrs	r3, r3, #8
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4300:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 4301:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 4302:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get ADC group regular sequence: channel on the selected
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 79
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 79
 
 
 4303:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         scan sequence rank.
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4357:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_1            (7)
 4358:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_2            (7)
 4359:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_3            (7)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 80
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 80
 
 
 4360:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_4            (7)
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4414:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           conversions launched successively automatically.
 4415:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   It is not possible to enable both ADC group regular
 4416:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         continuous mode and sequencer discontinuous mode.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 81
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 81
 
 
 4417:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4471:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         use function @ref LL_ADC_DMA_GetRegAddr().
 4472:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
 4473:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC state:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 82
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 82
 
 
 4474:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC must be disabled or enabled without conversion on going
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4528:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   DFSDM transfer cannot be used if DMA transfer is enabled.
 4529:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   To configure DFSDM source address (peripheral address),
 4530:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         use the same function as for DMA transfer:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 83
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 83
 
 
 4531:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         function @ref LL_ADC_DMA_GetRegAddr().
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4585:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
 4586:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 4587:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 84
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 84
 
 
 4588:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get ADC group regular behavior in case of overrun:
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4642:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_INJ_TRIG_EXT_TIM8_TRGO
 4643:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_INJ_TRIG_EXT_TIM8_TRGO2
 4644:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_INJ_TRIG_EXT_TIM15_TRGO
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 85
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 85
 
 
 4645:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_INJ_TRIG_EXT_EXTI_LINE15
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4699:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****           | ((ADC_INJ_TRIG_EDGE_MASK >> shift_jexten) & ADC_JSQR_JEXTEN)
 4700:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****          );
 4701:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 86
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 86
 
 
 4702:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4756:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   This function performs configuration of:
 4757:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - Sequence length: Number of ranks in the scan sequence.
 4758:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - Sequence direction: Unless specified in parameters, sequencer
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 87
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 87
 
 
 4759:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           scan direction is forward (from rank 1 to rank n).
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4813:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 4814:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_INJ_SetSequencerDiscont(ADC_TypeDef *ADCx, uint32_t SeqDiscont)
 4815:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 88
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 88
 
 
 4816:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   MODIFY_REG(ADCx->CFGR, ADC_CFGR_JDISCEN, SeqDiscont);
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4870:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_10
 4871:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_11
 4872:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 89
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 89
 
 
 4873:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_13
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4927:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           @ref __LL_ADC_CHANNEL_TO_DECIMAL_NB().
 4928:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll JSQR     JSQ1           LL_ADC_INJ_GetSequencerRanks\n
 4929:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         JSQR     JSQ2           LL_ADC_INJ_GetSequencerRanks\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 90
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 90
 
 
 4930:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         JSQR     JSQ3           LL_ADC_INJ_GetSequencerRanks\n
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 4984:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                               (ADC_CHANNEL_ID_NUMBER_MASK >> ADC_CHANNEL_ID_NUMBER_BITOFFSET_POS)
 4985:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                               << (Rank & ADC_INJ_RANK_ID_JSQR_MASK))
 4986:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                      >> (Rank & ADC_INJ_RANK_ID_JSQR_MASK)) << ADC_CHANNEL_ID_NUMBER_BITOFFSET_POS
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 91
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 91
 
 
 4987:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                    );
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5041:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   A context is a setting of group injected sequencer:
 5042:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - group injected trigger
 5043:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - sequencer length
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 92
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 92
 
 
 5044:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - sequencer ranks
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5098:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
 5099:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 5100:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 93
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 93
 
 
 5101:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Set one context on ADC group injected that will be checked in
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5155:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_INJ_TRIG_EXT_FALLING
 5156:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_INJ_TRIG_EXT_RISINGFALLING
 5157:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 94
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 94
 
 
 5158:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Note: This parameter is discarded in case of SW start:
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5212:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_8
 5213:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_9
 5214:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_10
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 95
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 95
 
 
 5215:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_11
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5269:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_DAC1CH2_ADC3 (3)(6)
 5270:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *
 5271:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (1) On STM32L4, parameter available only on ADC instance: ADC1.\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 96
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 96
 
 
 5272:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (2) On STM32L4, parameter available only on ADC instance: ADC2.\n
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5326:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                                    uint32_t Rank4_Channel)
 5327:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 5328:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Set bits with content of parameter "Rankx_Channel" with bits position    */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 97
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 97
 
 
 5329:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* in register depending on literal "LL_ADC_INJ_RANK_x".                    */
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5383:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   In case of ADC conversion of internal channel (VrefInt,
 5384:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         temperature sensor, ...), a sampling time minimum value
 5385:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         is required.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 98
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 98
 
 
 5386:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         Refer to device datasheet.
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5440:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *
 5441:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (1) On STM32L4, parameter available only on ADC instance: ADC1.\n
 5442:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (2) On STM32L4, parameter available only on ADC instance: ADC2.\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 99
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 99
 
 
 5443:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (3) On STM32L4, parameter available only on ADC instance: ADC3.\n
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  176 001c 1344     		add	r3, r3, r2
  177              		.loc 1 5470 18
  178 001e 7B61     		str	r3, [r7, #20]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 100
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 100
 
 
 5471:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                              ((Channel & ADC_CHANNEL_SMPRX_REGOFFSET_MASK) >> ADC_S
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5484:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         On this STM32 series, ADC processing time is:
 5485:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - 12.5 ADC clock cycles at ADC resolution 12 bits
 5486:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - 10.5 ADC clock cycles at ADC resolution 10 bits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 101
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 101
 
 
 5487:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - 8.5 ADC clock cycles at ADC resolution 8 bits
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5541:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (3) On STM32L4, parameter available only on ADC instance: ADC3.\n
 5542:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (4) On STM32L4, parameter available only on ADC instances: ADC1, ADC3.\n
 5543:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (5) On STM32L4, parameter available on devices with only 1 ADC instance.\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 102
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 102
 
 
 5544:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (6) On STM32L4, parameter available on devices with several ADC instances.\n
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5598:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll DIFSEL   DIFSEL         LL_ADC_SetChannelSingleDiff
 5599:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCx ADC instance
 5600:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  Channel This parameter can be one of the following values:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 103
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 103
 
 
 5601:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_1
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5655:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_1
 5656:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_2
 5657:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 104
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 104
 
 
 5658:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_CHANNEL_4
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5712:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           - resolution: resolution is limited to 8 bits: if ADC resolution is
 5713:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             12 bits the 4 LSB are ignored, if ADC resolution is 10 bits
 5714:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *             the 2 LSB are ignored.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 105
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 105
 
 
 5715:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5769:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_11_INJ          (0)
 5770:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_11_REG_INJ
 5771:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_12_REG          (0)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 106
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 106
 
 
 5772:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_12_INJ          (0)
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5826:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (6) On STM32L4, parameter available on devices with several ADC instances.
 5827:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval None
 5828:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 107
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 107
 
 
 5829:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_SetAnalogWDMonitChannels(ADC_TypeDef *ADCx, uint32_t AWDy, uint32_t AWD
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5883:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC must be disabled or enabled without conversion on going
 5884:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         on either groups regular or injected.
 5885:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll CFGR     AWD1CH         LL_ADC_GetAnalogWDMonitChannels\n
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 108
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 108
 
 
 5886:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         CFGR     AWD1SGL        LL_ADC_GetAnalogWDMonitChannels\n
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5940:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_11_REG          (0)
 5941:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_11_INJ          (0)
 5942:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_11_REG_INJ
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 109
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 109
 
 
 5943:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD_CHANNEL_12_REG          (0)
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 5997:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                     | (ADC_AWD2CR_AWD2CH_0 << (analog_wd_monit_channels >> ADC_CFGR
 5998:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                    );
 5999:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****       }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 110
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 110
 
 
 6000:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****     }
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6054:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   If ADC oversampling is enabled, ADC analog watchdog thresholds are
 6055:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         impacted: the comparison of analog watchdog thresholds is done on
 6056:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         oversampling final computation (after ratio and shift application):
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 111
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 111
 
 
 6057:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC data register bitfield [15:4] (12 most significant bits).
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6111:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   On this STM32 series, there are 2 kinds of analog watchdog
 6112:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         instance:
 6113:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         - AWD standard (instance AWD1):
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 112
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 112
 
 
 6114:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *           - channels monitored: can monitor 1 channel or all channels.
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6168:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                                   uint32_t AWDThresholdValue)
 6169:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 6170:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Set bits with content of parameter "AWDThresholdValue" with bits         */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 113
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 113
 
 
 6171:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* position in register and register position depending on parameters       */
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6225:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 6226:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 6227:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EF_Configuration_ADC_oversampling Configuration of ADC transversal scope: over
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 114
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 114
 
 
 6228:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @{
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6282:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 6283:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint32_t)(READ_BIT(ADCx->CFGR2, ADC_CFGR2_ROVSE | ADC_CFGR2_JOVSE | ADC_CFGR2_ROVSM));
 6284:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 115
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 115
 
 
 6285:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6339:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC state:
 6340:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC must be disabled or enabled without conversion on going
 6341:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         on either groups regular or injected.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 116
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 116
 
 
 6342:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll CFGR2    OVSS           LL_ADC_ConfigOverSamplingRatioShift\n
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6396:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval Shift This parameter can be one of the following values:
 6397:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OVS_SHIFT_NONE
 6398:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OVS_SHIFT_RIGHT_1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 117
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 117
 
 
 6399:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_OVS_SHIFT_RIGHT_2
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6453:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get ADC multimode configuration to operate in independent mode
 6454:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         or multimode (for devices with several ADC instances).
 6455:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   If multimode configuration: the selected ADC instance is
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 118
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 118
 
 
 6456:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         either master or slave depending on hardware.
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6510:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll CCR      MDMA           LL_ADC_SetMultiDMATransfer\n
 6511:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         CCR      DMACFG         LL_ADC_SetMultiDMATransfer
 6512:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCxy_COMMON ADC common instance
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 119
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 119
 
 
 6513:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMO
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6567:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 6568:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_GetMultiDMATransfer(const ADC_Common_TypeDef *ADCxy_COMMON)
 6569:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 120
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 120
 
 
 6570:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint32_t)(READ_BIT(ADCxy_COMMON->CCR, ADC_CCR_MDMA | ADC_CCR_DMACFG));
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6624:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_MULTI_TWOSMP_DELAY_6CYCLES  (1)
 6625:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_MULTI_TWOSMP_DELAY_7CYCLES  (1)
 6626:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_MULTI_TWOSMP_DELAY_8CYCLES  (2)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 121
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 121
 
 
 6627:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         @arg @ref LL_ADC_MULTI_TWOSMP_DELAY_9CYCLES  (2)
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6681:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 6682:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Note: Write register with some additional bits forced to state reset     */
 6683:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       instead of modifying only the selected bit for this function,      */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 122
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 122
 
 
 6684:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       to not interfere with bits with HW property "rs".                  */
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6738:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Note: Write register with some additional bits forced to state reset     */
 6739:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       instead of modifying only the selected bit for this function,      */
 6740:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       to not interfere with bits with HW property "rs".                  */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 123
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 123
 
 
 6741:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   MODIFY_REG(ADCx->CR,
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  228              	.LCFI18:
  229              		.cfi_def_cfa_offset 4
  230              		.cfi_offset 7, -4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 124
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 124
 
 
  231 0002 83B0     		sub	sp, sp, #12
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6805:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval None
 6806:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 6807:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_Disable(ADC_TypeDef *ADCx)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 125
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 125
 
 
 6808:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  303 001c 0C37     		adds	r7, r7, #12
  304              	.LCFI27:
  305              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 126
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 126
 
 
  306 001e BD46     		mov	sp, r7
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6866:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 6867:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Note: Write register with some additional bits forced to state reset     */
 6868:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       instead of modifying only the selected bit for this function,      */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 127
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 127
 
 
 6869:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       to not interfere with bits with HW property "rs".                  */
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  335 0002 83B0     		sub	sp, sp, #12
  336              	.LCFI31:
  337              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 128
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 128
 
 
  338 0004 00AF     		add	r7, sp, #0
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 6933:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 6934:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Note: Write register with some additional bits forced to state reset     */
 6935:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       instead of modifying only the selected bit for this function,      */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 129
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 129
 
 
 6936:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       to not interfere with bits with HW property "rs".                  */
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  375              		.loc 1 6989 1
  376              		.cfi_startproc
  377              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 130
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 130
 
 
  378              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7003:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint16_t LL_ADC_REG_ReadConversionData10(const ADC_TypeDef *ADCx)
 7004:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 7005:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint16_t)(READ_BIT(ADCx->DR, ADC_DR_RDATA));
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 131
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 131
 
 
 7006:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7060:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_REG_ReadMultiConversionData32(const ADC_Common_TypeDef *ADCxy_COMMO
 7061:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****                                                               uint32_t ConversionData)
 7062:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 132
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 132
 
 
 7063:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return (uint32_t)(READ_BIT(ADCxy_COMMON->CDR,
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7117:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 7118:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /* Note: Write register with some additional bits forced to state reset     */
 7119:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       instead of modifying only the selected bit for this function,      */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 133
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 133
 
 
 7120:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   /*       to not interfere with bits with HW property "rs".                  */
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7174:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 7175:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 7176:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get ADC group injected conversion data, range fit for
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 134
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 134
 
 
 7177:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC resolution 12 bits.
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7231:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 7232:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get ADC group injected conversion data, range fit for
 7233:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         ADC resolution 8 bits.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 135
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 135
 
 
 7234:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @note   For devices with feature oversampling: Oversampling
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7288:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @}
 7289:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 7290:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 136
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 136
 
 
 7291:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /** @defgroup ADC_LL_EF_FLAG_Management ADC flag management
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  448              		.loc 1 7317 69 discriminator 2
  449 0018 0023     		movs	r3, #0
  450              	.L15:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 137
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 137
 
 
 7318:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7349:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 7350:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return ((READ_BIT(ADCx->ISR, LL_ADC_FLAG_EOSMP) == (LL_ADC_FLAG_EOSMP)) ? 1UL : 0UL);
 7351:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 138
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 138
 
 
 7352:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7406:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
 7407:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 7408:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 139
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 139
 
 
 7409:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get flag ADC analog watchdog 3.
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  496              		.loc 1 7442 1
  497 000e 00BF     		nop
  498 0010 0C37     		adds	r7, r7, #12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 140
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 140
 
 
  499              	.LCFI51:
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7477:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 7478:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Clear flag ADC group injected end of unitary conversion.
 7479:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll ISR      JEOC           LL_ADC_ClearFlag_JEOC
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 141
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 141
 
 
 7480:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCx ADC instance
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7491:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCx ADC instance
 7492:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval None
 7493:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 142
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 142
 
 
 7494:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_ClearFlag_JEOS(ADC_TypeDef *ADCx)
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7548:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMO
 7549:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval State of bit (1 or 0).
 7550:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 143
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 143
 
 
 7551:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_ADRDY(const ADC_Common_TypeDef *ADCxy_COMMON)
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7605:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get flag multimode ADC group regular end of sequence conversions of the ADC slave.
 7606:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll CSR      EOS_SLV        LL_ADC_IsActiveFlag_SLV_EOS
 7607:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @param  ADCxy_COMMON ADC common instance
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 144
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 144
 
 
 7608:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMO
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7662:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
 7663:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 7664:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 145
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 145
 
 
 7665:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Get flag multimode ADC group injected end of unitary conversion of the ADC master.
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7719:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_MST_JQOVF(const ADC_Common_TypeDef *ADCxy_COMMON)
 7720:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 7721:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   return ((READ_BIT(ADCxy_COMMON->CSR, LL_ADC_FLAG_JQOVF_MST) == (LL_ADC_FLAG_JQOVF_MST)) ? 1UL : 0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 146
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 146
 
 
 7722:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7776:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMO
 7777:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @retval State of bit (1 or 0).
 7778:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 147
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 147
 
 
 7779:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_IsActiveFlag_SLV_AWD2(const ADC_Common_TypeDef *ADCxy_COMMON)
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7833:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   */
 7834:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_EnableIT_EOC(ADC_TypeDef *ADCx)
 7835:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 148
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 148
 
 
 7836:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   SET_BIT(ADCx->IER, LL_ADC_IT_EOC);
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7890:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** {
 7891:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   SET_BIT(ADCx->IER, LL_ADC_IT_JEOS);
 7892:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 149
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 149
 
 
 7893:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7947:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** }
 7948:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 7949:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 150
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 150
 
 
 7950:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Disable interruption ADC group regular end of unitary conversion.
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
 7959:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** 
 7960:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h **** /**
 7961:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @brief  Disable interruption ADC group regular end of sequence conversions.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 151
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 151
 
 
 7962:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   * @rmtoll IER      EOSIE          LL_ADC_DisableIT_EOS
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  628 0006 7860     		str	r0, [r7, #4]
 8001:Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h ****   CLEAR_BIT(ADCx->IER, LL_ADC_IT_JEOC);
  629              		.loc 1 8001 3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 152
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 152
 
 
  630 0008 7B68     		ldr	r3, [r7, #4]
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  686              	CHANNEL_OFFSET_TAB:
  687 0000 081C3044 		.ascii	"\010\0340DXl\200"
  687      586C80
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 153
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 153
 
 
  688              		.section	.bss.RCM_handle_array,"aw",%nobits
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
   20:Src/regular_conversion_manager.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
   21:Src/regular_conversion_manager.c ****   * the License. You may obtain a copy of the License at:
   22:Src/regular_conversion_manager.c ****   *                             www.st.com/SLA0044
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 154
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 154
 
 
   23:Src/regular_conversion_manager.c ****   *
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
   77:Src/regular_conversion_manager.c **** 
   78:Src/regular_conversion_manager.c **** typedef struct
   79:Src/regular_conversion_manager.c **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 155
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 155
 
 
   80:Src/regular_conversion_manager.c ****   RCM_exec_cb_t cb;
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  134:Src/regular_conversion_manager.c ****   *
  135:Src/regular_conversion_manager.c ****   * @param  regConv Pointer to the regular conversion parameters.
  136:Src/regular_conversion_manager.c ****   *         Contains ADC, Channel and sampling time to be used.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 156
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 156
 
 
  137:Src/regular_conversion_manager.c ****   *
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  766 002c 044A     		ldr	r2, .L23
  767 002e DB00     		lsls	r3, r3, #3
  768 0030 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 157
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 157
 
 
  769 0032 7A68     		ldr	r2, [r7, #4]
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  179:Src/regular_conversion_manager.c **** void RCM_RegisterRegConv(RegConv_t *regConv)
  180:Src/regular_conversion_manager.c **** {
  798              		.loc 2 180 1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 158
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 158
 
 
  799              		.cfi_startproc
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  835 0024 BB7B     		ldrb	r3, [r7, #14]
  836 0026 FB73     		strb	r3, [r7, #15]
  837              	.L27:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 159
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 159
 
 
  199:Src/regular_conversion_manager.c ****       }
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  215:Src/regular_conversion_manager.c ****           /* Nothing to do */
  216:Src/regular_conversion_manager.c ****         }
  217:Src/regular_conversion_manager.c ****       }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 160
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 160
 
 
  218:Src/regular_conversion_manager.c ****       else
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  231:Src/regular_conversion_manager.c ****         LL_ADC_ClearFlag_EOC(regConv->regADC);
  916              		.loc 2 231 9
  917 00a0 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 161
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 161
 
 
  918 00a2 1B68     		ldr	r3, [r3]
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  959 00ec 1946     		mov	r1, r3
  960 00ee 0123     		movs	r3, #1
  961 00f0 8B40     		lsls	r3, r3, r1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 162
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 162
 
 
  962 00f2 1A43     		orrs	r2, r2, r3
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1006 013e 1A73     		strb	r2, [r3, #12]
  255:Src/regular_conversion_manager.c **** }
  1007              		.loc 2 255 1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 163
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 163
 
 
  1008 0140 00BF     		nop
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1051 0008 7B68     		ldr	r3, [r7, #4]
  1052 000a 1B7B     		ldrb	r3, [r3, #12]
  1053 000c FB73     		strb	r3, [r7, #15]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 164
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 164
 
 
  269:Src/regular_conversion_manager.c ****   LL_ADC_REG_SetSequencerRanks(RCM_handle_array[handle]->regADC,
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1103 006e FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
  1104 0070 224A     		ldr	r2, .L41
  1105 0072 52F82330 		ldr	r3, [r2, r3, lsl #2]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 165
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 165
 
 
  1106 0076 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1152 00cc 52F82330 		ldr	r3, [r2, r3, lsl #2]
  1153              		.loc 2 277 58 discriminator 1
  1154 00d0 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 166
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 166
 
 
  1155              		.loc 2 277 10 discriminator 1
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  288:Src/regular_conversion_manager.c ****  * This function requests the execution of the user-defined regular conversion identified
  289:Src/regular_conversion_manager.c ****  * by @p handle. All user defined conversion requests must be performed inside routines with the
  290:Src/regular_conversion_manager.c ****  * same priority level. If a previous regular conversion request is pending this function has no
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 167
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 167
 
 
  291:Src/regular_conversion_manager.c ****  * effect, for this reason is better to call RCM_GetUserConvState() and check if the state is
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  308:Src/regular_conversion_manager.c ****   else
  309:Src/regular_conversion_manager.c ****   {
  310:Src/regular_conversion_manager.c ****     /* Nothing to do */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 168
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 168
 
 
  311:Src/regular_conversion_manager.c ****   }
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1280 0002 83B0     		sub	sp, sp, #12
  1281              	.LCFI94:
  1282              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 169
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 169
 
 
  1283 0004 00AF     		add	r7, sp, #0
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1325              		.cfi_endproc
  1326              	.LFE1092:
  1328              		.section	.text.RCM_ExecUserConv,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 170
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 170
 
 
  1329              		.align	1
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1369 001a 012B     		cmp	r3, #1
  1370 001c 23D1     		bne	.L55
  352:Src/regular_conversion_manager.c ****     {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 171
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 171
 
 
  353:Src/regular_conversion_manager.c ****       RCM_UserConvValue = RCM_ExecRegularConv(RCM_UserConvHandle);
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  364:Src/regular_conversion_manager.c ****       }
  365:Src/regular_conversion_manager.c ****     }
  366:Src/regular_conversion_manager.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 172
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 172
 
 
  367:Src/regular_conversion_manager.c ****   else
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1451              		.cfi_offset 7, -4
  1452 0002 00AF     		add	r7, sp, #0
  1453              	.LCFI105:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 173
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 173
 
 
  1454              		.cfi_def_cfa_register 7
@@ -10352,80 +10352,80 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 1
  1481              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
  1482              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
  1483              		.file 8 "Inc/regular_conversion_manager.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 174
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 174
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 regular_conversion_manager.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:20     .text.LL_ADC_REG_SetSequencerLength:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:25     .text.LL_ADC_REG_SetSequencerLength:00000000 LL_ADC_REG_SetSequencerLength
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:71     .text.LL_ADC_REG_SetSequencerRanks:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:76     .text.LL_ADC_REG_SetSequencerRanks:00000000 LL_ADC_REG_SetSequencerRanks
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:143    .text.LL_ADC_SetChannelSamplingTime:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:148    .text.LL_ADC_SetChannelSamplingTime:00000000 LL_ADC_SetChannelSamplingTime
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:215    .text.LL_ADC_Enable:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:220    .text.LL_ADC_Enable:00000000 LL_ADC_Enable
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:264    .text.LL_ADC_IsEnabled:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:269    .text.LL_ADC_IsEnabled:00000000 LL_ADC_IsEnabled
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:319    .text.LL_ADC_REG_StartConversion:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:324    .text.LL_ADC_REG_StartConversion:00000000 LL_ADC_REG_StartConversion
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:368    .text.LL_ADC_REG_ReadConversionData12:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:373    .text.LL_ADC_REG_ReadConversionData12:00000000 LL_ADC_REG_ReadConversionData12
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:414    .text.LL_ADC_IsActiveFlag_EOC:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:419    .text.LL_ADC_IsActiveFlag_EOC:00000000 LL_ADC_IsActiveFlag_EOC
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:469    .text.LL_ADC_ClearFlag_EOC:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:474    .text.LL_ADC_ClearFlag_EOC:00000000 LL_ADC_ClearFlag_EOC
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:514    .text.LL_ADC_ClearFlag_JEOC:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:519    .text.LL_ADC_ClearFlag_JEOC:00000000 LL_ADC_ClearFlag_JEOC
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:559    .text.LL_ADC_DisableIT_EOC:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:564    .text.LL_ADC_DisableIT_EOC:00000000 LL_ADC_DisableIT_EOC
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:606    .text.LL_ADC_DisableIT_JEOC:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:611    .text.LL_ADC_DisableIT_JEOC:00000000 LL_ADC_DisableIT_JEOC
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:653    .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:656    .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:659    .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:662    .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:665    .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:668    .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:671    .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:674    .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:677    .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:680    .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:683    .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:686    .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:689    .bss.RCM_handle_array:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:692    .bss.RCM_handle_array:00000000 RCM_handle_array
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:695    .bss.RCM_CB_array:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:698    .bss.RCM_CB_array:00000000 RCM_CB_array
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:701    .bss.RCM_UserConvValue:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:704    .bss.RCM_UserConvValue:00000000 RCM_UserConvValue
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:709    .bss.RCM_UserConvState:00000000 RCM_UserConvState
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:710    .bss.RCM_UserConvState:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:712    .bss.RCM_UserConvHandle:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:715    .bss.RCM_UserConvHandle:00000000 RCM_UserConvHandle
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:718    .text.RCM_RegisterRegConv_WithCB:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:724    .text.RCM_RegisterRegConv_WithCB:00000000 RCM_RegisterRegConv_WithCB
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:796    .text.RCM_RegisterRegConv:00000000 RCM_RegisterRegConv
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:785    .text.RCM_RegisterRegConv_WithCB:00000040 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:790    .text.RCM_RegisterRegConv:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1020   .text.RCM_RegisterRegConv:00000148 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1026   .text.RCM_ExecRegularConv:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1032   .text.RCM_ExecRegularConv:00000000 RCM_ExecRegularConv
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1188   .text.RCM_ExecRegularConv:000000fc $d
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s 			page 175
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:20     .text.LL_ADC_REG_SetSequencerLength:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:25     .text.LL_ADC_REG_SetSequencerLength:00000000 LL_ADC_REG_SetSequencerLength
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:71     .text.LL_ADC_REG_SetSequencerRanks:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:76     .text.LL_ADC_REG_SetSequencerRanks:00000000 LL_ADC_REG_SetSequencerRanks
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:143    .text.LL_ADC_SetChannelSamplingTime:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:148    .text.LL_ADC_SetChannelSamplingTime:00000000 LL_ADC_SetChannelSamplingTime
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:215    .text.LL_ADC_Enable:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:220    .text.LL_ADC_Enable:00000000 LL_ADC_Enable
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:264    .text.LL_ADC_IsEnabled:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:269    .text.LL_ADC_IsEnabled:00000000 LL_ADC_IsEnabled
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:319    .text.LL_ADC_REG_StartConversion:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:324    .text.LL_ADC_REG_StartConversion:00000000 LL_ADC_REG_StartConversion
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:368    .text.LL_ADC_REG_ReadConversionData12:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:373    .text.LL_ADC_REG_ReadConversionData12:00000000 LL_ADC_REG_ReadConversionData12
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:414    .text.LL_ADC_IsActiveFlag_EOC:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:419    .text.LL_ADC_IsActiveFlag_EOC:00000000 LL_ADC_IsActiveFlag_EOC
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:469    .text.LL_ADC_ClearFlag_EOC:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:474    .text.LL_ADC_ClearFlag_EOC:00000000 LL_ADC_ClearFlag_EOC
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:514    .text.LL_ADC_ClearFlag_JEOC:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:519    .text.LL_ADC_ClearFlag_JEOC:00000000 LL_ADC_ClearFlag_JEOC
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:559    .text.LL_ADC_DisableIT_EOC:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:564    .text.LL_ADC_DisableIT_EOC:00000000 LL_ADC_DisableIT_EOC
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:606    .text.LL_ADC_DisableIT_JEOC:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:611    .text.LL_ADC_DisableIT_JEOC:00000000 LL_ADC_DisableIT_JEOC
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:653    .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:656    .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:659    .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:662    .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:665    .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:668    .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:671    .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:674    .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:677    .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:680    .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:683    .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:686    .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:689    .bss.RCM_handle_array:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:692    .bss.RCM_handle_array:00000000 RCM_handle_array
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:695    .bss.RCM_CB_array:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:698    .bss.RCM_CB_array:00000000 RCM_CB_array
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:701    .bss.RCM_UserConvValue:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:704    .bss.RCM_UserConvValue:00000000 RCM_UserConvValue
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:709    .bss.RCM_UserConvState:00000000 RCM_UserConvState
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:710    .bss.RCM_UserConvState:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:712    .bss.RCM_UserConvHandle:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:715    .bss.RCM_UserConvHandle:00000000 RCM_UserConvHandle
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:718    .text.RCM_RegisterRegConv_WithCB:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:724    .text.RCM_RegisterRegConv_WithCB:00000000 RCM_RegisterRegConv_WithCB
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:796    .text.RCM_RegisterRegConv:00000000 RCM_RegisterRegConv
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:785    .text.RCM_RegisterRegConv_WithCB:00000040 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:790    .text.RCM_RegisterRegConv:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1020   .text.RCM_RegisterRegConv:00000148 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1026   .text.RCM_ExecRegularConv:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1032   .text.RCM_ExecRegularConv:00000000 RCM_ExecRegularConv
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1188   .text.RCM_ExecRegularConv:000000fc $d
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s 			page 175
 
 
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1193   .text.RCM_RequestUserConv:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1199   .text.RCM_RequestUserConv:00000000 RCM_RequestUserConv
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1257   .text.RCM_RequestUserConv:00000034 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1263   .text.RCM_GetUserConv:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1269   .text.RCM_GetUserConv:00000000 RCM_GetUserConv
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1323   .text.RCM_GetUserConv:00000030 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1329   .text.RCM_ExecUserConv:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1335   .text.RCM_ExecUserConv:00000000 RCM_ExecUserConv
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1427   .text.RCM_ExecUserConv:00000070 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1435   .text.RCM_GetUserConvState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1441   .text.RCM_GetUserConvState:00000000 RCM_GetUserConvState
-C:\Users\ep_ygh\AppData\Local\Temp\ccoSCvg1.s:1472   .text.RCM_GetUserConvState:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1193   .text.RCM_RequestUserConv:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1199   .text.RCM_RequestUserConv:00000000 RCM_RequestUserConv
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1257   .text.RCM_RequestUserConv:00000034 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1263   .text.RCM_GetUserConv:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1269   .text.RCM_GetUserConv:00000000 RCM_GetUserConv
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1323   .text.RCM_GetUserConv:00000030 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1329   .text.RCM_ExecUserConv:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1335   .text.RCM_ExecUserConv:00000000 RCM_ExecUserConv
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1427   .text.RCM_ExecUserConv:00000070 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1435   .text.RCM_GetUserConvState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1441   .text.RCM_GetUserConvState:00000000 RCM_GetUserConvState
+C:\Users\ep_ygh\AppData\Local\Temp\cc5s13vg.s:1472   .text.RCM_GetUserConvState:00000014 $d
 
 NO UNDEFINED SYMBOLS

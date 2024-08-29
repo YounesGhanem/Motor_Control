@@ -815,7 +815,7 @@ void HAL_DMA_IRQHandler(DMA_HandleTypeDef *hdma)
     if ((hdma->Instance->CCR & DMA_CCR_CIRC) == 0U)
     {
       /* Disable the half transfer interrupt */
-      __HAL_DMA_DISABLE_IT(hdma, DMA_IT_HT);
+      //__HAL_DMA_DISABLE_IT(hdma, DMA_IT_HT);
     }
     /* Clear the half transfer complete flag */
     hdma->DmaBaseAddress->IFCR = DMA_ISR_HTIF1 << (hdma->ChannelIndex & 0x1CU);

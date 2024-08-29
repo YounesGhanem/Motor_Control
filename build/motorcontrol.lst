@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 1
   56              		.section	.bss.pMCI,"aw",%nobits
   57              		.align	2
   60              	pMCI:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s 			page 2
 
 
   61 0000 00000000 		.space	4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 1
   45:Src/motorcontrol.c ****  *
   46:Src/motorcontrol.c ****  * CubeMX calls this function after all peripherals initializations and
   47:Src/motorcontrol.c ****  * before the NVIC is configured
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s 			page 3
 
 
   48:Src/motorcontrol.c ****  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 1
  117 0002 00AF     		add	r7, sp, #0
  118              	.LCFI3:
  119              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s 			page 4
 
 
   59:Src/motorcontrol.c ****   /* Reconfigure the SysTick interrupt to fire every 500 us. */
@@ -219,31 +219,31 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 1
  153              		.file 14 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/trajectory_ctrl.h"
  154              		.file 15 "Inc/mc_interface.h"
  155              		.file 16 "Inc/mc_config.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 motorcontrol.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:60     .bss.pMCI:00000000 pMCI
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:57     .bss.pMCI:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:63     .text.MX_MotorControl_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:69     .text.MX_MotorControl_Init:00000000 MX_MotorControl_Init
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:95     .text.MX_MotorControl_Init:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:100    .text.vPortSetupTimerInterrupt:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:106    .text.vPortSetupTimerInterrupt:00000000 vPortSetupTimerInterrupt
-C:\Users\ep_ygh\AppData\Local\Temp\ccPOVzOF.s:135    .text.vPortSetupTimerInterrupt:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:60     .bss.pMCI:00000000 pMCI
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:57     .bss.pMCI:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:63     .text.MX_MotorControl_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:69     .text.MX_MotorControl_Init:00000000 MX_MotorControl_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:95     .text.MX_MotorControl_Init:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:100    .text.vPortSetupTimerInterrupt:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:106    .text.vPortSetupTimerInterrupt:00000000 vPortSetupTimerInterrupt
+C:\Users\ep_ygh\AppData\Local\Temp\ccdkvlVP.s:135    .text.vPortSetupTimerInterrupt:0000001c $d
 
 UNDEFINED SYMBOLS
 MCboot

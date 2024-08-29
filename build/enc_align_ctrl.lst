@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
   56              		.align	1
   57              		.weak	EAC_Init
   58              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 2
 
 
   59              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
   67              		@ args = 0, pretend = 0, frame = 16
   68              		@ frame_needed = 1, uses_anonymous_args = 0
   69              		@ link register save eliminated.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 3
 
 
   70 0000 80B4     		push	{r7}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  107              	.LCFI3:
  108              		.cfi_def_cfa_offset 4
  109 0030 BD46     		mov	sp, r7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 4
 
 
  110              	.LCFI4:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
   85:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     VSS_SetMecAcceleration(pHandle->pVSS, 0, 0U);
  146              		.loc 1 85 5
  147 0008 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 5
 
 
  148 000a 5B68     		ldr	r3, [r3, #4]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  188              		.loc 1 99 13
  189 005a 1A46     		mov	r2, r3
  190              		.loc 1 99 65
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 6
 
 
  191 005c 7B68     		ldr	r3, [r7, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  240              	EAC_Exec:
  241              	.LFB1090:
  107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 7
 
 
  108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** /**
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  271 0018 013B     		subs	r3, r3, #1
  272 001a 9AB2     		uxth	r2, r3
  273 001c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 8
 
 
  274 001e 9A81     		strh	r2, [r3, #12]	@ movhi
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  150:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #ifdef NULL_PTR_CHECK_ENC_ALI_CTRL
  151:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
  152:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 9
 
 
  153:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  351              		.loc 1 168 18
  352 0008 7B68     		ldr	r3, [r7, #4]
  353 000a 9B7B     		ldrb	r3, [r3, #14]	@ zero_extendqisi2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 10
 
 
  169:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c **** #endif
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  181:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   {
  182:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****     /* Nothing to do */
  183:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 11
 
 
  184:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c ****   else
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  438              	.LCFI29:
  439              		.cfi_def_cfa_offset 16
  440 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 12
 
 
  441              	.LCFI30:
@@ -703,36 +703,36 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 1
  475              		.file 11 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/virtual_speed_sensor.h"
  476              		.file 12 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
  477              		.file 13 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/enc_align_ctrl.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 enc_align_ctrl.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:56     .text.EAC_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:62     .text.EAC_Init:00000000 EAC_Init
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:122    .text.EAC_StartAlignment:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:128    .text.EAC_StartAlignment:00000000 EAC_StartAlignment
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:229    .text.EAC_StartAlignment:00000090 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:234    .text.EAC_Exec:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:240    .text.EAC_Exec:00000000 EAC_Exec
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:327    .text.EAC_IsAligned:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:333    .text.EAC_IsAligned:00000000 EAC_IsAligned
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:372    .text.EAC_SetRestartState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:378    .text.EAC_SetRestartState:00000000 EAC_SetRestartState
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:420    .text.EAC_GetRestartState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccouhUF8.s:426    .text.EAC_GetRestartState:00000000 EAC_GetRestartState
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:56     .text.EAC_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:62     .text.EAC_Init:00000000 EAC_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:122    .text.EAC_StartAlignment:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:128    .text.EAC_StartAlignment:00000000 EAC_StartAlignment
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:229    .text.EAC_StartAlignment:00000090 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:234    .text.EAC_Exec:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:240    .text.EAC_Exec:00000000 EAC_Exec
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:327    .text.EAC_IsAligned:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:333    .text.EAC_IsAligned:00000000 EAC_IsAligned
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:372    .text.EAC_SetRestartState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:378    .text.EAC_SetRestartState:00000000 EAC_SetRestartState
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:420    .text.EAC_GetRestartState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccjt7WmX.s:426    .text.EAC_GetRestartState:00000000 EAC_GetRestartState
 
 UNDEFINED SYMBOLS
 VSS_SetMecAcceleration

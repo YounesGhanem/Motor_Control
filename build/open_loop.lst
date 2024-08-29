@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
   56              		.align	1
   57              		.weak	OL_Init
   58              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 2
 
 
   59              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
   50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c **** __weak void OL_Init(OpenLoop_Handle_t *pHandle, VirtualSpeedSensor_Handle_t *pVSS)
   51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c **** {
   65              		.loc 1 51 1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 3
 
 
   66              		.cfi_startproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  106              		.cfi_endproc
  107              	.LFE1088:
  109              		.section	.text.OL_VqdConditioning,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 4
 
 
  110              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  148 0020 FA89     		ldrh	r2, [r7, #14]
  149 0022 62F31F43 		bfi	r3, r2, #16, #16
   83:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 5
 
 
  150              		.loc 1 83 1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
   96:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c ****   }
   97:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c ****   else
   98:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c ****   {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 6
 
 
   99:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c **** #endif
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  237              	.LCFI20:
  238              		.cfi_def_cfa_register 7
  239 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 7
 
 
  112:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c ****   int16_t hVoltage;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  280              		.cfi_offset 7, -4
  281 0002 83B0     		sub	sp, sp, #12
  282              	.LCFI25:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 8
 
 
  283              		.cfi_def_cfa_offset 16
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  323              		.loc 1 141 27
  324 0042 7B68     		ldr	r3, [r7, #4]
  325 0044 1A81     		strh	r2, [r3, #8]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 9
 
 
  142:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c ****       }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  359 0076 BD46     		mov	sp, r7
  360              	.LCFI28:
  361              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 10
 
 
  362              		@ sp needed
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  401 0010 9A70     		strb	r2, [r3, #2]
  173:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c **** #ifdef NULL_PTR_CHECK_OPEN_LOOP
  174:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 11
 
 
  175:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/open_loop.c **** #endif
@@ -629,34 +629,34 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 1
  426              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/speed_pos_fdbk.h"
  427              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/virtual_speed_sensor.h"
  428              		.file 9 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/open_loop.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 open_loop.c
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:56     .text.OL_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:62     .text.OL_Init:00000000 OL_Init
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:110    .text.OL_VqdConditioning:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:116    .text.OL_VqdConditioning:00000000 OL_VqdConditioning
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:168    .text.OL_UpdateVoltage:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:174    .text.OL_UpdateVoltage:00000000 OL_UpdateVoltage
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:216    .text.OL_GetVoltage:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:222    .text.OL_GetVoltage:00000000 OL_GetVoltage
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:264    .text.OL_Calc:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:270    .text.OL_Calc:00000000 OL_Calc
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:372    .text.OL_VF:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cccYPchz.s:378    .text.OL_VF:00000000 OL_VF
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:56     .text.OL_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:62     .text.OL_Init:00000000 OL_Init
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:110    .text.OL_VqdConditioning:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:116    .text.OL_VqdConditioning:00000000 OL_VqdConditioning
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:168    .text.OL_UpdateVoltage:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:174    .text.OL_UpdateVoltage:00000000 OL_UpdateVoltage
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:216    .text.OL_GetVoltage:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:222    .text.OL_GetVoltage:00000000 OL_GetVoltage
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:264    .text.OL_Calc:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:270    .text.OL_Calc:00000000 OL_Calc
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:372    .text.OL_VF:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc7HuoyL.s:378    .text.OL_VF:00000000 OL_VF
 
 NO UNDEFINED SYMBOLS

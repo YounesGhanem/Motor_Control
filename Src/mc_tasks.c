@@ -25,7 +25,7 @@
 //cstat +MISRAC2012-Rule-21.1
 #include "mc_type.h"
 #include "mc_math.h"
-#include "motorcontrol.h"
+#include "motorcontrol.h"   // include mc_config.h which includes ENCODER_M1 and HALL_M1
 #include "regular_conversion_manager.h"
 #include "cmsis_os.h"
 #include "mc_interface.h"
@@ -147,12 +147,16 @@ __weak void MCboot( MCI_Handle_t* pMCIList[NBR_OF_MOTORS] )
     /*   Main speed sensor component initialization       */
     /******************************************************/
     ENC_Init (&ENCODER_M1);
+    HALL_Init(&HALL_M1);
 
     /******************************************************/
     /*   Main encoder alignment component initialization  */
     /******************************************************/
     EAC_Init(&EncAlignCtrlM1,pSTC[M1],&VirtualSpeedSensorM1,&ENCODER_M1);
     pEAC[M1] = &EncAlignCtrlM1;
+
+   /* TODO : */
+    
 
     /******************************************************/
     /*   Position Control component initialization        */
@@ -254,7 +258,7 @@ __weak void MC_RunMotorControlTasks(void)
  */
 void TSK_MF_StopProcessing(uint8_t motor)
 {
-    R3_1_SwitchOffPWM(pwmcHandle[motor]);
+    //R3_1_SwitchOffPWM(pwmcHandle[motor]);
 
   FOC_Clear(motor);
   PQD_Clear(pMPM[motor]);
@@ -435,7 +439,7 @@ __weak void TSK_MediumFrequencyTaskM1(void)
           {
             if (TSK_ChargeBootCapDelayHasElapsedM1())
             {
-              R3_1_SwitchOffPWM(pwmcHandle[M1]);
+              //R3_1_SwitchOffPWM(pwmcHandle[M1]);
               FOCVars[M1].bDriveInput = EXTERNAL;
               STC_SetSpeedSensor( pSTC[M1], &VirtualSpeedSensorM1._Super );
               ENC_Clear(&ENCODER_M1);
@@ -485,7 +489,7 @@ __weak void TSK_MediumFrequencyTaskM1(void)
             }
             else
             {
-              R3_1_SwitchOffPWM( pwmcHandle[M1] );
+              //R3_1_SwitchOffPWM( pwmcHandle[M1] );
               STC_SetControlMode(pSTC[M1], MCM_SPEED_MODE);
               STC_SetSpeedSensor(pSTC[M1], &ENCODER_M1._Super);
               FOC_Clear(M1);
@@ -755,8 +759,6 @@ __attribute__((section (".ccmram")))
 #endif
 #endif
 
-extern ADC_HandleTypeDef hadc2;
-
 /**
   * @brief  Executes the Motor Control duties that require a high frequency rate and a precise timing.
   *
@@ -770,37 +772,12 @@ __weak uint8_t TSK_HighFrequencyTask(void)
 
   uint16_t hFOCreturn;
   uint8_t bMotorNbr = 0;
-  uint32_t adcValue1, adcValue2, adcValue3;
   MC_Perf_Measure_Start(&PerfTraces, MEASURE_TSK_HighFrequencyTaskM1);
   /* USER CODE BEGIN HighFrequencyTask 0 */
 
   /* USER CODE END HighFrequencyTask 0 */
 
-  //(void)ENC_CalcAngle(&ENCODER_M1);   /* If not sensorless then 2nd parameter is MC_NULL */
-
-  // if (LL_ADC_IsActiveFlag_EOS(ADC2) )
-  // {
-  //   LL_ADC_ClearFlag_EOS( ADC2 );
-  //   adcValue1 = HAL_ADC_GetValue()
-  //   adcValue2 = HAL_ADC_GetValue();
-  //   adcValue3 = HAL_ADC_GetValue();
-
-
-  //   (void)HALL_CalcAngle(&HALL_M1);
-  //   // Add your code here
-  // }
-
-    if (__HAL_ADC_GET_FLAG(&hadc2, ADC_FLAG_EOS))
-    {
-        // EOS est actif, on peut lire les valeurs
-        adcValue1 = HAL_ADC_GetValue(&hadc2); // Lecture de la première valeur
-        adcValue2 = HAL_ADC_GetValue(&hadc2); // Lecture de la deuxième valeur
-        adcValue3 = HAL_ADC_GetValue(&hadc2); // Lecture de la troisième valeur
-
-        (void)HALL_CalcAngle(&HALL_M1);
-
-        __HAL_ADC_CLEAR_FLAG(&hadc2, ADC_FLAG_EOS);
-    }
+  (void)ENC_CalcAngle(&ENCODER_M1);   /* If not sensorless then 2nd parameter is MC_NULL */
 
   /* USER CODE BEGIN HighFrequencyTask SINGLEDRIVE_1 */
 
@@ -1013,7 +990,7 @@ __weak void TSK_HardwareFaultTask(void)
   /* USER CODE BEGIN TSK_HardwareFaultTask 0 */
 
   /* USER CODE END TSK_HardwareFaultTask 0 */
-  R3_1_SwitchOffPWM(pwmcHandle[M1]);
+ // R3_1_SwitchOffPWM(pwmcHandle[M1]);
   MCI_FaultProcessing(&Mci[M1], MC_SW_ERROR, 0);
 
   /* USER CODE BEGIN TSK_HardwareFaultTask 1 */

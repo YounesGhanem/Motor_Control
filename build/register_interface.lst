@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
   56              		.align	1
   57              		.global	RI_SetRegisterGlobal
   58              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 2
 
 
   59              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
   81 0008 7B60     		str	r3, [r7, #4]
   82 000a 0346     		mov	r3, r0	@ movhi
   83 000c FB81     		strh	r3, [r7, #14]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 3
 
 
   84 000e 0B46     		mov	r3, r1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
   39:Src/register_interface.c ****       switch (regID)
  133              		.loc 1 39 7
  134 00ac FB89     		ldrh	r3, [r7, #14]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 4
 
 
  135 00ae 482B     		cmp	r3, #72
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  169 00e8 0ED0     		beq	.L23
  170 00ea B3F5656F 		cmp	r3, #3664
  171 00ee 08DC     		bgt	.L13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 5
 
 
  172 00f0 B3F5B26F 		cmp	r3, #1424
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
   86:Src/register_interface.c **** 
   87:Src/register_interface.c ****       switch (regID)
  199              		.loc 1 87 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 6
 
 
  200 0112 FB89     		ldrh	r3, [r7, #14]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  110:Src/register_interface.c ****       /* Used to compute String length stored in RXBUFF even if Reg does not exist */
  111:Src/register_interface.c ****       /* It allows to jump to the next command in the buffer */
  112:Src/register_interface.c ****       (void)RI_MovString(charData, dummy, size, dataAvailable);
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 7
 
 
  232              		.loc 1 112 13
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  126:Src/register_interface.c ****       {
  127:Src/register_interface.c ****         /* The decoded size of the raw structure can not match with transmitted buffer, error in bu
  128:Src/register_interface.c ****            construction */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 8
 
 
  129:Src/register_interface.c ****         *size = 0;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  300 019a FB77     		strb	r3, [r7, #31]
  142:Src/register_interface.c ****           }
  301              		.loc 1 142 13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 9
 
 
  302 019c 02E0     		b	.L19
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  344              		.thumb_func
  346              	RI_SetRegisterMotor1:
  347              	.LFB1091:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 10
 
 
  165:Src/register_interface.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  394 0040 C5000000 		.word	.L31+1
  395 0044 9D070000 		.word	.L25+1
  396 0048 9D070000 		.word	.L25+1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 11
 
 
  397 004c 9D070000 		.word	.L25+1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  179:Src/register_interface.c ****           {
  180:Src/register_interface.c ****             retVal = MCP_ERROR_RO_REG;
  445              		.loc 1 180 20
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 12
 
 
  446 00e8 0423     		movs	r3, #4
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  200:Src/register_interface.c ****           else
  201:Src/register_interface.c ****           {
  202:Src/register_interface.c ****             /* Nothing to do */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 13
 
 
  203:Src/register_interface.c ****           }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  223:Src/register_interface.c ****     }
  224:Src/register_interface.c **** 
  225:Src/register_interface.c ****     case TYPE_DATA_16BIT:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 14
 
 
  226:Src/register_interface.c ****     {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  565 01ea 41F29052 		movw	r2, #5520
  566 01ee 9342     		cmp	r3, r2
  567 01f0 00F3DE81 		bgt	.L41
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 15
 
 
  568 01f4 41F25052 		movw	r2, #5456
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  622 02ac B3F5656F 		cmp	r3, #3664
  623 02b0 00F37E81 		bgt	.L41
  624 02b4 B3F5316F 		cmp	r3, #2832
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 16
 
 
  625 02b8 00F01981 		beq	.L58
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  679 0390 00F30E81 		bgt	.L41
  680 0394 B3F5F26F 		cmp	r3, #1936
  681 0398 00F08B80 		beq	.L61
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 17
 
 
  682 039c B3F5F26F 		cmp	r3, #1936
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  731              		.loc 1 233 11
  732 0438 BFE0     		b	.L71
  733              	.L70:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 18
 
 
  234:Src/register_interface.c ****         }
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  764 0470 A3E0     		b	.L71
  765              	.L65:
  258:Src/register_interface.c ****         }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 19
 
 
  259:Src/register_interface.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  797              	.L40:
  282:Src/register_interface.c ****         }
  283:Src/register_interface.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 20
 
 
  284:Src/register_interface.c ****         case MC_REG_BUS_VOLTAGE:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  825 04d2 72E0     		b	.L71
  826              	.L59:
  827              	.LBE7:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 21
 
 
  828              	.LBB8:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  853 04f6 B7F92A30 		ldrsh	r3, [r7, #42]
  854 04fa 1946     		mov	r1, r3
  855 04fc 7748     		ldr	r0, .L90+12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 22
 
 
  856 04fe FFF7FEFF 		bl	PID_SetKP
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  886 052e 1946     		mov	r1, r3
  887 0530 6748     		ldr	r0, .L90
  888 0532 FFF7FEFF 		bl	PID_SetKIDivisorPOW2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 23
 
 
  364:Src/register_interface.c ****           break;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  919 0560 5D48     		ldr	r0, .L90+8
  920 0562 FFF7FEFF 		bl	PID_SetKDDivisorPOW2
  388:Src/register_interface.c ****           break;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 24
 
 
  921              		.loc 1 388 11
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  952 0592 FFF7FEFF 		bl	PID_SetKPDivisorPOW2
  412:Src/register_interface.c ****           break;
  953              		.loc 1 412 11
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 25
 
 
  954 0596 10E0     		b	.L71
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  985              		.loc 1 434 7
  986 05c0 F3E0     		b	.L39
  987              	.L29:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 26
 
 
  988              	.LBE6:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  453:Src/register_interface.c ****           break;
  1024              		.loc 1 453 11
  1025 05fc 03E0     		b	.L75
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 27
 
 
  1026              	.L73:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1059              	.L26:
  1060              	.LBE10:
  1061              	.LBB11:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 28
 
 
  475:Src/register_interface.c ****     }
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  492:Src/register_interface.c ****       }
  493:Src/register_interface.c ****       else
  494:Src/register_interface.c ****       {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 29
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 29
 
 
  495:Src/register_interface.c ****         switch (regID)
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  549:Src/register_interface.c ****           case MC_REG_ASYNC_UARTA:
  550:Src/register_interface.c ****           {
  551:Src/register_interface.c ****             retVal =  MCPA_cfgLog (&MCPA_UART_A, rawData);
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 30
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 30
 
 
  552:Src/register_interface.c ****             break;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  503:Src/register_interface.c ****           }
  1140              		.loc 1 503 13
  1141 06cc 65E0     		b	.L77
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 31
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 31
 
 
  1142              	.L91:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1188 071c B7F84220 		ldrh	r2, [r7, #66]
  1189 0720 1946     		mov	r1, r3
  1190 0722 386D     		ldr	r0, [r7, #80]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 32
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 32
 
 
  1191 0724 FFF7FEFF 		bl	MCI_ExecTorqueRamp
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1230 0758 F0EE470A 		vmov.f32	s1, s14
  1231 075c B0EE670A 		vmov.f32	s0, s15
  1232 0760 386D     		ldr	r0, [r7, #80]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 33
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 33
 
 
  1233 0762 FFF7FEFF 		bl	MCI_ExecPositionCommand
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  565:Src/register_interface.c ****     default:
  566:Src/register_interface.c ****     {
  567:Src/register_interface.c ****       retVal = MCP_ERROR_BAD_DATA_TYPE;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 34
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 34
 
 
  1275              		.loc 1 567 14
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1323 0002 8EB0     		sub	sp, sp, #56
  1324              	.LCFI11:
  1325              		.cfi_def_cfa_offset 64
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 35
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 35
 
 
  1326 0004 00AF     		add	r7, sp, #0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1376 0080 15010000 		.word	.L99+1
  1377 0084 55020000 		.word	.L95+1
  1378 0088 55020000 		.word	.L95+1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 36
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 36
 
 
  1379 008c 55020000 		.word	.L95+1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1412 00dc 0823     		movs	r3, #8
  1413 00de 87F83730 		strb	r3, [r7, #55]
  1414              		.loc 1 599 9
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 37
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 37
 
 
  1415 00e2 BBE0     		b	.L104
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  622:Src/register_interface.c ****         }
  1443              		.loc 1 622 18
  1444 010c 0823     		movs	r3, #8
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 38
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 38
 
 
  1445 010e 87F83730 		strb	r3, [r7, #55]
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1485              		.loc 1 638 27
  1486 0158 3B6A     		ldr	r3, [r7, #32]
  1487 015a 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 39
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 39
 
 
  639:Src/register_interface.c ****               break;
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  655:Src/register_interface.c ****               break;
  1526              		.loc 1 655 15
  1527 0190 03E0     		b	.L115
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 40
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 40
 
 
  1528              	.L112:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1560 01b8 15E0     		b	.L126
  1561              	.L117:
  677:Src/register_interface.c ****         {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 41
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 41
 
 
  678:Src/register_interface.c ****           case MC_REG_FW_NAME:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1597              	.LBE20:
  1598              	.LBB21:
  697:Src/register_interface.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 42
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 42
 
 
  698:Src/register_interface.c ****       }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  717:Src/register_interface.c ****             {
  718:Src/register_interface.c ****               (void)memcpy(rawData, &globalConfig_reg, sizeof(GlobalConfig_reg_t));
  719:Src/register_interface.c ****             }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 43
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 43
 
 
  720:Src/register_interface.c ****             break;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  739:Src/register_interface.c ****         retVal = MCP_ERROR_BAD_DATA_TYPE;
  1668              		.loc 1 739 16
  1669 0254 0723     		movs	r3, #7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 44
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 44
 
 
  1670 0256 87F83730 		strb	r3, [r7, #55]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1719              	.LCFI17:
  1720              		.cfi_def_cfa_register 7
  1721 0006 BA60     		str	r2, [r7, #8]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 45
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 45
 
 
  1722 0008 7B60     		str	r3, [r7, #4]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1771 0088 2F070000 		.word	.L135+1
  1772 008c 0F0B0000 		.word	.L131+1
  1773 0090 0F0B0000 		.word	.L131+1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 46
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 46
 
 
  1774 0094 0F0B0000 		.word	.L131+1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  762:Src/register_interface.c ****               break;
  1818              		.loc 1 762 15
  1819 0108 1CE0     		b	.L144
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 47
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 47
 
 
  1820              	.L143:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  783:Src/register_interface.c ****             default:
  784:Src/register_interface.c ****             {
  785:Src/register_interface.c ****               retVal = MCP_ERROR_UNKNOWN_REG;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 48
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 48
 
 
  1854              		.loc 1 785 22
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1889 0172 40F3D882 		ble	.L147
  804:Src/register_interface.c ****         {
  805:Src/register_interface.c ****           switch (regID)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 49
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 49
 
 
  1890              		.loc 1 805 11
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  1944 0226 9342     		cmp	r3, r2
  1945 0228 00F37482 		bgt	.L149
  1946 022c 41F2D042 		movw	r2, #5328
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 50
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 50
 
 
  1947 0230 9342     		cmp	r3, r2
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2001 02f0 00F31082 		bgt	.L149
  2002 02f4 B3F5256F 		cmp	r3, #2640
  2003 02f8 00F06181 		beq	.L168
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 51
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 51
 
 
  2004 02fc B3F5256F 		cmp	r3, #2640
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2058 03d2 B3F5347F 		cmp	r3, #720
  2059 03d6 63D0     		beq	.L182
  2060 03d8 B3F5347F 		cmp	r3, #720
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 52
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 52
 
 
  2061 03dc 00F39A81 		bgt	.L149
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2105 044a FB6D     		ldr	r3, [r7, #92]
  2106 044c 1A80     		strh	r2, [r3]	@ movhi
  816:Src/register_interface.c ****               break;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 53
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 53
 
 
  2107              		.loc 1 816 15
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  835:Src/register_interface.c ****             }
  836:Src/register_interface.c **** 
  837:Src/register_interface.c ****             case MC_REG_I_Q_KD:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 54
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 54
 
 
  838:Src/register_interface.c ****             {
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2177 04b0 9048     		ldr	r0, .L227+8
  2178 04b2 FFF7FEFF 		bl	PID_GetKD
  2179 04b6 0346     		mov	r3, r0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 55
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 55
 
 
  2180 04b8 1A46     		mov	r2, r3
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2216              		.loc 1 875 26
  2217 04f2 FB6D     		ldr	r3, [r7, #92]
  2218 04f4 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 56
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 56
 
 
  876:Src/register_interface.c ****               break;
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2255              		.loc 1 893 26
  2256 0534 FB6D     		ldr	r3, [r7, #92]
  2257 0536 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 57
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 57
 
 
  894:Src/register_interface.c ****               break;
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2294              		.loc 1 911 26
  2295 0576 FB6D     		ldr	r3, [r7, #92]
  2296 0578 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 58
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 58
 
 
  912:Src/register_interface.c ****               break;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2333              		.loc 1 929 26
  2334 05b8 FB6D     		ldr	r3, [r7, #92]
  2335 05ba 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 59
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 59
 
 
  930:Src/register_interface.c ****               break;
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2372 05f6 1A80     		strh	r2, [r3]	@ movhi
  948:Src/register_interface.c ****               break;
  2373              		.loc 1 948 15
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 60
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 60
 
 
  2374 05f8 91E0     		b	.L190
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2406              		.loc 1 970 15
  2407 0628 79E0     		b	.L190
  2408              	.L161:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 61
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 61
 
 
  971:Src/register_interface.c ****             }
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  992:Src/register_interface.c ****             {
  993:Src/register_interface.c ****               *regdataU16 = PID_GetKDDivisorPOW2(&PIDSpeedHandle_M1);
  2442              		.loc 1 993 29
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 62
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 62
 
 
  2443 065a 2448     		ldr	r0, .L227
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2480              		.loc 1 1010 27
  2481 0694 3B6E     		ldr	r3, [r7, #96]
  2482 0696 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 63
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 63
 
 
 1011:Src/register_interface.c ****               break;
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2518              	.L151:
 1030:Src/register_interface.c ****             }
 1031:Src/register_interface.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 64
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 64
 
 
 1032:Src/register_interface.c ****             case MC_REG_POSITION_KP_DIV:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1047:Src/register_interface.c ****               break;
  2558              		.loc 1 1047 15
  2559 0712 04E0     		b	.L190
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 65
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 65
 
 
  2560              	.L149:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1069:Src/register_interface.c **** 
 1070:Src/register_interface.c ****         if (freeSpace >= 4)
  2591              		.loc 1 1070 12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 66
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 66
 
 
  2592 0736 B7F9B830 		ldrsh	r3, [r7, #184]
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2635              		.loc 1 1081 79
  2636 078e 1346     		mov	r3, r2
  2637 0790 5B00     		lsls	r3, r3, #1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 67
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 67
 
 
  2638 0792 1344     		add	r3, r3, r2
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2677              		.loc 1 1096 15
  2678 07d0 10E0     		b	.L199
  2679              	.L193:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 68
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 68
 
 
  2680              	.LBE24:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2711 07fa 8CE1     		b	.L146
  2712              	.L192:
 1117:Src/register_interface.c ****         }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 69
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 69
 
 
  2713              		.loc 1 1117 18
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2751              		.loc 1 1135 22
  2752 0840 B7F9B830 		ldrsh	r3, [r7, #184]
  2753 0844 7A68     		ldr	r2, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 70
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 70
 
 
  2754 0846 F96E     		ldr	r1, [r7, #108]
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2788 087e 0133     		adds	r3, r3, #1
  2789 0880 C7F89430 		str	r3, [r7, #148]
 1156:Src/register_interface.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 71
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 71
 
 
 1157:Src/register_interface.c ****         switch (regID)
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2836 0902 87F8A730 		strb	r3, [r7, #167]
 1165:Src/register_interface.c ****             }
 1166:Src/register_interface.c ****             else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 72
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 72
 
 
 1167:Src/register_interface.c ****             {
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1182:Src/register_interface.c ****             {
 1183:Src/register_interface.c ****               MotorConfig_reg_t const *pMotorConfig_reg = MotorConfig_reg[motorID];
 1184:Src/register_interface.c ****               (void)memcpy(rawData, (const uint8_t *)pMotorConfig_reg, sizeof(MotorConfig_reg_t));
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 73
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 73
 
 
 1185:Src/register_interface.c ****             }
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1200:Src/register_interface.c ****             }
 1201:Src/register_interface.c **** 
 1202:Src/register_interface.c ****             break;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 74
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 74
 
 
  2909              		.loc 1 1202 13
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2947              	.L220:
 1213:Src/register_interface.c ****             }
  2948              		.loc 1 1213 15
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 75
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 75
 
 
  2949 09b6 D7F89430 		ldr	r3, [r7, #148]
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  2996 0a18 D7F8A000 		ldr	r0, [r7, #160]
  2997 0a1c FFF7FEFF 		bl	MCI_GetLastRampFinalDuration
  2998 0a20 0346     		mov	r3, r0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 76
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 76
 
 
  2999 0a22 1A46     		mov	r2, r3
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3040 0a70 45E0     		b	.L215
  3041              	.L207:
  3042              	.LBE32:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 77
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 77
 
 
  3043              	.LBB33:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1249:Src/register_interface.c ****           case MC_REG_POSITION_RAMP:
 1250:Src/register_interface.c ****           {
 1251:Src/register_interface.c ****             float Position;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 78
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 78
 
 
 1252:Src/register_interface.c ****             float Duration;
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1270:Src/register_interface.c ****         }
 1271:Src/register_interface.c **** 
 1272:Src/register_interface.c ****         /* Size of the answer is size of the data + 2 bytes containing data size */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 79
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 79
 
 
 1273:Src/register_interface.c ****         *size = (*rawSize) + 2U;
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3163              		.thumb_func
  3165              	RI_MovString:
  3166              	.LFB1094:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 80
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 80
 
 
 1285:Src/register_interface.c **** 
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3209 002c 7B69     		ldr	r3, [r7, #20]
  3210 002e 0133     		adds	r3, r3, #1
  3211 0030 7B61     		str	r3, [r7, #20]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 81
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 81
 
 
 1297:Src/register_interface.c ****     tempsrcString++;
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1306:Src/register_interface.c ****   {
 1307:Src/register_interface.c ****     *tempdestString = (int8_t)0;
  3252              		.loc 1 1307 21
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 82
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 82
 
 
  3253 0068 7B69     		ldr	r3, [r7, #20]
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3302              		.loc 1 1314 21
  3303 000a FB88     		ldrh	r3, [r7, #6]	@ movhi
  3304 000c DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 83
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 83
 
 
  3305              		.loc 1 1314 11
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1336:Src/register_interface.c **** 
 1337:Src/register_interface.c ****     default:
 1338:Src/register_interface.c ****     {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 84
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 84
 
 
 1339:Src/register_interface.c ****       result=0;
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3384 0004 00AF     		add	r7, sp, #0
  3385              	.LCFI34:
  3386              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 85
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 85
 
 
  3387 0006 0346     		mov	r3, r0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3419 004c 00F3A080 		bgt	.L250
  3420 0050 B3F5296F 		cmp	r3, #2704
  3421 0054 00F08D80 		beq	.L252
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 86
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 86
 
 
  3422 0058 B3F5296F 		cmp	r3, #2704
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3472 00e6 3B68     		ldr	r3, [r7]
  3473 00e8 1A60     		str	r2, [r3]
 1375:Src/register_interface.c ****              break;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 87
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 87
 
 
  3474              		.loc 1 1375 14
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1394:Src/register_interface.c ****           }
 1395:Src/register_interface.c **** 
 1396:Src/register_interface.c ****           case MC_REG_I_Q_MEAS:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 88
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 88
 
 
 1397:Src/register_interface.c ****           {
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3544 013a 3B69     		ldr	r3, [r7, #16]
  3545 013c 5B68     		ldr	r3, [r3, #4]
  3546              		.loc 1 1416 24
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 89
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 89
 
 
  3547 013e 03F11202 		add	r2, r3, #18
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3583 016e 1A60     		str	r2, [r3]
 1435:Src/register_interface.c ****             break;
  3584              		.loc 1 1435 13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 90
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 90
 
 
  3585 0170 14E0     		b	.L264
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
 1459:Src/register_interface.c ****             retVal = MCP_ERROR_UNKNOWN_REG;
  3616              		.loc 1 1459 20
  3617 0196 0523     		movs	r3, #5
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 91
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 91
 
 
  3618 0198 FB75     		strb	r3, [r7, #23]
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3654 01b8 00000000 		.word	Mci
  3655 01bc 0C000000 		.word	ENCODER_M1+12
  3656 01c0 04000000 		.word	ENCODER_M1+4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 92
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 92
 
 
  3657 01c4 00000000 		.word	nullData16.0
@@ -5494,67 +5494,67 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 1
  3690              		.file 23 "Inc/mc_config.h"
  3691              		.file 24 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcpa.h"
  3692              		.file 25 "Inc/mcp_config.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 93
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 93
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 register_interface.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:56     .text.RI_SetRegisterGlobal:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:62     .text.RI_SetRegisterGlobal:00000000 RI_SetRegisterGlobal
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:98     .text.RI_SetRegisterGlobal:00000028 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:131    .text.RI_SetRegisterGlobal:000000ac $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3165   .text.RI_MovString:00000000 RI_MovString
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:340    .text.RI_SetRegisterMotor1:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:346    .text.RI_SetRegisterMotor1:00000000 RI_SetRegisterMotor1
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:394    .text.RI_SetRegisterMotor1:00000040 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:427    .text.RI_SetRegisterMotor1:000000c4 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:511    .text.RI_SetRegisterMotor1:00000148 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:515    .text.RI_SetRegisterMotor1:0000014c $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1145   .text.RI_SetRegisterMotor1:000006d0 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1153   .text.RI_SetRegisterMotor1:000006e4 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1300   .text.RI_SetRegisterMotor1:000007b8 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1306   .text.RI_GetRegisterGlobal:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1312   .text.RI_GetRegisterGlobal:00000000 RI_GetRegisterGlobal
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1360   .text.RI_GetRegisterGlobal:00000040 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1393   .text.RI_GetRegisterGlobal:000000c4 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1689   .text.RI_GetRegisterGlobal:00000268 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1697   .text.RI_GetRegisterMotor1:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1703   .text.RI_GetRegisterMotor1:00000000 RI_GetRegisterMotor1
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1755   .text.RI_GetRegisterMotor1:00000048 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1788   .text.RI_GetRegisterMotor1:000000cc $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1875   .text.RI_GetRegisterMotor1:00000158 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:1881   .text.RI_GetRegisterMotor1:00000164 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:2543   .text.RI_GetRegisterMotor1:000006ec $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:2551   .text.RI_GetRegisterMotor1:00000704 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:2964   .text.RI_GetRegisterMotor1:000009d0 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:2974   .text.RI_GetRegisterMotor1:000009ec $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3154   .text.RI_GetRegisterMotor1:00000b24 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3159   .text.RI_MovString:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3277   .text.RI_GetIDSize:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3283   .text.RI_GetIDSize:00000000 RI_GetIDSize
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3364   .text.RI_GetPtrReg:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3370   .text.RI_GetPtrReg:00000000 RI_GetPtrReg
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3654   .text.RI_GetPtrReg:000001b8 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3665   .bss.nullData16.0:00000000 nullData16.0
-C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s:3662   .bss.nullData16.0:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:56     .text.RI_SetRegisterGlobal:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:62     .text.RI_SetRegisterGlobal:00000000 RI_SetRegisterGlobal
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:98     .text.RI_SetRegisterGlobal:00000028 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:131    .text.RI_SetRegisterGlobal:000000ac $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3165   .text.RI_MovString:00000000 RI_MovString
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:340    .text.RI_SetRegisterMotor1:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:346    .text.RI_SetRegisterMotor1:00000000 RI_SetRegisterMotor1
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:394    .text.RI_SetRegisterMotor1:00000040 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:427    .text.RI_SetRegisterMotor1:000000c4 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:511    .text.RI_SetRegisterMotor1:00000148 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:515    .text.RI_SetRegisterMotor1:0000014c $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1145   .text.RI_SetRegisterMotor1:000006d0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1153   .text.RI_SetRegisterMotor1:000006e4 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1300   .text.RI_SetRegisterMotor1:000007b8 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1306   .text.RI_GetRegisterGlobal:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1312   .text.RI_GetRegisterGlobal:00000000 RI_GetRegisterGlobal
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1360   .text.RI_GetRegisterGlobal:00000040 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1393   .text.RI_GetRegisterGlobal:000000c4 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1689   .text.RI_GetRegisterGlobal:00000268 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1697   .text.RI_GetRegisterMotor1:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1703   .text.RI_GetRegisterMotor1:00000000 RI_GetRegisterMotor1
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1755   .text.RI_GetRegisterMotor1:00000048 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1788   .text.RI_GetRegisterMotor1:000000cc $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1875   .text.RI_GetRegisterMotor1:00000158 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:1881   .text.RI_GetRegisterMotor1:00000164 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:2543   .text.RI_GetRegisterMotor1:000006ec $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:2551   .text.RI_GetRegisterMotor1:00000704 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:2964   .text.RI_GetRegisterMotor1:000009d0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:2974   .text.RI_GetRegisterMotor1:000009ec $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3154   .text.RI_GetRegisterMotor1:00000b24 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3159   .text.RI_MovString:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3277   .text.RI_GetIDSize:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3283   .text.RI_GetIDSize:00000000 RI_GetIDSize
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3364   .text.RI_GetPtrReg:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3370   .text.RI_GetPtrReg:00000000 RI_GetPtrReg
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3654   .text.RI_GetPtrReg:000001b8 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3665   .bss.nullData16.0:00000000 nullData16.0
+C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s:3662   .bss.nullData16.0:00000000 $d
 
 UNDEFINED SYMBOLS
 MCI_GetTeref
 MCI_ExecTorqueRamp
 MCI_GetMecSpeedRefUnit
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 94
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 94
 
 
 MCI_ExecSpeedRamp
@@ -5614,7 +5614,7 @@ MotorConfig_reg
 ApplicationConfig_reg
 FOCConfig_reg
 scaleParams_M1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccEVvySe.s 			page 95
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccKAM13h.s 			page 95
 
 
 MCI_GetLastRampFinalSpeed

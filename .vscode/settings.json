@@ -39,7 +39,8 @@
         "cmath": "c",
         "hall_align_ctrl.h": "c",
         "mc_parameters.h": "c",
-        "ramp_ext_mngr.h": "c"
+        "ramp_ext_mngr.h": "c",
+        "mc_api.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": false
 }

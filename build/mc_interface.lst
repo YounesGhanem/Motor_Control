@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
   56              		.align	1
   57              		.syntax unified
   58              		.thumb
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 2
 
 
   59              		.thumb_func
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
   51:Inc/mc_math.h ****          (((x) == (2*2*2*2*2*2*2*2*2)) ? 9 : \
   52:Inc/mc_math.h ****           (((x) == (2*2*2*2*2*2*2*2)) ? 8 : \
   53:Inc/mc_math.h ****            (((x) == (2*2*2*2*2*2*2)) ? 7 : \
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 3
 
 
   54:Inc/mc_math.h ****             (((x) == (2*2*2*2*2*2)) ? 6 : \
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  108:Inc/mc_math.h ****   * @param  hAngle: angle in q1.15 format.
  109:Inc/mc_math.h ****   * @retval Trig_Components Cos(angle) and Sin(angle) in Trig_Components format.
  110:Inc/mc_math.h ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 4
 
 
  111:Inc/mc_math.h **** Trig_Components MCM_Trig_Functions(int16_t hAngle);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  165:Inc/mc_math.h ****      18317 , 18345 , 18374 , 18402 , 18431 , 18459 , 18488 , 18516,\
  166:Inc/mc_math.h ****      18544 , 18573 , 18601 , 18629 , 18657 , 18685 , 18713 , 18741,\
  167:Inc/mc_math.h ****      18769 , 18797 , 18825 , 18853 , 18881 , 18908 , 18936 , 18964,\
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 5
 
 
  168:Inc/mc_math.h ****      18991 , 19019 , 19046 , 19074 , 19101 , 19129 , 19156 , 19184,\
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  222:Inc/mc_math.h ****      28524 , 28542 , 28561 , 28579 , 28597 , 28616 , 28634 , 28652,\
  223:Inc/mc_math.h ****      28671 , 28689 , 28707 , 28725 , 28744 , 28762 , 28780 , 28798,\
  224:Inc/mc_math.h ****      28817 , 28835 , 28853 , 28871 , 28889 , 28907 , 28925 , 28944,\
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 6
 
 
  225:Inc/mc_math.h ****      28962 , 28980 , 28998 , 29016 , 29034 , 29052 , 29070 , 29088,\
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
   65              		.cfi_startproc
   66              		@ args = 0, pretend = 0, frame = 16
   67              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 7
 
 
   68 0000 80B5     		push	{r7, lr}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  109              		.loc 1 290 11
  110 0044 47F6FF73 		movw	r3, #32767
  111 0048 FB60     		str	r3, [r7, #12]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 8
 
 
  112              	.L2:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
   21:Src/mc_interface.c ****   * @ingroup MCInterface
   22:Src/mc_interface.c ****   */
   23:Src/mc_interface.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 9
 
 
   24:Src/mc_interface.c **** /* Includes ------------------------------------------------------------------*/
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  144 0000 80B4     		push	{r7}
  145              	.LCFI5:
  146              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 10
 
 
  147              		.cfi_offset 7, -4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  184 0034 0022     		movs	r2, #0
  185 0036 1A83     		strh	r2, [r3, #24]	@ movhi
   90:Src/mc_interface.c ****     pHandle->hDurationms = 0;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 11
 
 
  186              		.loc 2 90 26
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  232              		.thumb_func
  234              	MCI_ExecSpeedRamp:
  235              	.LFB1091:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 12
 
 
  100:Src/mc_interface.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  259 0014 1A75     		strb	r2, [r3, #20]
  131:Src/mc_interface.c ****     pHandle->hFinalSpeed = hFinalSpeed;
  260              		.loc 2 131 26
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 13
 
 
  261 0016 7B68     		ldr	r3, [r7, #4]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  147:Src/mc_interface.c ****   * @param  hDurationms the duration of the ramp expressed in milliseconds. It
  148:Src/mc_interface.c ****   *         is possible to set 0 to perform an instantaneous change in the
  149:Src/mc_interface.c ****   *         value.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 14
 
 
  150:Src/mc_interface.c ****   *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  334 002c B7F91630 		ldrsh	r3, [r7, #22]
  335 0030 1946     		mov	r1, r3
  336 0032 F868     		ldr	r0, [r7, #12]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 15
 
 
  337 0034 FFF7FEFF 		bl	MCI_ExecSpeedRamp
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  201:Src/mc_interface.c **** {
  364              		.loc 2 201 1
  365              		.cfi_startproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 16
 
 
  366              		@ args = 0, pretend = 0, frame = 8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  218:Src/mc_interface.c **** }
  404              		.loc 2 218 1
  405 0032 00BF     		nop
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 17
 
 
  406 0034 0C37     		adds	r7, r7, #12
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  437              		.cfi_offset 7, -8
  438              		.cfi_offset 14, -4
  439 0002 86B0     		sub	sp, sp, #24
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 18
 
 
  440              	.LCFI29:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  480              		.loc 2 257 1
  481 0050 00BF     		nop
  482 0052 1837     		adds	r7, r7, #24
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 19
 
 
  483              	.LCFI31:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  278:Src/mc_interface.c ****   {
  279:Src/mc_interface.c ****     /* Nothing to do */
  280:Src/mc_interface.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 20
 
 
  281:Src/mc_interface.c ****   else
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  561              		.syntax unified
  562              		.thumb
  563              		.thumb_func
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 21
 
 
  565              	MCI_SetCurrentReferences_F:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  591 0020 17EE903A 		vmov	r3, s15	@ int
  592 0024 1BB2     		sxth	r3, r3
  593 0026 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 22
 
 
  594              		.loc 2 321 48
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  646 0084 FFF7FEFF 		bl	MCI_SetCurrentReferences
  324:Src/mc_interface.c **** #ifdef NULL_PTR_CHECK_MC_INT
  325:Src/mc_interface.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 23
 
 
  326:Src/mc_interface.c **** #endif
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  684 0006 F860     		str	r0, [r7, #12]
  685 0008 87ED020A 		vstr.32	s0, [r7, #8]
  686 000c C7ED010A 		vstr.32	s1, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 24
 
 
  345:Src/mc_interface.c **** #ifdef NULL_PTR_CHECK_MC_INT
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  359:Src/mc_interface.c ****     else
  360:Src/mc_interface.c ****     {
  361:Src/mc_interface.c ****       TC_FollowCommand(pHandle->pPosCtrl, FinalPosition);
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 25
 
 
  727              		.loc 2 361 7
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  381:Src/mc_interface.c ****   *
  382:Src/mc_interface.c ****   * Before calling MCI_StartMotor() it is mandatory to execute one of the
  383:Src/mc_interface.c ****   * following commands, in order to set a torque or a speed reference
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 26
 
 
  384:Src/mc_interface.c ****   * otherwise the behavior of the motor when it reaches the #RUN state will
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  788 0014 002B     		cmp	r3, #0
  789 0016 15D1     		bne	.L22
  414:Src/mc_interface.c ****         (MC_NO_FAULTS == MCI_GetOccurredFaults(pHandle)) &&
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 27
 
 
  790              		.loc 2 414 26 discriminator 1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  827 004c 80BD     		pop	{r7, pc}
  828              		.cfi_endproc
  829              	.LFE1098:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 28
 
 
  831              		.section	.text.MCI_StartWithPolarizationMotor,"ax",%progbits
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  850              	.LCFI55:
  851              		.cfi_def_cfa_offset 24
  852 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 29
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 29
 
 
  853              	.LCFI56:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  889 0040 7B68     		ldr	r3, [r7, #4]
  890 0042 9B68     		ldr	r3, [r3, #8]
  891              		.loc 2 481 40
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 30
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 30
 
 
  892 0044 0022     		movs	r2, #0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  508:Src/mc_interface.c ****   */
  509:Src/mc_interface.c **** __weak bool MCI_StartOffsetMeasurments(MCI_Handle_t *pHandle)
  510:Src/mc_interface.c **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 31
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 31
 
 
  922              		.loc 2 510 1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  523:Src/mc_interface.c ****     {
  524:Src/mc_interface.c ****       pHandle->DirectCommand = MCI_MEASURE_OFFSETS;
  962              		.loc 2 524 30
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 32
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 32
 
 
  963 0030 7B68     		ldr	r3, [r7, #4]
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  544:Src/mc_interface.c ****   * If the offset have not previously been provided to the Motor Control subsystem or
  545:Src/mc_interface.c ****   * if it has not measured them the function returns false and nothing is written in the
  546:Src/mc_interface.c ****   * PolarizationOffsets structure.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 33
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 33
 
 
  547:Src/mc_interface.c ****   *
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1034              		.loc 2 566 14
  1035 0026 0123     		movs	r3, #1
  1036 0028 FB73     		strb	r3, [r7, #15]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 34
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 34
 
 
  1037              	.L31:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  598:Src/mc_interface.c **** __weak bool MCI_SetCalibratedOffsetsMotor(MCI_Handle_t *pHandle, PolarizationOffsets_t *Polarizatio
  599:Src/mc_interface.c **** {
  1062              		.loc 2 599 1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 35
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 35
 
 
  1063              		.cfi_startproc
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  612:Src/mc_interface.c ****     {
  613:Src/mc_interface.c ****       PWMC_SetOffsetCalib(pHandle->pPWM, PolarizationOffsets);
  1103              		.loc 2 613 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 36
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 36
 
 
  1104 0032 7B68     		ldr	r3, [r7, #4]
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  631:Src/mc_interface.c ****   * #FAULT_OVER states, the command is immediately executed. Otherwise, it is
  632:Src/mc_interface.c ****   * discarded. The Application can check the return value to know whether the
  633:Src/mc_interface.c ****   * command was executed or discarded.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 37
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 37
 
 
  634:Src/mc_interface.c ****   *
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1172 001c 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
  1173 001e 0C2B     		cmp	r3, #12
  1174 0020 02D1     		bne	.L38
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 38
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 38
 
 
  1175              	.L37:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  676:Src/mc_interface.c ****       /* Reject the command as the condition are not met */
  677:Src/mc_interface.c ****     }
  678:Src/mc_interface.c **** #ifdef NULL_PTR_CHECK_MC_INT
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 39
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 39
 
 
  679:Src/mc_interface.c ****   }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1246              		.cfi_def_cfa_offset 24
  1247 0004 00AF     		add	r7, sp, #0
  1248              	.LCFI81:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 40
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 40
 
 
  1249              		.cfi_def_cfa_register 7
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1280              		.loc 2 722 10
  1281 0036 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
  723:Src/mc_interface.c **** }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 41
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 41
 
 
  1282              		.loc 2 723 1
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  738:Src/mc_interface.c ****     /* Nothing to do */
  739:Src/mc_interface.c ****   }
  740:Src/mc_interface.c ****   else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 42
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 42
 
 
  741:Src/mc_interface.c ****   {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1370              		.thumb
  1371              		.thumb_func
  1373              	MCI_ExecBufferedCommands:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 43
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 43
 
 
  1374              	.LFB1106:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1406 001c 36D0     		beq	.L48
  1407 001e 032B     		cmp	r3, #3
  1408 0020 43DC     		bgt	.L55
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 44
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 44
 
 
  1409 0022 012B     		cmp	r3, #1
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1432 0048 B3F91610 		ldrsh	r1, [r3, #22]
  777:Src/mc_interface.c ****           break;
  1433              		.loc 2 777 93
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 45
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 45
 
 
  1434 004c 7B68     		ldr	r3, [r7, #4]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1477 0092 83F82420 		strb	r2, [r3, #36]
  792:Src/mc_interface.c ****           commandHasBeenExecuted = true;
  1478              		.loc 2 792 18
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 46
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 46
 
 
  1479 0096 7B68     		ldr	r3, [r7, #4]
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1514              	.LBE3:
  1515              		.loc 2 813 1
  1516 00c4 00BF     		nop
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 47
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 47
 
 
  1517 00c6 1037     		adds	r7, r7, #16
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  834:Src/mc_interface.c **** #ifdef NULL_PTR_CHECK_MC_INT
  835:Src/mc_interface.c ****   if (MC_NULL == pHandle)
  836:Src/mc_interface.c ****   {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 48
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 48
 
 
  837:Src/mc_interface.c ****     retVal = MCI_COMMAND_EXECUTED_UNSUCCESSFULLY;
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1587              		.cfi_endproc
  1588              	.LFE1107:
  1590              		.section	.text.MCI_GetSTMState,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 49
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 49
 
 
  1591              		.align	1
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1632              		.cfi_endproc
  1633              	.LFE1108:
  1635              		.section	.text.MCI_GetCtrlPositionState,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 50
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 50
 
 
  1636              		.align	1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1677              	.LFE1109:
  1679              		.section	.text.MCI_GetAlignmentStatus,"ax",%progbits
  1680              		.align	1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 51
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 51
 
 
  1681              		.weak	MCI_GetAlignmentStatus
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1723              		.section	.text.MCI_GetCurrentPosition,"ax",%progbits
  1724              		.align	1
  1725              		.weak	MCI_GetCurrentPosition
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 52
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 52
 
 
  1726              		.syntax unified
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1768              		.align	1
  1769              		.weak	MCI_GetTargetPosition
  1770              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 53
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 53
 
 
  1771              		.thumb
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1813              		.weak	MCI_GetMoveDuration
  1814              		.syntax unified
  1815              		.thumb
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 54
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 54
 
 
  1816              		.thumb_func
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1858              		.syntax unified
  1859              		.thumb
  1860              		.thumb_func
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 55
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 55
 
 
  1862              	MCI_GetOccurredFaults:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1895              		.cfi_def_cfa_offset 0
  1896 0016 7047     		bx	lr
  1897              		.cfi_endproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 56
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 56
 
 
  1898              	.LFE1114:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  1934              	.LCFI142:
  1935              		.cfi_def_cfa_register 13
  1936              		@ sp needed
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 57
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 57
 
 
  1937 0012 5DF8047B 		ldr	r7, [sp], #4
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1005:Src/mc_interface.c ****   }
 1006:Src/mc_interface.c ****   else
 1007:Src/mc_interface.c ****   {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 58
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 58
 
 
 1008:Src/mc_interface.c **** #endif
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1022:Src/mc_interface.c ****   */
 1023:Src/mc_interface.c **** __weak MC_ControlMode_t MCI_GetControlMode(MCI_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
 1024:Src/mc_interface.c **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 59
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 59
 
 
  2012              		.loc 2 1024 1
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1036:Src/mc_interface.c ****   * @retval int16_t It returns 1 or -1 according the sign of hFinalSpeed,
 1037:Src/mc_interface.c ****   *         hFinalTorque or Iqdref.q of the last command.
 1038:Src/mc_interface.c ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 60
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 60
 
 
 1039:Src/mc_interface.c **** __weak int16_t MCI_GetImposedMotorDirection(MCI_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1062:Src/mc_interface.c ****         }
 1063:Src/mc_interface.c ****         break;
 1064:Src/mc_interface.c ****       }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 61
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 61
 
 
 1065:Src/mc_interface.c **** 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2108 003c 10DA     		bge	.L92
 1070:Src/mc_interface.c ****         }
  2109              		.loc 2 1070 18
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 62
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 62
 
 
  2110 003e 4FF6FF73 		movw	r3, #65535
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2150              	.LCFI160:
  2151              		.cfi_def_cfa_register 13
  2152              		@ sp needed
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 63
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 63
 
 
  2153 0070 5DF8047B 		ldr	r7, [sp], #4
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1122:Src/mc_interface.c ****   return (pHandle->hFinalSpeed);
  2186              		.loc 2 1122 18
  2187 0008 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 64
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 64
 
 
  2188 000a B3F91630 		ldrsh	r3, [r3, #22]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1136:Src/mc_interface.c ****   int16_t retVal = 0;
 1137:Src/mc_interface.c **** 
 1138:Src/mc_interface.c ****   if (MC_NULL == pHandle)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 65
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 65
 
 
 1139:Src/mc_interface.c ****   {
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2266              	.LCFI174:
  2267              		.cfi_def_cfa_offset 4
  2268              		.cfi_offset 7, -4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 66
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 66
 
 
  2269 0002 83B0     		sub	sp, sp, #12
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1180:Src/mc_interface.c ****   * @retval float_t last ramp final speed sent by the user expressed in rpm.
 1181:Src/mc_interface.c ****   */
 1182:Src/mc_interface.c **** __weak float_t MCI_GetLastRampFinalSpeed_F(MCI_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 67
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 67
 
 
 1183:Src/mc_interface.c **** {
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2346 003c B0EE670A 		vmov.f32	s0, s15
  2347 0040 1437     		adds	r7, r7, #20
  2348              	.LCFI183:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 68
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 68
 
 
  2349              		.cfi_def_cfa_offset 4
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1207:Src/mc_interface.c ****   {
 1208:Src/mc_interface.c ****     /* Nothing to do */
 1209:Src/mc_interface.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 69
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 69
 
 
 1210:Src/mc_interface.c ****   else
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1227:Src/mc_interface.c **** /**
 1228:Src/mc_interface.c ****   * @brief  Stop the execution of speed ramp.
 1229:Src/mc_interface.c ****   * @param  pHandle Pointer on the component instance to work on.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 70
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 70
 
 
 1230:Src/mc_interface.c ****   * @retval bool It returns true if the command is executed, false otherwise.
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2476              	.LFB1125:
 1243:Src/mc_interface.c **** 
 1244:Src/mc_interface.c **** /**
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 71
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 71
 
 
 1245:Src/mc_interface.c ****   * @brief  Stop the execution of ongoing ramp.
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2514              		.syntax unified
  2515              		.thumb
  2516              		.thumb_func
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 72
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 72
 
 
  2518              	MCI_GetSpdSensorReliability:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1288:Src/mc_interface.c **** 
 1289:Src/mc_interface.c ****   return (status);
  2547              		.loc 2 1289 10
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 73
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 73
 
 
  2548 001e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1307:Src/mc_interface.c ****   {
 1308:Src/mc_interface.c **** #endif
 1309:Src/mc_interface.c ****     SpeednPosFdbk_Handle_t * SpeedSensor = STC_GetSpeedSensor(pHandle->pSTC);
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 74
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 74
 
 
  2587              		.loc 2 1309 44
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2629              		.cfi_offset 7, -8
  2630              		.cfi_offset 14, -4
  2631 0002 84B0     		sub	sp, sp, #16
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 75
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 75
 
 
  2632              	.LCFI212:
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2670 0046 80BD     		pop	{r7, pc}
  2671              	.L118:
  2672              		.align	2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 76
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 76
 
 
  2673              	.L117:
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2714 0018 BD46     		mov	sp, r7
  2715              	.LCFI220:
  2716              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 77
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 77
 
 
  2717              		@ sp needed
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2759              		.loc 2 1368 78
  2760 0024 B2EE047A 		vmov.f32	s14, #1.0e+1
  2761 0028 C7EE876A 		vdiv.f32	s13, s15, s14
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 78
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 78
 
 
  2762 002c F0EE667A 		vmov.f32	s15, s13
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1382:Src/mc_interface.c ****   if (MC_NULL == pHandle)
 1383:Src/mc_interface.c ****   {
 1384:Src/mc_interface.c ****     tempVal.a = 0;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 79
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 79
 
 
 1385:Src/mc_interface.c ****     tempVal.b = 0;
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2847              		@ link register save eliminated.
  2848 0000 80B4     		push	{r7}
  2849              	.LCFI232:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 80
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 80
 
 
  2850              		.cfi_def_cfa_offset 4
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2891 0040 07EE103A 		vmov	s14, r3
  2892 0044 67EE877A 		vmul.f32	s15, s15, s14
  2893              		.loc 2 1411 11
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 81
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 81
 
 
  2894 0048 C7ED057A 		vstr.32	s15, [r7, #20]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2936 0000 80B4     		push	{r7}
  2937              	.LCFI238:
  2938              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 82
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 82
 
 
  2939              		.cfi_offset 7, -4
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  2977              		.section	.text.MCI_GetIqd,"ax",%progbits
  2978              		.align	1
  2979              		.weak	MCI_GetIqd
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 83
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 83
 
 
  2980              		.syntax unified
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3012 001a 62F30F03 		bfi	r3, r2, #0, #16
  3013 001e FA89     		ldrh	r2, [r7, #14]
  3014 0020 62F31F43 		bfi	r3, r2, #16, #16
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 84
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 84
 
 
 1466:Src/mc_interface.c **** #endif
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1480:Src/mc_interface.c ****     iqd.d = 0.0f;
 1481:Src/mc_interface.c ****     iqd.q = 0.0f;
 1482:Src/mc_interface.c ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 85
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 85
 
 
 1483:Src/mc_interface.c ****   else
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1492:Src/mc_interface.c **** }
  3102              		.loc 2 1492 1
  3103 0068 B0EE470A 		vmov.f32	s0, s14
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 86
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 86
 
 
  3104 006c F0EE670A 		vmov.f32	s1, s15
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1508:Src/mc_interface.c ****     tempVal.d = 0;
 1509:Src/mc_interface.c ****   }
 1510:Src/mc_interface.c ****   else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 87
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 87
 
 
 1511:Src/mc_interface.c ****   {
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3185              		.cfi_startproc
  3186              		@ args = 0, pretend = 0, frame = 16
  3187              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 88
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 88
 
 
  3188              		@ link register save eliminated.
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3225              		.cfi_def_cfa_offset 0
  3226 002e 7047     		bx	lr
  3227              		.cfi_endproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 89
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 89
 
 
  3228              	.LFE1137:
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3265 001a 1B6A     		ldr	r3, [r3, #32]
  3266              		.loc 2 1562 80
  3267 001c 5B68     		ldr	r3, [r3, #4]	@ unaligned
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 90
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 90
 
 
  3268              		.loc 2 1562 16
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3316              	.LFE1138:
  3318              		.section	.text.MCI_GetVqd,"ax",%progbits
  3319              		.align	1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 91
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 91
 
 
  3320              		.weak	MCI_GetVqd
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3352 0018 BA89     		ldrh	r2, [r7, #12]
  3353 001a 62F30F03 		bfi	r3, r2, #0, #16
  3354 001e FA89     		ldrh	r2, [r7, #14]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 92
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 92
 
 
  3355 0020 62F31F43 		bfi	r3, r2, #16, #16
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1605:Src/mc_interface.c ****   if (MC_NULL == pHandle)
 1606:Src/mc_interface.c ****   {
 1607:Src/mc_interface.c ****     tempVal.alpha = 0;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 93
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 93
 
 
 1608:Src/mc_interface.c ****     tempVal.beta = 0;
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1625:Src/mc_interface.c ****   */
 1626:Src/mc_interface.c **** __weak int16_t MCI_GetElAngledpp(MCI_Handle_t *pHandle) //cstat !MISRAC2012-Rule-8.13
 1627:Src/mc_interface.c **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 94
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 94
 
 
  3437              		.loc 2 1627 1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1637:Src/mc_interface.c ****   *         Iqref and Idref computation
 1638:Src/mc_interface.c ****   * @param  pHandle Pointer on the component instance to work on.
 1639:Src/mc_interface.c ****   * @retval int16_t Teref
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 95
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 95
 
 
 1640:Src/mc_interface.c ****   */
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
 1649:Src/mc_interface.c **** 
 1650:Src/mc_interface.c **** /**
 1651:Src/mc_interface.c ****   * @brief  It returns the reference electrical torque.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 96
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 96
 
 
 1652:Src/mc_interface.c ****   * @param  pHandle Pointer on the component instance to work on.
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3574              		.cfi_restore 7
  3575              		.cfi_def_cfa_offset 0
  3576 0032 7047     		bx	lr
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 97
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 97
 
 
  3577              		.cfi_endproc
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3611 0012 1068     		ldr	r0, [r2]	@ unaligned
  3612 0014 1860     		str	r0, [r3]
 1685:Src/mc_interface.c ****   wAux = MCM_Modulus(Local_Curr.alpha, Local_Curr.beta);
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 98
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 98
 
 
  3613              		.loc 2 1685 10
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3653              		.cfi_offset 14, -4
  3654 0002 86B0     		sub	sp, sp, #24
  3655              	.LCFI310:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 99
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 99
 
 
  3656              		.cfi_def_cfa_offset 32
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3691 0040 7861     		str	r0, [r7, #20]
 1721:Src/mc_interface.c **** 
 1722:Src/mc_interface.c ****     if (wAux1 > INT16_MAX)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 100
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 100
 
 
  3692              		.loc 2 1722 8
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3732              	.LCFI314:
  3733              		.cfi_def_cfa_offset 12
  3734              		.cfi_offset 4, -12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 101
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 101
 
 
  3735              		.cfi_offset 7, -8
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3778              	MCI_Clear_PerfMeasure:
  3779              	.LFB1147:
 1752:Src/mc_interface.c **** __weak void MCI_Clear_PerfMeasure(MCI_Handle_t *pHandle, uint8_t bMotor)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 102
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 102
 
 
 1753:Src/mc_interface.c **** {
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3821              		.file 4 "c:\\programdata\\chocolatey\\lib\\gcc-arm-embedded\\tools\\gcc-arm-none-eabi-10.3-2021.10
  3822              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
  3823              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 103
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 103
 
 
  3824              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
@@ -6131,152 +6131,152 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 1
  3831              		.file 14 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h"
  3832              		.file 15 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/trajectory_ctrl.h"
  3833              		.file 16 "Inc/mc_interface.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 104
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 104
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mc_interface.c
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:56     .text.MCM_Modulus:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:61     .text.MCM_Modulus:00000000 MCM_Modulus
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:130    .text.MCI_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:136    .text.MCI_Init:00000000 MCI_Init
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:228    .text.MCI_ExecSpeedRamp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:234    .text.MCI_ExecSpeedRamp:00000000 MCI_ExecSpeedRamp
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:294    .text.MCI_ExecSpeedRamp_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:300    .text.MCI_ExecSpeedRamp_F:00000000 MCI_ExecSpeedRamp_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:351    .text.MCI_ExecSpeedRamp_F:00000040 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:356    .text.MCI_ExecTorqueRamp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:362    .text.MCI_ExecTorqueRamp:00000000 MCI_ExecTorqueRamp
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:422    .text.MCI_ExecTorqueRamp_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:428    .text.MCI_ExecTorqueRamp_F:00000000 MCI_ExecTorqueRamp_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:494    .text.MCI_SetCurrentReferences:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:500    .text.MCI_SetCurrentReferences:00000000 MCI_SetCurrentReferences
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:559    .text.MCI_SetCurrentReferences_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:565    .text.MCI_SetCurrentReferences_F:00000000 MCI_SetCurrentReferences_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:661    .text.MCI_ExecPositionCommand:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:667    .text.MCI_ExecPositionCommand:00000000 MCI_ExecPositionCommand
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:751    .text.MCI_ExecPositionCommand:00000090 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:756    .text.MCI_StartMotor:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:762    .text.MCI_StartMotor:00000000 MCI_StartMotor
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1597   .text.MCI_GetSTMState:00000000 MCI_GetSTMState
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1862   .text.MCI_GetOccurredFaults:00000000 MCI_GetOccurredFaults
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1907   .text.MCI_GetCurrentFaults:00000000 MCI_GetCurrentFaults
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:832    .text.MCI_StartWithPolarizationMotor:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:838    .text.MCI_StartWithPolarizationMotor:00000000 MCI_StartWithPolarizationMotor
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:914    .text.MCI_StartOffsetMeasurments:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:920    .text.MCI_StartOffsetMeasurments:00000000 MCI_StartOffsetMeasurments
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:992    .text.MCI_GetCalibratedOffsetsMotor:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:998    .text.MCI_GetCalibratedOffsetsMotor:00000000 MCI_GetCalibratedOffsetsMotor
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1054   .text.MCI_SetCalibratedOffsetsMotor:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1060   .text.MCI_SetCalibratedOffsetsMotor:00000000 MCI_SetCalibratedOffsetsMotor
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1135   .text.MCI_StopMotor:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1141   .text.MCI_StopMotor:00000000 MCI_StopMotor
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1227   .text.MCI_FaultAcknowledged:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1233   .text.MCI_FaultAcknowledged:00000000 MCI_FaultAcknowledged
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1296   .text.MCI_FaultProcessing:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1302   .text.MCI_FaultProcessing:00000000 MCI_FaultProcessing
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1367   .text.MCI_ExecBufferedCommands:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1373   .text.MCI_ExecBufferedCommands:00000000 MCI_ExecBufferedCommands
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1529   .text.MCI_IsCommandAcknowledged:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1535   .text.MCI_IsCommandAcknowledged:00000000 MCI_IsCommandAcknowledged
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 105
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:56     .text.MCM_Modulus:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:61     .text.MCM_Modulus:00000000 MCM_Modulus
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:130    .text.MCI_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:136    .text.MCI_Init:00000000 MCI_Init
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:228    .text.MCI_ExecSpeedRamp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:234    .text.MCI_ExecSpeedRamp:00000000 MCI_ExecSpeedRamp
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:294    .text.MCI_ExecSpeedRamp_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:300    .text.MCI_ExecSpeedRamp_F:00000000 MCI_ExecSpeedRamp_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:351    .text.MCI_ExecSpeedRamp_F:00000040 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:356    .text.MCI_ExecTorqueRamp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:362    .text.MCI_ExecTorqueRamp:00000000 MCI_ExecTorqueRamp
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:422    .text.MCI_ExecTorqueRamp_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:428    .text.MCI_ExecTorqueRamp_F:00000000 MCI_ExecTorqueRamp_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:494    .text.MCI_SetCurrentReferences:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:500    .text.MCI_SetCurrentReferences:00000000 MCI_SetCurrentReferences
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:559    .text.MCI_SetCurrentReferences_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:565    .text.MCI_SetCurrentReferences_F:00000000 MCI_SetCurrentReferences_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:661    .text.MCI_ExecPositionCommand:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:667    .text.MCI_ExecPositionCommand:00000000 MCI_ExecPositionCommand
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:751    .text.MCI_ExecPositionCommand:00000090 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:756    .text.MCI_StartMotor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:762    .text.MCI_StartMotor:00000000 MCI_StartMotor
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1597   .text.MCI_GetSTMState:00000000 MCI_GetSTMState
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1862   .text.MCI_GetOccurredFaults:00000000 MCI_GetOccurredFaults
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1907   .text.MCI_GetCurrentFaults:00000000 MCI_GetCurrentFaults
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:832    .text.MCI_StartWithPolarizationMotor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:838    .text.MCI_StartWithPolarizationMotor:00000000 MCI_StartWithPolarizationMotor
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:914    .text.MCI_StartOffsetMeasurments:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:920    .text.MCI_StartOffsetMeasurments:00000000 MCI_StartOffsetMeasurments
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:992    .text.MCI_GetCalibratedOffsetsMotor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:998    .text.MCI_GetCalibratedOffsetsMotor:00000000 MCI_GetCalibratedOffsetsMotor
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1054   .text.MCI_SetCalibratedOffsetsMotor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1060   .text.MCI_SetCalibratedOffsetsMotor:00000000 MCI_SetCalibratedOffsetsMotor
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1135   .text.MCI_StopMotor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1141   .text.MCI_StopMotor:00000000 MCI_StopMotor
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1227   .text.MCI_FaultAcknowledged:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1233   .text.MCI_FaultAcknowledged:00000000 MCI_FaultAcknowledged
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1296   .text.MCI_FaultProcessing:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1302   .text.MCI_FaultProcessing:00000000 MCI_FaultProcessing
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1367   .text.MCI_ExecBufferedCommands:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1373   .text.MCI_ExecBufferedCommands:00000000 MCI_ExecBufferedCommands
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1529   .text.MCI_IsCommandAcknowledged:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1535   .text.MCI_IsCommandAcknowledged:00000000 MCI_IsCommandAcknowledged
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 105
 
 
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1591   .text.MCI_GetSTMState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1636   .text.MCI_GetCtrlPositionState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1642   .text.MCI_GetCtrlPositionState:00000000 MCI_GetCtrlPositionState
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1680   .text.MCI_GetAlignmentStatus:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1686   .text.MCI_GetAlignmentStatus:00000000 MCI_GetAlignmentStatus
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1724   .text.MCI_GetCurrentPosition:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1730   .text.MCI_GetCurrentPosition:00000000 MCI_GetCurrentPosition
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1768   .text.MCI_GetTargetPosition:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1774   .text.MCI_GetTargetPosition:00000000 MCI_GetTargetPosition
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1812   .text.MCI_GetMoveDuration:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1818   .text.MCI_GetMoveDuration:00000000 MCI_GetMoveDuration
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1856   .text.MCI_GetOccurredFaults:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1901   .text.MCI_GetCurrentFaults:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1946   .text.MCI_GetFaultState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:1952   .text.MCI_GetFaultState:00000000 MCI_GetFaultState
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2004   .text.MCI_GetControlMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2010   .text.MCI_GetControlMode:00000000 MCI_GetControlMode
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2049   .text.MCI_GetImposedMotorDirection:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2055   .text.MCI_GetImposedMotorDirection:00000000 MCI_GetImposedMotorDirection
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2162   .text.MCI_GetLastRampFinalSpeed:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2168   .text.MCI_GetLastRampFinalSpeed:00000000 MCI_GetLastRampFinalSpeed
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2207   .text.MCI_GetLastRampFinalTorque:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2213   .text.MCI_GetLastRampFinalTorque:00000000 MCI_GetLastRampFinalTorque
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2252   .text.MCI_GetLastRampFinalDuration:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2258   .text.MCI_GetLastRampFinalDuration:00000000 MCI_GetLastRampFinalDuration
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2297   .text.MCI_GetLastRampFinalSpeed_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2303   .text.MCI_GetLastRampFinalSpeed_F:00000000 MCI_GetLastRampFinalSpeed_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2362   .text.MCI_GetLastRampFinalSpeed_F:0000004c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2367   .text.MCI_RampCompleted:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2373   .text.MCI_RampCompleted:00000000 MCI_RampCompleted
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2425   .text.MCI_StopSpeedRamp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2431   .text.MCI_StopSpeedRamp:00000000 MCI_StopSpeedRamp
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2469   .text.MCI_StopRamp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2475   .text.MCI_StopRamp:00000000 MCI_StopRamp
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2512   .text.MCI_GetSpdSensorReliability:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2518   .text.MCI_GetSpdSensorReliability:00000000 MCI_GetSpdSensorReliability
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2563   .text.MCI_GetAvrgMecSpeedUnit:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2569   .text.MCI_GetAvrgMecSpeedUnit:00000000 MCI_GetAvrgMecSpeedUnit
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2614   .text.MCI_GetAvrgMecSpeed_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2620   .text.MCI_GetAvrgMecSpeed_F:00000000 MCI_GetAvrgMecSpeed_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2674   .text.MCI_GetAvrgMecSpeed_F:00000048 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2679   .text.MCI_GetMecSpeedRefUnit:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2685   .text.MCI_GetMecSpeedRefUnit:00000000 MCI_GetMecSpeedRefUnit
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2723   .text.MCI_GetMecSpeedRef_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2729   .text.MCI_GetMecSpeedRef_F:00000000 MCI_GetMecSpeedRef_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2776   .text.MCI_GetMecSpeedRef_F:0000003c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2781   .text.MCI_GetIab:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2787   .text.MCI_GetIab:00000000 MCI_GetIab
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2835   .text.MCI_GetIab_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2841   .text.MCI_GetIab_F:00000000 MCI_GetIab_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2923   .text.MCI_GetIalphabeta:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2929   .text.MCI_GetIalphabeta:00000000 MCI_GetIalphabeta
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2978   .text.MCI_GetIqd:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:2984   .text.MCI_GetIqd:00000000 MCI_GetIqd
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3033   .text.MCI_GetIqd_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3039   .text.MCI_GetIqd_F:00000000 MCI_GetIqd_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3121   .text.MCI_GetIqdHF:00000000 $t
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s 			page 106
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1591   .text.MCI_GetSTMState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1636   .text.MCI_GetCtrlPositionState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1642   .text.MCI_GetCtrlPositionState:00000000 MCI_GetCtrlPositionState
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1680   .text.MCI_GetAlignmentStatus:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1686   .text.MCI_GetAlignmentStatus:00000000 MCI_GetAlignmentStatus
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1724   .text.MCI_GetCurrentPosition:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1730   .text.MCI_GetCurrentPosition:00000000 MCI_GetCurrentPosition
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1768   .text.MCI_GetTargetPosition:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1774   .text.MCI_GetTargetPosition:00000000 MCI_GetTargetPosition
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1812   .text.MCI_GetMoveDuration:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1818   .text.MCI_GetMoveDuration:00000000 MCI_GetMoveDuration
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1856   .text.MCI_GetOccurredFaults:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1901   .text.MCI_GetCurrentFaults:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1946   .text.MCI_GetFaultState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:1952   .text.MCI_GetFaultState:00000000 MCI_GetFaultState
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2004   .text.MCI_GetControlMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2010   .text.MCI_GetControlMode:00000000 MCI_GetControlMode
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2049   .text.MCI_GetImposedMotorDirection:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2055   .text.MCI_GetImposedMotorDirection:00000000 MCI_GetImposedMotorDirection
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2162   .text.MCI_GetLastRampFinalSpeed:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2168   .text.MCI_GetLastRampFinalSpeed:00000000 MCI_GetLastRampFinalSpeed
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2207   .text.MCI_GetLastRampFinalTorque:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2213   .text.MCI_GetLastRampFinalTorque:00000000 MCI_GetLastRampFinalTorque
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2252   .text.MCI_GetLastRampFinalDuration:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2258   .text.MCI_GetLastRampFinalDuration:00000000 MCI_GetLastRampFinalDuration
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2297   .text.MCI_GetLastRampFinalSpeed_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2303   .text.MCI_GetLastRampFinalSpeed_F:00000000 MCI_GetLastRampFinalSpeed_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2362   .text.MCI_GetLastRampFinalSpeed_F:0000004c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2367   .text.MCI_RampCompleted:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2373   .text.MCI_RampCompleted:00000000 MCI_RampCompleted
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2425   .text.MCI_StopSpeedRamp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2431   .text.MCI_StopSpeedRamp:00000000 MCI_StopSpeedRamp
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2469   .text.MCI_StopRamp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2475   .text.MCI_StopRamp:00000000 MCI_StopRamp
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2512   .text.MCI_GetSpdSensorReliability:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2518   .text.MCI_GetSpdSensorReliability:00000000 MCI_GetSpdSensorReliability
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2563   .text.MCI_GetAvrgMecSpeedUnit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2569   .text.MCI_GetAvrgMecSpeedUnit:00000000 MCI_GetAvrgMecSpeedUnit
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2614   .text.MCI_GetAvrgMecSpeed_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2620   .text.MCI_GetAvrgMecSpeed_F:00000000 MCI_GetAvrgMecSpeed_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2674   .text.MCI_GetAvrgMecSpeed_F:00000048 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2679   .text.MCI_GetMecSpeedRefUnit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2685   .text.MCI_GetMecSpeedRefUnit:00000000 MCI_GetMecSpeedRefUnit
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2723   .text.MCI_GetMecSpeedRef_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2729   .text.MCI_GetMecSpeedRef_F:00000000 MCI_GetMecSpeedRef_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2776   .text.MCI_GetMecSpeedRef_F:0000003c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2781   .text.MCI_GetIab:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2787   .text.MCI_GetIab:00000000 MCI_GetIab
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2835   .text.MCI_GetIab_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2841   .text.MCI_GetIab_F:00000000 MCI_GetIab_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2923   .text.MCI_GetIalphabeta:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2929   .text.MCI_GetIalphabeta:00000000 MCI_GetIalphabeta
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2978   .text.MCI_GetIqd:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:2984   .text.MCI_GetIqd:00000000 MCI_GetIqd
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3033   .text.MCI_GetIqd_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3039   .text.MCI_GetIqd_F:00000000 MCI_GetIqd_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3121   .text.MCI_GetIqdHF:00000000 $t
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s 			page 106
 
 
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3127   .text.MCI_GetIqdHF:00000000 MCI_GetIqdHF
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3176   .text.MCI_GetIqdref:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3182   .text.MCI_GetIqdref:00000000 MCI_GetIqdref
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3231   .text.MCI_GetIqdref_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3237   .text.MCI_GetIqdref_F:00000000 MCI_GetIqdref_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3319   .text.MCI_GetVqd:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3325   .text.MCI_GetVqd:00000000 MCI_GetVqd
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3374   .text.MCI_GetValphabeta:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3380   .text.MCI_GetValphabeta:00000000 MCI_GetValphabeta
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3429   .text.MCI_GetElAngledpp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3435   .text.MCI_GetElAngledpp:00000000 MCI_GetElAngledpp
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3476   .text.MCI_GetTeref:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3482   .text.MCI_GetTeref:00000000 MCI_GetTeref
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3523   .text.MCI_GetTeref_F:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3529   .text.MCI_GetTeref_F:00000000 MCI_GetTeref_F
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3581   .text.MCI_GetPhaseCurrentAmplitude:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3587   .text.MCI_GetPhaseCurrentAmplitude:00000000 MCI_GetPhaseCurrentAmplitude
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3637   .text.MCI_GetPhaseVoltageAmplitude:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3643   .text.MCI_GetPhaseVoltageAmplitude:00000000 MCI_GetPhaseVoltageAmplitude
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3719   .text.MCI_Clear_Iqdref:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3725   .text.MCI_Clear_Iqdref:00000000 MCI_Clear_Iqdref
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3772   .text.MCI_Clear_PerfMeasure:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc7miP3c.s:3778   .text.MCI_Clear_PerfMeasure:00000000 MCI_Clear_PerfMeasure
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3127   .text.MCI_GetIqdHF:00000000 MCI_GetIqdHF
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3176   .text.MCI_GetIqdref:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3182   .text.MCI_GetIqdref:00000000 MCI_GetIqdref
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3231   .text.MCI_GetIqdref_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3237   .text.MCI_GetIqdref_F:00000000 MCI_GetIqdref_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3319   .text.MCI_GetVqd:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3325   .text.MCI_GetVqd:00000000 MCI_GetVqd
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3374   .text.MCI_GetValphabeta:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3380   .text.MCI_GetValphabeta:00000000 MCI_GetValphabeta
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3429   .text.MCI_GetElAngledpp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3435   .text.MCI_GetElAngledpp:00000000 MCI_GetElAngledpp
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3476   .text.MCI_GetTeref:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3482   .text.MCI_GetTeref:00000000 MCI_GetTeref
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3523   .text.MCI_GetTeref_F:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3529   .text.MCI_GetTeref_F:00000000 MCI_GetTeref_F
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3581   .text.MCI_GetPhaseCurrentAmplitude:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3587   .text.MCI_GetPhaseCurrentAmplitude:00000000 MCI_GetPhaseCurrentAmplitude
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3637   .text.MCI_GetPhaseVoltageAmplitude:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3643   .text.MCI_GetPhaseVoltageAmplitude:00000000 MCI_GetPhaseVoltageAmplitude
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3719   .text.MCI_Clear_Iqdref:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3725   .text.MCI_Clear_Iqdref:00000000 MCI_Clear_Iqdref
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3772   .text.MCI_Clear_PerfMeasure:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cciRBgX0.s:3778   .text.MCI_Clear_PerfMeasure:00000000 MCI_Clear_PerfMeasure
 
 UNDEFINED SYMBOLS
 MCM_Sqrt

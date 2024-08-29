@@ -37,6 +37,8 @@ extern "C" {
 #define ENC_DMA_PRIORITY DMA_Priority_High
 #define ENC_SPEED_ARRAY_SIZE  ((uint8_t)16)    /* 2^4 */
 
+#define HALL_ADC_SIZE 3
+
 /**
   * @brief  ENCODER class parameters definition
   */
@@ -65,12 +67,14 @@ typedef struct
   volatile uint8_t DeltaCapturesIndex;               /*!< Buffer index */
   bool TimerOverflowError;                           /*!< true if the number of overflow  occurred is greater than
                                                           'define' ENC_MAX_OVERFLOW_NB*/
+
+  uint32_t AdcRawValues[2*HALL_ADC_SIZE];             /** Contains Raw ADC values */
 } HALL_Handle_t;
 
 
 /* IRQ implementation of the TIMER ENCODER */
 //TODO: Does that make sense for hall ?
-void *ENC_IRQHandler(void *pHandleVoid);
+//void *HALL_IRQHandler(void *pHandleVoid);
 
 /* It initializes the hardware peripherals (TIMx, GPIO and NVIC)
  * required for the speed position sensor management using ENCODER

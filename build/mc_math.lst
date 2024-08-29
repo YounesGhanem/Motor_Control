@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
   56              		.section	.rodata.hSin_Cos_Table,"a"
   57              		.align	2
   60              	hSin_Cos_Table:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 2
 
 
   61 0000 0000     		.short	0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  115 006c A329     		.short	10659
  116 006e 612A     		.short	10849
  117 0070 1F2B     		.short	11039
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 3
 
 
  118 0072 DC2B     		.short	11228
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  172 00de 9750     		.short	20631
  173 00e0 3351     		.short	20787
  174 00e2 CE51     		.short	20942
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 4
 
 
  175 00e4 6852     		.short	21096
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  229 0150 C96D     		.short	28105
  230 0152 306E     		.short	28208
  231 0154 966E     		.short	28310
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 5
 
 
  232 0156 FB6E     		.short	28411
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  286 01c2 B07D     		.short	32176
  287 01c4 D57D     		.short	32213
  288 01c6 FA7D     		.short	32250
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 6
 
 
  289 01c8 1D7E     		.short	32285
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
   18:Src/mc_math.c ****   *                             www.st.com/SLA0044
   19:Src/mc_math.c ****   *
   20:Src/mc_math.c ****   ******************************************************************************
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 7
 
 
   21:Src/mc_math.c ****   */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
   75:Src/mc_math.c **** #define U0_90           0x0200u
   76:Src/mc_math.c **** #define U90_180         0x0300u
   77:Src/mc_math.c **** #define U180_270        0x0000u
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 8
 
 
   78:Src/mc_math.c **** #define U270_360        0x0100u
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  112:Src/mc_math.c **** 
  113:Src/mc_math.c ****   a_divSQRT3_tmp = divSQRT_3 * ((int32_t)Input.a);
  347              		.loc 1 113 47
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 9
 
 
  348 000e B7F90430 		ldrsh	r3, [r7, #4]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  132:Src/mc_math.c ****   }
  133:Src/mc_math.c ****   else if (wbeta_tmp < (-32768))
  384              		.loc 1 133 11
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 10
 
 
  385 004e 3B69     		ldr	r3, [r7, #16]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  418 0088 1846     		mov	r0, r3
  419 008a 2437     		adds	r7, r7, #36
  420              	.LCFI3:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 11
 
 
  421              		.cfi_def_cfa_offset 4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  457              		.cfi_def_cfa_register 7
  458 0006 7860     		str	r0, [r7, #4]
  459 0008 0B46     		mov	r3, r1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 12
 
 
  460 000a 7B80     		strh	r3, [r7, #2]	@ movhi
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  201:Src/mc_math.c **** 
  202:Src/mc_math.c ****   /* Check saturation of Iq */
  203:Src/mc_math.c ****   if (wqd_tmp > INT16_MAX)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 13
 
 
  488              		.loc 1 203 6
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  224:Src/mc_math.c ****     /* Nothing to do */
  225:Src/mc_math.c ****   }
  226:Src/mc_math.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 14
 
 
  227:Src/mc_math.c ****   /* No overflow guaranteed */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  554 00b0 13F5004F 		cmn	r3, #32768
  555 00b4 03DA     		bge	.L14
  249:Src/mc_math.c ****   {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 15
 
 
  250:Src/mc_math.c ****     hqd_tmp = ((int16_t)-32768);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  590 00ec BD46     		mov	sp, r7
  591              	.LCFI10:
  592              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 16
 
 
  593              		@ sp needed
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  294:Src/mc_math.c ****   Trig_Components Local_Vector_Components;
  295:Src/mc_math.c ****   alphabeta_t Output;
  296:Src/mc_math.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 17
 
 
  297:Src/mc_math.c ****   Local_Vector_Components = MCM_Trig_Functions(Theta);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  314:Src/mc_math.c ****   beta_tmp2 = Input.d * ((int32_t)Local_Vector_Components.hCos);
  662              		.loc 1 314 20
  663 0050 B7F90630 		ldrsh	r3, [r7, #6]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 18
 
 
  664              		.loc 1 314 58
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  707              	MCM_Trig_Functions:
  708              	.LFB1093:
  328:Src/mc_math.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 19
 
 
  329:Src/mc_math.c **** #if defined (CCMRAM)
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  354:Src/mc_math.c **** 
  355:Src/mc_math.c ****   switch (((uint16_t)uhindex) & SIN_MASK)
  738              		.loc 1 355 31
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 20
 
 
  739 001e 7B8A     		ldrh	r3, [r7, #18]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  359:Src/mc_math.c ****       Local_Components.hCos = hSin_Cos_Table[( uint8_t )( 0xFFu - ( uint8_t )( uhindex ) )];
  761              		.loc 1 359 45
  762 004e 304B     		ldr	r3, .L28
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 21
 
 
  763 0050 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  804 008e 1BB2     		sxth	r3, r3
  805 0090 3B81     		strh	r3, [r7, #8]	@ movhi
  368:Src/mc_math.c ****     }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 22
 
 
  806              		.loc 1 368 7
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  849 00d0 0F4B     		ldr	r3, .L28
  850 00d2 33F91230 		ldrsh	r3, [r3, r2, lsl #1]
  851 00d6 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 23
 
 
  380:Src/mc_math.c ****       Local_Components.hCos =  hSin_Cos_Table[( uint8_t )( uhindex )];
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  898              		.cfi_endproc
  899              	.LFE1093:
  901              		.section	.text.MCM_Sqrt,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 24
 
 
  902              		.align	1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  934              		.loc 1 412 8
  935 0012 7B68     		ldr	r3, [r7, #4]
  936 0014 B3F5001F 		cmp	r3, #2097152
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 25
 
 
  937 0018 02DC     		bgt	.L32
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  430:Src/mc_math.c ****         biter ++;
  974              		.loc 1 430 15
  975 004e FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 26
 
 
  976 0050 0133     		adds	r3, r3, #1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  1019              	MCM_floatToIntBit:
  1020              	.LFB1095:
  444:Src/mc_math.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 27
 
 
  445:Src/mc_math.c **** /**
@@ -1618,40 +1618,40 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 1
  1065              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
  1066              		.file 6 "Inc/mc_type.h"
  1067              		.file 7 "Inc/mc_math.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 28
 
 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s 			page 29
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mc_math.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:60     .rodata.hSin_Cos_Table:00000000 hSin_Cos_Table
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:57     .rodata.hSin_Cos_Table:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:318    .text.MCM_Clarke:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:324    .text.MCM_Clarke:00000000 MCM_Clarke
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:435    .text.MCM_Park:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:441    .text.MCM_Park:00000000 MCM_Park
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:707    .text.MCM_Trig_Functions:00000000 MCM_Trig_Functions
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:599    .text.MCM_Rev_Park:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:605    .text.MCM_Rev_Park:00000000 MCM_Rev_Park
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:701    .text.MCM_Trig_Functions:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:897    .text.MCM_Trig_Functions:00000110 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:902    .text.MCM_Sqrt:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:908    .text.MCM_Sqrt:00000000 MCM_Sqrt
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:1013   .text.MCM_floatToIntBit:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccBcGaFQ.s:1019   .text.MCM_floatToIntBit:00000000 MCM_floatToIntBit
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:60     .rodata.hSin_Cos_Table:00000000 hSin_Cos_Table
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:57     .rodata.hSin_Cos_Table:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:318    .text.MCM_Clarke:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:324    .text.MCM_Clarke:00000000 MCM_Clarke
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:435    .text.MCM_Park:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:441    .text.MCM_Park:00000000 MCM_Park
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:707    .text.MCM_Trig_Functions:00000000 MCM_Trig_Functions
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:599    .text.MCM_Rev_Park:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:605    .text.MCM_Rev_Park:00000000 MCM_Rev_Park
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:701    .text.MCM_Trig_Functions:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:897    .text.MCM_Trig_Functions:00000110 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:902    .text.MCM_Sqrt:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:908    .text.MCM_Sqrt:00000000 MCM_Sqrt
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:1013   .text.MCM_floatToIntBit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccAgmsXB.s:1019   .text.MCM_floatToIntBit:00000000 MCM_floatToIntBit
 
 NO UNDEFINED SYMBOLS

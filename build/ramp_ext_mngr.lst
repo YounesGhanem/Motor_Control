@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
   56              		.align	1
   57              		.global	REMNG_Init
   58              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 2
 
 
   59              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
   69              		@ link register save eliminated.
   70 0000 80B4     		push	{r7}
   71              	.LCFI0:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 3
 
 
   72              		.cfi_def_cfa_offset 4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  109              		@ sp needed
  110 002c 5DF8047B 		ldr	r7, [sp], #4
  111              	.LCFI5:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 4
 
 
  112              		.cfi_restore 7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
   88:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c **** #endif
   89:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****     int32_t current_ref;
   90:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 5
 
 
   91:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****     current_ref = pHandle->Ext;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  182 003c 02FB03F3 		mul	r3, r2, r3
  183 0040 FB60     		str	r3, [r7, #12]
  106:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****       pHandle->RampRemainingStep = 0U;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 6
 
 
  184              		.loc 1 106 34
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  226              		.thumb_func
  228              	REMNG_ExecRamp:
  229              	.LFB1090:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 7
 
 
  120:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  255 0016 FA68     		ldr	r2, [r7, #12]
  256 0018 5269     		ldr	r2, [r2, #20]
  257              		.loc 1 148 17
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 8
 
 
  258 001a 93FBF2F3 		sdiv	r3, r3, r2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  300              		.loc 1 160 34
  301 005e 786A     		ldr	r0, [r7, #36]
  302 0060 FFF7FEFF 		bl	getScalingFactor
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 9
 
 
  303 0064 F861     		str	r0, [r7, #28]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  180:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****         }
  181:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****         else
  182:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****         {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 10
 
 
  183:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****           wScalingFactorMin = wScalingFactor3;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  197:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****       pHandle->RampRemainingStep++;
  378              		.loc 1 197 14
  379 00d6 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 11
 
 
  380 00d8 DB68     		ldr	r3, [r3, #12]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  422              	.L15:
  423              		.align	2
  424              	.L14:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 12
 
 
  425 0110 D34D6210 		.word	274877907
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  467 0018 BD46     		mov	sp, r7
  468              	.LCFI21:
  469              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 13
 
 
  470              		@ sp needed
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  243:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****     /* Nothing to do */
  244:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   }
  245:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 14
 
 
  246:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  264:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   * @brief  Stop the execution of the ramp keeping the last reached value.
  265:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   * @param  pHandle related Handle of struct RampMngr_Handle_t.
  266:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   * @retval none
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 15
 
 
  267:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  582 001e 7047     		bx	lr
  583              		.cfi_endproc
  584              	.LFE1093:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 16
 
 
  586              		.section	.text.getScalingFactor,"ax",%progbits
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  623              	.L23:
  302:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   }
  303:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 17
 
 
  304:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  317:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****     }
  318:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   }
  319:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c ****   return (((uint32_t)1) << (i - 1U));
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 18
 
 
  663              		.loc 1 319 31
@@ -1051,37 +1051,37 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 1
  690              		.file 4 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h"
  691              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
  692              		.file 6 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/ramp_ext_mngr.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ramp_ext_mngr.c
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:56     .text.REMNG_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:62     .text.REMNG_Init:00000000 REMNG_Init
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:119    .text.REMNG_Calc:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:125    .text.REMNG_Calc:00000000 REMNG_Calc
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:222    .text.REMNG_ExecRamp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:228    .text.REMNG_ExecRamp:00000000 REMNG_ExecRamp
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:593    .text.getScalingFactor:00000000 getScalingFactor
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:425    .text.REMNG_ExecRamp:00000110 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:430    .text.REMNG_GetValue:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:436    .text.REMNG_GetValue:00000000 REMNG_GetValue
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:480    .text.REMNG_RampCompleted:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:486    .text.REMNG_RampCompleted:00000000 REMNG_RampCompleted
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:537    .text.REMNG_StopRamp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:543    .text.REMNG_StopRamp:00000000 REMNG_StopRamp
-C:\Users\ep_ygh\AppData\Local\Temp\cc3KlDV5.s:587    .text.getScalingFactor:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:56     .text.REMNG_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:62     .text.REMNG_Init:00000000 REMNG_Init
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:119    .text.REMNG_Calc:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:125    .text.REMNG_Calc:00000000 REMNG_Calc
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:222    .text.REMNG_ExecRamp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:228    .text.REMNG_ExecRamp:00000000 REMNG_ExecRamp
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:593    .text.getScalingFactor:00000000 getScalingFactor
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:425    .text.REMNG_ExecRamp:00000110 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:430    .text.REMNG_GetValue:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:436    .text.REMNG_GetValue:00000000 REMNG_GetValue
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:480    .text.REMNG_RampCompleted:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:486    .text.REMNG_RampCompleted:00000000 REMNG_RampCompleted
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:537    .text.REMNG_StopRamp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:543    .text.REMNG_StopRamp:00000000 REMNG_StopRamp
+C:\Users\ep_ygh\AppData\Local\Temp\ccNGb4Dm.s:587    .text.getScalingFactor:00000000 $t
 
 NO UNDEFINED SYMBOLS

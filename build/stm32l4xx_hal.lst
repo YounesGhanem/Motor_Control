@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
   14:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * This software is licensed under terms that can be found in the LICENSE file
   15:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * in the root directory of this software component.
   16:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 2
 
 
   17:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
   71:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** #define MEMRMP_OFFSET             SYSCFG_OFFSET
   72:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** #define FB_MODE_BitNumber         8U
   73:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** #define FB_MODE_BB                (PERIPH_BB_BASE + (MEMRMP_OFFSET * 32U) + (FB_MODE_BitNumber * 4U
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 3
 
 
   74:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  128:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****             ISR process will be blocked.
  129:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****        (++) functions affecting time base configurations are declared as __weak
  130:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****              to make  override possible  in case of other  implementations in user file.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 4
 
 
  131:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** @endverbatim
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  167:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** #endif /* DATA_CACHE_ENABLE */
  168:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** 
  169:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** #if (PREFETCH_ENABLE != 0)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 5
 
 
  170:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   __HAL_FLASH_PREFETCH_BUFFER_ENABLE();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  101              		@ sp needed
  102 003a 80BD     		pop	{r7, pc}
  103              	.L6:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 6
 
 
  104              		.align	2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  147 0022 4FF0FF32 		mov	r2, #-1
  148 0026 1A64     		str	r2, [r3, #64]
  203:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 7
 
 
  149              		.loc 1 203 3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  187 0064 00100240 		.word	1073876992
  188              		.cfi_endproc
  189              	.LFE318:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 8
 
 
  191              		.section	.text.HAL_MspInit,"ax",%progbits
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  233:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @brief  DeInitialize the MSP.
  234:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @retval None
  235:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 9
 
 
  236:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** __weak void HAL_MspDeInit(void)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  257:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @retval HAL status
  258:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   */
  259:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 10
 
 
  260:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  313              		.loc 1 270 10
  314 0036 7B68     		ldr	r3, [r7, #4]
  315 0038 0F2B     		cmp	r3, #15
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 11
 
 
  316 003a 09D8     		bhi	.L16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  348              		.cfi_def_cfa_offset 8
  349 0066 BD46     		mov	sp, r7
  350              	.LCFI19:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 12
 
 
  351              		.cfi_def_cfa_register 13
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  328:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** {
  372              		.loc 1 328 1
  373              		.cfi_startproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 13
 
 
  374              		@ args = 0, pretend = 0, frame = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  337:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   */
  338:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** __weak uint32_t HAL_GetTick(void)
  339:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 14
 
 
  422              		.loc 1 339 1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  469 0000 80B4     		push	{r7}
  470              	.LCFI28:
  471              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 15
 
 
  472              		.cfi_offset 7, -4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  518 0004 00AF     		add	r7, sp, #0
  519              	.LCFI34:
  520              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 16
 
 
  521 0006 0346     		mov	r3, r0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  377:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   }
  378:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** 
  379:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   return status;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 17
 
 
  557              		.loc 1 379 10
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  602 0008 1846     		mov	r0, r3
  603 000a BD46     		mov	sp, r7
  604              	.LCFI39:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 18
 
 
  605              		.cfi_def_cfa_register 13
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  646 000c B860     		str	r0, [r7, #8]
  406:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   uint32_t wait = Delay;
  647              		.loc 1 406 12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 19
 
 
  648 000e 7B68     		ldr	r3, [r7, #4]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  691              		.cfi_endproc
  692              	.LFE327:
  694              		.section	.text.HAL_SuspendTick,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 20
 
 
  695              		.align	1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  734              	.L48:
  735 001c 10E000E0 		.word	-536813552
  736              		.cfi_endproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 21
 
 
  737              	.LFE328:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  777              	.L52:
  778 001a 00BF     		.align	2
  779              	.L51:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 22
 
 
  780 001c 10E000E0 		.word	-536813552
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  828              		.syntax unified
  829              		.thumb
  830              		.thumb_func
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 23
 
 
  832              	HAL_GetREVID:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  468:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** 
  469:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** /**
  470:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @brief  Return the device identifier.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 24
 
 
  471:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @retval Device identifier
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  483:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** {
  923              		.loc 1 483 1
  924              		.cfi_startproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 25
 
 
  925              		@ args = 0, pretend = 0, frame = 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  972              		.cfi_def_cfa_offset 4
  973              		.cfi_offset 7, -4
  974 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 26
 
 
  975              	.LCFI71:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1021 0006 1B68     		ldr	r3, [r3]
  503:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** }
  1022              		.loc 1 503 1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 27
 
 
  1023 0008 1846     		mov	r0, r3
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1052              		@ frame_needed = 1, uses_anonymous_args = 0
  1053              		@ link register save eliminated.
  1054 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 28
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 28
 
 
  1055              	.LCFI78:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1102              		.cfi_offset 7, -4
  1103 0002 00AF     		add	r7, sp, #0
  1104              	.LCFI83:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 29
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 29
 
 
  1105              		.cfi_def_cfa_register 7
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1151              		.loc 1 549 3
  1152 0004 054B     		ldr	r3, .L84
  1153 0006 5B68     		ldr	r3, [r3, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 30
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 30
 
 
  1154 0008 044A     		ldr	r2, .L84
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1201 000e 5360     		str	r3, [r2, #4]
  559:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** }
  1202              		.loc 1 559 1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 31
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 31
 
 
  1203 0010 00BF     		nop
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1250              	.LCFI96:
  1251              		.cfi_def_cfa_register 13
  1252              		@ sp needed
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 32
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 32
 
 
  1253 0014 5DF8047B 		ldr	r7, [sp], #4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1300              		.cfi_restore 7
  1301              		.cfi_def_cfa_offset 0
  1302 0018 7047     		bx	lr
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 33
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 33
 
 
  1303              	.L94:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1328 0002 00AF     		add	r7, sp, #0
  1329              	.LCFI103:
  1330              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 34
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 34
 
 
  609:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   /* unlock the write protection of the SRAM2ER bit */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  622:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *         and Flash Bank1 mapped at 0x08100000 (and aliased at 0x00100000)
  623:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *
  624:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @retval None
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 35
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 35
 
 
  625:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   */
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  637:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *         and Flash Bank2 mapped at 0x08100000 (and aliased at 0x00100000)
  638:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *
  639:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   * @retval None
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 36
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 36
 
 
  640:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  652:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *            @arg SYSCFG_VREFBUF_VOLTAGE_SCALE0: VREF_OUT1 around 2.048 V.
  653:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *                                                This requires VDDA equal to or higher than 2.4 V
  654:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *            @arg SYSCFG_VREFBUF_VOLTAGE_SCALE1: VREF_OUT2 around 2.5 V.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 37
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 37
 
 
  655:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   *                                                This requires VDDA equal to or higher than 2.8 V
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1507              		.section	.text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig,"ax",%progbits
  1508              		.align	1
  1509              		.global	HAL_SYSCFG_VREFBUF_HighImpedanceConfig
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 38
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 38
 
 
  1510              		.syntax unified
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1549 001e 5DF8047B 		ldr	r7, [sp], #4
  1550              	.LCFI125:
  1551              		.cfi_restore 7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 39
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 39
 
 
  1552              		.cfi_def_cfa_offset 0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1596 001a 0C37     		adds	r7, r7, #12
  1597              	.LCFI129:
  1598              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 40
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 40
 
 
  1599 001c BD46     		mov	sp, r7
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  703:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c **** 
  704:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   /* Get Start Tick*/
  705:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c ****   tickstart = HAL_GetTick();
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 41
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 41
 
 
  1645              		.loc 1 705 15
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1685 0042 00BF     		.align	2
  1686              	.L117:
  1687 0044 30000140 		.word	1073807408
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 42
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 42
 
 
  1688              		.cfi_endproc
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1734              	.LFE349:
  1736              		.section	.text.HAL_SYSCFG_EnableIOAnalogSwitchBooster,"ax",%progbits
  1737              		.align	1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 43
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 43
 
 
  1738              		.global	HAL_SYSCFG_EnableIOAnalogSwitchBooster
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1783              		.global	HAL_SYSCFG_DisableIOAnalogSwitchBooster
  1784              		.syntax unified
  1785              		.thumb
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 44
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 44
 
 
  1786              		.thumb_func
@@ -2638,130 +2638,130 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 1
  1832              		.file 6 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
  1833              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
  1834              		.file 8 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 45
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 45
 
 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 46
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l4xx_hal.c
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:24     .bss.uwTick:00000000 uwTick
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:21     .bss.uwTick:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:31     .data.uwTickPrio:00000000 uwTickPrio
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:28     .data.uwTickPrio:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:37     .data.uwTickFreq:00000000 uwTickFreq
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:40     .text.HAL_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:46     .text.HAL_Init:00000000 HAL_Init
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:268    .text.HAL_InitTick:00000000 HAL_InitTick
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:198    .text.HAL_MspInit:00000000 HAL_MspInit
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:106    .text.HAL_Init:0000003c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:111    .text.HAL_DeInit:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:117    .text.HAL_DeInit:00000000 HAL_DeInit
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:233    .text.HAL_MspDeInit:00000000 HAL_MspDeInit
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:187    .text.HAL_DeInit:00000064 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:192    .text.HAL_MspInit:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:227    .text.HAL_MspDeInit:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:262    .text.HAL_InitTick:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:357    .text.HAL_InitTick:0000006c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:364    .text.HAL_IncTick:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:370    .text.HAL_IncTick:00000000 HAL_IncTick
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:408    .text.HAL_IncTick:00000020 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:414    .text.HAL_GetTick:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:420    .text.HAL_GetTick:00000000 HAL_GetTick
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:451    .text.HAL_GetTick:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:456    .text.HAL_GetTickPrio:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:462    .text.HAL_GetTickPrio:00000000 HAL_GetTickPrio
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:493    .text.HAL_GetTickPrio:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:498    .text.HAL_SetTickFreq:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:504    .text.HAL_SetTickFreq:00000000 HAL_SetTickFreq
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:572    .text.HAL_SetTickFreq:00000048 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:578    .text.HAL_GetTickFreq:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:584    .text.HAL_GetTickFreq:00000000 HAL_GetTickFreq
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:615    .text.HAL_GetTickFreq:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:620    .text.HAL_Delay:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:626    .text.HAL_Delay:00000000 HAL_Delay
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:690    .text.HAL_Delay:00000044 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:695    .text.HAL_SuspendTick:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:701    .text.HAL_SuspendTick:00000000 HAL_SuspendTick
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:735    .text.HAL_SuspendTick:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:740    .text.HAL_ResumeTick:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:746    .text.HAL_ResumeTick:00000000 HAL_ResumeTick
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:780    .text.HAL_ResumeTick:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:785    .text.HAL_GetHalVersion:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:791    .text.HAL_GetHalVersion:00000000 HAL_GetHalVersion
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:821    .text.HAL_GetHalVersion:00000010 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:826    .text.HAL_GetREVID:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:832    .text.HAL_GetREVID:00000000 HAL_GetREVID
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:866    .text.HAL_GetREVID:00000018 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:871    .text.HAL_GetDEVID:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:877    .text.HAL_GetDEVID:00000000 HAL_GetDEVID
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:910    .text.HAL_GetDEVID:00000018 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:915    .text.HAL_GetUIDw0:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:921    .text.HAL_GetUIDw0:00000000 HAL_GetUIDw0
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:952    .text.HAL_GetUIDw0:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:957    .text.HAL_GetUIDw1:00000000 $t
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 47
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:24     .bss.uwTick:00000000 uwTick
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:21     .bss.uwTick:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:31     .data.uwTickPrio:00000000 uwTickPrio
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:28     .data.uwTickPrio:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:37     .data.uwTickFreq:00000000 uwTickFreq
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:40     .text.HAL_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:46     .text.HAL_Init:00000000 HAL_Init
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:268    .text.HAL_InitTick:00000000 HAL_InitTick
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:198    .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:106    .text.HAL_Init:0000003c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:111    .text.HAL_DeInit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:117    .text.HAL_DeInit:00000000 HAL_DeInit
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:233    .text.HAL_MspDeInit:00000000 HAL_MspDeInit
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:187    .text.HAL_DeInit:00000064 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:192    .text.HAL_MspInit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:227    .text.HAL_MspDeInit:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:262    .text.HAL_InitTick:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:357    .text.HAL_InitTick:0000006c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:364    .text.HAL_IncTick:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:370    .text.HAL_IncTick:00000000 HAL_IncTick
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:408    .text.HAL_IncTick:00000020 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:414    .text.HAL_GetTick:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:420    .text.HAL_GetTick:00000000 HAL_GetTick
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:451    .text.HAL_GetTick:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:456    .text.HAL_GetTickPrio:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:462    .text.HAL_GetTickPrio:00000000 HAL_GetTickPrio
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:493    .text.HAL_GetTickPrio:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:498    .text.HAL_SetTickFreq:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:504    .text.HAL_SetTickFreq:00000000 HAL_SetTickFreq
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:572    .text.HAL_SetTickFreq:00000048 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:578    .text.HAL_GetTickFreq:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:584    .text.HAL_GetTickFreq:00000000 HAL_GetTickFreq
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:615    .text.HAL_GetTickFreq:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:620    .text.HAL_Delay:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:626    .text.HAL_Delay:00000000 HAL_Delay
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:690    .text.HAL_Delay:00000044 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:695    .text.HAL_SuspendTick:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:701    .text.HAL_SuspendTick:00000000 HAL_SuspendTick
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:735    .text.HAL_SuspendTick:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:740    .text.HAL_ResumeTick:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:746    .text.HAL_ResumeTick:00000000 HAL_ResumeTick
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:780    .text.HAL_ResumeTick:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:785    .text.HAL_GetHalVersion:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:791    .text.HAL_GetHalVersion:00000000 HAL_GetHalVersion
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:821    .text.HAL_GetHalVersion:00000010 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:826    .text.HAL_GetREVID:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:832    .text.HAL_GetREVID:00000000 HAL_GetREVID
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:866    .text.HAL_GetREVID:00000018 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:871    .text.HAL_GetDEVID:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:877    .text.HAL_GetDEVID:00000000 HAL_GetDEVID
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:910    .text.HAL_GetDEVID:00000018 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:915    .text.HAL_GetUIDw0:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:921    .text.HAL_GetUIDw0:00000000 HAL_GetUIDw0
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:952    .text.HAL_GetUIDw0:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:957    .text.HAL_GetUIDw1:00000000 $t
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 47
 
 
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:963    .text.HAL_GetUIDw1:00000000 HAL_GetUIDw1
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:994    .text.HAL_GetUIDw1:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:999    .text.HAL_GetUIDw2:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1005   .text.HAL_GetUIDw2:00000000 HAL_GetUIDw2
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1036   .text.HAL_GetUIDw2:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1041   .text.HAL_DBGMCU_EnableDBGSleepMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1047   .text.HAL_DBGMCU_EnableDBGSleepMode:00000000 HAL_DBGMCU_EnableDBGSleepMode
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1081   .text.HAL_DBGMCU_EnableDBGSleepMode:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1086   .text.HAL_DBGMCU_DisableDBGSleepMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1092   .text.HAL_DBGMCU_DisableDBGSleepMode:00000000 HAL_DBGMCU_DisableDBGSleepMode
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1126   .text.HAL_DBGMCU_DisableDBGSleepMode:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1131   .text.HAL_DBGMCU_EnableDBGStopMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1137   .text.HAL_DBGMCU_EnableDBGStopMode:00000000 HAL_DBGMCU_EnableDBGStopMode
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1171   .text.HAL_DBGMCU_EnableDBGStopMode:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1176   .text.HAL_DBGMCU_DisableDBGStopMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1182   .text.HAL_DBGMCU_DisableDBGStopMode:00000000 HAL_DBGMCU_DisableDBGStopMode
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1216   .text.HAL_DBGMCU_DisableDBGStopMode:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1221   .text.HAL_DBGMCU_EnableDBGStandbyMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1227   .text.HAL_DBGMCU_EnableDBGStandbyMode:00000000 HAL_DBGMCU_EnableDBGStandbyMode
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1261   .text.HAL_DBGMCU_EnableDBGStandbyMode:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1266   .text.HAL_DBGMCU_DisableDBGStandbyMode:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1272   .text.HAL_DBGMCU_DisableDBGStandbyMode:00000000 HAL_DBGMCU_DisableDBGStandbyMode
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1306   .text.HAL_DBGMCU_DisableDBGStandbyMode:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1311   .text.HAL_SYSCFG_SRAM2Erase:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1317   .text.HAL_SYSCFG_SRAM2Erase:00000000 HAL_SYSCFG_SRAM2Erase
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1360   .text.HAL_SYSCFG_SRAM2Erase:00000020 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1366   .text.HAL_SYSCFG_EnableMemorySwappingBank:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1372   .text.HAL_SYSCFG_EnableMemorySwappingBank:00000000 HAL_SYSCFG_EnableMemorySwappingBank
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1405   .text.HAL_SYSCFG_EnableMemorySwappingBank:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1410   .text.HAL_SYSCFG_DisableMemorySwappingBank:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1416   .text.HAL_SYSCFG_DisableMemorySwappingBank:00000000 HAL_SYSCFG_DisableMemorySwappingBank
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1449   .text.HAL_SYSCFG_DisableMemorySwappingBank:00000014 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1454   .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1460   .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000000 HAL_SYSCFG_VREFBUF_VoltageScalingConfig
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1503   .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000024 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1508   .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1514   .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000000 HAL_SYSCFG_VREFBUF_HighImpedanceConfig
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1557   .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000024 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1562   .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1568   .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000000 HAL_SYSCFG_VREFBUF_TrimmingConfig
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1611   .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000024 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1616   .text.HAL_SYSCFG_EnableVREFBUF:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1622   .text.HAL_SYSCFG_EnableVREFBUF:00000000 HAL_SYSCFG_EnableVREFBUF
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1687   .text.HAL_SYSCFG_EnableVREFBUF:00000044 $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1692   .text.HAL_SYSCFG_DisableVREFBUF:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1698   .text.HAL_SYSCFG_DisableVREFBUF:00000000 HAL_SYSCFG_DisableVREFBUF
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1732   .text.HAL_SYSCFG_DisableVREFBUF:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1737   .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1743   .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster:00000000 HAL_SYSCFG_EnableIOAnalogSwitchBooster
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1777   .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster:0000001c $d
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1782   .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1788   .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster:00000000 HAL_SYSCFG_DisableIOAnalogSwitchBooster
-C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s:1822   .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:963    .text.HAL_GetUIDw1:00000000 HAL_GetUIDw1
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:994    .text.HAL_GetUIDw1:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:999    .text.HAL_GetUIDw2:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1005   .text.HAL_GetUIDw2:00000000 HAL_GetUIDw2
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1036   .text.HAL_GetUIDw2:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1041   .text.HAL_DBGMCU_EnableDBGSleepMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1047   .text.HAL_DBGMCU_EnableDBGSleepMode:00000000 HAL_DBGMCU_EnableDBGSleepMode
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1081   .text.HAL_DBGMCU_EnableDBGSleepMode:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1086   .text.HAL_DBGMCU_DisableDBGSleepMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1092   .text.HAL_DBGMCU_DisableDBGSleepMode:00000000 HAL_DBGMCU_DisableDBGSleepMode
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1126   .text.HAL_DBGMCU_DisableDBGSleepMode:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1131   .text.HAL_DBGMCU_EnableDBGStopMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1137   .text.HAL_DBGMCU_EnableDBGStopMode:00000000 HAL_DBGMCU_EnableDBGStopMode
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1171   .text.HAL_DBGMCU_EnableDBGStopMode:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1176   .text.HAL_DBGMCU_DisableDBGStopMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1182   .text.HAL_DBGMCU_DisableDBGStopMode:00000000 HAL_DBGMCU_DisableDBGStopMode
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1216   .text.HAL_DBGMCU_DisableDBGStopMode:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1221   .text.HAL_DBGMCU_EnableDBGStandbyMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1227   .text.HAL_DBGMCU_EnableDBGStandbyMode:00000000 HAL_DBGMCU_EnableDBGStandbyMode
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1261   .text.HAL_DBGMCU_EnableDBGStandbyMode:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1266   .text.HAL_DBGMCU_DisableDBGStandbyMode:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1272   .text.HAL_DBGMCU_DisableDBGStandbyMode:00000000 HAL_DBGMCU_DisableDBGStandbyMode
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1306   .text.HAL_DBGMCU_DisableDBGStandbyMode:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1311   .text.HAL_SYSCFG_SRAM2Erase:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1317   .text.HAL_SYSCFG_SRAM2Erase:00000000 HAL_SYSCFG_SRAM2Erase
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1360   .text.HAL_SYSCFG_SRAM2Erase:00000020 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1366   .text.HAL_SYSCFG_EnableMemorySwappingBank:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1372   .text.HAL_SYSCFG_EnableMemorySwappingBank:00000000 HAL_SYSCFG_EnableMemorySwappingBank
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1405   .text.HAL_SYSCFG_EnableMemorySwappingBank:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1410   .text.HAL_SYSCFG_DisableMemorySwappingBank:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1416   .text.HAL_SYSCFG_DisableMemorySwappingBank:00000000 HAL_SYSCFG_DisableMemorySwappingBank
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1449   .text.HAL_SYSCFG_DisableMemorySwappingBank:00000014 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1454   .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1460   .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000000 HAL_SYSCFG_VREFBUF_VoltageScalingConfig
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1503   .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000024 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1508   .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1514   .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000000 HAL_SYSCFG_VREFBUF_HighImpedanceConfig
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1557   .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000024 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1562   .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1568   .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000000 HAL_SYSCFG_VREFBUF_TrimmingConfig
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1611   .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000024 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1616   .text.HAL_SYSCFG_EnableVREFBUF:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1622   .text.HAL_SYSCFG_EnableVREFBUF:00000000 HAL_SYSCFG_EnableVREFBUF
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1687   .text.HAL_SYSCFG_EnableVREFBUF:00000044 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1692   .text.HAL_SYSCFG_DisableVREFBUF:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1698   .text.HAL_SYSCFG_DisableVREFBUF:00000000 HAL_SYSCFG_DisableVREFBUF
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1732   .text.HAL_SYSCFG_DisableVREFBUF:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1737   .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1743   .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster:00000000 HAL_SYSCFG_EnableIOAnalogSwitchBooster
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1777   .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster:0000001c $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1782   .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1788   .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster:00000000 HAL_SYSCFG_DisableIOAnalogSwitchBooster
+C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s:1822   .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster:0000001c $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriorityGrouping
 HAL_SYSTICK_Config
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cciwkFji.s 			page 48
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc0VXQKH.s 			page 48
 
 
 HAL_NVIC_SetPriority

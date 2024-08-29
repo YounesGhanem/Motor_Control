@@ -970,7 +970,7 @@ __weak void R3_1_SwitchOffPWM( PWMC_Handle_t * pHdl )
 
   /* Disable UPDATE ISR */
   LL_TIM_DisableIT_UPDATE( TIMx );
-  
+
   pHandle->_Super.TurnOnLowSidesAction = false;
 
   /* Main PWM Output Disable */

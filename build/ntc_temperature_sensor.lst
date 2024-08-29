@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
   56              		.align	1
   57              		.weak	NTC_SetFaultState
   58              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 2
 
 
   59              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
   50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   *
   51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   * In case a real temperature sensor is not available (Sensor Type = #VIRTUAL_SENSOR),
   52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   * This component will always returns a constant, programmable, temperature.
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 3
 
 
   53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
   82:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****       hFault = MC_OVER_TEMP;
   90              		.loc 1 82 14
   91 0014 0823     		movs	r3, #8
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 4
 
 
   92 0016 FB81     		strh	r3, [r7, #14]	@ movhi
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  133              		.section	.text.NTC_Init,"ax",%progbits
  134              		.align	1
  135              		.weak	NTC_Init
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 5
 
 
  136              		.syntax unified
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  121:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****     {
  122:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****       pHandle->hFaultState = MC_NO_ERROR;
  123:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****       pHandle->hAvTemp_d = pHandle->hExpectedTemp_d;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 6
 
 
  124:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****     }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  207              		@ link register save eliminated.
  208 0000 80B4     		push	{r7}
  209              	.LCFI11:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 7
 
 
  210              		.cfi_def_cfa_offset 4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  154:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   * @param pHandle : Pointer on Handle structure of TemperatureSensor component
  155:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   *
  156:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   * @retval Fault status : Error reported in case of an over temperature detection
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 8
 
 
  157:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****   */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  177:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****       }
  178:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****       else
  179:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****       {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 9
 
 
  180:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c ****         uint32_t wtemp;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  327 0062 1A81     		strh	r2, [r3, #8]	@ movhi
  328              	.LBE2:
  329 0064 02E0     		b	.L14
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 10
 
 
  330              	.L12:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  365              		.cfi_startproc
  366              		@ args = 0, pretend = 0, frame = 8
  367              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 11
 
 
  368              		@ link register save eliminated.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  226:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/ntc_temperature_sensor.c **** {
  409              		.loc 1 226 1
  410              		.cfi_startproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 12
 
 
  411              		@ args = 0, pretend = 0, frame = 16
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  449              		.loc 1 242 13
  450 002a FB68     		ldr	r3, [r7, #12]
  451 002c 02FB03F3 		mul	r3, r2, r3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 13
 
 
  452 0030 FB60     		str	r3, [r7, #12]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  489              		.cfi_endproc
  490              	.LFE1093:
  492              		.section	.text.NTC_CheckTemp,"ax",%progbits
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 14
 
 
  493              		.align	1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  528              		@ sp needed
  529 0012 5DF8047B 		ldr	r7, [sp], #4
  530              	.LCFI39:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 15
 
 
  531              		.cfi_restore 7
@@ -854,36 +854,36 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 1
  542              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
  543              		.file 6 "Inc/mc_type.h"
  544              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/ntc_temperature_sensor.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ntc_temperature_sensor.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:56     .text.NTC_SetFaultState:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:62     .text.NTC_SetFaultState:00000000 NTC_SetFaultState
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:134    .text.NTC_Init:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:140    .text.NTC_Init:00000000 NTC_Init
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:201    .text.NTC_Clear:00000000 NTC_Clear
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:195    .text.NTC_Clear:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:241    .text.NTC_CalcAvTemp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:247    .text.NTC_CalcAvTemp:00000000 NTC_CalcAvTemp
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:356    .text.NTC_GetAvTemp_d:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:362    .text.NTC_GetAvTemp_d:00000000 NTC_GetAvTemp_d
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:401    .text.NTC_GetAvTemp_C:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:407    .text.NTC_GetAvTemp_C:00000000 NTC_GetAvTemp_C
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:493    .text.NTC_CheckTemp:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccsYVk2f.s:499    .text.NTC_CheckTemp:00000000 NTC_CheckTemp
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:56     .text.NTC_SetFaultState:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:62     .text.NTC_SetFaultState:00000000 NTC_SetFaultState
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:134    .text.NTC_Init:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:140    .text.NTC_Init:00000000 NTC_Init
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:201    .text.NTC_Clear:00000000 NTC_Clear
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:195    .text.NTC_Clear:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:241    .text.NTC_CalcAvTemp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:247    .text.NTC_CalcAvTemp:00000000 NTC_CalcAvTemp
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:356    .text.NTC_GetAvTemp_d:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:362    .text.NTC_GetAvTemp_d:00000000 NTC_GetAvTemp_d
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:401    .text.NTC_GetAvTemp_C:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:407    .text.NTC_GetAvTemp_C:00000000 NTC_GetAvTemp_C
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:493    .text.NTC_CheckTemp:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc9OTGJn.s:499    .text.NTC_CheckTemp:00000000 NTC_CheckTemp
 
 NO UNDEFINED SYMBOLS

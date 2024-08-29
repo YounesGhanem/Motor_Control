@@ -66,6 +66,8 @@ build/mc_interface.o: Src/mc_interface.c Inc/mc_math.h Inc/mc_type.h \
  MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h \
  MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_speed_pos_fdbk.h \
  MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/enc_align_ctrl.h \
+ MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_align_ctrl.h \
+ MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_speed_pos_fdbk.h \
  MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/ramp_ext_mngr.h \
  MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/circle_limitation.h \
  Inc/parameters_conversion.h Inc/mc_math.h \
@@ -147,6 +149,8 @@ MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/L4xx/Inc/r3_1_l4xx_pwm_curr_fdbk.h:
 MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/encoder_speed_pos_fdbk.h:
 MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_speed_pos_fdbk.h:
 MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/enc_align_ctrl.h:
+MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_align_ctrl.h:
+MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/hall_speed_pos_fdbk.h:
 MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/ramp_ext_mngr.h:
 MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/circle_limitation.h:
 Inc/parameters_conversion.h:

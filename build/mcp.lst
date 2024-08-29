@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
   56              		.align	2
   57              	.LC0:
   58 0000 00000000 		.word	RI_SetRegisterGlobal
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 2
 
 
   59 0004 00000000 		.word	RI_SetRegisterMotor1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
   45:Src/mcp.c     ****   * @brief  Parses the payload in the received packet and call the required function in order to mo
   46:Src/mcp.c     ****   *
   47:Src/mcp.c     ****   * The function called depends on the targeted motor and/or targeted register : RI_SetRegisterGlob
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 3
 
 
   48:Src/mcp.c     ****   *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  103              		.loc 1 68 13
  104 0022 7B84     		strh	r3, [r7, #34]	@ movhi
   69:Src/mcp.c     ****     uint16_t size = 0U;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 4
 
 
  105              		.loc 1 69 14
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  142 0062 1B88     		ldrh	r3, [r3]
  143              		.loc 1 86 13
  144 0064 23F00703 		bic	r3, r3, #7
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 5
 
 
  145 0068 7B83     		strh	r3, [r7, #26]	@ movhi
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  187 00b0 BA6A     		ldr	r2, [r7, #40]
  188 00b2 A047     		blx	r4
  189              	.LVL0:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 6
 
 
  190 00b4 0346     		mov	r3, r0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  230 00f4 7B62     		str	r3, [r7, #36]
  113:Src/mcp.c     ****             pHandle->txLength++;
  231              		.loc 1 113 20
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 7
 
 
  232 00f6 7B68     		ldr	r3, [r7, #4]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  127:Src/mcp.c     ****             retVal = MCP_ERROR_NO_TXSYNC_SPACE;
  273              		.loc 1 127 20
  274 0130 0823     		movs	r3, #8
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 8
 
 
  275 0132 87F82F30 		strb	r3, [r7, #47]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  311              	.LC1:
  312 0008 00000000 		.word	RI_GetRegisterGlobal
  313 000c 00000000 		.word	RI_GetRegisterMotor1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 9
 
 
  314              		.section	.text.RI_GetRegCommandParser,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  345              		.loc 1 169 15
  346 0012 7B68     		ldr	r3, [r7, #4]
  347 0014 5B68     		ldr	r3, [r3, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 10
 
 
  348 0016 BB62     		str	r3, [r7, #40]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  186:Src/mcp.c     ****       regID = *dataElementID & REG_MASK;
  386              		.loc 1 186 15
  387 0052 FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 11
 
 
  388 0054 1B88     		ldrh	r3, [r3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  430 009a B7F92030 		ldrsh	r3, [r7, #32]
  431 009e 0093     		str	r3, [sp]
  432 00a0 1346     		mov	r3, r2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 12
 
 
  433 00a2 7A6A     		ldr	r2, [r7, #36]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  211:Src/mcp.c     ****     }
  212:Src/mcp.c     **** #ifdef NULL_PTR_CHECK_REG_INT
  213:Src/mcp.c     ****   }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 13
 
 
  214:Src/mcp.c     **** #endif
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  519 0006 7860     		str	r0, [r7, #4]
  225:Src/mcp.c     ****   const uint16_t *packetHeader;
  226:Src/mcp.c     ****   uint16_t command;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 14
 
 
  227:Src/mcp.c     ****   int16_t txSyncFreeSpace;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  252:Src/mcp.c     **** 
  253:Src/mcp.c     ****     motorID = (uint8_t)((*packetHeader - 1U) & MOTOR_MASK);
  549              		.loc 1 253 26
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 15
 
 
  550 0036 BB69     		ldr	r3, [r7, #24]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  595 0076 FB81     		strh	r3, [r7, #14]	@ movhi
  263:Src/mcp.c     **** 
  264:Src/mcp.c     ****     /* Initialization of the tx length, command which send back data has to increment the txLength
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 16
 
 
  265:Src/mcp.c     ****      * (case of Read register) */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  646 0120 81030000 		.word	.L25+1
  647 0124 81030000 		.word	.L25+1
  648 0128 81030000 		.word	.L25+1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 17
 
 
  649 012c 81030000 		.word	.L25+1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  703 0204 81030000 		.word	.L25+1
  704 0208 81030000 		.word	.L25+1
  705 020c 81030000 		.word	.L25+1
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 18
 
 
  706 0210 81030000 		.word	.L25+1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  747 0266 8EE0     		b	.L40
  748              	.L36:
  282:Src/mcp.c     ****       }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 19
 
 
  283:Src/mcp.c     **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  785 029a 0023     		movs	r3, #0
  786 029c 7B77     		strb	r3, [r7, #29]
  301:Src/mcp.c     ****         break;
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 20
 
 
  787              		.loc 1 301 9
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  818              		.loc 1 324 85
  819 02cc 83F00103 		eor	r3, r3, #1
  820 02d0 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 21
 
 
  821              		.loc 1 324 23
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  851              		.loc 1 346 9
  852 02fa 44E0     		b	.L40
  853              	.L29:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 22
 
 
  347:Src/mcp.c     ****       }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  886              	.L39:
  369:Src/mcp.c     ****       }
  370:Src/mcp.c     **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 23
 
 
  371:Src/mcp.c     ****       case MCP_USER_CMD:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  928              	.L49:
  929 0376 00BF     		.align	2
  930              	.L48:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 24
 
 
  931 0378 00000000 		.word	Mci
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  972              		.section	.text.MCP_RegisterCallBack,"ax",%progbits
  973              		.align	1
  974              		.global	MCP_RegisterCallBack
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 25
 
 
  975              		.syntax unified
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  1013              	.L51:
  414:Src/mcp.c     ****   }
  415:Src/mcp.c     ****   else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 26
 
 
  416:Src/mcp.c     ****   {
@@ -1552,39 +1552,39 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 1
  1058              		.file 17 "Inc/mc_interface.h"
  1059              		.file 18 "Inc/mc_config.h"
  1060              		.file 19 "Inc/mcp_config.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s 			page 27
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mcp.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:56     .rodata:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:61     .text.RI_SetRegCommandParser:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:67     .text.RI_SetRegCommandParser:00000000 RI_SetRegCommandParser
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:305    .text.RI_SetRegCommandParser:00000158 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:315    .text.RI_GetRegCommandParser:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:321    .text.RI_GetRegCommandParser:00000000 RI_GetRegCommandParser
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:489    .text.RI_GetRegCommandParser:000000f0 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:494    .text.MCP_ReceivedPacket:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:500    .text.MCP_ReceivedPacket:00000000 MCP_ReceivedPacket
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:612    .text.MCP_ReceivedPacket:00000098 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:717    .text.MCP_ReceivedPacket:0000023c $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:931    .text.MCP_ReceivedPacket:00000378 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:935    .text.MCP_ReceivedPacket:00000380 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:973    .text.MCP_RegisterCallBack:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:979    .text.MCP_RegisterCallBack:00000000 MCP_RegisterCallBack
-C:\Users\ep_ygh\AppData\Local\Temp\ccSEVZvL.s:1037   .text.MCP_RegisterCallBack:00000034 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:56     .rodata:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:61     .text.RI_SetRegCommandParser:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:67     .text.RI_SetRegCommandParser:00000000 RI_SetRegCommandParser
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:305    .text.RI_SetRegCommandParser:00000158 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:315    .text.RI_GetRegCommandParser:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:321    .text.RI_GetRegCommandParser:00000000 RI_GetRegCommandParser
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:489    .text.RI_GetRegCommandParser:000000f0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:494    .text.MCP_ReceivedPacket:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:500    .text.MCP_ReceivedPacket:00000000 MCP_ReceivedPacket
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:612    .text.MCP_ReceivedPacket:00000098 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:717    .text.MCP_ReceivedPacket:0000023c $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:931    .text.MCP_ReceivedPacket:00000378 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:935    .text.MCP_ReceivedPacket:00000380 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:973    .text.MCP_RegisterCallBack:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:979    .text.MCP_RegisterCallBack:00000000 MCP_RegisterCallBack
+C:\Users\ep_ygh\AppData\Local\Temp\ccvEffcb.s:1037   .text.MCP_RegisterCallBack:00000034 $d
 
 UNDEFINED SYMBOLS
 RI_SetRegisterGlobal

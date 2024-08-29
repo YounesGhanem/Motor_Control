@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
   56              		.align	1
   57              		.weak	PQD_CalcElMotorPower
   58              		.syntax unified
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 2
 
 
   59              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
   50:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
   51:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** /**
   52:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   * @brief Updates the average electrical motor power measure with the latest values 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 3
 
 
   53:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   *        of the DQ currents and voltages.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
   94 001e 1632     		adds	r2, r2, #22
   95 0020 1068     		ldr	r0, [r2]	@ unaligned
   96 0022 1860     		str	r0, [r3]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 4
 
 
   78:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
  143 0070 9BB2     		uxth	r3, r3
  144 0072 1AB2     		sxth	r2, r3
  145 0074 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 5
 
 
  146 0076 1A80     		strh	r2, [r3]	@ movhi
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
  187              		.cfi_def_cfa_register 7
  188 0006 7860     		str	r0, [r7, #4]
  100:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_MOT_POW_MES
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 6
 
 
  101:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c ****   if (MC_NULL == pHandle)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
  221              		@ args = 0, pretend = 0, frame = 16
  222              		@ frame_needed = 1, uses_anonymous_args = 0
  223 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 7
 
 
  224              	.LCFI12:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
  265 003e 67EE277A 		vmul.f32	s15, s14, s15
  266 0042 C7ED037A 		vstr.32	s15, [r7, #12]
  138:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** 
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 8
 
 
  139:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/pqd_motor_power_measurement.c **** #ifdef NULL_PTR_CHECK_PQD_MOT_POW_MEAS
@@ -455,29 +455,29 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 1
  294              		.file 6 "Inc/mc_type.h"
  295              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/bus_voltage_sensor.h"
  296              		.file 8 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/pqd_motor_power_measurement.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 pqd_motor_power_measurement.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:56     .text.PQD_CalcElMotorPower:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:62     .text.PQD_CalcElMotorPower:00000000 PQD_CalcElMotorPower
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:165    .text.PQD_Clear:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:171    .text.PQD_Clear:00000000 PQD_Clear
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:211    .text.PQD_GetAvrgElMotorPowerW:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccckZdQd.s:217    .text.PQD_GetAvrgElMotorPowerW:00000000 PQD_GetAvrgElMotorPowerW
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:56     .text.PQD_CalcElMotorPower:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:62     .text.PQD_CalcElMotorPower:00000000 PQD_CalcElMotorPower
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:165    .text.PQD_Clear:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:171    .text.PQD_Clear:00000000 PQD_Clear
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:211    .text.PQD_GetAvrgElMotorPowerW:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\ccUKtevm.s:217    .text.PQD_GetAvrgElMotorPowerW:00000000 PQD_GetAvrgElMotorPowerW
 
 UNDEFINED SYMBOLS
 VBS_GetAvBusVoltage_V

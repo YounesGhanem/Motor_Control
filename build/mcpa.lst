@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
   56              		.section	.bss.GLOBAL_TIMESTAMP,"aw",%nobits
   57              		.align	2
   60              	GLOBAL_TIMESTAMP:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 2
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 2
 
 
   61 0000 00000000 		.space	4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
   45:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c **** {
   72              		.loc 1 45 1
   73              		.cfi_startproc
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 3
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 3
 
 
   74              		@ args = 0, pretend = 0, frame = 24
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  109 0026 7B68     		ldr	r3, [r7, #4]
  110 0028 1B68     		ldr	r3, [r3]
  111              		.loc 1 64 43
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 4
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 4
 
 
  112 002a 1B68     		ldr	r3, [r3]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  147              		.loc 1 80 22
  148 0062 7B68     		ldr	r3, [r7, #4]
  149 0064 93F82920 		ldrb	r2, [r3, #41]	@ zero_extendqisi2
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 5
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 5
 
 
  150              		.loc 1 80 39
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
   93:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****             /* We store pointer here, so 4 bytes */
   94:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****             (void)memcpy(pHandle->dataPtrTableBuff, pHandle->dataPtrTable,
  192              		.loc 1 94 33
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 6
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 6
 
 
  193 00b6 7B68     		ldr	r3, [r7, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  107:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****       /* */
  108:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****       if ((pHandle->bufferIndex > 0U)  && (pHandle->bufferIndex <= pHandle->bufferTxTriggerBuff))
  233              		.loc 1 108 19
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 7
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 7
 
 
  234 00f4 7B68     		ldr	r3, [r7, #4]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  281              		.loc 1 115 41 discriminator 3
  282 0132 7B68     		ldr	r3, [r7, #4]
  283 0134 1B8B     		ldrh	r3, [r3, #24]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 8
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 8
 
 
  284              		.loc 1 115 55 discriminator 3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  326 017a 1DE0     		b	.L8
  327              	.L9:
  125:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****             {
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 9
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 9
 
 
  126:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****               /* Dump MF data */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  352 019a 7B68     		ldr	r3, [r7, #4]
  353 019c 1A8B     		ldrh	r2, [r3, #24]
  354              		.loc 1 155 66 discriminator 3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 10
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 10
 
 
  355 019e 7B68     		ldr	r3, [r7, #4]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  161:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****           }
  162:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         }
  163:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         else
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 11
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 11
 
 
  164:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  436              		.loc 1 179 27 discriminator 3
  437 0216 1B68     		ldr	r3, [r3]
  438              		.loc 1 179 25 discriminator 3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 12
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 12
 
 
  439 0218 1A68     		ldr	r2, [r3]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  187:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         /* Buffer is ready to be send */
  188:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         logValue16 = (uint16_t *)&pHandle->currentBuffer[pHandle->bufferIndex]; //cstat !MISRAC2012
  480              		.loc 1 188 42
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 13
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 13
 
 
  481 0252 7B68     		ldr	r3, [r7, #4]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  203:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****       pHandle->HFIndex++;
  204:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****     }
  205:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c **** #ifdef NULL_PTR_CHECK_MCPA
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 14
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 14
 
 
  206:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****   }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  563              	.LCFI5:
  564              		.cfi_def_cfa_offset 12
  565              		.cfi_offset 4, -12
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 15
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 15
 
 
  566              		.cfi_offset 7, -8
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  600              		.loc 1 236 19 discriminator 3
  601 002c 1344     		add	r3, r3, r2
  602 002e 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 16
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 16
 
 
  237:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****          *logValue = *((uint32_t *)pHandle->dataPtrTableBuff[i]); //cstat !MISRAC2012-Rule-11.5
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  234:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         {
  650              		.loc 1 234 9 discriminator 1
  651 0072 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 17
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 17
 
 
  652 0074 D6DB     		blt	.L21
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  693 00ac 1A83     		strh	r2, [r3, #24]	@ movhi
  694              	.L22:
  251:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****     }
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 18
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 18
 
 
  252:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****     else
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  270:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****   pHandle->Mark = 0U;
  733              		.loc 1 270 17
  734 0008 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 19
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 19
 
 
  735 000a 0022     		movs	r2, #0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  279:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****   else
  280:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****   {
  281:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****     /* Nothing to do */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 20
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 20
 
 
  282:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****   }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  821              		@ frame_needed = 1, uses_anonymous_args = 0
  822 0000 80B5     		push	{r7, lr}
  823              	.LCFI15:
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 21
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 21
 
 
  824              		.cfi_def_cfa_offset 8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  318:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****     }
  319:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****     else if (buffSize > pHandle->pTransportLayer->txAsyncMaxPayload)
  857              		.loc 1 319 32
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 22
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 22
 
 
  858 002a 7B68     		ldr	r3, [r7, #4]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  900 0072 7B68     		ldr	r3, [r7, #4]
  901 0074 93F82730 		ldrb	r3, [r3, #39]	@ zero_extendqisi2
  902              		.loc 1 331 27
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 23
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 23
 
 
  903 0078 1344     		add	r3, r3, r2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  950              		.loc 1 338 18 discriminator 4
  951 00be 7B68     		ldr	r3, [r7, #4]
  952 00c0 DA68     		ldr	r2, [r3, #12]
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 24
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 24
 
 
  953              		.loc 1 338 33 discriminator 4
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  342:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         }
  343:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c **** 
  344:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         /* Smallest packet must be able to contain logSize Markbyte AsyncID and TimeStamp */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 25
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 25
 
 
  345:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****         if (buffSize < (logSize + 2U + 4U))
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  358:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****           else
  359:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****           {
  360:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****             /* Nothing to do */
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 26
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 26
 
 
  361:MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Src/mcpa.c ****           }
@@ -1540,34 +1540,34 @@ ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 1
  1063              		.file 5 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h"
  1064              		.file 6 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcptl.h"
  1065              		.file 7 "MCSDK_v6.2.1-Full/MotorControl/MCSDK/MCLib/Any/Inc/mcpa.h"
-ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s 			page 27
+ARM GAS  C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s 			page 27
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mcpa.c
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:60     .bss.GLOBAL_TIMESTAMP:00000000 GLOBAL_TIMESTAMP
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:57     .bss.GLOBAL_TIMESTAMP:00000000 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:63     .text.MCPA_dataLog:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:69     .text.MCPA_dataLog:00000000 MCPA_dataLog
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:545    .text.MCPA_dataLog:000002a0 $d
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:550    .text.MCPA_flushDataLog:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:556    .text.MCPA_flushDataLog:00000000 MCPA_flushDataLog
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:709    .text.MCPA_stopDataLog:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:714    .text.MCPA_stopDataLog:00000000 MCPA_stopDataLog
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:810    .text.MCPA_cfgLog:00000000 $t
-C:\Users\ep_ygh\AppData\Local\Temp\ccpNBLb3.s:816    .text.MCPA_cfgLog:00000000 MCPA_cfgLog
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:20     .rodata.OFFSET_TAB_CCMRx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:23     .rodata.OFFSET_TAB_CCMRx:00000000 OFFSET_TAB_CCMRx
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:26     .rodata.SHIFT_TAB_OCxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:29     .rodata.SHIFT_TAB_OCxx:00000000 SHIFT_TAB_OCxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:32     .rodata.SHIFT_TAB_ICxx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:35     .rodata.SHIFT_TAB_ICxx:00000000 SHIFT_TAB_ICxx
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:38     .rodata.SHIFT_TAB_CCxP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:41     .rodata.SHIFT_TAB_CCxP:00000000 SHIFT_TAB_CCxP
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:44     .rodata.SHIFT_TAB_OISx:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:47     .rodata.SHIFT_TAB_OISx:00000000 SHIFT_TAB_OISx
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:50     .rodata.CHANNEL_OFFSET_TAB:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:53     .rodata.CHANNEL_OFFSET_TAB:00000000 CHANNEL_OFFSET_TAB
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:60     .bss.GLOBAL_TIMESTAMP:00000000 GLOBAL_TIMESTAMP
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:57     .bss.GLOBAL_TIMESTAMP:00000000 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:63     .text.MCPA_dataLog:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:69     .text.MCPA_dataLog:00000000 MCPA_dataLog
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:545    .text.MCPA_dataLog:000002a0 $d
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:550    .text.MCPA_flushDataLog:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:556    .text.MCPA_flushDataLog:00000000 MCPA_flushDataLog
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:709    .text.MCPA_stopDataLog:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:714    .text.MCPA_stopDataLog:00000000 MCPA_stopDataLog
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:810    .text.MCPA_cfgLog:00000000 $t
+C:\Users\ep_ygh\AppData\Local\Temp\cc1G97mH.s:816    .text.MCPA_cfgLog:00000000 MCPA_cfgLog
 
 UNDEFINED SYMBOLS
 memcpy
